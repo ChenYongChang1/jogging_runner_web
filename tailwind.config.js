@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  prefix: 'tw-',
+  prefix: "tw-",
   content: [
     "./src/components/**/*.{js,vue,ts}",
     "./src/layouts/**/*.vue",
@@ -10,6 +10,13 @@ module.exports = {
     "./src/error.vue",
   ],
   theme: {
+    colors: {
+      themecolor: '#61CD57',
+      basecolor:'#4A4A4A',
+      text666: '#666666',
+      text999: '#999999',
+      linecolor: "#F7F7F7",
+    },
     extend: {},
   },
   plugins: [],
