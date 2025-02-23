@@ -20,7 +20,7 @@ module.exports = {
       basecolor:'#4A4A4A',
       text666: '#666666',
       text999: '#999999',
-      linecolor: "#F7F7F7",
+      linecolor: "#000", // F7F7F7
     },
     extend: {},
     screens: {
