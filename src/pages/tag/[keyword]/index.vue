@@ -1,3 +1,3 @@
 <script>
-export { default } from "../[lang]/tag/[keyword]/[page].vue";
+export { default } from "./[page].vue";
 </script>

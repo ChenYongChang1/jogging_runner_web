@@ -1,7 +1,9 @@
 <template>
-  <div>
+  <div class="container tw-flex tw-flex-col tw-w-full tw-min-h-[100vh]">
     <Header />
-    <nuxt />
+    <div class="tw-flex-1">
+      <slot></slot>
+    </div>
     <Footer />
   </div>
 </template>
