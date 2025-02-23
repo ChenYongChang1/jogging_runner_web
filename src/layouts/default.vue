@@ -3,9 +3,15 @@
     <div
       class="tw-w-full tw-h-[90px] tw-flex tw-justify-between tw-items-center tw-border-b-linecolor tw-border-b-[1px] tw-border-solid tw-px-[36px]"
     >
-      <img src="@/assets/images/logo-zh.png" class="tw-w-[208px] tw-object-contain" alt="" />
-      <div class="tw-flex">
-        123
+      <img
+        src="@/assets/images/logo-zh.png"
+        class="tw-w-[208px] tw-object-contain"
+        alt=""
+      />
+      <div class="tw-flex tw-font-[500] tw-test-[16px]">
+        <bw-button>123</bw-button>
+        <bw-button>超慢跑节拍器180下载</bw-button>
+        <bw-button>必备装备</bw-button>
       </div>
     </div>
     <div class="tw-flex-1">

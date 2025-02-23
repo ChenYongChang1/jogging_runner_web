@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["@pinia/nuxt", "@nuxtjs/tailwindcss"],
 
-  css: ["~/assets/css/tailwind.scss"],
+  css: ["~/assets/css/tailwind.scss", "~/assets/css/index.scss"],
   components: [
     {
       path: "~/components/",
