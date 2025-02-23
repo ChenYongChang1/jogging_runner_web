@@ -1,26 +1,14 @@
 <template>
-  <div class="container tw-flex tw-flex-col tw-w-full tw-min-h-[100vh]">
-    <div
-      class="tw-w-full tw-h-[90px] tw-flex tw-justify-between tw-items-center tw-border-b-linecolor tw-border-b-[1px] tw-border-solid tw-px-[36px]"
-    >
-      <img
-        src="@/assets/images/logo-zh.png"
-        class="tw-w-[208px] tw-object-contain"
-        alt=""
-      />
-      <div class="tw-flex tw-font-[500] tw-test-[16px]">
-        <bw-button>123</bw-button>
-        <bw-button>超慢跑节拍器180下载</bw-button>
-        <bw-button>必备装备</bw-button>
-      </div>
-    </div>
-    <div class="tw-flex-1">
-      <slot></slot>
-    </div>
-    <div class="runner-footer tw-h-[100px] tw-w-full tw-bg-[black]"></div>
+  <div>
+    <Header />
+    <nuxt />
+    <Footer />
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import Header from "../components/Layout/header.vue";
+import Footer from "../components/Layout/footer.vue";
+</script>
 
 <style lang="scss" scoped></style>
