@@ -1,17 +1,17 @@
 <template>
   <div class="footer-wrapper justify-center items-center w-full">
     <!-- 简介 -->
-    <div class="brief-introduction tw-mx-[24px]">
-      <!-- pc端简介 -->
+    <div class="brief-introduction tw-mx-auto ">
+      <!-- pc端简介 1280px-->
       <div
-        class="brief-introduction-pc tw-hidden sm:tw-flex tw-items-center tw-justify-between tw-pt-[117px] tw-pb-[120px] tw-px-[182px]"
+        class="brief-introduction-pc tw-w-[1280px]  tw-mx-auto tw-hidden sm:tw-flex tw-items-center tw-justify-center"
       >
         <img
           src="~assets/images/footer-introduction.png"
-          class="tw-w-[502px] tw-h-[424px]"
+          class="tw-w-[39.2%] tw-mr-[9.4%]"
         />
 
-        <div class="right-content tw-w-[404px]">
+        <div class="right-content tw-w-[31.6%]">
           <div
             class="right-content-header tw-text-[#4A4A4A] tw-text-[48px] tw-font-[600] tw-leading-[56px] tw-text-left tw-pb-[17px]"
           >

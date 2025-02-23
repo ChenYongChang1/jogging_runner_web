@@ -1,6 +1,6 @@
 <template>
   <header
-    class="layout-header tw-bg-white tw-shadow-sm"
+    class="layout-header tw-bg-white tw-shadow-sm border-b-1"
     style="background-color: rgba(248, 255, 248, 0.44)"
   >
     <div class="container-custom tw-px-4 sm:tw-px-6">

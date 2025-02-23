@@ -1,6 +1,8 @@
-<template><div>nuxt</div></template>
+<template><div><home></home></div></template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import home from './home.vue';
+</script>
 
 <style lang="scss" scoped>
 div {
