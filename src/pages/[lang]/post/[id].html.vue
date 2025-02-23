@@ -1,5 +1,5 @@
 
-<template><div>nuxt</div></template>
+<template><div>文章详情页</div></template>
 
 <script lang="ts" setup></script>
 
