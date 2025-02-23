@@ -5,6 +5,13 @@
     class="tw-w-full tw-object-contain"
     alt=""
   />
+  <video
+    v-else-if="mediaType === MediaType.video"
+    class="tw-w-full tw-object-contain"
+    controls
+  >
+    <source :src="src" type="video/mp4" />
+  </video>
 </template>
 
 <script lang="ts" setup>
