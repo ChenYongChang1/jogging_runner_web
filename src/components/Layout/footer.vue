@@ -39,7 +39,7 @@
     <footerIntroduction />
     <!-- 网站备案 -->
     <div
-      class="website-approve tw-mx-[24px] tw-rounded-[26px]"
+      class="website-approve tw-mx-[24px] tw-mt-[25px] tw-rounded-[26px]"
       style="background-color: #1e293b"
     >
       <div class="website-approve-pc tw-pt-[93px] tw-pb-[78px] tw-text-center">
