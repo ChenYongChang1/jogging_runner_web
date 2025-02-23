@@ -1,6 +1,8 @@
-
 * {
   box-sizing: border-box;
 }
 
-@import url('./ui-scss.scss');
+@import url("./ui-scss.scss");
+.dd-container {
+  @apply tw-w-[1280px] tw-mx-auto;
+}

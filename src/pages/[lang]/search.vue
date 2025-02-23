@@ -1,13 +1,15 @@
 <template>
-  <div class="tw-w-[84.7vw] tw-mx-auto">
+  <div class="dd-container">
     <div class="search-box tw-flex tw-pt-[56px]">
       <div
-        class="search-content tw-w-[63.8vw] tw-border-r-[1px] tw-border-linecolor tw-border-solid tw-pr-[30px]"
+        class="search-content tw-w-[65.4%] tw-border-r-[1px] tw-border-linecolor tw-border-solid tw-pr-[30px]"
       >
         <bw-article-card class="card-row-item"></bw-article-card>
         <bw-article-card class="card-row-item"></bw-article-card>
       </div>
-      <article-search-content></article-search-content>
+      <div class="tw-w-[33.9%] tw-pl-[52px]">
+        <article-search-content></article-search-content>
+      </div>
     </div>
   </div>
 </template>

@@ -3,7 +3,7 @@
     <div class="card-title">
       Zone 2 心率計算：有效達成運動目標並提升心臟健康的關鍵！
     </div>
-    <bw-media class="tw-mb-[22px]"></bw-media>
+    <bw-media class="tw-mb-[22px]" type="image"></bw-media>
     <div
       class="next-title tw-text-[30px] tw-font-[600] tw-text-basecolor tw-leading-[55px]"
     >

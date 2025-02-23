@@ -11,22 +11,22 @@ module.exports = {
   ],
   theme: {
     screens: {
-			sm: '375px',
-			md: '768px',
-			xl: '1440px',
-		},
+      sm: "375px",
+      md: "768px",
+      xl: "1440px",
+    },
     colors: {
-      themecolor: '#61CD57',
-      basecolor:'#4A4A4A',
-      text666: '#666666',
-      text999: '#999999',
-      linecolor: "#000", // F7F7F7
+      themecolor: "#61CD57",
+      basecolor: "#4A4A4A",
+      text666: "#666666",
+      text999: "#999999",
+      linecolor: "#F7F7F7", //
     },
     extend: {},
     screens: {
-      'sm': '640px',
-      'md': '768px',
-      'lg': '1024px',
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
     },
   },
   plugins: [],
