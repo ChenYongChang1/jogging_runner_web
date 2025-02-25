@@ -37,6 +37,13 @@
         </bw-button>
       </div>
     </div>
+    <BwPagination
+      :current-page="currentPage"
+      :page-size="pageSize"
+      :total="total"
+      @size-change="handleSizeChange"
+      @current-change="handleCurrentChange"
+    />
   </div>
 </template>
 <script setup lang="ts">
@@ -54,6 +61,18 @@ const props = defineProps({
     default: () => [],
   },
 });
+const total = ref<number>(0);
+const pageSize = ref<number>(10);
+const currentPage = ref<number>(1);
+// 处理每页条数变化
+const handleSizeChange = (newSize:number) => {
+  console.log("每页条数变化:", newSize);
+};
+
+// 处理页码变化
+const handleCurrentChange = (newPage:number) => {
+  console.log("页码变化:", newPage);
+};
 </script>
 <style lang="scss" scoped>
 .bw-list-item {
