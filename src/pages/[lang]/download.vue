@@ -1,11 +1,3 @@
-<!--
- * @Author: sunfuyu sunfuyu@bwcj.com
- * @Date: 2025-02-25 22:14:22
- * @LastEditors: sunfuyu sunfuyu@bwcj.com
- * @LastEditTime: 2025-02-25 22:43:19
- * @FilePath: \jogging_runner_web\src\pages\[lang]\download.vue
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
--->
 <template>
   <div class="download-page">
     <div class="download-tabar tw-w-[100%] tw-bg-[#F8FFF8]">
@@ -26,26 +18,34 @@
           </p>
           <div class="download-app tw-pt-[25px]">
             <el-popover
-              trigger="hover click"
+              trigger="manual"
+              v-model:visible="visible"
+              @mouseenter="showPopover"
+              @mouseleave="hidePopover"
+              @click="togglePopover"
               placement="left-start"
-              width="200"
+              width="144"
             >
               <template #reference>
                 <BwButton
                   class="download-app-btn tw-w-[120px] tw-flex tw-items-center tw-justify-center"
                   :active="true"
+                  @mouseenter="showPopover"
+                  @click="togglePopover"
                   >下载APP<el-icon class="tw-ml-[5px] tw-font-[500]"
                     ><Download /></el-icon
                 ></BwButton>
               </template>
-              <div class="popover-download tw-px-[9px] tw-py-[8px]">
+              <div
+                class="popover-download tw-flex tw-flex-col tw-items-center tw-justify-center tw-w-[144px] tw-px-[9px] tw-py-[8px]"
+              >
                 <img
-                  src="https://s3-alpha-sig.figma.com/img/6225/6c82/d2a7085169282dbc2058beeb507c3313?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=iwn07BM3gbTxWJeY~A1B8HLOZ46rBomNMFtH~JQhFYaapyV~bJJPd3iGGivcUu3UqFjWZdVgGGXUusb~TewHxRD5WIj6oGq0ZYIGBqZF9njN~3eP2Cd9NgmStQyNsi1wGmROefXjUohzSZYgDZH88TAY5e5q0EoxMdwZr5NvQG52wsj-1xDqTutnSGYcMjjws~Z6ceGG4MCjLI80oV8mTigtDd9~e~e1uO2gwRgj7rYaky46-gOjkWbstFU4qscifVTN5cpglmTMge-Ydg8jaCDoaS9JW2vsGmYB2hVGH6O20sd4jYrQJ8gUYzNq0zVWiG9DiqIxxtFVJ8SHzKWP2g__"
-                  class="tw-w-[125px] tw-h-[124px] tw-mb-[5px]"
+                  src="@/assets/images/erweima.png"
+                  class="tw-w-[125px] tw-mb-[5px]"
                   alt=""
                 />
                 <div
-                  class="text tw-text-[#4A4A4A] tw-text-[16px] tw-font-[600] tw-leading-[24px] tw-text-center"
+                  class="text tw-text-[#4A4A4A] tw-text-[16px] tw-font-[500] tw-leading-[24px]"
                 >
                   扫码下载超慢跑
                 </div>
@@ -53,7 +53,7 @@
             </el-popover>
           </div>
         </div>
-        <img src="@/assets/images/download.png" class="tw-w-[36.1%]" />
+        <img src="@/assets/images/home.png" class="tw-w-[36.1%]" />
       </div>
       <!-- pc端介绍 -->
       <div
@@ -61,7 +61,7 @@
       ></div>
       <!-- pc端文字介绍 -->
       <div
-        class="download-text-describe-pc tw-hidden sm:tw-flex tw-rounded-[24px] tw-bg-[#FBFBFB] tw-w-[96.6%] tw-mx-auto tw-mb-[120px] tw-px-[118px] tw-pt-[48px] tw-pb-[54px]"
+        class="download-text-describe-pc tw-hidden sm:tw-flex tw-flex-col tw-rounded-[24px] tw-bg-[#FBFBFB] tw-w-[96.6%] tw-mx-auto tw-mb-[120px] tw-px-[118px] tw-pt-[48px] tw-pb-[54px]"
       >
         <div class="text-describe-title">为什么推荐超慢跑：</div>
         <div class="text-describe-content">
@@ -129,7 +129,22 @@
 </template>
 
 <script lang="ts" setup>
-import BwButton from "~/components/base/BwButton.vue";
+import { Download } from "@element-plus/icons-vue";
+
+const popover = ref(null);
+const visible = ref(false);
+// 鼠标悬停时显示
+const showPopover = () => {
+  visible.value = true;
+};
+const hidePopover = () => {
+  visible.value = false;
+};
+// 点击时切换显示状态
+const togglePopover = () => {
+  visible.value = !visible.value;
+};
+// import BwButton from "~/components/base/BwButton.vue";
 </script>
 
 <style lang="scss" scoped>
