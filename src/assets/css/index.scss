@@ -3,6 +3,20 @@
 }
 
 @import url("./ui-scss.scss");
+html {
+  font-size: 16px;
+}
 .dd-container {
-  @apply tw-w-[1280px] tw-mx-auto;
+  width: 100%;
+  @apply xl:tw-w-[1280px] md:tw-w-[768px] lg:tw-w-[1000px] tw-mx-auto ss:tw-px-[1rem];
+}
+$fontSizes: (16, 40);
+@for $i from nth($fontSizes, 1) through nth($fontSizes, 2) {
+  .dd-fs-#{$i} {
+    @apply xl:tw-text-[#{$i}px] lg:tw-text-[#{$i * 0.8}px] ss:tw-text-[#{$i / 16}rem];
+  }
+}
+
+.dd-title-text {
+  @extend .dd-fs-36;
 }
