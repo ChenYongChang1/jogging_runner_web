@@ -4,8 +4,8 @@
       <div
         class="download-type-pc tw-hidden sm:tw-flex tw-pl-[80px] tw-pt-[45px] tw-pr-[182px]"
       >
-        <img src="~assets/images/download-type-pc.png" class="tw-w-[639px]" />
-        <div class="right-content tw-w-[404px] tw-pt-[145px]">
+        <img src="~assets/images/download-type-pc.png" class="tw-w-[45.9%] tw-mr-[17%]" />
+        <div class="right-content tw-w-[35%] tw-pt-[145px]">
           <div class="download-text tw-flex tw-items-center tw-pb-[20px]">
             <div
               class="tw-pb-[10px] tw-rounded-[6px] tw-w-[10px] tw-h-[10px] tw-bg-[green]"

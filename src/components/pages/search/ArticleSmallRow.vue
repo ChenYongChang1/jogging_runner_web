@@ -1,7 +1,7 @@
 <template>
   <div>
     <nuxt-link
-      class="tw-block tw-w-full tw-text-[20px] tw-font-[500] tw-leading-[32px] tw-text-text666 tw-mb-[12px] hover:tw-text-themecolor"
+      class="tw-block tw-w-full dd-fs-20 tw-font-[500] tw-leading-[32px] tw-text-text666 tw-mb-[12px] hover:tw-text-themecolor"
       :to="`/post/test.html`"
     >
       心血管疾病預防：飲食、運動及徵兆全解析

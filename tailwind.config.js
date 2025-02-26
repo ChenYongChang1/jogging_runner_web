@@ -10,11 +10,6 @@ module.exports = {
     "./src/error.vue",
   ],
   theme: {
-    screens: {
-      sm: "375px",
-      md: "768px",
-      xl: "1440px",
-    },
     colors: {
       themecolor: "#61CD57",
       basecolor: "#4A4A4A",
@@ -24,9 +19,12 @@ module.exports = {
     },
     extend: {},
     screens: {
+      ss: '100px',
+      xsm: "375px",
       sm: "640px",
       md: "768px",
       lg: "1024px",
+      xl: "1440px",
     },
   },
   plugins: [],

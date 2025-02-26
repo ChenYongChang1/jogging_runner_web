@@ -1,7 +1,11 @@
 <template>
   <header
-    class="layout-header tw-bg-white tw-shadow-sm"
-    style="background-color: rgba(248, 255, 248, 0.44)"
+    class="layout-header tw-bg-white tw-shadow-sm border-b-1"
+    :style="{
+      backgroundColor: isEquipment
+        ? 'transparent'
+        : 'rgba(248, 255, 248, 0.44)',
+    }"
   >
     <div class="container-custom tw-px-4 sm:tw-px-6">
       <!-- 头部主体内容 -->
@@ -17,11 +21,11 @@
           />
           <div>
             <h1
-              class="tw-text-base sm:tw-text-lg tw-font-bold tw-text-green-500"
+              class="tw-text-base sm:tw-text-lg tw-text-[#3EDB30] tw-font-bold tw-text-green-500"
             >
               超慢跑节拍器
             </h1>
-            <div class="tw-text-xs sm:tw-text-sm tw-text-gray-500">
+            <div class="tw-text-xs sm:tw-text-sm tw-text-[#ffffff] tw-text-gray-500">
               chaomanpao.com
             </div>
           </div>
@@ -33,7 +37,7 @@
             v-for="item in menuItems"
             :key="item.path"
             :to="item.path"
-            class="navBtn"
+            :class="['navBtn', isEquipment ? 'navBtn-equipment' : '']"
           >
             {{ item.name }}
           </router-link>
@@ -123,9 +127,14 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { ArrowDown } from "@element-plus/icons-vue";
+import { useRoute } from "vue-router";
 
+const route = useRoute();
+const isEquipment = computed(() => {
+  return route.name.includes("equipment");
+});
 const isMenuOpen = ref(false);
 
 const menuItems = [
@@ -144,6 +153,7 @@ const changeLanguage = (str) => {
 </script>
 <style lang="scss" scoped>
 .layout-header {
+  z-index: 100;
   .navBtn {
     border-radius: 14px;
     border-width: 1.5px;
@@ -157,6 +167,9 @@ const changeLanguage = (str) => {
       border-color: #61cd57;
       color: #fff;
     }
+  }
+  .navBtn-equipment {
+    color: #fff;
   }
 }
 </style>

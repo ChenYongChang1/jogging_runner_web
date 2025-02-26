@@ -1,11 +1,11 @@
 <template>
   <div class="card-row">
-    <div class="card-title">
+    <div class="card-title dd-title-text">
       Zone 2 心率計算：有效達成運動目標並提升心臟健康的關鍵！
     </div>
     <bw-media class="tw-mb-[22px]" type="image"></bw-media>
     <div
-      class="next-title tw-text-[30px] tw-font-[600] tw-text-basecolor tw-leading-[55px]"
+      class="next-title dd-fs-30 tw-font-[600] tw-text-basecolor tw-leading-[55px]"
     >
       Zone 2 心率計算：
     </div>
@@ -14,7 +14,7 @@
       低强度的运动可以使心率保持在最大心率的60%-70%之间，这一区间被认为是最佳的脂肪燃烧和心肺功能提升区间。在这个心率区间内，身体主要使用脂肪作为能量来源，而非糖原，这有助于脂肪减少和体重管理。
     </div>
     <div
-      class="look-views tw-flex tw-justify-between tw-items-center tw-flex-wrap"
+      class="look-views lg:tw-flex tw-justify-between tw-items-center tw-flex-wrap ss:tw-mb-[1.125rem]"
     >
       <div class="look-nums tw-flex">
         <img
@@ -26,7 +26,7 @@
           >25.2万人看过</span
         >
       </div>
-      <bw-button type="border">
+      <bw-button type="border" class="ss:tw-mx-auto lg:tw-mx-0 tw-w-fit">
         <div class="tw-flex">
           <span class="tw-mr-[6px]">阅读全文</span>
           <img src="@/assets/icon/to-right.svg" class="tw-w-[18px]" alt="" />
@@ -47,10 +47,10 @@ defineOptions({ name: "BwArticleCard" });
     0 -4px 14px 0 rgba($color: #000000, $alpha: 0.04);
   @apply tw-rounded-[32px] tw-p-[24px] tw-text-justify;
   .card-title {
-    @apply tw-text-[36px] tw-font-[600] tw-text-basecolor tw-leading-[55px] tw-mb-[30px];
+    @apply tw-font-[600] tw-text-basecolor lg:tw-leading-[55px] lg:tw-mb-[30px] ss:tw-mb-[1.375rem];
   }
   .sub-text {
-    @apply tw-text-text666 tw-text-[20px] tw-font-[500] tw-leading-[32px];
+    @apply tw-text-text666 lg:tw-text-[20px] ss:tw-text-[1rem] tw-font-[500] lg:tw-leading-[32px] ss:tw-leading-[1.5rem];
   }
 }
 </style>
