@@ -61,7 +61,7 @@
       ></div>
       <!-- pc端文字介绍 -->
       <div
-        class="download-text-describe-pc tw-hidden sm:tw-flex tw-rounded-[24px] tw-bg-[#FBFBFB] tw-w-[96.6%] tw-mx-auto tw-mb-[120px] tw-px-[118px] tw-pt-[48px] tw-pb-[54px]"
+        class="download-text-describe-pc tw-hidden sm:tw-flex tw-flex-col tw-rounded-[24px] tw-bg-[#FBFBFB] tw-w-[96.6%] tw-mx-auto tw-mb-[120px] tw-px-[118px] tw-pt-[48px] tw-pb-[54px]"
       >
         <div class="text-describe-title">为什么推荐超慢跑：</div>
         <div class="text-describe-content">
