@@ -3,7 +3,7 @@
     <div class="download-tabar tw-w-[100%] tw-bg-[#F8FFF8]">
       <!-- pc端 -->
       <div
-        class="download-tabar-pc tw-hidden sm:tw-flex tw-pt-[24px] tw-justify-center tw-items-center tw-w-[1280px] tw-mx-auto tw-mb-[64px]"
+        class="download-tabar-pc tw-hidden sm:tw-flex tw-pt-[24px] tw-justify-center tw-items-center dd-container tw-mx-auto tw-mb-[64px]"
       >
         <div class="download-tabar-left tw-w-[48%] tw-mr-[15.9%]">
           <p

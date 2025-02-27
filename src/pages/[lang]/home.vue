@@ -3,7 +3,7 @@
     <div class="home-tabar tw-w-[100%] tw-bg-[#F8FFF8]">
       <!-- pc端 手机logo -->
       <div
-        class="home-tabar-pc tw-hidden sm:tw-flex tw-pt-[24px] tw-justify-center tw-items-center tw-w-[1280px] tw-mx-auto"
+        class="home-tabar-pc tw-hidden sm:tw-flex tw-pt-[24px] tw-justify-center tw-items-center dd-container tw-mx-auto"
       >
         <div class="home-tabar-left tw-w-[48%] tw-mr-[15.9%]">
           <p
@@ -30,7 +30,7 @@
     </div>
     <!-- pc端tabar -->
     <div
-      class="home-tabar-list-pc tw-hidden sm:tw-flex tw-justify-around tw-items-center tw-w-[1280px] tw-transform tw-translate-y-[-75px] tw-mx-auto"
+      class="home-tabar-list-pc tw-hidden sm:tw-flex tw-justify-around tw-items-center dd-container tw-transform tw-translate-y-[-75px] tw-mx-auto"
     >
       <div
         class="tabar-item tw-w-[22.8%] tw-rounded-[3px] tw-pt-[32px] tw-pl-[16px] tw-mr-[15px]"
