@@ -4,7 +4,7 @@
     <div class="equipment-introduce-pc"></div>
     <div class="equipment-content-pc dd-container tw-mt-[80px] tw-bg-[#fff]">
       <div class="title tw-flex tw-justify-center tw-items-center tw-mb-[48px]">
-        <div class="tw-text-[#4a4a4a] dd-fs-40 tw-font-[600] tw-leading-[50px]">
+        <div class="tw-text-[#4a4a4a] dd-fs-46 tw-font-[600] tw-leading-[50px]">
           扫码查看详情
         </div>
         <img
