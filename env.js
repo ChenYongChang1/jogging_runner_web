@@ -1,0 +1,1 @@
+export const BASE_URL = 'http://sheep11.com/api2'

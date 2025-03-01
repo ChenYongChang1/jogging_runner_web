@@ -3,17 +3,72 @@
 }
 
 @import url("./ui-scss.scss");
+
 html {
-  font-size: 16px;
+  // font-size: 4.2vw; /* 根据视口宽度设置字体大小 */
+  @apply tw-text-[16px];
+  // max-sm:tw-text-[4vw];
 }
+
 .dd-container {
   width: 100%;
   @apply xl:tw-w-[1280px] md:tw-w-[768px] lg:tw-w-[1000px] tw-mx-auto ss:tw-px-[1rem];
 }
-$fontSizes: (16, 40);
-@for $i from nth($fontSizes, 1) through nth($fontSizes, 2) {
-  .dd-fs-#{$i} {
-    @apply xl:tw-text-[#{$i}px] lg:tw-text-[#{$i * 0.8}px] ss:tw-text-[#{$i / 16}rem];
+$fontSizes: (
+  20: (
+    16,
+    18,
+    20,
+  ),
+  30: (
+    22,
+    28,
+    36,
+  ),
+  36: (
+    24,
+    30,
+    36,
+  ),
+  42: (
+    30,
+    35,
+    42,
+  ),
+  46: (
+    36,
+    40,
+    46,
+  ),
+  48: (
+    36,
+    40,
+    48,
+  ),
+  "48-28": (
+    28,
+    37,
+    48,
+  ),
+  84: (
+    48,
+    70,
+    84,
+  ),
+  60: (
+    46,
+    50,
+    60,
+  ),
+  54: (
+    42,
+    45,
+    54,
+  ),
+);
+@each $key, $value in $fontSizes {
+  .dd-fs-#{$key} {
+    @apply max-md:tw-text-[#{nth($value, 1)}px] max-lg:tw-text-[#{nth($value, 2)}px] lg:tw-text-[#{nth($value, 3)}px];
   }
 }
 
