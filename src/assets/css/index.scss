@@ -7,6 +7,7 @@
 html {
   // font-size: 4.2vw; /* 根据视口宽度设置字体大小 */
   @apply tw-text-[16px];
+  // max-sm:tw-text-[4vw];
 }
 
 .dd-container {
@@ -18,7 +19,6 @@ $fontSizes: (
     16,
     18,
     20,
-
   ),
   30: (
     22,
@@ -45,7 +45,7 @@ $fontSizes: (
     40,
     48,
   ),
-  '48-28': (
+  "48-28": (
     28,
     37,
     48,

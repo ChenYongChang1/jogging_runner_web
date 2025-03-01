@@ -96,7 +96,6 @@
 
 <script lang="ts" setup>
 defineOptions({ name: "ArticleSearchContent" });
-import { searchPush } from "~/plugins/server/comblie-inject";
 import ArticleSmallRow from "./ArticleSmallRow.vue";
 import { Search } from "@element-plus/icons-vue";
 

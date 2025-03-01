@@ -53,7 +53,11 @@
     </div>
     <!-- pc端search -->
     <div class="search-input tw-mt-[-11px] dd-container tw-mx-auto">
-      <BwInput v-model="searchValue" placeholder="请输入搜索内容" @keydown.enter="handleSearch">
+      <BwInput
+        v-model="searchValue"
+        placeholder="请输入搜索内容"
+        @keydown.enter="handleSearch"
+      >
         <template #append>
           <BwButton @click="handleSearch" :active="true">
             <el-icon><Search /></el-icon> 搜索
@@ -75,7 +79,6 @@ import tabarOne from "@/assets/images/tabar-1.png";
 import tabarTwo from "@/assets/images/tabar-2.png";
 import tabarThree from "@/assets/images/tabar-3.png";
 import tabarFour from "@/assets/images/tabar-4.png";
-import { searchPush } from "~/plugins/server/comblie-inject";
 const tabarList = ref([
   {
     title: "入门与技巧",
