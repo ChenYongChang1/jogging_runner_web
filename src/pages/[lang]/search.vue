@@ -9,7 +9,9 @@
         <bw-article-card class="card-row-item"></bw-article-card>
       </div>
       <div class="lg:tw-w-[33.9%] xl:tw-pl-[52px] lg:tw-pl-[30px]">
-        <article-search-content v-model:searchWorld="searchWorld"></article-search-content>
+        <article-search-content
+          v-model:searchWorld="searchWorld"
+        ></article-search-content>
       </div>
     </div>
   </div>
@@ -18,10 +20,13 @@
 <script lang="ts" setup>
 import ArticleSearchContent from "~/components/pages/search/ArticleSearchContent.vue";
 import SearchEmpty from "~/components/pages/search/SearchEmpty.vue";
+import { getCategory } from "~/composables/api/home";
 
 const route = useRoute();
 const searchWorld: Ref<string> = ref(route.query.kw?.toString() || "");
 // 监听查询参数变化
+const res = ref("-");
+useAsyncData("d", async () => (res.value = await getCategory()));
 watch(
   () => route.query.kw,
   (newVal, oldVal) => {
