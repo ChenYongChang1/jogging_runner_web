@@ -1,17 +1,12 @@
 <template>
-  <div class="footer-wrapper justify-center items-center w-full lg:tw-mt-[120px]">
+  <div class="footer-wrapper justify-center items-center w-full lg:tw-mt-[120px] tw-mt-[44px]">
     <!-- 简介 -->
     <div class="brief-introduction tw-mx-auto">
       <!-- pc端简介 1280px-->
       <div
-        class="brief-introduction-pc dd-container sm:tw-flex lg:tw-items-start max-lg:tw-flex-col-reverse tw-justify-center lg:tw-mb-[120px]"
+      class="brief-introduction-pc dd-container sm:tw-flex lg:tw-items-start lg:tw-flex-row-reverse tw-flex-col tw-justify-center lg:tw-mb-[120px]"
       >
-        <img
-          src="~assets/images/footer-introduction.png"
-          class="lg:tw-w-[48%] lg:tw-mr-[9.4%] max-lg:tw-w-full max-lg:tw-mb-[2rem]"
-        />
-
-        <div class="right-content lg:tw-w-[40.6%]">
+      <div class="right-content lg:tw-w-[40.6%]">
           <div
             class="right-content-header max-lg:tw-text-center tw-text-[#4A4A4A] dd-fs-48 tw-font-[600] tw-leading-[56px] tw-text-left tw-pb-[17px]"
           >
@@ -25,6 +20,12 @@
             超慢跑科普是我们的重点板块。我们邀请专业的运动专家，深入浅出地讲解超慢跑的原理、益处，比如它如何提升心肺功能、增强关节灵活性，以及相较于其他运动，超慢跑在运动损伤风险上的优势，让大家科学地认识超慢跑。
           </p>
         </div>
+        <img
+          src="~assets/images/footer-introduction.png"
+          class="lg:tw-w-[48%] lg:tw-mr-[9.4%] tw-w-full tw-mb-[2rem]"
+        />
+
+
       </div>
     </div>
     <!-- 下载方式 -->

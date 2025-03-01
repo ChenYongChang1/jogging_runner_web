@@ -2,13 +2,9 @@
   <div class="download-type tw-mx-[24px] tw-rounded-[26px] tw-bg-[#EDFFEE]">
     <!-- pc 端下载方式 -->
     <div
-      class="download-type-pc tw-hidden sm:tw-flex tw-pl-[80px] tw-pt-[45px] tw-pr-[182px]"
+      class="download-type-pc sm:tw-flex lg:tw-items-start lg:tw-flex-row-reverse tw-flex-col tw-pl-[4.78%] tw-pt-[45px] tw-pr-[8.1%]"
     >
-      <img
-        src="~assets/images/download-type-pc.png"
-        class="tw-w-[45.9%] tw-mr-[17%]"
-      />
-      <div class="right-content tw-w-[35%] tw-pt-[145px]">
+    <div class="left-content tw-pt-[145px]">
         <div class="download-text tw-flex tw-items-center tw-pb-[20px]">
           <div
             class="tw-pb-[10px] tw-rounded-[6px] tw-w-[10px] tw-h-[10px] tw-bg-[green]"
@@ -16,29 +12,29 @@
           <div class="tw-font-[500]">下载APP</div>
         </div>
         <div
-          class="right-content-header tw-text-[#4A4A4A] tw-text-[48px] tw-font-[600] tw-leading-[56px] tw-text-left tw-pb-[17px]"
+          class="left-content-header tw-text-[#4A4A4A] dd-fs-48 tw-font-[600] tw-leading-[56px] tw-text-left tw-pb-[17px]"
         >
           下载超慢跑节拍器
         </div>
         <div class="download-type-imgs tw-pt-[50px] tw-flex tw-flex-wrap">
-          <div class="download-type-imgs-item tw-w-1/2 tw-p-4 tw-pb-[10px]">
+          <div class="download-type-imgs-item md:tw-w-1/2 tw-pr-[8px] tw-pb-[10px]">
             <img
               src="~assets/images/apple-download.png"
               @click="handleClickType('app-store')"
               class=""
             />
           </div>
-          <div class="download-type-imgs-item tw-w-1/2 tw-p-4 tw-pb-[10px] tw-relative">
+          <div class="download-type-imgs-item md:tw-w-1/2 tw-pr-0 tw-pb-[10px] tw-relative">
             <img
               src="~assets/images/google-download.png"
               @click="handleClickType('google-play')"
             />
-            <img 
+            <!-- <img 
               src="~assets/images/download-text.png"
-              class="tw-absolute tw-top-[20px] tw-right-[21.5px] tw-h-[5.5px]"
-            />
+              class="tw-absolute tw-top-[9px] tw-left-[59px] tw-h-[10.5px]"
+            /> -->
           </div>
-          <div class="download-type-imgs-item tw-w-1/2 tw-p-4 tw-pb-[10px]">
+          <div class="download-type-imgs-item md:tw-w-1/2 tw-pr-[8px] tw-pb-[10px]">
             <img
               src="~assets/images/anzhuo-download.png"
               @click="handleClickType('android')"
@@ -46,6 +42,11 @@
           </div>
         </div>
       </div>
+      <img
+        src="~assets/images/download-type-pc.png"
+        class="tw-w-[45.9%] tw-mr-[8.2%]"
+      />
+    
     </div>
   </div>
 </template>

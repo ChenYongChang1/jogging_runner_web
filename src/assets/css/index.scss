@@ -14,6 +14,12 @@ html {
   @apply xl:tw-w-[1280px] md:tw-w-[768px] lg:tw-w-[1000px] tw-mx-auto ss:tw-px-[1rem];
 }
 $fontSizes: (
+  20: (
+    16,
+    18,
+    20,
+
+  ),
   30: (
     22,
     28,
@@ -39,11 +45,26 @@ $fontSizes: (
     40,
     48,
   ),
+  '48-28': (
+    28,
+    37,
+    48,
+  ),
   84: (
     48,
     70,
     84,
-  )
+  ),
+  60: (
+    46,
+    50,
+    60,
+  ),
+  54: (
+    42,
+    45,
+    54,
+  ),
 );
 @each $key, $value in $fontSizes {
   .dd-fs-#{$key} {
