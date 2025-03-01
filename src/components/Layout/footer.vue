@@ -4,7 +4,7 @@
     <div class="brief-introduction tw-mx-auto">
       <!-- pc端简介 1280px-->
       <div
-        class="brief-introduction-pc dd-container tw-hidden sm:tw-flex lg:tw-items-start max-lg:tw-flex-col-reverse tw-justify-center lg:tw-mb-[120px]"
+        class="brief-introduction-pc dd-container sm:tw-flex lg:tw-items-start max-lg:tw-flex-col-reverse tw-justify-center lg:tw-mb-[120px]"
       >
         <img
           src="~assets/images/footer-introduction.png"
