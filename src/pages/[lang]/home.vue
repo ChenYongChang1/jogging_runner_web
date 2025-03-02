@@ -72,7 +72,7 @@
       </BwInput>
     </div>
     <!-- pc端list -->
-    <bw-list :tableList="tableList" class="dd-container tw-mx-auto"></bw-list>
+    <bw-list ref="homeBwListRef" :getListApi="getSearchInfo" :searchValue="searchValue" class="dd-container tw-mx-auto"></bw-list>
   </div>
 </template>
 
@@ -85,6 +85,9 @@ import tabarOne from "@/assets/images/tabar-1.png";
 import tabarTwo from "@/assets/images/tabar-2.png";
 import tabarThree from "@/assets/images/tabar-3.png";
 import tabarFour from "@/assets/images/tabar-4.png";
+import { getSearchInfo } from "@/composables/api/home";
+import { onMounted } from "vue";
+
 const tabarList = ref([
   {
     title: "入门与技巧",
@@ -109,31 +112,15 @@ const tabarList = ref([
   },
 ]);
 const searchValue = ref("");
-const tableList = ref([
-  {
-    title: "超慢跑超健康",
-    url: tabarOne,
-    type: "image",
-  },
-  {
-    title: "超慢跑超健康",
-    url: tabarTwo,
-    type: "image",
-  },
-  {
-    title: "超慢跑超健康",
-    url: tabarTwo,
-    type: "image",
-  },
-  {
-    title: "超慢跑超健康",
-    url: tabarTwo,
-    type: "image",
-  },
-]);
+const homeBwListRef = ref();
+
 const handleSearch = () => {
-  console.log(searchValue.value);
+  // 触发搜索
+  homeBwListRef.value?.getList();
 };
+onMounted(() => {
+  homeBwListRef.value?.getList();
+})
 </script>
 
 <style lang="scss" scoped></style>

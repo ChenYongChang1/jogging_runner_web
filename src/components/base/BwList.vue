@@ -7,15 +7,15 @@
         :key="index"
       >
         <BwMedia
-          class="tw-mb-[20px] tw-rounded-[26px]"
-          :src="item.url"
-          :type="item.type"
+          class="tw-mb-[20px] tw-rounded-[26px] tw-h-[229px]"
+          :src="item.cover"
+          :type="item.isVideo === 1 ? 'image' : 'video'"
         />
         <div class="bw-list-item-title">
-          超慢跑和膝蓋的關係？超慢跑被稱為「膝蓋友善運動」的關鍵原因
+          {{item.title}}
         </div>
         <div class="bw-list-item-content">
-          超慢跑是一項膝蓋友善的運動，運動新手、有膝蓋問題的人都能簡單入門。了解超慢跑與膝蓋的關聯，並說明它能幫助你輕鬆達成健康目標的原因。
+          {{item.desc}}
         </div>
         <div class="look-nums tw-flex tw-mt-[10px]">
           <img
@@ -24,7 +24,7 @@
             alt=""
           />
           <span class="tw-text-[14px] tw-font-[500] tw-text-text999"
-            >25.2万人看过</span
+            >{{ item.visitNum }}万人看过</span
           >
         </div>
         <div class="tw-flex tw-justify-end">
@@ -44,42 +44,59 @@
     <div class="tw-flex tw-justify-end tw-mt-[42px] max-md:tw-mt-[24px]">
       <BwPagination
         :current-page="currentPage"
-        :page-size="pageSize"
-        :total="total"
+        :page-count="totalPage"
         @current-change="handleCurrentChange"
       />
     </div>
   </div>
 </template>
 <script setup lang="ts">
-import { defineProps } from "vue";
+import { defineProps, defineExpose } from "vue";
 
 interface TableListItem {
-  url: string;
-  type: string;
-  [key: string]: string | undefined;
+  cover: string;
+  isVideo: number;
+  visitNum?: number;
   title?: string;
+  desc?: string;
+  [key: string]: string | number | undefined;  // 添加number类型到索引签名
 }
 const props = defineProps({
-  tableList: {
-    type: Array as PropType<TableListItem[]>,
-    default: () => [],
+  getListApi: {
+    type: Function,
+    required: true,
+  },
+  searchValue: {
+    type: String,
+    required: false,
+    default: "",
   },
 });
-const total = ref<number>(20);
-const pageSize = ref<number>(5);
+const tableList = ref<TableListItem[]>([]);
+const totalPage = ref<number>(0); // 总页数
 const currentPage = ref<number>(1);
-// 处理每页条数变化
-const handleSizeChange = (newSize: number) => {
-  pageSize.value = newSize;
-  console.log("每页条数变化:", newSize);
+
+const getList = async () => {
+  const data = await props.getListApi({
+    page: currentPage.value,
+    categoryId: "",
+    keyword: props.searchValue,
+  });
+  totalPage.value = data.totalPage;
+  currentPage.value = data.page;
+  tableList.value = data.list;
 };
 
 // 处理页码变化
 const handleCurrentChange = (newPage: number) => {
   currentPage.value = newPage;
   console.log("页码变化:", newPage);
+  getList();
 };
+// 暴露getList方法供父组件调用
+defineExpose({
+  getList,
+});
 </script>
 <style lang="scss" scoped>
 .bw-list-item {
@@ -97,7 +114,6 @@ const handleCurrentChange = (newPage: number) => {
   .bw-list-item-content {
     font-family: PingFang SC;
     font-weight: 400;
-    height: 88px;
     overflow: hidden;
     text-overflow: ellipsis;
     font-size: 16px;
