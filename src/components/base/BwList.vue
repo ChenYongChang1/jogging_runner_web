@@ -7,7 +7,7 @@
         :key="index"
       >
         <BwMedia
-          class="tw-mb-[20px] tw-rounded-[26px] tw-h-[229px]"
+          class="tw-mb-[20px] tw-rounded-[26px] tw-w-[100%] tw-min-h-[229px]"
           :src="item.cover"
           :type="item.isVideo === 1 ? 'image' : 'video'"
         />
