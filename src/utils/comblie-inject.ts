@@ -13,3 +13,9 @@ export const searchPush = (world?: string) => {
   navigateTo(`/search`);
 };
 
+export const getWatchQueryFunc = (queryKey: string[], call: () => any) => {
+  const route = useRoute();
+  const keys = () => queryKey.map((i) => route.query[i]);
+  watch(keys, call);
+  return call;
+};

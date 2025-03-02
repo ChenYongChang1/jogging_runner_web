@@ -1,13 +1,13 @@
 <template>
   <img
     v-if="mediaType === MediaType.image"
-    src="@/assets/images/image.png"
-    class="tw-w-full tw-object-contain"
+    :src="src"
+    class="tw-w-full tw-object-contain tw-rounded-[8px]"
     alt=""
   />
   <video
     v-else-if="mediaType === MediaType.video"
-    class="tw-w-full tw-object-contain"
+    class="tw-w-full tw-object-contain tw-rounded-[8px]"
     controls
   >
     <source :src="src" type="video/mp4" />

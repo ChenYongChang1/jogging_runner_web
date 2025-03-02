@@ -21,8 +21,7 @@
 
     <el-pagination
       :current-page="currentPage"
-      :page-size="pageSize"
-      :total="total"
+      :page-count="pageCount"
       layout="pager"
       @current-change="handleCurrentChange"
     />
@@ -58,14 +57,10 @@ const props = defineProps({
     type: Number,
     required: true,
   },
-  pageSize: {
+  pageCount: {
     type: Number,
     required: true,
-  },
-  total: {
-    type: Number,
-    required: true,
-  },
+  }
 });
 
 // 定义 emits
@@ -77,7 +72,7 @@ const emit = defineEmits([
 ]);
 
 // 计算总页数
-const totalPages = computed(() => Math.ceil(props.total / props.pageSize));
+const totalPages = computed(() => props.pageCount);
 
 // 跳转到首页
 const goToFirstPage = () => {

@@ -40,10 +40,17 @@ function createUseFetchRequest(method: HttpMethod) {
     } = useRuntimeConfig();
 
     const baseURL = "/" as string;
-
-    const requestUrl = url // new URL(url, baseURL).toString();
-
-    return await useFetch(requestUrl, {
+    const paramsKey = [];
+    if (method === "GET") {
+      for (const i in data) {
+        paramsKey.push(`${i}=${encodeURIComponent(data[i])}`);
+      }
+      data = undefined;
+    }
+    const requestUrl = url; // new URL(url, baseURL).toString();
+    const realUrl =
+      requestUrl + (paramsKey.length ? "?" : "") + paramsKey.join("&");
+    return await useFetch(realUrl, {
       ...options,
       method,
       body: data,
