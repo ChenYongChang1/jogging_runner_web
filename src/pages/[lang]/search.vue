@@ -4,13 +4,26 @@
       class="search-box lg:tw-flex xl:tw-pt-[56px] lg:tw-pt-[44px] ss:tw-pt-[32px]"
     >
       <div class="search-content">
-        <!-- <search-empty></search-empty> -->
-        <bw-article-card class="card-row-item"></bw-article-card>
-        <bw-article-card class="card-row-item"></bw-article-card>
+        <search-empty v-if="!tableList.length"></search-empty>
+        <bw-article-card
+          v-for="item in tableList"
+          :key="`article-${item.id}`"
+          :article="item"
+          class="card-row-item"
+        ></bw-article-card>
+        <div class="tw-flex tw-justify-end tw-mt-[42px] max-md:tw-mt-[24px]">
+          <BwPagination
+            v-model:current-page="currentPage"
+            :page-count="pageCount"
+            @current-change="handleCurrentChange"
+          />
+        </div>
       </div>
       <div class="lg:tw-w-[33.9%] xl:tw-pl-[52px] lg:tw-pl-[30px]">
         <article-search-content
           v-model:searchWorld="searchWorld"
+          :categoriesList="categoriesList"
+          :lastsList="lastsList"
         ></article-search-content>
       </div>
     </div>
@@ -20,21 +33,56 @@
 <script lang="ts" setup>
 import ArticleSearchContent from "~/components/pages/search/ArticleSearchContent.vue";
 import SearchEmpty from "~/components/pages/search/SearchEmpty.vue";
-import { getCategory } from "~/composables/api/home";
+import { getCategory, getSearchInfo } from "~/composables/api/home";
 
 const route = useRoute();
+const router = useRouter();
 const searchWorld: Ref<string> = ref(route.query.kw?.toString() || "");
+const currentPage: Ref<number> = ref(Number(route.query.png?.toString() || 1));
+const pageCount: Ref<number> = ref(0);
+const tableList = ref([]);
+const categoriesList = ref([]);
+const lastsList = ref([]);
+// console.log(searchWorld, currentPage);
+
+const handleCurrentChange = () => {
+  router.push({
+    query: {
+      kw: encodeURIComponent(searchWorld.value),
+      png: currentPage.value,
+    },
+  });
+};
+
+const getSearchList = async () => {
+  const result = await getSearchInfo({
+    page: currentPage.value || 1,
+    keyword: searchWorld.value || "",
+  });
+  const { totalPage, page, list, lasts, categories } = result;
+  console.log(result, "result");
+  currentPage.value = page || 1;
+  pageCount.value = totalPage;
+  tableList.value = list;
+  lastsList.value = lasts;
+  categoriesList.value = categories;
+};
+
+const search = getWatchQueryFunc(["kw", "png"], getSearchList);
+
+useAsyncData("search", search);
+
 // 监听查询参数变化
-const res = ref("-");
-useAsyncData("d", async () => (res.value = await getCategory()));
-watch(
-  () => route.query.kw,
-  (newVal, oldVal) => {
-    if (newVal !== oldVal) {
-      searchWorld.value = newVal?.toString() || "";
-    }
-  }
-);
+// const res = ref("-");
+// useAsyncData("d", async () => (res.value = await getCategory()));
+// watch(
+//   () => route.query.kw,
+//   (newVal, oldVal) => {
+//     if (newVal !== oldVal) {
+//       searchWorld.value = newVal?.toString() || "";
+//     }
+//   }
+// );
 </script>
 
 <style lang="scss" scoped>

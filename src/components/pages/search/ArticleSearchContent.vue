@@ -24,11 +24,12 @@
       最新文章
     </div>
     <div class="article-list bw-mb-[64px]">
-      <article-small-row class="tw-mb-[28px]"></article-small-row>
-      <article-small-row class="tw-mb-[28px]"></article-small-row>
-      <article-small-row class="tw-mb-[28px]"></article-small-row>
-      <article-small-row class="tw-mb-[28px]"></article-small-row>
-      <article-small-row class="tw-mb-[28px]"></article-small-row>
+      <article-small-row
+        v-for="item in lastsList"
+        :key="`lasts-${item.id}`"
+        class="tw-mb-[28px]"
+        :article="item"
+      ></article-small-row>
     </div>
   </div>
   <div
@@ -37,59 +38,23 @@
     文章分类
   </div>
   <div class="article-list max-lg:tw-mb-[2.75rem]">
-    <div class="article-rows tw-mb-[26px]">
+    <div
+      v-for="item in categoriesList"
+      :key="`categoriesList-${item.id}`"
+      class="article-rows tw-mb-[26px]"
+    >
       <div
         class="article-title tw-text-[24px] tw-font-[600] tw-leading-[38px] tw-mb-[12px] tw-text-basecolor"
       >
-        入门技巧
+        {{ item.name }}
       </div>
-      <div
+      <nuxt-link
+        v-for="citem in item.childs || []"
         class="article-type tw-pl-[18px] tw-text-[20px] tw-font-[500] tw-text-text666 tw-mb-[12px]"
+        :to="`/tag/${citem.id}`"
       >
-        基础知识
-      </div>
-      <div
-        class="article-type tw-pl-[18px] tw-text-[20px] tw-font-[500] tw-text-text666 tw-mb-[12px]"
-      >
-        基础知识
-      </div>
-      <div
-        class="article-type tw-pl-[18px] tw-text-[20px] tw-font-[500] tw-text-text666 tw-mb-[12px]"
-      >
-        基础知识
-      </div>
-      <div
-        class="article-type tw-pl-[18px] tw-text-[20px] tw-font-[500] tw-text-text666 tw-mb-[12px]"
-      >
-        基础知识
-      </div>
-    </div>
-    <div class="article-rows tw-mb-[26px]">
-      <div
-        class="article-title tw-text-[24px] tw-font-[600] tw-leading-[38px] tw-mb-[12px] tw-text-basecolor"
-      >
-        入门技巧
-      </div>
-      <div
-        class="article-type tw-pl-[18px] tw-text-[20px] tw-font-[500] tw-text-text666 tw-mb-[12px]"
-      >
-        基础知识
-      </div>
-      <div
-        class="article-type tw-pl-[18px] tw-text-[20px] tw-font-[500] tw-text-text666 tw-mb-[12px]"
-      >
-        基础知识
-      </div>
-      <div
-        class="article-type tw-pl-[18px] tw-text-[20px] tw-font-[500] tw-text-text666 tw-mb-[12px]"
-      >
-        基础知识
-      </div>
-      <div
-        class="article-type tw-pl-[18px] tw-text-[20px] tw-font-[500] tw-text-text666 tw-mb-[12px]"
-      >
-        基础知识
-      </div>
+        {{ citem.name }}
+      </nuxt-link>
     </div>
   </div>
 </template>
@@ -98,7 +63,16 @@
 defineOptions({ name: "ArticleSearchContent" });
 import ArticleSmallRow from "./ArticleSmallRow.vue";
 import { Search } from "@element-plus/icons-vue";
-
+const props = defineProps({
+  categoriesList: {
+    type: Array,
+    default: () => [],
+  },
+  lastsList: {
+    type: Array,
+    default: () => [],
+  },
+});
 const searchWorld = defineModel("searchWorld", {
   type: String,
 });

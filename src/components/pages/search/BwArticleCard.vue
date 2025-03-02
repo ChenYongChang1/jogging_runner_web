@@ -1,17 +1,16 @@
 <template>
   <div class="card-row">
     <div class="card-title dd-title-text">
-      Zone 2 心率計算：有效達成運動目標並提升心臟健康的關鍵！
+      {{ article.title }}
     </div>
-    <bw-media class="tw-mb-[22px]" type="image"></bw-media>
-    <div
+    <bw-media class="tw-mb-[22px]" :src="article.cover" type="image"></bw-media>
+    <!-- <div
       class="next-title dd-fs-30 tw-font-[600] tw-text-basecolor tw-leading-[55px]"
     >
       Zone 2 心率計算：
-    </div>
+    </div> -->
     <div class="sub-text tw-mb-[10px]">
-      超慢跑的原理基于“低强度、长时间”的有氧运动理论。
-      低强度的运动可以使心率保持在最大心率的60%-70%之间，这一区间被认为是最佳的脂肪燃烧和心肺功能提升区间。在这个心率区间内，身体主要使用脂肪作为能量来源，而非糖原，这有助于脂肪减少和体重管理。
+      {{ article.desc || "" }}
     </div>
     <div
       class="look-views lg:tw-flex tw-justify-between tw-items-center tw-flex-wrap ss:tw-mb-[1.125rem]"
@@ -23,10 +22,14 @@
           alt=""
         />
         <span class="tw-text-[14px] tw-font-[500] tw-text-text999"
-          >25.2万人看过</span
+          >{{ article.visitNum || 0 }}人看过</span
         >
       </div>
-      <bw-button type="border" class="ss:tw-mx-auto lg:tw-mx-0 tw-w-fit">
+      <bw-button
+        type="border"
+        class="ss:tw-mx-auto lg:tw-mx-0 tw-w-fit"
+        @click="linkToInfo"
+      >
         <div class="tw-flex">
           <span class="tw-mr-[6px]">阅读全文</span>
           <img src="@/assets/icon/to-right.svg" class="tw-w-[18px]" alt="" />
@@ -38,6 +41,18 @@
 
 <script lang="ts" setup>
 defineOptions({ name: "BwArticleCard" });
+const props = defineProps({
+  article: {
+    type: Object,
+    default: () => ({}),
+  },
+});
+const router = useRouter();
+
+const linkToInfo = () => {
+  const href = getRouteLink(`/post/${props.article.id}.html`);
+  router.push(href);
+};
 </script>
 
 <style lang="scss" scoped>
