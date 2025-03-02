@@ -3,18 +3,18 @@
     <div class="home-tabar tw-w-[100%] tw-bg-[#F8FFF8]">
       <!-- pc端 手机logo -->
       <div
-        class="home-tabar-pc tw-flex tw-pt-[24px] tw-justify-center tw-items-center dd-container tw-mx-auto"
+        class="home-tabar-pc tw-flex tw-pt-[24px] tw-justify-between tw-items-center dd-container tw-mx-auto"
       >
         <div
-          class="home-tabar-left tw-w-[48%] tw-mr-[15.9%] max-lg:tw-mr-0 max-lg:tw-text-center max-lg:tw-w-[100%]"
+          class="home-tabar-left tw-w-[54%] max-lg:tw-mr-0 max-lg:tw-text-center max-lg:tw-w-[100%]"
         >
           <p
-            class="home-tabar-title tw-text-[#333333] tw-text-[50px] tw-font-[700] tw-pb-[15px]"
+            class="home-tabar-title tw-text-[#333333] dd-fs-84 tw-font-[400] tw-pb-[15px]"
           >
             超慢跑超健康
           </p>
           <p
-            class="home-tabar-title tw-text-[#333333] tw-text-[50px] tw-font-[700]"
+            class="home-tabar-title tw-text-[#333333] dd-fs-54 tw-font-[400]"
           >
             随时随地健康健美
           </p>
