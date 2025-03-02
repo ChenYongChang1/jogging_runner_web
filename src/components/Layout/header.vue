@@ -25,7 +25,9 @@
             >
               超慢跑节拍器
             </h1>
-            <div class="tw-text-xs sm:tw-text-sm tw-text-[#ffffff] tw-text-gray-500">
+            <div
+              class="tw-text-xs sm:tw-text-sm tw-text-[#ffffff] tw-text-gray-500"
+            >
               chaomanpao.com
             </div>
           </div>
@@ -84,44 +86,52 @@
       </div>
 
       <!-- 移动端下拉菜单 (sm以下屏幕显示) -->
-      <el-collapse-transition>
-        <div
-          v-show="isMenuOpen"
-          class="sm:tw-hidden tw-border-t tw-border-gray-100"
-        >
-          <div class="tw-py-2">
-            <router-link
-              v-for="item in menuItems"
-              :key="item.path"
-              :to="item.path"
-              class="tw-block tw-py-2.5 tw-px-4 tw-text-gray-500 hover:tw-bg-green-500 hover:tw-text-white-600 active:tw-bg-green-500 active:tw-text-white-700"
-              @click="isMenuOpen = false"
-            >
-              {{ item.name }}
-            </router-link>
+      <!-- 移动端抽屉菜单 -->
+      <el-drawer
+        v-model="isMenuOpen"
+        direction="ltr"
+        size="auto"
+        :with-header="false"
+        class="mobile-menu-drawer"
+      >
+        <div class="tw-py-4">
+          <router-link
+            v-for="item in menuItems"
+            :key="item.path"
+            :to="item.path"
+            :class="['navBtn-h5', isEquipment ? 'navBtn-equipment' : '']"
+            class="tw-block tw-py-3 tw-px-4 tw-text-gray-500 hover:tw-bg-green-50 hover:tw-text-green-600 active:tw-bg-green-100 active:tw-text-green-700"
+            @click="isMenuOpen = false"
+          >
+            {{ item.name }}
+          </router-link>
 
-            <!-- 移动端语言切换 -->
-            <el-dropdown>
-              <el-button
-                type="primary"
-                class="tw-py-2.5 tw-px-4 tw-flex tw-items-center tw-text-sm"
-              >
-                {{ language }} <el-icon><ArrowDown /></el-icon>
-              </el-button>
-              <template #dropdown>
-                <el-dropdown-menu>
-                  <el-dropdown-item
-                    v-for="item in languageList"
-                    :key="item.value"
-                    :command="item.value"
-                    >{{ item.label }}</el-dropdown-item
-                  >
-                </el-dropdown-menu>
-              </template>
-            </el-dropdown>
-          </div>
+          <!-- 移动端语言切换 -->
+          <el-dropdown
+            popper-class="language-dropdown"
+            class="language-dropdown tw-block tw-px-4 tw-py-3"
+          >
+            <el-button
+              type="primary"
+              text
+              size="small"
+              class="languageBtn-h5 tw-w-full tw-justify-between tw-items-center"
+            >
+              {{ language }} <el-icon><ArrowDown /></el-icon>
+            </el-button>
+            <template #dropdown>
+              <el-dropdown-menu>
+                <el-dropdown-item
+                  v-for="item in languageList"
+                  :key="item.value"
+                  :command="item.value"
+                  >{{ item.label }}</el-dropdown-item
+                >
+              </el-dropdown-menu>
+            </template>
+          </el-dropdown>
         </div>
-      </el-collapse-transition>
+      </el-drawer>
     </div>
   </header>
 </template>
@@ -167,6 +177,14 @@ const changeLanguage = (str) => {
       border-color: #61cd57;
       color: #fff;
     }
+    &-h5 {
+      border: none;
+      background-color: #fff;
+      &:hover,
+      &:active {
+        color: #61cd57;
+      }
+    }
   }
   .navBtn-equipment {
     color: #fff;
@@ -184,6 +202,15 @@ const changeLanguage = (str) => {
         background: #61cd57;
         border-color: #61cd57;
       }
+      &-h5 {
+        background: #61cd57;
+        border-color: #61cd57;
+        &:hover {
+          background: #61cd57;
+          color: #fff;
+        }
+        color: #fff;
+      }
     }
   }
 }
@@ -193,6 +220,11 @@ const changeLanguage = (str) => {
       background-color: #61cd57 !important;
       color: #fff !important;
     }
+  }
+}
+.mobile-menu-drawer {
+  .el-drawer__body {
+    padding: 0;
   }
 }
 </style>
