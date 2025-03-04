@@ -41,7 +41,8 @@
         :key="index"
         :style="{
           backgroundImage: `url(${item?.backGroup})`,
-          backgroundSize: 'cover',
+          backgroundSize: '100% 100%',
+          backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
         }"
       >
