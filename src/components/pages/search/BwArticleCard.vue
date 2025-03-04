@@ -15,7 +15,7 @@
     <div
       class="look-views lg:tw-flex tw-justify-between tw-items-center tw-flex-wrap ss:tw-mb-[1.125rem]"
     >
-      <div class="look-nums tw-flex">
+      <div class="look-nums tw-flex max-lg:tw-mb-[1.125rem]">
         <img
           src="@/assets/icon/look.svg"
           class="tw-w-[18px] tw-mr-[8px]"
