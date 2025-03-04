@@ -34,6 +34,7 @@ const onTapBuyGoods = () => {
       id: props.goodsRow.id,
       /// 商品 url 地址
       url: props.goodsRow.url,
+      goods: props.goodsRow,
     },
   };
   let paramString = JSON.stringify(param);
