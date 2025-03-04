@@ -7,6 +7,7 @@
 
 <script lang="ts" setup>
 import { getArticleInfo } from "~/composables/api/home";
+import BwGoodsRow from "~/composables/goods/BwGoodsRow.vue";
 
 const route = useRoute();
 const id = route.params.id;
