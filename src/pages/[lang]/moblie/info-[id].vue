@@ -20,13 +20,16 @@ import { genreContent } from "~/composables/goods/useGoods";
 const route = useRoute();
 const id = route.params.id;
 const articleInfo = ref({});
+
 const getArticleInfoById = async () => {
   articleInfo.value = await getArticleInfo(id as string);
 };
-getArticleInfoById();
+
 const contentHtml = computed(() =>
   genreContent(articleInfo.value?.content || "", articleInfo.value.relGoods)
 );
+
+useAsyncData("info", getArticleInfoById);
 </script>
 
 <style lang="scss" scoped></style>
