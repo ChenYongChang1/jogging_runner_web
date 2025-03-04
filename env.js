@@ -1,1 +1,1 @@
-export const BASE_URL = 'http://sheep11.com/api2'
+export const BASE_URL = 'https://test-api.ifasting.net'

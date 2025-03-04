@@ -8,6 +8,14 @@
       class="bw-input-field"
       v-bind="$attrs"
     />
+    <!-- 添加清除按钮 -->
+    <div
+      v-if="clearable && modelValue"
+      class="clear-icon tw-cursor-pointer tw-text-[#999] tw-text-[16px] tw-mr-[10px]"
+      @click="handleClear"
+    >
+      ✕
+    </div>
     <slot name="append"></slot>
     <!-- 用来插入自定义按钮 -->
   </div>
@@ -26,11 +34,20 @@ const props = defineProps({
     type: String,
     default: "",
   },
+  clearable: {
+    type: Boolean,
+    default: true
+  }
 });
 const modelValue = defineModel("modelValue", {
   type: String,
   default: "",
 });
+// 添加清除方法
+const handleClear = () => {
+  modelValue.value = '';
+};
+
 </script>
 
 <style scoped lang="scss">

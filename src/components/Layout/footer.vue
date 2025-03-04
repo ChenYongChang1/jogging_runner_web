@@ -44,7 +44,7 @@
         <p
           class="tw-text-[#fff] tw-text-[22px] tw-font-[500] tw-leading-[20px]"
         >
-          网站备案号：沪ICP备2023022642号-2
+          网站备案号：沪ICP备2024086239号-2
         </p>
       </div>
     </div>

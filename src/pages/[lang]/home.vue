@@ -3,18 +3,18 @@
     <div class="home-tabar tw-w-[100%] tw-bg-[#F8FFF8]">
       <!-- pc端 手机logo -->
       <div
-        class="home-tabar-pc tw-flex tw-pt-[24px] tw-justify-center tw-items-center dd-container tw-mx-auto"
+        class="home-tabar-pc tw-flex tw-pt-[24px] tw-justify-between tw-items-center dd-container tw-mx-auto"
       >
         <div
-          class="home-tabar-left tw-w-[48%] tw-mr-[15.9%] max-lg:tw-mr-0 max-lg:tw-text-center max-lg:tw-w-[100%]"
+          class="home-tabar-left tw-w-[54%] max-lg:tw-mr-0 max-lg:tw-text-center max-lg:tw-w-[100%]"
         >
           <p
-            class="home-tabar-title tw-text-[#333333] tw-text-[50px] tw-font-[700] tw-pb-[15px]"
+            class="home-tabar-title tw-text-[#333333] dd-fs-84 tw-font-[400] tw-pb-[15px]"
           >
             超慢跑超健康
           </p>
           <p
-            class="home-tabar-title tw-text-[#333333] tw-text-[50px] tw-font-[700]"
+            class="home-tabar-title tw-text-[#333333] dd-fs-54 tw-font-[400]"
           >
             随时随地健康健美
           </p>
@@ -72,7 +72,7 @@
       </BwInput>
     </div>
     <!-- pc端list -->
-    <bw-list :tableList="tableList" class="dd-container tw-mx-auto"></bw-list>
+    <bw-list ref="homeBwListRef" :getListApi="getSearchInfo" :searchValue="searchValue" class="dd-container tw-mx-auto"></bw-list>
   </div>
 </template>
 
@@ -85,6 +85,9 @@ import tabarOne from "@/assets/images/tabar-1.png";
 import tabarTwo from "@/assets/images/tabar-2.png";
 import tabarThree from "@/assets/images/tabar-3.png";
 import tabarFour from "@/assets/images/tabar-4.png";
+import { getSearchInfo } from "@/composables/api/home";
+import { onMounted } from "vue";
+
 const tabarList = ref([
   {
     title: "入门与技巧",
@@ -109,31 +112,15 @@ const tabarList = ref([
   },
 ]);
 const searchValue = ref("");
-const tableList = ref([
-  {
-    title: "超慢跑超健康",
-    url: tabarOne,
-    type: "image",
-  },
-  {
-    title: "超慢跑超健康",
-    url: tabarTwo,
-    type: "image",
-  },
-  {
-    title: "超慢跑超健康",
-    url: tabarTwo,
-    type: "image",
-  },
-  {
-    title: "超慢跑超健康",
-    url: tabarTwo,
-    type: "image",
-  },
-]);
+const homeBwListRef = ref();
+
 const handleSearch = () => {
-  console.log(searchValue.value);
+  // 触发搜索
+  homeBwListRef.value?.getList();
 };
+onMounted(() => {
+  homeBwListRef.value?.getList();
+})
 </script>
 
 <style lang="scss" scoped></style>

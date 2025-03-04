@@ -85,3 +85,10 @@ $fontSizes: (
 .dd-title-text {
   @extend .dd-fs-36;
 }
+
+
+.download-app-popover {
+  width: 144px !important;
+  padding: 8px 0 !important;
+  box-sizing: border-box;
+}

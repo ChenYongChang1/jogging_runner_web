@@ -59,6 +59,8 @@ const getSearchList = async () => {
     page: currentPage.value || 1,
     keyword: searchWorld.value || "",
   });
+  console.log(result, "result");
+
   const { totalPage, page, list, lasts, categories } = result;
   console.log(result, "result");
   currentPage.value = page || 1;

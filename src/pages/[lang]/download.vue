@@ -198,10 +198,3 @@ const togglePopover = () => {
   }
 }
 </style>
-<style lang="scss">
-.download-app-popover {
-  width: 144px !important;
-  padding: 8px 0 !important;
-  box-sizing: border-box;
-}
-</style>

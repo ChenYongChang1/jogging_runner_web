@@ -1,11 +1,15 @@
 <template>
-  <div class="dd-container">
-    <h1>{{ articleInfo.title }}</h1>
+  <div class="tw-px-[1rem] tw-py-[0.5rem]">
+    <img v-if="articleInfo.cover" class=" tw-w-full tw-object-contain tw-mb-[1.25rem]" :src="articleInfo.cover" :alt="articleInfo.title">
+    <h1 class="tw-text-basecolor tw-font-[500] tw-text-[1.25rem] tw-mb-[1rem]">
+      {{ articleInfo.title }}
+    </h1>
     <div v-html="articleInfo.content"></div>
   </div>
 </template>
 
 <script lang="ts" setup>
+setPageLayout("none");
 import { getArticleInfo } from "~/composables/api/home";
 
 const route = useRoute();
@@ -15,7 +19,6 @@ const getArticleInfoById = async () => {
   articleInfo.value = await getArticleInfo(id as string);
 };
 getArticleInfoById();
-console.log(articleInfo);
 </script>
 
 <style lang="scss" scoped></style>
