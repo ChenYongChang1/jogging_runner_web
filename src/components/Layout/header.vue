@@ -56,7 +56,10 @@
               class="languageBtn tw-flex tw-items-center tw-text-sm"
             >
               {{ language
-              }}<el-icon class="el-icon--right"><arrow-down /></el-icon>
+              }}<el-icon class="el-icon--right"><img
+            src="@/assets/icon/ArrowDown.svg"
+            alt=""
+          /></el-icon>
             </el-button>
             <template #dropdown>
               <el-dropdown-menu>
@@ -117,8 +120,12 @@
               size="small"
               class="languageBtn-h5 tw-w-full tw-justify-between tw-items-center"
             >
-              {{ language }} <el-icon><ArrowDown /></el-icon>
+              {{ language }} <el-icon><img
+            src="@/assets/icon/ArrowDown.svg"
+            alt=""
+          /></el-icon>
             </el-button>
+
             <template #dropdown>
               <el-dropdown-menu>
                 <el-dropdown-item
@@ -138,7 +145,6 @@
 
 <script setup>
 import { ref, computed } from "vue";
-import { ArrowDown } from "@element-plus/icons-vue";
 import { useRoute } from "vue-router";
 
 const route = useRoute();
@@ -150,7 +156,7 @@ const isMenuOpen = ref(false);
 const menuItems = [
   { name: "首页", path: "/" },
   { name: "超慢跑节拍器180下载", path: "/download" },
-  { name: "必备装备", path: "/essentialEquipment" },
+  { name: "必备装备", path: "/equipment" },
 ];
 const language = ref("中文");
 const languageList = [

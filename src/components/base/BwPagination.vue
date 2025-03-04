@@ -49,7 +49,6 @@
 
 <script setup>
 import { ref, computed } from "vue";
-import { ArrowLeft, ArrowRight } from "@element-plus/icons-vue"; // 引入图标组件
 
 // 定义组件的 props
 const props = defineProps({

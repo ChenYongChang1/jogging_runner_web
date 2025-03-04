@@ -17,12 +17,41 @@
             随时随地健康健美
           </p>
           <div class="download-app tw-pt-[25px]">
-            <BwButton
-              class="download-app-btn tw-w-[166px] tw-h-[56px] max-lg:tw-mx-auto max-lg:tw-mb-[32px] tw-flex tw-items-center tw-justify-center"
-              :active="true"
-              >下载APP<el-icon class="tw-ml-[5px] tw-font-[500]"
-                ><Download /></el-icon
-            ></BwButton>
+            <el-popover
+              popper-class="download-app-popover"
+              trigger="manual"
+              v-model:visible="visible"
+              @mouseenter="showPopover"
+              @mouseleave="hidePopover"
+              @click="togglePopover"
+              placement="left-start"
+            >
+              <template #reference>
+                <BwButton
+                  class="download-app-btn tw-w-[166px] tw-h-[56px] max-lg:tw-mx-auto max-lg:tw-mb-[32px] tw-flex tw-items-center tw-justify-center"
+                  :active="true"
+                  @mouseenter="showPopover"
+                  @mouseleave="hidePopover"
+                  @click="togglePopover"
+                  >下载APP<el-icon class="tw-ml-[5px] tw-font-[500]"
+                    ><Download /></el-icon
+                ></BwButton>
+              </template>
+              <div
+                class="popover-download tw-flex tw-flex-col tw-items-center tw-justify-center"
+              >
+                <img
+                  src="@/assets/images/erweima.png"
+                  class="tw-w-[125px] tw-mb-[5px]"
+                  alt=""
+                />
+                <div
+                  class="text tw-text-[#4A4A4A] tw-text-[16px] tw-font-[500] tw-leading-[24px]"
+                >
+                  扫码下载超慢跑
+                </div>
+              </div>
+            </el-popover>
           </div>
         </div>
         <img
@@ -41,7 +70,8 @@
         :key="index"
         :style="{
           backgroundImage: `url(${item?.backGroup})`,
-          backgroundSize: 'cover',
+          backgroundSize: '100% 100%',
+          backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
         }"
       >
@@ -54,9 +84,13 @@
           class="tabar-item-right tw-flex tw-justify-between tw-items-center"
         >
           <bw-button
-            :style="{ background: item.buttonColor, borderColor: item.buttonColor }"
+            :style="{
+              background: item.buttonColor,
+              borderColor: item.buttonColor,
+            }"
             class="tw-w-[132px] tw-h-[46px] tw-rounded-[30px] tw-leading-[46px] max-md:tw-w-[98px] max-md:tw-h-[30px!important] max-md:tw-leading-[30px!important] max-xsm:tw-w-[78px] max-xsm:tw-h-[27px] max-sxm:tw-leading-[27px] dd-fs-20-12 max-xsm:tw-px-[8px] tw-text-center"
             :active="true"
+            @click="handleView(item.alias)"
             >点击查看</bw-button
           >
           <img :src="item.icon" class="tw-w-[85px] max-lg:tw-w-[50px]" />
@@ -68,7 +102,7 @@
     <div
       class="search-input tw-mt-[-11px] dd-container tw-mx-auto max-lg:tw-mt-[28px]"
     >
-      <BwInput v-model="searchValue" placeholder="请输入搜索内容">
+      <BwInput v-model="searchValue" placeholder="请输入搜索内容" @keyup.down="handleSearch">
         <template #append>
           <BwButton @click="handleSearch" :active="true">
             <el-icon><Search /></el-icon> 搜索
@@ -90,12 +124,10 @@
 import BwButton from "~/components/base/BwButton.vue";
 import BwInput from "~/components/base/BwInput.vue";
 import BwList from "~/components/base/BwList.vue";
-import { Download, Search } from "@element-plus/icons-vue";
 import tabarOne from "@/assets/images/tabar-1.png";
 import tabarTwo from "@/assets/images/tabar-2.png";
 import tabarThree from "@/assets/images/tabar-3.png";
 import tabarFour from "@/assets/images/tabar-4.png";
-import { onMounted } from "vue";
 import { getCategory, getSearchInfo } from "~/composables/api/home";
 
 const tabarListStyles = ref([
@@ -107,10 +139,12 @@ const tabarListStyles = ref([
 const tabarList = ref([]);
 const searchValue = ref("");
 const homeBwListRef = ref();
+const router = useRouter();
 
 const handleSearch = () => {
   // 触发搜索
-  homeBwListRef.value?.getList();
+  // homeBwListRef.value?.getList();
+  searchPush(searchValue.value)
 };
 const getCategoryList = async () => {
   const res = await getCategory();
@@ -123,8 +157,25 @@ const getDataList = async () => {
   }
 };
 useAsyncData("getCategoryList", getCategoryList);
-
 useAsyncData("getDataList", getDataList);
+// 跳转
+const handleView = (alias) => {
+  // router.push(`/article/${alias}`);
+  const href = getRouteLink(`/tag/${alias}`);
+  router.push(href);
+};
+const visible = ref(false);
+// 鼠标悬停时显示
+const showPopover = () => {
+  visible.value = true;
+};
+const hidePopover = () => {
+  visible.value = false;
+};
+// 点击时切换显示状态
+const togglePopover = () => {
+  visible.value = true;
+};
 </script>
 
 <style lang="scss" scoped></style>

@@ -21,7 +21,6 @@
       </div>
       <div class="lg:tw-w-[33.9%] xl:tw-pl-[52px] lg:tw-pl-[30px]">
         <article-search-content
-          v-model:searchWorld="searchWorld"
           :categoriesList="categoriesList"
           :lastsList="lastsList"
         ></article-search-content>
@@ -37,7 +36,7 @@ import { getCategory, getSearchInfo } from "~/composables/api/home";
 
 const route = useRoute();
 const router = useRouter();
-const searchWorld: Ref<string> = ref(route.params.keyword?.toString() || "");
+const alias: Ref<string> = ref(route.params.keyword?.toString() || "");
 const currentPage: Ref<number> = ref(
   Number(route.params.page?.toString() || 1)
 );
@@ -45,12 +44,15 @@ const pageCount: Ref<number> = ref(0);
 const tableList = ref([]);
 const categoriesList = ref([]);
 const lastsList = ref([]);
-// console.log(searchWorld, currentPage);
+// console.log(alias, currentPage);
 
 const handleCurrentChange = () => {
+  router.push(
+    getRouteLink(`/tag/${encodeURIComponent(alias.value)}/${currentPage.value}`)
+  );
   // router.push({
   //   query: {
-  //     kw: encodeURIComponent(searchWorld.value),
+  //     kw: encodeURIComponent(alias.value),
   //     png: currentPage.value,
   //   },
   // });
@@ -59,7 +61,7 @@ const handleCurrentChange = () => {
 const getSearchList = async () => {
   const result = await getSearchInfo({
     page: currentPage.value || 1,
-    keyword: searchWorld.value || "",
+    alias: alias.value || "",
   });
   const { totalPage, page, list, lasts, categories } = result;
   console.log(result, "result");
@@ -70,7 +72,7 @@ const getSearchList = async () => {
   categoriesList.value = categories;
 };
 
-useAsyncData("search", getSearchList);
+useAsyncData("search-tag", getSearchList);
 
 // 监听查询参数变化
 // const res = ref("-");
@@ -79,7 +81,7 @@ useAsyncData("search", getSearchList);
 //   () => route.query.kw,
 //   (newVal, oldVal) => {
 //     if (newVal !== oldVal) {
-//       searchWorld.value = newVal?.toString() || "";
+//       alias.value = newVal?.toString() || "";
 //     }
 //   }
 // );

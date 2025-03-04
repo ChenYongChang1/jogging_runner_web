@@ -21,7 +21,10 @@
               class="download-app-btn tw-w-[166px] tw-h-[56px] max-lg:tw-mx-auto max-lg:tw-mb-[32px] tw-flex tw-items-center tw-justify-center"
               :active="true"
               >下载APP<el-icon class="tw-ml-[5px] tw-font-[500]"
-                ><Download /></el-icon
+                ><img
+            src="@/assets/icon/Download.svg"
+            alt=""
+          /></el-icon
             ></BwButton>
           </div>
         </div>
@@ -69,7 +72,8 @@
       <BwInput v-model="searchValue" placeholder="请输入搜索内容">
         <template #append>
           <BwButton @click="handleSearch" :active="true">
-            <el-icon><Search /></el-icon> 搜索
+            <el-icon><img src="@/assets/icon/Search.svg" alt="" />
+            </el-icon> 搜索
           </BwButton>
         </template>
       </BwInput>
@@ -88,12 +92,10 @@
 import BwButton from "~/components/base/BwButton.vue";
 import BwInput from "~/components/base/BwInput.vue";
 import BwList from "~/components/base/BwList.vue";
-import { Download, Search } from "@element-plus/icons-vue";
 import tabarOne from "@/assets/images/tabar-1.png";
 import tabarTwo from "@/assets/images/tabar-2.png";
 import tabarThree from "@/assets/images/tabar-3.png";
 import tabarFour from "@/assets/images/tabar-4.png";
-import { onMounted } from "vue";
 import { getCategory, getSearchInfo } from "~/composables/api/home";
 
 const tabarListStyles = ref([

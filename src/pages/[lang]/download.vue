@@ -35,7 +35,10 @@
                   @mouseenter="showPopover"
                   @click="togglePopover"
                   >下载APP<el-icon class="tw-ml-[5px] tw-font-[500]"
-                    ><Download /></el-icon
+                    ><img
+            src="@/assets/icon/Download.svg"
+            alt=""
+          /></el-icon
                 ></BwButton>
               </template>
               <div
@@ -151,7 +154,6 @@
 </template>
 
 <script lang="ts" setup>
-import { Download } from "@element-plus/icons-vue";
 
 const popover = ref(null);
 const visible = ref(false);

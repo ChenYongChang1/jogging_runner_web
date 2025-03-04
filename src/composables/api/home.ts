@@ -56,7 +56,7 @@ export const getCategory = async () => {
 
 // 搜索/分类的接口 首页列表也是这个
 export const getSearchInfo = async (params: {
-  categoryId?: string;
+  alias?: string;
   keyword?: string;
   page?: number;
 }) => {
