@@ -1,3 +1,3 @@
-npm run build
+./build-web.sh
 
 npm run start
