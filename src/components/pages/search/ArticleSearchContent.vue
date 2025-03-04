@@ -13,7 +13,8 @@
       >
         <template #append>
           <BwButton :active="true" @click="search">
-            <el-icon><Search /></el-icon> 搜索
+            <el-icon><img src="@/assets/icon/Search.svg" alt="" />
+            </el-icon> 搜索
           </BwButton>
         </template>
       </bw-input>
@@ -62,7 +63,6 @@
 <script lang="ts" setup>
 defineOptions({ name: "ArticleSearchContent" });
 import ArticleSmallRow from "./ArticleSmallRow.vue";
-import { Search } from "@element-plus/icons-vue";
 const props = defineProps({
   categoriesList: {
     type: Array,

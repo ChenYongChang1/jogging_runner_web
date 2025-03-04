@@ -31,6 +31,7 @@
                   class="download-app-btn tw-w-[166px] tw-h-[56px] max-lg:tw-mx-auto max-lg:tw-mb-[32px] tw-flex tw-items-center tw-justify-center"
                   :active="true"
                   @mouseenter="showPopover"
+                  @mouseleave="hidePopover"
                   @click="togglePopover"
                   >下载APP<el-icon class="tw-ml-[5px] tw-font-[500]"
                     ><Download /></el-icon
@@ -123,7 +124,6 @@
 import BwButton from "~/components/base/BwButton.vue";
 import BwInput from "~/components/base/BwInput.vue";
 import BwList from "~/components/base/BwList.vue";
-import { Download, Search } from "@element-plus/icons-vue";
 import tabarOne from "@/assets/images/tabar-1.png";
 import tabarTwo from "@/assets/images/tabar-2.png";
 import tabarThree from "@/assets/images/tabar-3.png";
@@ -173,7 +173,6 @@ const hidePopover = () => {
 };
 // 点击时切换显示状态
 const togglePopover = () => {
-  console.log("惦记了");
   visible.value = true;
 };
 </script>
