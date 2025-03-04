@@ -82,9 +82,10 @@ const getList = async () => {
     categoryId: "",
     keyword: props.searchValue,
   });
-  totalPage.value = data.totalPage;
-  currentPage.value = data.page;
-  tableList.value = data.list;
+  console.log(data, '888888888', currentPage.value)
+  totalPage.value = data?.totalPage;
+  currentPage.value = data?.page;
+  tableList.value = data?.list;
 };
 
 // 处理页码变化
