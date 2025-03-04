@@ -1,0 +1,4 @@
+const BwPagination_vue_vue_type_style_index_0_scoped_152ba7ef_lang = ".custom-pagination[data-v-152ba7ef]{align-items:center;display:flex;gap:8px;justify-content:center}.custom-pagination .button-page[data-v-152ba7ef]{border-color:#c0c4cc;color:#4a4a4a}.custom-pagination .button-page[data-v-152ba7ef]:active,.custom-pagination .button-page[data-v-152ba7ef]:hover{background-color:#61cd57;border-color:#61cd57;color:#fff}.custom-pagination .disabled[data-v-152ba7ef]{border-color:#c0c4cc;color:#a8abb2;cursor:not-allowed}.custom-pagination .disabled[data-v-152ba7ef]:active,.custom-pagination .disabled[data-v-152ba7ef]:hover{background-color:#fff;border-color:#c0c4cc;color:#a8abb2}.bw-button[data-v-152ba7ef]{margin:0;padding:0 8px}";
+
+export { BwPagination_vue_vue_type_style_index_0_scoped_152ba7ef_lang as B };
+//# sourceMappingURL=BwPagination-styles-1.mjs-Q7w28kxV.mjs.map
