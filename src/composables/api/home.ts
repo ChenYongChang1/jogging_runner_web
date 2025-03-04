@@ -1,7 +1,6 @@
 // 网站首页-分类列表
 export const getCategory = async () => {
   const result = await useFetchGet("/api/jogging/wb/category");
-  console.log(result, '这个事result')
   return result.data;
   // return {
   //   code: 0,
