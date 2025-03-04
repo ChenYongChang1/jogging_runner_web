@@ -150,7 +150,7 @@ const isMenuOpen = ref(false);
 const menuItems = [
   { name: "首页", path: "/" },
   { name: "超慢跑节拍器180下载", path: "/download" },
-  { name: "必备装备", path: "/essentialEquipment" },
+  { name: "必备装备", path: "/equipment" },
 ];
 const language = ref("中文");
 const languageList = [
