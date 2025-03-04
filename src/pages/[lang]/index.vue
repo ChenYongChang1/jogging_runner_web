@@ -114,15 +114,17 @@ const handleSearch = () => {
 };
 const getCategoryList = async () => {
   const res = await getCategory();
-  console.log(res, "0000000");
   tabarList.value = res.value?.data;
 };
 const getDataList = async () => {
-  await homeBwListRef.value?.getList;
+  await nextTick();
+  if (homeBwListRef.value) {
+    return await homeBwListRef.value.getList();
+  }
 };
 useAsyncData("getCategoryList", getCategoryList);
 
-useAsyncData("getList", getDataList);
+useAsyncData("getDataList", getDataList);
 </script>
 
 <style lang="scss" scoped></style>

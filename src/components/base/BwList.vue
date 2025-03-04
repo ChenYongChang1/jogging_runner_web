@@ -82,7 +82,6 @@ const getList = async () => {
     categoryId: "",
     keyword: props.searchValue,
   });
-  console.log(data, '888888888', currentPage.value)
   totalPage.value = data?.totalPage;
   currentPage.value = data?.page;
   tableList.value = data?.list;
