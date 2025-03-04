@@ -4,7 +4,7 @@
 import { BASE_URL } from "./env";
 
 export default defineNuxtConfig({
-  ssr: false,
+  ssr: true,
   srcDir: "src/",
   compatibilityDate: "2024-11-01",
   app: {
