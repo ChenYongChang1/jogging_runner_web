@@ -5,13 +5,19 @@
     class="tw-w-full tw-object-contain tw-rounded-[8px] media-zoom"
     alt=""
   />
-  <video
+  <img
+    v-else-if="mediaType === MediaType.video"
+    :src="src"
+    class="tw-w-full tw-object-contain tw-rounded-[8px] video"
+    alt=""
+  />
+  <!-- <video
     v-else-if="mediaType === MediaType.video"
     class="tw-w-full tw-object-contain tw-rounded-[8px]"
     controls
   >
     <source :src="src" type="video/mp4" />
-  </video>
+  </video> -->
 </template>
 
 <script lang="ts" setup>

@@ -102,7 +102,7 @@
     <div
       class="search-input tw-mt-[-11px] dd-container tw-mx-auto max-lg:tw-mt-[28px]"
     >
-      <BwInput v-model="searchValue" placeholder="请输入搜索内容">
+      <BwInput v-model="searchValue" placeholder="请输入搜索内容" @keyup.down="handleSearch">
         <template #append>
           <BwButton @click="handleSearch" :active="true">
             <el-icon><Search /></el-icon> 搜索
@@ -143,7 +143,8 @@ const router = useRouter();
 
 const handleSearch = () => {
   // 触发搜索
-  homeBwListRef.value?.getList();
+  // homeBwListRef.value?.getList();
+  searchPush(searchValue.value)
 };
 const getCategoryList = async () => {
   const res = await getCategory();
