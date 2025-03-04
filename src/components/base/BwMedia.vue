@@ -2,7 +2,7 @@
   <img
     v-if="mediaType === MediaType.image"
     :src="src"
-    class="tw-w-full tw-object-contain tw-rounded-[8px]"
+    class="tw-w-full tw-object-contain tw-rounded-[8px] media-zoom"
     alt=""
   />
   <video
@@ -46,4 +46,11 @@ const mediaType = computed(() => {
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.media-zoom {
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+</style>
