@@ -8,12 +8,10 @@
 </template>
 
 <script lang="ts" setup>
-import type { PropType } from "vue";
-
 defineOptions({ name: "BwButton" });
 defineProps({
   type: {
-    type: String as PropType<"default" | "border">,
+    type: String,
     default: "default",
   },
   active: {

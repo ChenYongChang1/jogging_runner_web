@@ -96,7 +96,6 @@ import tabarOne from "@/assets/images/tabar-1.png";
 import tabarTwo from "@/assets/images/tabar-2.png";
 import tabarThree from "@/assets/images/tabar-3.png";
 import tabarFour from "@/assets/images/tabar-4.png";
-import { onMounted } from "vue";
 import { getCategory, getSearchInfo } from "~/composables/api/home";
 
 const tabarListStyles = ref([
