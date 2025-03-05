@@ -81,7 +81,6 @@ const getSearchList = async () => {
     categoryName = "分类名称",
   } = result;
   console.log(categoryName, "categoryName");
-  console.log(result, "result");
   currentPage.value = page || 1;
   pageCount.value = totalPage;
   tableList.value = list;

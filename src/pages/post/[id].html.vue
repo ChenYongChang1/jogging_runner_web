@@ -2,8 +2,8 @@
   <div class="dd-container">
     <bw-breadcrumb :items="[
       {
-        title: categoryTitle,
-        path: `/tag/${encodeURIComponent(category)}`
+        title: articleInfo.categoryName,
+        path: `/tag/${encodeURIComponent(articleInfo.alias)}`
       },
       {
         title: articleInfo.title
@@ -20,8 +20,8 @@ import { getArticleInfo } from "~/composables/api/home";
 const route = useRoute();
 const id = route.params.id;
 const articleInfo = ref({});
-const categoryTitle = ref('入门与技巧');
-const category = ref('getting-started-skills');
+// const categoryTitle = ref('入门与技巧');
+// const alias = ref('getting-started-skills');
 const getArticleInfoById = async () => {
   articleInfo.value = await getArticleInfo(id as string);
 };
