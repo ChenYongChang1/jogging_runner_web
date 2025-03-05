@@ -162,12 +162,7 @@ const menuItems = [
   { name: $t("common.必备装备"), path: "/equipment" },
 ];
 
-const language = ref($t('common.中文'))
-const languageList = [
-  { label: $t('common.中文'), value: 'zh' },
-  { label: $t('common.繁文'), value: 'zht' },
-]
-
+const language = computed(() => i18n.locale.value);
 const languageName = computed(() => {
   const languageRow =
     languageList.find((item) => item.value === language.value) ||
