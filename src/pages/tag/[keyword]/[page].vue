@@ -4,6 +4,14 @@
       class="search-box lg:tw-flex xl:tw-pt-[56px] lg:tw-pt-[44px] ss:tw-pt-[32px]"
     >
       <div class="search-content">
+        <!-- 添加面包屑 -->
+        <bw-breadcrumb
+          :items="[
+            {
+              title: categoryTitle,
+            },
+          ]"
+        />
         <search-empty v-if="!tableList.length"></search-empty>
         <bw-article-card
           v-for="item in tableList"
@@ -37,6 +45,7 @@ import { getCategory, getSearchInfo } from "~/composables/api/home";
 const route = useRoute();
 const router = useRouter();
 const alias: Ref<string> = ref(route.params.keyword?.toString() || "");
+const categoryTitle: Ref<string | null | undefined> = ref("");
 const currentPage: Ref<number> = ref(
   Number(route.params.page?.toString() || 1)
 );
@@ -63,13 +72,22 @@ const getSearchList = async () => {
     page: currentPage.value || 1,
     alias: alias.value || "",
   });
-  const { totalPage, page, list, lasts, categories } = result;
+  const {
+    totalPage,
+    page,
+    list,
+    lasts,
+    categories,
+    categoryName = "分类名称",
+  } = result;
+  console.log(categoryName, "categoryName");
   console.log(result, "result");
   currentPage.value = page || 1;
   pageCount.value = totalPage;
   tableList.value = list;
   lastsList.value = lasts;
   categoriesList.value = categories;
+  categoryTitle.value = categoryName; // TODO 接口需要返回分类名称
 };
 
 useAsyncData("search-tag", getSearchList);

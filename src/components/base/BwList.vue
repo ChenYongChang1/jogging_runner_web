@@ -28,13 +28,17 @@
             alt=""
           />
           <span class="tw-text-[14px] tw-font-[500] tw-text-text999"
-            >{{ item.visitNum }}{{ $t('common.万人看过') }}</span
+            >{{ item.visitNum }}{{ $t("common.万人看过") }}</span
           >
         </div>
         <div class="tw-flex tw-justify-end">
-          <bw-button type="border" class="tw-w-[140px] tw-text-center">
+          <bw-button
+            type="border"
+            class="tw-w-[140px] tw-text-center"
+            @click="linkToInfo(item)"
+          >
             <div class="tw-flex tw-justify-center">
-              <span class="tw-mr-[6px]">{{ $t('common.阅读全文') }}</span>
+              <span class="tw-mr-[6px]">{{ $t("common.阅读全文") }}</span>
               <img
                 src="@/assets/icon/to-right.svg"
                 loading="lazy"
@@ -56,15 +60,16 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { defineProps, defineExpose, ref } from 'vue'
+import { defineProps, defineExpose, ref } from "vue";
 
 interface TableListItem {
-  cover: string
-  isVideo: number
-  visitNum?: number
-  title?: string
-  desc?: string
-  [key: string]: string | number | undefined // 添加number类型到索引签名
+  id: string;
+  cover: string;
+  isVideo: number;
+  visitNum?: number;
+  title?: string;
+  desc?: string;
+  [key: string]: string | number | undefined; // 添加number类型到索引签名
 }
 const props = defineProps({
   getListApi: {
@@ -74,7 +79,7 @@ const props = defineProps({
   searchValue: {
     type: String,
     required: false,
-    default: '',
+    default: "",
   },
 });
 const tableList = ref<TableListItem[]>([]);
@@ -100,14 +105,19 @@ const getList = async () => {
 
 // 处理页码变化
 const handleCurrentChange = (newPage: number) => {
-  currentPage.value = newPage
-  console.log('页码变化:', newPage)
-  getList()
-}
+  currentPage.value = newPage;
+  console.log("页码变化:", newPage);
+  getList();
+};
+const router = useRouter();
+const linkToInfo = (item: TableListItem) => {
+  const href = getRouteLink(`/post/${item.id}.html`);
+  router.push(href);
+};
 // 暴露getList方法供父组件调用
 defineExpose({
   getList,
-})
+});
 </script>
 <style lang="scss" scoped>
 .bw-list-item {
