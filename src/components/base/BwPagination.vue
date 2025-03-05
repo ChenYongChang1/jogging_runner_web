@@ -11,13 +11,26 @@
     <bw-button
       type="border"
       :class="['button-page', currentPage === 1 ? 'disabled' : '']"
+      class="tw-text-center tw-w-[46px] tw-flex tw-justify-center tw-items-center"
       :active="false"
+      @mouseenter="
+        () => {
+          isLeftHover = true;
+        }
+      "
+      @mouseleave="
+        () => {
+          isLeftHover = false;
+        }
+      "
       :disabled="currentPage === 1"
       @click="goToPrevPage"
     >
-      <el-icon><img src="@/assets/icon/arrow-left.svg" /></el-icon>
+      <el-icon
+        ><img v-if="isLeftHover" src="@/assets/icon/arrow-left.svg" />
+        <img v-else src="@/assets/icon/arrow-left-black.svg"
+      /></el-icon>
     </bw-button>
-
     <el-pagination
       :current-page="currentPage"
       :page-count="pageCount"
@@ -28,11 +41,25 @@
     <bw-button
       type="border"
       :class="['button-page', currentPage === totalPages ? 'disabled' : '']"
+      class="tw-text-center tw-w-[46px] tw-flex tw-justify-center tw-items-center"
       :active="false"
       :disabled="currentPage === totalPages"
+      @mouseenter="
+        () => {
+          isRightHover = true;
+        }
+      "
+      @mouseleave="
+        () => {
+          isRightHover = false;
+        }
+      "
       @click="goToNextPage"
     >
-      <el-icon><img src="@/assets/icon/arrow-right.svg" /></el-icon>
+      <el-icon>
+        <img v-if="isRightHover" src="@/assets/icon/arrow-right.svg" />
+        <img v-else src="@/assets/icon/arrow-right-black.svg"
+      /></el-icon>
     </bw-button>
     <bw-button
       type="border"
@@ -69,7 +96,8 @@ const emit = defineEmits([
 
 // 计算总页数
 const totalPages = computed(() => props.pageCount)
-
+const isRightHover = ref(false);
+const isLeftHover = ref(false);
 // 跳转到首页
 const goToFirstPage = () => {
   emit('update:currentPage', 1)

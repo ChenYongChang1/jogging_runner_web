@@ -6,7 +6,7 @@
 >
   <path 
     d="M15 7L10 12L15 17" 
-    stroke="white" 
+    stroke="black" 
     stroke-width="2" 
     stroke-linecap="round" 
     stroke-linejoin="round"
