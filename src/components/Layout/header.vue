@@ -162,12 +162,14 @@ const menuItems = [
 
 const language = ref($t('common.中文'))
 const languageList = [
-  { label: $t('common.中文'), value: 'en' },
-  { label: $t('common.繁文'), value: 'tw' },
+  { label: $t('common.中文'), value: 'zh' },
+  { label: $t('common.繁文'), value: 'zht' },
 ]
 
 const changeLanguage = (str) => {
   language.value = languageList.find((item) => item.value === str)?.label
+  i18n.global.locale = str // 添加这行来实际切换语言
+
 }
 </script>
 <style lang="scss" scoped>
