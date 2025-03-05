@@ -25,7 +25,8 @@ const articleInfo = ref({});
 const getArticleInfoById = async () => {
   articleInfo.value = await getArticleInfo(id as string);
 };
-getArticleInfoById();
+useAsyncData("getArticleInfoById", getArticleInfoById);
+
 console.log(articleInfo);
 </script>
 
