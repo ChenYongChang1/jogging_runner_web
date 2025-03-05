@@ -1,17 +1,26 @@
 {
   "name": "nuxt-app",
   "private": true,
-  "type": "module",
   "scripts": {
     "build": "nuxt build",
     "start": "node .output/server/index.mjs",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "i18n:init": "npx cc init",
+    "i18n:git": "npx cc git -c ./i18n.config.js",
+    "i18n:load-lang": "pnpm run i18n:export && pnpm run i18n:mergeResult && pnpm run i18n:merge",
+    "i18n:get-lose": "npx cc get:lose -c ./i18n.config.js",
+    "i18n:genre": "npx cc -c ./i18n.config.js --incremental",
+    "i18n:translate": "npx cc translate -c ./i18n.config.js",
+    "i18n:export": "npx cc exportExcel -c ./i18n.config.js",
+    "i18n:merge": "npx cc merge -c ./i18n.config.js",
+    "i18n:mergeResult": "npx cc merge:lang -c ./i18n.config.js "
   },
   "dependencies": {
     "@element-plus/nuxt": "^1.1.1",
+    "@nuxtjs/i18n": "^9.2.1",
     "@nuxtjs/tailwindcss": "^6.13.1",
     "@pinia/nuxt": "^0.10.1",
     "element-plus": "^2.9.5",
@@ -20,6 +29,7 @@
     "vue-router": "latest"
   },
   "devDependencies": {
+    "@chagee/i18n-extract-cli": "1.2.6-beta.20",
     "sass": "^1.85.0",
     "sass-loader": "^16.0.5"
   }

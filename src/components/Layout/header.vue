@@ -23,7 +23,7 @@
             <h1
               class="tw-text-base md:tw-text-lg tw-text-[#3EDB30] tw-font-bold tw-text-green-500"
             >
-              超慢跑节拍器
+              {{ $t('common.超慢跑节拍器') }}
             </h1>
             <div
               class="tw-text-xs md:tw-text-sm tw-text-[#ccc] tw-text-gray-500"
@@ -56,10 +56,9 @@
               class="languageBtn tw-flex tw-items-center tw-text-sm"
             >
               {{ language
-              }}<el-icon class="el-icon--right"><img
-            src="@/assets/icon/ArrowDown.svg"
-            alt=""
-          /></el-icon>
+              }}<el-icon class="el-icon--right"
+                ><img src="@/assets/icon/ArrowDown.svg" alt=""
+              /></el-icon>
             </el-button>
             <template #dropdown>
               <el-dropdown-menu>
@@ -84,7 +83,7 @@
             alt="menu"
             class="tw-w-[18px] tw-h-[18px]"
           />
-          <span class="tw-text-base">更多</span>
+          <span class="tw-text-base">{{ $t('common.更多') }}</span>
         </div>
       </div>
 
@@ -120,10 +119,10 @@
               size="small"
               class="languageBtn-h5 tw-w-full tw-justify-between tw-items-center"
             >
-              {{ language }} <el-icon><img
-            src="@/assets/icon/ArrowDown.svg"
-            alt=""
-          /></el-icon>
+              {{ language }}
+              <el-icon
+                ><img src="@/assets/icon/ArrowDown.svg" alt=""
+              /></el-icon>
             </el-button>
 
             <template #dropdown>
@@ -142,30 +141,34 @@
     </div>
   </header>
 </template>
-
 <script setup>
-import { ref, computed } from "vue";
-import { useRoute } from "vue-router";
+import i18n from '@locales/'
+const $t = i18n.global.t
 
-const route = useRoute();
+import { ref, computed } from 'vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
 const isEquipment = computed(() => {
-  return route.name.includes("equipment");
-});
-const isMenuOpen = ref(false);
+  return route.name.includes('equipment')
+})
+const isMenuOpen = ref(false)
 
 const menuItems = [
-  { name: "首页", path: "/" },
-  { name: "超慢跑节拍器180下载", path: "/download" },
-  { name: "必备装备", path: "/equipment" },
-];
-const language = ref("中文");
+  { name: $t('common.首页'), path: '/' },
+  { name: $t('common.超慢跑节拍器180下载'), path: '/download' },
+  { name: $t('common.必备装备'), path: '/equipment' },
+]
+
+const language = ref($t('common.中文'))
 const languageList = [
-  { label: "中文", value: "en" },
-  { label: "繁文", value: "tw" },
-];
+  { label: $t('common.中文'), value: 'en' },
+  { label: $t('common.繁文'), value: 'tw' },
+]
+
 const changeLanguage = (str) => {
-  language.value = languageList.find((item) => item.value === str)?.label;
-};
+  language.value = languageList.find((item) => item.value === str)?.label
+}
 </script>
 <style lang="scss" scoped>
 .layout-header {

@@ -13,20 +13,17 @@
         alt=""
       />
       <span class="tw-text-[14px] tw-font-[500] tw-text-text999"
-        >{{ article.visitNum }}人看过</span
+        >{{ article.visitNum }}{{ $t('common.人看过') }}</span
       >
     </div>
   </div>
 </template>
-
 <script lang="ts" setup>
-defineOptions({ name: "ArticleSmallRow" });
+defineOptions({ name: 'ArticleSmallRow' })
 const props = defineProps({
   article: {
     type: Object,
     default: () => ({}),
   },
-});
+})
 </script>
-
-<style lang="scss" scoped></style>

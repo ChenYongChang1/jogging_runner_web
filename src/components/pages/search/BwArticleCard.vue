@@ -10,7 +10,7 @@
       Zone 2 心率計算：
     </div> -->
     <div class="sub-text tw-mb-[10px]">
-      {{ article.desc || "" }}
+      {{ article.desc || '' }}
     </div>
     <div
       class="look-views lg:tw-flex tw-justify-between tw-items-center tw-flex-wrap ss:tw-mb-[1.125rem]"
@@ -22,7 +22,7 @@
           alt=""
         />
         <span class="tw-text-[14px] tw-font-[500] tw-text-text999"
-          >{{ article.visitNum || 0 }}人看过</span
+          >{{ article.visitNum || 0 }}{{ $t('common.人看过') }}</span
         >
       </div>
       <bw-button
@@ -31,30 +31,28 @@
         @click="linkToInfo"
       >
         <div class="tw-flex">
-          <span class="tw-mr-[6px]">阅读全文</span>
+          <span class="tw-mr-[6px]">{{ $t('common.阅读全文') }}</span>
           <img src="@/assets/icon/to-right.svg" class="tw-w-[18px]" alt="" />
         </div>
       </bw-button>
     </div>
   </div>
 </template>
-
 <script lang="ts" setup>
-defineOptions({ name: "BwArticleCard" });
+defineOptions({ name: 'BwArticleCard' })
 const props = defineProps({
   article: {
     type: Object,
     default: () => ({}),
   },
-});
-const router = useRouter();
+})
+const router = useRouter()
 
 const linkToInfo = () => {
-  const href = getRouteLink(`/post/${props.article.id}.html`);
-  router.push(href);
-};
+  const href = getRouteLink(`/post/${props.article.id}.html`)
+  router.push(href)
+}
 </script>
-
 <style lang="scss" scoped>
 .card-row {
   width: 100%;

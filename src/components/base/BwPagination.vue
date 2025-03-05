@@ -6,9 +6,8 @@
       :active="false"
       :disabled="currentPage === 1"
       @click="goToFirstPage"
+      >{{ $t('common.首页') }}</bw-button
     >
-      首页
-    </bw-button>
     <bw-button
       type="border"
       :class="['button-page', currentPage === 1 ? 'disabled' : '']"
@@ -41,14 +40,12 @@
       :active="false"
       :disabled="currentPage === totalPages"
       @click="goToLastPage"
+      >{{ $t('common.尾页') }}</bw-button
     >
-      尾页
-    </bw-button>
   </div>
 </template>
-
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed } from 'vue'
 
 // 定义组件的 props
 const props = defineProps({
@@ -59,63 +56,62 @@ const props = defineProps({
   pageCount: {
     type: Number,
     required: true,
-  }
-});
+  },
+})
 
 // 定义 emits
 const emit = defineEmits([
-  "update:currentPage",
-  "update:pageSize",
-  "size-change",
-  "current-change",
-]);
+  'update:currentPage',
+  'update:pageSize',
+  'size-change',
+  'current-change',
+])
 
 // 计算总页数
-const totalPages = computed(() => props.pageCount);
+const totalPages = computed(() => props.pageCount)
 
 // 跳转到首页
 const goToFirstPage = () => {
-  emit("update:currentPage", 1);
-  emit("current-change", 1);
-};
+  emit('update:currentPage', 1)
+  emit('current-change', 1)
+}
 
 // 跳转到尾页
 const goToLastPage = () => {
-  emit("update:currentPage", totalPages.value);
-  emit("current-change", totalPages.value);
-};
+  emit('update:currentPage', totalPages.value)
+  emit('current-change', totalPages.value)
+}
 
 // 跳转到上一页
 const goToPrevPage = () => {
   if (props.currentPage > 1) {
-    const newPage = props.currentPage - 1;
-    emit("update:currentPage", newPage);
-    emit("current-change", newPage);
+    const newPage = props.currentPage - 1
+    emit('update:currentPage', newPage)
+    emit('current-change', newPage)
   }
-};
+}
 
 // 跳转到下一页
 const goToNextPage = () => {
   if (props.currentPage < totalPages.value) {
-    const newPage = props.currentPage + 1;
-    emit("update:currentPage", newPage);
-    emit("current-change", newPage);
+    const newPage = props.currentPage + 1
+    emit('update:currentPage', newPage)
+    emit('current-change', newPage)
   }
-};
+}
 
 // 处理每页条数变化
 const handleSizeChange = (newSize) => {
-  emit("update:pageSize", newSize);
-  emit("size-change", newSize);
-};
+  emit('update:pageSize', newSize)
+  emit('size-change', newSize)
+}
 
 // 处理页码变化
 const handleCurrentChange = (newPage) => {
-  emit("update:currentPage", newPage);
-  emit("current-change", newPage);
-};
+  emit('update:currentPage', newPage)
+  emit('current-change', newPage)
+}
 </script>
-
 <style lang="scss" scoped>
 .custom-pagination {
   display: flex;
