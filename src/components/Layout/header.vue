@@ -117,6 +117,7 @@
               type="primary"
               text
               size="small"
+              @command="changeLanguage"
               class="languageBtn-h5 tw-w-full tw-justify-between tw-items-center"
             >
               {{ language }}
@@ -168,8 +169,7 @@ const languageList = [
 
 const changeLanguage = (str) => {
   language.value = languageList.find((item) => item.value === str)?.label
-  i18n.global.locale = str // 添加这行来实际切换语言
-
+  i18n.global.setLocale(str);
 }
 </script>
 <style lang="scss" scoped>

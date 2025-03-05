@@ -1,14 +1,22 @@
 import zh from "./module/zh-cn";
-console.log(zh, "zh");
+import tw from "./module/tw-cn";
+import { ref } from 'vue';
+
+const currentLocale = ref('zh');
+
 const result = defineI18nConfig(() => ({
-  legacy: false, // 是否兼容之前
-  fallbackLocale: "zh", // 区配不到的语言就用en
-  locale: 'zh',
+  legacy: false,
+  fallbackLocale: "zh",
+  locale: currentLocale.value,
   messages: {
     zh: zh,
-    zht: zh,
+    zht: tw,
     en: zh,
   },
 }));
-console.log(result());
+console.log(result(), "result");
+export const setLocale = (newLocale) => {
+  currentLocale.value = newLocale;
+};
+
 export default result;

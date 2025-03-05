@@ -1,25 +1,33 @@
-import result from './config';
+import result, { setLocale } from './config';
+import { computed, ref } from 'vue';
+
+const currentLocale = ref(result().locale);
+
 function t(key) {
-  const i18nConfig = result();
-  let currentLocale = i18nConfig.locale;
-  const messages = i18nConfig.messages[currentLocale];
-  
-  // 将 key 按照点号分割，处理嵌套的情况
-  const keyPath = key.split('.');
-  let value = messages;
-  
-  // 遍历 keyPath 获取嵌套值
-  for (const k of keyPath) {
-    value = value?.[k];
-    if (value === undefined) break;
-  }
-  
-  return value || `[${key} not found]`;
+  return computed(() => {
+    const i18nConfig = result();
+    const messages = i18nConfig.messages[currentLocale.value];
+    
+    const keyPath = key.split('.');
+    let value = messages;
+    
+    for (const k of keyPath) {
+      value = value?.[k];
+      if (value === undefined) break;
+    }
+    
+    return value;
+  });
 }
+
+const updateLocale = (newLocale) => {
+  currentLocale.value = newLocale;
+};
 
 export default {
   global: {
     t,
-    locale: result().locale,
+    locale: currentLocale,
+    setLocale: updateLocale,
   },
 };
