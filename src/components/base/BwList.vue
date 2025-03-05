@@ -1,6 +1,9 @@
 <template>
   <div class="bwList tw-mx-auto">
-    <div class="bw-list-main tw-flex tw-flex-wrap tw-justify-between tw-gap-4">
+    <div
+      class="bw-list-main tw-flex tw-flex-wrap tw-justify-between tw-gap-4"
+      v-loading="loading"
+    >
       <div
         class="bw-list-item tw-w-full sm:tw-w-[48%] lg:tw-w-[29.3%] tw-px-[16px] tw-pt-[16px] tw-pb-[22px]"
         v-for="(item, index) in tableList"
@@ -12,10 +15,10 @@
           :type="item.isVideo === 1 ? 'image' : 'video'"
         />
         <div class="bw-list-item-title">
-          {{item.title}}
+          {{ item.title }}
         </div>
         <div class="bw-list-item-content">
-          {{item.desc}}
+          {{ item.desc }}
         </div>
         <div class="look-nums tw-flex tw-mt-[10px]">
           <img
@@ -61,7 +64,7 @@ interface TableListItem {
   visitNum?: number;
   title?: string;
   desc?: string;
-  [key: string]: string | number | undefined;  // 添加number类型到索引签名
+  [key: string]: string | number | undefined; // 添加number类型到索引签名
 }
 const props = defineProps({
   getListApi: {
@@ -77,16 +80,22 @@ const props = defineProps({
 const tableList = ref<TableListItem[]>([]);
 const totalPage = ref<number>(0); // 总页数
 const currentPage = ref<number>(1);
+const loading = ref<boolean>(false); // 添加 loading 状态
 
 const getList = async () => {
-  const data = await props.getListApi({
-    page: currentPage.value,
-    categoryId: "",
-    keyword: props.searchValue,
-  });
-  totalPage.value = data?.totalPage;
-  currentPage.value = data?.page;
-  tableList.value = data?.list;
+  loading.value = true; // 请求开始时设置 loading
+  try {
+    const data = await props.getListApi({
+      page: currentPage.value,
+      categoryId: "",
+      keyword: props.searchValue,
+    });
+    totalPage.value = data?.totalPage;
+    currentPage.value = data?.page;
+    tableList.value = data?.list;
+  } finally {
+    loading.value = false; // 请求结束后关闭 loading
+  }
 };
 
 // 处理页码变化

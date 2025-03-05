@@ -16,7 +16,7 @@
       :disabled="currentPage === 1"
       @click="goToPrevPage"
     >
-      <el-icon><arrow-left /></el-icon>
+      <el-icon><img src="@/assets/icon/arrow-left.svg" /></el-icon>
     </bw-button>
 
     <el-pagination
@@ -33,7 +33,7 @@
       :disabled="currentPage === totalPages"
       @click="goToNextPage"
     >
-      <el-icon><arrow-right /></el-icon>
+      <el-icon><img src="@/assets/icon/arrow-right.svg" /></el-icon>
     </bw-button>
     <bw-button
       type="border"
