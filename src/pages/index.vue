@@ -66,45 +66,74 @@
     <div
       class="home-tabar-list-pc tw-grid tw-grid-cols-2 lg:tw-grid-cols-4 tw-gap-4 dd-container tw-transform tw-translate-y-[-75px] max-lg:tw-translate-y-0 tw-mx-auto"
     >
-      <div
-        class="tabar-item tw-relative tw-rounded-[24px] tw-pt-[32px] tw-pb-[4px] tw-pl-[16px] tw-pr-[10px]"
-        v-for="(item, index) in tabarList"
-        :key="index"
-        :style="{
-          backgroundImage: `url(${item?.backGroup})`,
-          backgroundSize: '100% 100%',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center',
-        }"
-      >
+      <template v-if="tabarList.length">
         <div
-          class="tabar-item-text dd-fs-34 tw-font-[700] tw-leading-[47.6px] tw-text-[#333]"
+          class="tabar-item tw-relative tw-rounded-[24px] tw-pt-[32px] tw-pb-[4px] tw-pl-[16px] tw-pr-[10px]"
+          v-for="(item, index) in tabarList"
+          :key="index"
+          :style="{
+            backgroundImage: `url(${item?.backGroup})`,
+            backgroundSize: '100% 100%',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+          }"
         >
-          {{ item.name }}
-        </div>
-        <div
-          class="tabar-item-right tw-flex tw-justify-between tw-items-center"
-        >
-          <bw-button
-            :style="{
-              background: item.buttonColor,
-              borderColor: item.buttonColor,
-            }"
-            class="tw-w-[132px] tw-h-[46px] tw-rounded-[30px] tw-leading-[46px] max-md:tw-w-[98px] max-md:tw-h-[30px!important] max-md:tw-leading-[30px!important] max-xsm:tw-w-[78px] max-xsm:tw-h-[27px] max-sxm:tw-leading-[27px] dd-fs-20-12 max-xsm:tw-px-[8px] tw-text-center"
-            :active="true"
-            @click="handleView(item.alias)"
-            >点击查看</bw-button
+          <div
+            class="tabar-item-text dd-fs-34 tw-font-[700] tw-leading-[47.6px] tw-text-[#333]"
           >
-          <img :src="item.icon" class="tw-w-[85px] max-lg:tw-w-[50px]" loading="lazy" />
+            {{ item.name }}
+          </div>
+          <div
+            class="tabar-item-right tw-flex tw-justify-between tw-items-center"
+          >
+            <bw-button
+              :style="{
+                background: item.buttonColor,
+                borderColor: item.buttonColor,
+              }"
+              class="tw-w-[132px] tw-h-[46px] tw-rounded-[30px] tw-leading-[46px] max-md:tw-w-[98px] max-md:tw-h-[30px!important] max-md:tw-leading-[30px!important] max-xsm:tw-w-[78px] max-xsm:tw-h-[27px] max-sxm:tw-leading-[27px] dd-fs-20-12 max-xsm:tw-px-[8px] tw-text-center"
+              :active="true"
+              @click="handleView(item.alias)"
+              >点击查看</bw-button
+            >
+            <img
+              :src="item.icon"
+              class="tw-w-[85px] max-lg:tw-w-[50px]"
+              loading="lazy"
+            />
+          </div>
         </div>
-      </div>
+      </template>
+      <template v-else>
+        <div
+          v-for="i in 4"
+          :key="i"
+          class="tabar-item tw-relative tw-rounded-[24px] tw-pt-[32px] tw-pb-[4px] tw-pl-[16px] tw-pr-[10px] tw-bg-gray-100 tw-animate-pulse"
+        >
+          <div
+            class="tw-h-[47.6px] tw-w-[150px] tw-bg-gray-200 tw-rounded"
+          ></div>
+          <div class="tw-flex tw-justify-between tw-items-center tw-mt-4">
+            <div
+              class="tw-w-[132px] tw-h-[46px] tw-bg-gray-200 tw-rounded-[30px]"
+            ></div>
+            <div
+              class="tw-w-[85px] tw-h-[85px] tw-bg-gray-200 tw-rounded"
+            ></div>
+          </div>
+        </div>
+      </template>
     </div>
 
     <!-- pc端search -->
     <div
       class="search-input tw-mt-[-11px] dd-container tw-mx-auto max-lg:tw-mt-[28px]"
     >
-      <BwInput v-model="searchValue" placeholder="请输入搜索内容" @keyup.down="handleSearch">
+      <BwInput
+        v-model="searchValue"
+        placeholder="请输入搜索内容"
+        @keyup.down="handleSearch"
+      >
         <template #append>
           <BwButton @click="handleSearch" :active="true">
             <el-icon><Search /></el-icon> 搜索
@@ -146,19 +175,24 @@ const router = useRouter();
 const handleSearch = () => {
   // 触发搜索
   // homeBwListRef.value?.getList();
-  searchPush(searchValue.value)
+  searchPush(searchValue.value);
 };
-const getCategoryList = async () => {
+const { data: categoryData } = useAsyncData("getCategoryList", async () => {
   const res = await getCategory();
-  tabarList.value = res.value?.data;
-};
+  return res.value?.data;
+});
+watchEffect(() => {
+  if (categoryData.value) {
+    tabarList.value = categoryData.value;
+  }
+});
 const getDataList = async () => {
   await nextTick();
   if (homeBwListRef.value) {
     return await homeBwListRef.value.getList();
   }
 };
-useAsyncData("getCategoryList", getCategoryList);
+// useAsyncData("getCategoryList", getCategoryList);
 useAsyncData("getDataList", getDataList);
 // 跳转
 const handleView = (alias) => {
