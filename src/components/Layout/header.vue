@@ -35,14 +35,14 @@
 
         <!-- PC端导航 (sm及以上屏幕显示) -->
         <nav class="tw-hidden md:tw-flex tw-items-center tw-space-x-6">
-          <router-link
+          <nuxt-link
             v-for="item in menuItems"
             :key="item.path"
-            :to="item.path"
+            :to="localePath(item.path)"
             :class="['navBtn', isEquipment ? 'navBtn-equipment' : '']"
           >
             {{ item.name }}
-          </router-link>
+          </nuxt-link>
 
           <!-- 语言切换下拉菜单 -->
           <el-dropdown
@@ -97,16 +97,16 @@
         class="mobile-menu-drawer"
       >
         <div class="tw-py-4">
-          <router-link
+          <nuxt-link
             v-for="item in menuItems"
             :key="item.path"
-            :to="item.path"
+            :to="localePath(item.path)"
             :class="['navBtn-h5', isEquipment ? 'navBtn-equipment' : '']"
             class="tw-block tw-py-3 tw-px-4 tw-text-gray-500 hover:tw-bg-green-50 hover:tw-text-green-600 active:tw-bg-green-100 active:tw-text-green-700"
             @click="isMenuOpen = false"
           >
             {{ item.name }}
-          </router-link>
+          </nuxt-link>
 
           <!-- 移动端语言切换 -->
           <el-dropdown
@@ -146,6 +146,7 @@
 const { $i18n: i18n } = useNuxtApp();
 const $t = (...args) => i18n.t(...args);
 const switchLocalePath = useSwitchLocalePath();
+const localePath = useLocalePath()
 import { languageList } from "~/assets/js/const";
 import { ref, computed } from "vue";
 import { useRoute } from "vue-router";
