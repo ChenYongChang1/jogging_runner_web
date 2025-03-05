@@ -23,7 +23,7 @@
             <h1
               class="tw-text-base md:tw-text-lg tw-text-[#3EDB30] tw-font-bold tw-text-green-500"
             >
-              {{ $t('common.超慢跑节拍器') }}
+              {{ $t("common.超慢跑节拍器") }}
             </h1>
             <div
               class="tw-text-xs md:tw-text-sm tw-text-[#ccc] tw-text-gray-500"
@@ -55,7 +55,7 @@
               round
               class="languageBtn tw-flex tw-items-center tw-text-sm"
             >
-              {{ language
+              {{ languageName
               }}<el-icon class="el-icon--right"
                 ><img src="@/assets/icon/ArrowDown.svg" alt=""
               /></el-icon>
@@ -66,7 +66,7 @@
                   v-for="item in languageList"
                   :key="item.value"
                   :command="item.value"
-                  >{{ item.label }}</el-dropdown-item
+                  >{{ $t(item.label) }}</el-dropdown-item
                 >
               </el-dropdown-menu>
             </template>
@@ -83,7 +83,7 @@
             alt="menu"
             class="tw-w-[18px] tw-h-[18px]"
           />
-          <span class="tw-text-base">{{ $t('common.更多') }}</span>
+          <span class="tw-text-base">{{ $t("common.更多") }}</span>
         </div>
       </div>
 
@@ -120,7 +120,7 @@
               @command="changeLanguage"
               class="languageBtn-h5 tw-w-full tw-justify-between tw-items-center"
             >
-              {{ language }}
+              {{ languageName }}
               <el-icon
                 ><img src="@/assets/icon/ArrowDown.svg" alt=""
               /></el-icon>
@@ -132,7 +132,7 @@
                   v-for="item in languageList"
                   :key="item.value"
                   :command="item.value"
-                  >{{ item.label }}</el-dropdown-item
+                  >{{ $t(item.label) }}</el-dropdown-item
                 >
               </el-dropdown-menu>
             </template>
@@ -143,23 +143,24 @@
   </header>
 </template>
 <script setup>
-import i18n from '@locales/'
-const $t = i18n.global.t
+const { $i18n: i18n } = useNuxtApp();
+const $t = (...args) => i18n.t(...args);
+const switchLocalePath = useSwitchLocalePath();
+import { languageList } from "~/assets/js/const";
+import { ref, computed } from "vue";
+import { useRoute } from "vue-router";
 
-import { ref, computed } from 'vue'
-import { useRoute } from 'vue-router'
-
-const route = useRoute()
+const route = useRoute();
 const isEquipment = computed(() => {
-  return route.name.includes('equipment')
-})
-const isMenuOpen = ref(false)
+  return route.name.includes("equipment");
+});
+const isMenuOpen = ref(false);
 
 const menuItems = [
-  { name: $t('common.首页'), path: '/' },
-  { name: $t('common.超慢跑节拍器180下载'), path: '/download' },
-  { name: $t('common.必备装备'), path: '/equipment' },
-]
+  { name: $t("common.首页"), path: "/" },
+  { name: $t("common.超慢跑节拍器180下载"), path: "/download" },
+  { name: $t("common.必备装备"), path: "/equipment" },
+];
 
 const language = ref($t('common.中文'))
 const languageList = [
@@ -167,10 +168,15 @@ const languageList = [
   { label: $t('common.繁文'), value: 'zht' },
 ]
 
+const languageName = computed(() => {
+  const languageRow =
+    languageList.find((item) => item.value === language.value) ||
+    languageList[0];
+  return $t(languageRow?.label);
+});
 const changeLanguage = (str) => {
-  language.value = languageList.find((item) => item.value === str)?.label
-  i18n.global.setLocale(str);
-}
+  navigateTo(switchLocalePath(str));
+};
 </script>
 <style lang="scss" scoped>
 .layout-header {

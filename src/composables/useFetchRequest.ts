@@ -1,30 +1,32 @@
-import i18n from '@locales/'
-const $t = i18n.global.t
-import { useFetch, useRuntimeConfig } from '#app'
-import type { UseFetchOptions } from 'nuxt/app'
+const { $i18n: i18n } = useNuxtApp();
+
+const $t = (...args) => i18n.t(...args)
+
+import { useFetch, useRuntimeConfig } from "#app";
+import type { UseFetchOptions } from "nuxt/app";
 
 interface RequestOptions extends UseFetchOptions<any> {
-  customBaseURL?: string
+  customBaseURL?: string;
 }
 
-type HttpMethod = 'GET' | 'POST' | 'PUT' | 'DELETE'
-type HandleRequestOptions = { request: Request; options: RequestOptions }
-type HandleResponseOptions = { response: any }
+type HttpMethod = "GET" | "POST" | "PUT" | "DELETE";
+type HandleRequestOptions = { request: Request; options: RequestOptions };
+type HandleResponseOptions = { response: any };
 
 // 请求拦截器
 function handleRequest({ options }: HandleRequestOptions) {
   options.headers = {
     ...options.headers,
-    'Content-Type': 'application/json',
-  }
+    "Content-Type": "application/json",
+  };
 }
 
 // 响应拦截器
 function handleResponse({ response }: HandleResponseOptions) {
   if (response._data.error) {
-    throw new Error(response._data.error.message || $t('common.响应错误'))
+    throw new Error(response._data.error.message || $t("common.响应错误"));
   }
-  return response._data
+  return response._data;
 }
 
 /**
@@ -39,31 +41,31 @@ function createUseFetchRequest(method: HttpMethod) {
   ) {
     const {
       public: { API_BASE_ENV },
-    } = useRuntimeConfig()
+    } = useRuntimeConfig();
 
-    const baseURL = '/' as string
-    const paramsKey = []
-    if (method === 'GET') {
+    const baseURL = "/" as string;
+    const paramsKey = [];
+    if (method === "GET") {
       for (const i in data) {
-        paramsKey.push(`${i}=${encodeURIComponent(data[i])}`)
+        paramsKey.push(`${i}=${encodeURIComponent(data[i])}`);
       }
-      data = undefined
+      data = undefined;
     }
-    const requestUrl = url // new URL(url, baseURL).toString();
+    const requestUrl = url; // new URL(url, baseURL).toString();
     const realUrl =
-      requestUrl + (paramsKey.length ? '?' : '') + paramsKey.join('&')
+      requestUrl + (paramsKey.length ? "?" : "") + paramsKey.join("&");
     return await useFetch(realUrl, {
       ...options,
       method,
       body: data,
       onRequest: handleRequest,
       onResponse: handleResponse,
-    })
-  }
+    });
+  };
 }
 
 // 提供 useFetch & HTTP 方法 - 统一管理请求 - 再到组件中使用
-export const useFetchGet = createUseFetchRequest('GET')
-export const useFetchPost = createUseFetchRequest('POST')
-export const useFetchPut = createUseFetchRequest('PUT')
-export const useFetchDelete = createUseFetchRequest('DELETE')
+export const useFetchGet = createUseFetchRequest("GET");
+export const useFetchPost = createUseFetchRequest("POST");
+export const useFetchPut = createUseFetchRequest("PUT");
+export const useFetchDelete = createUseFetchRequest("DELETE");

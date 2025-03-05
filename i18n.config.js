@@ -20,7 +20,7 @@ module.exports = {
         return `common.${key}`
       },
       importDeclaration:
-        "import i18n from '@locales/'\nconst $t = i18n.global.t",
+        "const { $i18n: i18n } = useNuxtApp()\nconst $t = i18n.t",
     },
     ts: {
       caller: '',
@@ -37,7 +37,7 @@ module.exports = {
         return `common.${key}`
       },
       importDeclaration:
-        "import i18n from '@locales/'\nconst $t = i18n.global.t",
+        "const { $i18n: i18n } = useNuxtApp()\nconst $t = i18n.t",
     },
     cjs: {
       caller: '',
@@ -54,7 +54,7 @@ module.exports = {
         return `common.${key}`
       },
       importDeclaration:
-        "import i18n from '@locales/'\nconst $t = i18n.global.t",
+        "const { $i18n: i18n } = useNuxtApp()\nconst $t = i18n.t",
     },
     mjs: {
       caller: '',
@@ -71,7 +71,7 @@ module.exports = {
         return `common.${key}`
       },
       importDeclaration:
-        "import i18n from '@locales/'\nconst $t = i18n.global.t",
+        "const { $i18n: i18n } = useNuxtApp()\nconst $t = i18n.t",
     },
     jsx: {
       caller: '',
@@ -88,7 +88,7 @@ module.exports = {
         return `common.${key}`
       },
       importDeclaration:
-        "import i18n from '@locales/'\nconst $t = i18n.global.t",
+        "const { $i18n: i18n } = useNuxtApp()\nconst $t = i18n.t",
       functionSnippets: '',
     },
     tsx: {
@@ -106,13 +106,13 @@ module.exports = {
         return `common.${key}`
       },
       importDeclaration:
-        "import i18n from '@locales/'\nconst $t = i18n.global.t",
+        "const { $i18n: i18n } = useNuxtApp()\nconst $t = i18n.t",
       functionSnippets: '',
     },
     vue: {
       caller: '',
       importDeclaration:
-        "import i18n from '@locales/'\nconst $t = i18n.global.t",
+        "const { $i18n: i18n } = useNuxtApp()\nconst $t = i18n.t",
       functionNameInTemplate: '$t',
       functionNameInScript: '$t',
       customizeKey: function getCustomizeKey(key, path) {
