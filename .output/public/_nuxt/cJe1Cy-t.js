@@ -1,0 +1,1 @@
+import{_ as t,c as o,o as n,D as c}from"./DqcxQPwl.js";const s={},r={class:"container tw-flex tw-flex-col tw-w-full tw-min-h-[100vh]"};function l(e,a){return n(),o("div",r,[c(e.$slots,"default")])}const _=t(s,[["render",l]]);export{_ as default};

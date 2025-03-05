@@ -1,16 +1,18 @@
 import { navigateTo } from "nuxt/app";
 
 export const getRouteLink = (link: string) => {
-  return link;
+  const localePath = useLocalePath();
+
+  return localePath(link);
 };
 
 export const searchPush = (world?: string) => {
   if (world) {
     const searchWorld = encodeURIComponent(world);
-    navigateTo(`/search?kw=${searchWorld}`);
+    navigateTo(getRouteLink(`/search?kw=${searchWorld}`));
     return;
   }
-  navigateTo(`/search`);
+  navigateTo(getRouteLink(`/search`));
 };
 
 export const getWatchQueryFunc = (queryKey: string[], call: () => any) => {

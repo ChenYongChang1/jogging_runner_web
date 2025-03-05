@@ -23,7 +23,7 @@
             <h1
               class="tw-text-base md:tw-text-lg tw-text-[#3EDB30] tw-font-bold tw-text-green-500"
             >
-              超慢跑节拍器
+              {{ $t("common.超慢跑节拍器") }}
             </h1>
             <div
               class="tw-text-xs md:tw-text-sm tw-text-[#ccc] tw-text-gray-500"
@@ -35,14 +35,14 @@
 
         <!-- PC端导航 (sm及以上屏幕显示) -->
         <nav class="tw-hidden md:tw-flex tw-items-center tw-space-x-6">
-          <router-link
+          <nuxt-link
             v-for="item in menuItems"
             :key="item.path"
-            :to="item.path"
+            :to="getRouteLink(item.path)"
             :class="['navBtn', isEquipment ? 'navBtn-equipment' : '']"
           >
             {{ item.name }}
-          </router-link>
+          </nuxt-link>
 
           <!-- 语言切换下拉菜单 -->
           <el-dropdown
@@ -55,11 +55,10 @@
               round
               class="languageBtn tw-flex tw-items-center tw-text-sm"
             >
-              {{ language
-              }}<el-icon class="el-icon--right"><img
-            src="@/assets/icon/ArrowDown.svg"
-            alt=""
-          /></el-icon>
+              {{ languageName
+              }}<el-icon class="el-icon--right"
+                ><img src="@/assets/icon/ArrowDown.svg" alt=""
+              /></el-icon>
             </el-button>
             <template #dropdown>
               <el-dropdown-menu>
@@ -67,7 +66,7 @@
                   v-for="item in languageList"
                   :key="item.value"
                   :command="item.value"
-                  >{{ item.label }}</el-dropdown-item
+                  >{{ $t(item.label) }}</el-dropdown-item
                 >
               </el-dropdown-menu>
             </template>
@@ -84,7 +83,7 @@
             alt="menu"
             class="tw-w-[18px] tw-h-[18px]"
           />
-          <span class="tw-text-base">更多</span>
+          <span class="tw-text-base">{{ $t("common.更多") }}</span>
         </div>
       </div>
 
@@ -98,21 +97,22 @@
         class="mobile-menu-drawer"
       >
         <div class="tw-py-4">
-          <router-link
+          <nuxt-link
             v-for="item in menuItems"
             :key="item.path"
-            :to="item.path"
+            :to="getRouteLink(item.path)"
             :class="['navBtn-h5', isEquipment ? 'navBtn-equipment' : '']"
             class="tw-block tw-py-3 tw-px-4 tw-text-gray-500 hover:tw-bg-green-50 hover:tw-text-green-600 active:tw-bg-green-100 active:tw-text-green-700"
             @click="isMenuOpen = false"
           >
             {{ item.name }}
-          </router-link>
+          </nuxt-link>
 
           <!-- 移动端语言切换 -->
           <el-dropdown
             popper-class="language-dropdown"
             class="language-dropdown tw-block tw-px-4 tw-py-3"
+            @command="changeLanguage"
           >
             <el-button
               type="primary"
@@ -120,10 +120,10 @@
               size="small"
               class="languageBtn-h5 tw-w-full tw-justify-between tw-items-center"
             >
-              {{ language }} <el-icon><img
-            src="@/assets/icon/ArrowDown.svg"
-            alt=""
-          /></el-icon>
+              {{ languageName }}
+              <el-icon
+                ><img src="@/assets/icon/ArrowDown.svg" alt=""
+              /></el-icon>
             </el-button>
 
             <template #dropdown>
@@ -132,7 +132,7 @@
                   v-for="item in languageList"
                   :key="item.value"
                   :command="item.value"
-                  >{{ item.label }}</el-dropdown-item
+                  >{{ $t(item.label) }}</el-dropdown-item
                 >
               </el-dropdown-menu>
             </template>
@@ -142,8 +142,11 @@
     </div>
   </header>
 </template>
-
 <script setup>
+const { $i18n: i18n } = useNuxtApp();
+const $t = (...args) => i18n.t(...args);
+const switchLocalePath = useSwitchLocalePath();
+import { languageList } from "~/assets/js/const";
 import { ref, computed } from "vue";
 import { useRoute } from "vue-router";
 
@@ -154,17 +157,20 @@ const isEquipment = computed(() => {
 const isMenuOpen = ref(false);
 
 const menuItems = [
-  { name: "首页", path: "/" },
-  { name: "超慢跑节拍器180下载", path: "/download" },
-  { name: "必备装备", path: "/equipment" },
+  { name: $t("common.首页"), path: "/" },
+  { name: $t("common.超慢跑节拍器180下载"), path: "/download" },
+  { name: $t("common.必备装备"), path: "/equipment" },
 ];
-const language = ref("中文");
-const languageList = [
-  { label: "中文", value: "en" },
-  { label: "繁文", value: "tw" },
-];
+
+const language = computed(() => i18n.locale.value);
+const languageName = computed(() => {
+  const languageRow =
+    languageList.find((item) => item.value === language.value) ||
+    languageList[0];
+  return $t(languageRow?.label);
+});
 const changeLanguage = (str) => {
-  language.value = languageList.find((item) => item.value === str)?.label;
+  navigateTo(switchLocalePath(str));
 };
 </script>
 <style lang="scss" scoped>

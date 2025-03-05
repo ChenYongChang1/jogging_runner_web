@@ -1,3 +1,7 @@
+const { $i18n: i18n } = useNuxtApp();
+
+const $t = (...args) => i18n.t(...args)
+
 import { useFetch, useRuntimeConfig } from "#app";
 import type { UseFetchOptions } from "nuxt/app";
 
@@ -20,7 +24,7 @@ function handleRequest({ options }: HandleRequestOptions) {
 // 响应拦截器
 function handleResponse({ response }: HandleResponseOptions) {
   if (response._data.error) {
-    throw new Error(response._data.error.message || "响应错误");
+    throw new Error(response._data.error.message || $t("common.响应错误"));
   }
   return response._data;
 }

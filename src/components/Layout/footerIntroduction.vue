@@ -10,12 +10,14 @@
           <div
             class="tw-pb-[10px] tw-rounded-[6px] tw-w-[10px] tw-h-[10px] tw-bg-[green]"
           ></div>
-          <div class="tw-text-[18px] tw-font-[500]">下载APP</div>
+          <div class="tw-text-[18px] tw-font-[500]">
+            {{ $t('common.下载APP') }}
+          </div>
         </div>
         <div
           class="left-content-header tw-text-[#4A4A4A] dd-fs-48 tw-font-[600] tw-leading-[56px] tw-text-left tw-pb-[17px]"
         >
-          下载超慢跑节拍器
+          {{ $t('common.下载超慢跑节拍器') }}
         </div>
         <div
           class="download-type-imgs tw-w-full md:tw-w-[386px] tw-pt-[50px] tw-flex tw-flex-wrap"
@@ -49,30 +51,28 @@
           </div>
         </div>
       </div>
-      <div class="right-content tw-flex tw-jusify-center tw-mr-[20px] max-md:tw-mr-0 tw-items-baseline max-md:tw-transform max-md:tw-translate-x-[-4.2%] tw-relative">
+      <div
+        class="right-content tw-flex tw-jusify-center tw-mr-[20px] max-md:tw-mr-0 tw-items-baseline max-md:tw-transform max-md:tw-translate-x-[-4.2%] tw-relative"
+      >
+        <img src="~assets/images/footer-1.png" class="" />
         <img
-        src="~assets/images/footer-1.png"
-        class=""
-      />
-      <img
-        src="~assets/images/footer-2.png"
-        class="tw-absolute tw-left-[58px] tw-h-[100%] tw-top-0"
-      />
+          src="~assets/images/footer-2.png"
+          class="tw-absolute tw-left-[58px] tw-h-[100%] tw-top-0"
+        />
       </div>
-
     </div>
   </div>
 </template>
-<script setup lang="ts">
+<script lang="ts" setup>
 const handleClickType = (type: string) => {
-  if (type === "app-store") {
+  if (type === 'app-store') {
     // 点击iphone download
-  } else if (type === "google-play") {
+  } else if (type === 'google-play') {
     // window.open('');
-  } else if (type === "android") {
+  } else if (type === 'android') {
     // window.open('');
   }
-};
+}
 </script>
 <style lang="scss" scoped>
 .download-type-imgs {

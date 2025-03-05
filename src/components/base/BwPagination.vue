@@ -6,19 +6,33 @@
       :active="false"
       :disabled="currentPage === 1"
       @click="goToFirstPage"
+      >{{ $t("common.首页") }}</bw-button
     >
-      首页
-    </bw-button>
     <bw-button
       type="border"
       :class="['button-page', currentPage === 1 ? 'disabled' : '']"
+      class="tw-text-center tw-w-[46px] tw-flex tw-justify-center tw-items-center"
       :active="false"
+      @mouseenter="
+        () => {
+          isLeftHover = true;
+        }
+      "
+      @mouseleave="
+        () => {
+          isLeftHover = false;
+        }
+      "
       :disabled="currentPage === 1"
       @click="goToPrevPage"
     >
-      <el-icon><arrow-left /></el-icon>
+      <el-icon
+        ><img
+          v-if="isLeftHover && currentPage !== 1"
+          src="@/assets/icon/arrow-left.svg" />
+        <img v-else src="@/assets/icon/arrow-left-black.svg"
+      /></el-icon>
     </bw-button>
-
     <el-pagination
       :current-page="currentPage"
       :page-count="pageCount"
@@ -29,11 +43,27 @@
     <bw-button
       type="border"
       :class="['button-page', currentPage === totalPages ? 'disabled' : '']"
+      class="tw-text-center tw-w-[46px] tw-flex tw-justify-center tw-items-center"
       :active="false"
       :disabled="currentPage === totalPages"
+      @mouseenter="
+        () => {
+          isRightHover = true;
+        }
+      "
+      @mouseleave="
+        () => {
+          isRightHover = false;
+        }
+      "
       @click="goToNextPage"
     >
-      <el-icon><arrow-right /></el-icon>
+      <el-icon>
+        <img
+          v-if="isRightHover && currentPage !== totalPages"
+          src="@/assets/icon/arrow-right.svg" />
+        <img v-else src="@/assets/icon/arrow-right-black.svg"
+      /></el-icon>
     </bw-button>
     <bw-button
       type="border"
@@ -41,12 +71,10 @@
       :active="false"
       :disabled="currentPage === totalPages"
       @click="goToLastPage"
+      >{{ $t("common.尾页") }}</bw-button
     >
-      尾页
-    </bw-button>
   </div>
 </template>
-
 <script setup>
 import { ref, computed } from "vue";
 
@@ -59,7 +87,7 @@ const props = defineProps({
   pageCount: {
     type: Number,
     required: true,
-  }
+  },
 });
 
 // 定义 emits
@@ -72,7 +100,8 @@ const emit = defineEmits([
 
 // 计算总页数
 const totalPages = computed(() => props.pageCount);
-
+const isRightHover = ref(false);
+const isLeftHover = ref(false);
 // 跳转到首页
 const goToFirstPage = () => {
   emit("update:currentPage", 1);
@@ -115,7 +144,6 @@ const handleCurrentChange = (newPage) => {
   emit("current-change", newPage);
 };
 </script>
-
 <style lang="scss" scoped>
 .custom-pagination {
   display: flex;
@@ -134,13 +162,13 @@ const handleCurrentChange = (newPage) => {
   }
   .disabled {
     border-color: #c0c4cc;
-    color: rgb(168, 171, 178);
+    color: #4a4a4a;
     cursor: not-allowed;
     &:hover,
     &:active {
       background-color: #fff;
       border-color: #c0c4cc;
-      color: rgb(168, 171, 178);
+      color: #4A4A4A;
     }
   }
 }
