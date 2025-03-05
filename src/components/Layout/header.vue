@@ -112,12 +112,12 @@
           <el-dropdown
             popper-class="language-dropdown"
             class="language-dropdown tw-block tw-px-4 tw-py-3"
+            @command="changeLanguage"
           >
             <el-button
               type="primary"
               text
               size="small"
-              @command="changeLanguage"
               class="languageBtn-h5 tw-w-full tw-justify-between tw-items-center"
             >
               {{ languageName }}
