@@ -46,7 +46,7 @@ const lastsList = ref([]);
 // console.log(searchWorld, currentPage);
 
 const handleCurrentChange = () => {
-  router.push({
+  navigateTo({
     query: {
       kw: encodeURIComponent(searchWorld.value),
       png: currentPage.value,

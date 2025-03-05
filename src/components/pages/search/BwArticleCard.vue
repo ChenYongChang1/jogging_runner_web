@@ -49,7 +49,7 @@ const props = defineProps({
 const router = useRouter();
 const linkToInfo = () => {
   const href = getRouteLink(`/post/${props.article.id}.html`);
-  router.push(href);
+  navigateTo(href);
 };
 </script>
 <style lang="scss" scoped>

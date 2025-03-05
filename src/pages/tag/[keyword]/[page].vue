@@ -56,10 +56,10 @@ const lastsList = ref([]);
 // console.log(alias, currentPage);
 
 const handleCurrentChange = () => {
-  router.push(
+  navigateTo(
     getRouteLink(`/tag/${encodeURIComponent(alias.value)}/${currentPage.value}`)
   );
-  // router.push({
+  // navigateTo({
   //   query: {
   //     kw: encodeURIComponent(alias.value),
   //     png: currentPage.value,

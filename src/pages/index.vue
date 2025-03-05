@@ -196,9 +196,9 @@ const getDataList = async () => {
 useAsyncData("getDataList", getDataList);
 // 跳转
 const handleView = (alias) => {
-  // router.push(`/article/${alias}`);
+  // navigateTo(`/article/${alias}`);
   const href = getRouteLink(`/tag/${alias}`);
-  router.push(href);
+  navigateTo(href);
 };
 const visible = ref(false);
 // 鼠标悬停时显示

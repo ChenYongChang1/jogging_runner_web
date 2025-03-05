@@ -112,7 +112,7 @@ const handleCurrentChange = (newPage: number) => {
 const router = useRouter();
 const linkToInfo = (item: TableListItem) => {
   const href = getRouteLink(`/post/${item.id}.html`);
-  router.push(href);
+  navigateTo(href);
 };
 // 暴露getList方法供父组件调用
 defineExpose({

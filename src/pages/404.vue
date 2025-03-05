@@ -22,6 +22,6 @@ const router = useRouter()
 
 const goToHome = () => {
   const href = getRouteLink('/')
-  router.push(href)
+  navigateTo(href)
 }
 </script>
