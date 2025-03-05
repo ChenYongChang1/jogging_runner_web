@@ -2,6 +2,7 @@
   <img
     v-if="mediaType === MediaType.image"
     :src="src"
+    loading="lazy"
     class="tw-w-full tw-object-contain tw-rounded-[8px] media-zoom"
     alt=""
   />

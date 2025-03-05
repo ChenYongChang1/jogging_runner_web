@@ -21,6 +21,7 @@
           <img
             src="@/assets/icon/look.svg"
             class="tw-w-[18px] tw-mr-[8px]"
+            loading="lazy"
             alt=""
           />
           <span class="tw-text-[14px] tw-font-[500] tw-text-text999"
@@ -33,6 +34,7 @@
               <span class="tw-mr-[6px]">阅读全文</span>
               <img
                 src="@/assets/icon/to-right.svg"
+                loading="lazy"
                 class="tw-w-[18px]"
                 alt=""
               />

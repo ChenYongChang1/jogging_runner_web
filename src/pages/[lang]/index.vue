@@ -43,6 +43,7 @@
                 <img
                   src="@/assets/images/erweima.png"
                   class="tw-w-[125px] tw-mb-[5px]"
+                  loading="lazy"
                   alt=""
                 />
                 <div
@@ -56,6 +57,7 @@
         </div>
         <img
           src="@/assets/images/home.png"
+          loading="lazy"
           class="tw-w-[36.1%] max-lg:tw-hidden"
         />
       </div>
@@ -93,7 +95,7 @@
             @click="handleView(item.alias)"
             >点击查看</bw-button
           >
-          <img :src="item.icon" class="tw-w-[85px] max-lg:tw-w-[50px]" />
+          <img :src="item.icon" class="tw-w-[85px] max-lg:tw-w-[50px]" loading="lazy" />
         </div>
       </div>
     </div>
