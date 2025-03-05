@@ -38,7 +38,7 @@
           <nuxt-link
             v-for="item in menuItems"
             :key="item.path"
-            :to="localePath(item.path)"
+            :to="getRouteLink(item.path)"
             :class="['navBtn', isEquipment ? 'navBtn-equipment' : '']"
           >
             {{ item.name }}
@@ -100,7 +100,7 @@
           <nuxt-link
             v-for="item in menuItems"
             :key="item.path"
-            :to="localePath(item.path)"
+            :to="getRouteLink(item.path)"
             :class="['navBtn-h5', isEquipment ? 'navBtn-equipment' : '']"
             class="tw-block tw-py-3 tw-px-4 tw-text-gray-500 hover:tw-bg-green-50 hover:tw-text-green-600 active:tw-bg-green-100 active:tw-text-green-700"
             @click="isMenuOpen = false"
@@ -146,7 +146,6 @@
 const { $i18n: i18n } = useNuxtApp();
 const $t = (...args) => i18n.t(...args);
 const switchLocalePath = useSwitchLocalePath();
-const localePath = useLocalePath()
 import { languageList } from "~/assets/js/const";
 import { ref, computed } from "vue";
 import { useRoute } from "vue-router";
