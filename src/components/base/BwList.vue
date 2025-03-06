@@ -61,7 +61,7 @@
 </template>
 <script lang="ts" setup>
 import { defineProps, defineExpose, ref } from "vue";
-
+import { getSearchInfo } from "~/composables/api/home";
 interface TableListItem {
   id: string;
   cover: string;
@@ -89,15 +89,19 @@ const loading = ref<boolean>(false); // 添加 loading 状态
 
 const getList = async () => {
   loading.value = true; // 请求开始时设置 loading
+
   try {
-    const data = await props.getListApi({
+    const data = await getSearchInfo({
       page: currentPage.value,
-      categoryId: "",
+      alias: "",
       keyword: props.searchValue,
     });
+
     totalPage.value = data?.totalPage;
     currentPage.value = data?.page;
     tableList.value = data?.list;
+  } catch (e) {
+    console.log(e);
   } finally {
     loading.value = false; // 请求结束后关闭 loading
   }
@@ -114,10 +118,12 @@ const linkToInfo = (item: TableListItem) => {
   const href = getRouteLink(`/post/${item.id}.html`);
   navigateTo(href);
 };
+// useFetch()
+getList();
 // 暴露getList方法供父组件调用
-defineExpose({
-  getList,
-});
+// defineExpose({
+//   getList,
+// });
 </script>
 <style lang="scss" scoped>
 .bw-list-item {
