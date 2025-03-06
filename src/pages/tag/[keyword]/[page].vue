@@ -80,7 +80,6 @@ const getSearchList = async () => {
     categories,
     categoryName = $t('tag.分类名称'),
   } = result
-  console.log(categoryName, 'categoryName')
   currentPage.value = page || 1
   pageCount.value = totalPage
   tableList.value = list

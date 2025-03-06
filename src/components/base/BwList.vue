@@ -72,10 +72,6 @@ interface TableListItem {
   [key: string]: string | number | undefined; // 添加number类型到索引签名
 }
 const props = defineProps({
-  getListApi: {
-    type: Function,
-    required: true,
-  },
   searchValue: {
     type: String,
     required: false,
@@ -110,7 +106,6 @@ const getList = async () => {
 // 处理页码变化
 const handleCurrentChange = (newPage: number) => {
   currentPage.value = newPage;
-  console.log("页码变化:", newPage);
   getList();
 };
 const router = useRouter();

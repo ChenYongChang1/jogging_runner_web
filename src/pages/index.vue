@@ -137,7 +137,11 @@
       >
         <template #append>
           <BwButton @click="handleSearch" :active="true">
-            <el-icon><Search /></el-icon>{{ $t("index.搜索") }}</BwButton
+           <div class="tw-flex">
+            <img class="tw-w-[16px] tw-mr-[4px]" src="@/assets/icon/Search.svg" alt="" />
+            <span>{{ $t("index.搜索") }}</span>
+           </div>
+            </BwButton
           >
         </template>
       </BwInput>
@@ -154,37 +158,27 @@
 import BwButton from "~/components/base/BwButton.vue";
 import BwInput from "~/components/base/BwInput.vue";
 import BwList from "~/components/base/BwList.vue";
-import tabarOne from "@/assets/images/tabar-1.png";
-import tabarTwo from "@/assets/images/tabar-2.png";
-import tabarThree from "@/assets/images/tabar-3.png";
-import tabarFour from "@/assets/images/tabar-4.png";
-import { getCategory, getSearchInfo } from "~/composables/api/home";
+import { getCategory } from "~/composables/api/home";
 
-const tabarListStyles = ref([
-  "background: linear-gradient(180deg, #E9F9FF 0%, #F4FFFD 100%)",
-  "background: linear-gradient(180deg, #FFF7DE 0%, #FFFCF4 100%)",
-  "background: linear-gradient(180deg, #E9ECFF 0%, #F4F5FF 100%)",
-  "background: linear-gradient(180deg, #E3FFE5 0%, #F3FFF9 100%);margin-right: 0",
-]);
 const tabarList = ref([]);
 const searchValue = ref("");
 const homeBwListRef = ref();
-const router = useRouter();
 
 const handleSearch = () => {
   // 触发搜索
   // homeBwListRef.value?.getList();
   searchPush(searchValue.value);
 };
-const { data: categoryData } = useAsyncData("getCategoryList", async () => {
+useAsyncData("getCategoryList", async () => {
   const res = await getCategory();
-  return res.value?.data;
+  tabarList.value = res.value?.data || [];
+  return tabarList.value 
 });
-watchEffect(() => {
-  if (categoryData.value) {
-    tabarList.value = categoryData.value;
-  }
-});
+// watchEffect(() => {
+//   if (categoryData.value) {
+//     tabarList.value = categoryData.value;
+//   }
+// });
 const getDataList = async () => {
   // await nextTick()
   // if (homeBwListRef.value) {

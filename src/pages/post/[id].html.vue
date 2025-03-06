@@ -32,7 +32,6 @@ const getArticleInfoById = async () => {
 };
 useAsyncData("getArticleInfoById", getArticleInfoById);
 
-console.log(articleInfo);
 </script>
 
 <style lang="scss" scoped></style>

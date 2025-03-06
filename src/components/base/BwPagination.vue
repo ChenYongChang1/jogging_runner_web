@@ -33,12 +33,14 @@
         <img v-else src="@/assets/icon/arrow-left-black.svg"
       /></el-icon>
     </bw-button>
-    <el-pagination
-      :current-page="currentPage"
-      :page-count="pageCount"
-      layout="pager"
-      @current-change="handleCurrentChange"
-    />
+    <client-only>
+      <el-pagination
+        :current-page="currentPage"
+        :page-count="pageCount"
+        layout="pager"
+        @current-change="handleCurrentChange"
+      />
+    </client-only>
 
     <bw-button
       type="border"
@@ -83,10 +85,12 @@ const props = defineProps({
   currentPage: {
     type: Number,
     required: true,
+    default: 1,
   },
   pageCount: {
     type: Number,
     required: true,
+    default: 0,
   },
 });
 
@@ -168,7 +172,7 @@ const handleCurrentChange = (newPage) => {
     &:active {
       background-color: #fff;
       border-color: #c0c4cc;
-      color: #4A4A4A;
+      color: #4a4a4a;
     }
   }
 }
