@@ -1,9 +1,9 @@
-const data = import.meta.glob('./tw-cn/**/*.json', { eager: true });
+const data = import.meta.glob('./zh-tw/**/*.json', { eager: true });
 
 const genreLanguageJson = module => {
   const mapData = {};
   for (const i in module) {
-    const [, key] = i.match(/\.\/tw-cn\/(.*?)\.json/) || [];
+    const [, key] = i.match(/\.\/zh-tw\/(.*?)\.json/) || [];
     const keysArr = key.split('/');
     const resultData = module[i].default;
     keysArr.reduce((data, item, index) => {
