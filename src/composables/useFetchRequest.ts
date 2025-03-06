@@ -1,6 +1,6 @@
 const { $i18n: i18n } = useNuxtApp();
 
-const $t = (...args) => i18n.t(...args)
+const $t = (...args) => i18n.t(...args);
 
 import { useFetch, useRuntimeConfig } from "#app";
 import type { UseFetchOptions } from "nuxt/app";
@@ -17,6 +17,7 @@ type HandleResponseOptions = { response: any };
 function handleRequest({ options }: HandleRequestOptions) {
   options.headers = {
     ...options.headers,
+    language: i18n.locale.value,
     "Content-Type": "application/json",
   };
 }
