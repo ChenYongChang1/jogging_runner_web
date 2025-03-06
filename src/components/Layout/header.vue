@@ -79,11 +79,22 @@
           @click="isMenuOpen = !isMenuOpen"
         >
           <img
+            v-if="!isEquipment"
             src="~/assets/images/morebtn.png"
             alt="menu"
             class="tw-w-[18px] tw-h-[18px]"
           />
-          <span class="tw-text-base">{{ $t("common.更多") }}</span>
+          <img
+            v-else
+            src="~/assets/images/morebtn-black.png"
+            alt="menu"
+            class="tw-w-[18px] tw-h-[18px]"
+          />
+          <span
+            class="tw-text-base"
+            :style="{ color: isEquipment ? '#fff' : '#4a4a4a' }"
+            >{{ $t("common.更多") }}</span
+          >
         </div>
       </div>
 
@@ -199,7 +210,7 @@ const changeLanguage = (str) => {
     }
   }
   .navBtn-equipment {
-    color: #fff;
+    color: #4a4a4a;
   }
 }
 </style>
