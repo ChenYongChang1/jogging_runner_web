@@ -74,17 +74,43 @@ export default defineNuxtConfig({
     },
   ],
 
+
   vite: {
     resolve: {
-      alias: {
-        "@locales": path.resolve(__dirname, "locales"),
-      },
+      alias: {},
     },
     plugins: [
       // tailwindcss(),
     ],
     ssr: {},
+    build: {
+      sourcemap: false,
+      rollupOptions: {
+        output: {
+          manualChunks: (id) => {
+            if (id.includes("element-plus")) {
+              return "componentUi";
+            } else if (id.includes("pages")) {
+              return "pages";
+            } else if (id.includes("lodash")) {
+              return "lodash";
+            } else if (id.includes("nuxt")) {
+              return "nuxt";
+            }else if (id.includes("vue-router")) {
+              return "vue-router";
+            }else if (id.includes("vue")) {
+              return "vue";
+            }
+          },
+        },
+      },
+    },
   },
+  build: {
+    analyze: true,
+  },
+
+ 
 
   compatibilityDate: "2025-03-05",
 });

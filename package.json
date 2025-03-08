@@ -2,7 +2,7 @@
   "name": "nuxt-app",
   "private": true,
   "scripts": {
-    "build:test": "nuxt build ---dotenv .env.test",
+    "build:test": "nuxt build ---dotenv .env.test --analyze",
     "build:prod": "nuxt build --mode prod",
     "start": "node .output/server/index.mjs",
     "dev": "nuxt dev",
