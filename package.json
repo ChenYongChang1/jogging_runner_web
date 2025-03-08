@@ -30,7 +30,6 @@
     "vue-router": "latest"
   },
   "devDependencies": {
-    "@chagee/i18n-extract-cli": "1.2.6-beta.26",
     "sass": "^1.85.0",
     "sass-loader": "^16.0.5"
   }
