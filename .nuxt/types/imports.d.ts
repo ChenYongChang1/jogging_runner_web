@@ -304,6 +304,7 @@ declare global {
   const addRouteMiddleware: typeof import('../../node_modules/.pnpm/nuxt@3.15.4_@parcel+watcher@2.5.1_@types+node@22.13.9_db0@0.2.4_eslint@9.21.0_jiti@2.4._dff270f4def6dc5620d973dea8099f72/node_modules/nuxt/dist/app/composables/router')['addRouteMiddleware']
   const callOnce: typeof import('../../node_modules/.pnpm/nuxt@3.15.4_@parcel+watcher@2.5.1_@types+node@22.13.9_db0@0.2.4_eslint@9.21.0_jiti@2.4._dff270f4def6dc5620d973dea8099f72/node_modules/nuxt/dist/app/composables/once')['callOnce']
   const cancelIdleCallback: typeof import('../../node_modules/.pnpm/nuxt@3.15.4_@parcel+watcher@2.5.1_@types+node@22.13.9_db0@0.2.4_eslint@9.21.0_jiti@2.4._dff270f4def6dc5620d973dea8099f72/node_modules/nuxt/dist/app/compat/idle-callback')['cancelIdleCallback']
+  const checkAppInstalled: typeof import('../../src/utils/detect')['checkAppInstalled']
   const clearError: typeof import('../../node_modules/.pnpm/nuxt@3.15.4_@parcel+watcher@2.5.1_@types+node@22.13.9_db0@0.2.4_eslint@9.21.0_jiti@2.4._dff270f4def6dc5620d973dea8099f72/node_modules/nuxt/dist/app/composables/error')['clearError']
   const clearNuxtData: typeof import('../../node_modules/.pnpm/nuxt@3.15.4_@parcel+watcher@2.5.1_@types+node@22.13.9_db0@0.2.4_eslint@9.21.0_jiti@2.4._dff270f4def6dc5620d973dea8099f72/node_modules/nuxt/dist/app/composables/asyncData')['clearNuxtData']
   const clearNuxtState: typeof import('../../node_modules/.pnpm/nuxt@3.15.4_@parcel+watcher@2.5.1_@types+node@22.13.9_db0@0.2.4_eslint@9.21.0_jiti@2.4._dff270f4def6dc5620d973dea8099f72/node_modules/nuxt/dist/app/composables/state')['clearNuxtState']
@@ -336,6 +337,9 @@ declare global {
   const hasInjectionContext: typeof import('vue')['hasInjectionContext']
   const inject: typeof import('vue')['inject']
   const injectHead: typeof import('../../node_modules/.pnpm/@unhead+vue@1.11.20_vue@3.5.13_typescript@5.8.2_/node_modules/@unhead/vue')['injectHead']
+  const isAndroid: typeof import('../../src/utils/detect')['isAndroid']
+  const isIOS: typeof import('../../src/utils/detect')['isIOS']
+  const isMobileDevice: typeof import('../../src/utils/detect')['isMobileDevice']
   const isNuxtError: typeof import('../../node_modules/.pnpm/nuxt@3.15.4_@parcel+watcher@2.5.1_@types+node@22.13.9_db0@0.2.4_eslint@9.21.0_jiti@2.4._dff270f4def6dc5620d973dea8099f72/node_modules/nuxt/dist/app/composables/error')['isNuxtError']
   const isPrerendered: typeof import('../../node_modules/.pnpm/nuxt@3.15.4_@parcel+watcher@2.5.1_@types+node@22.13.9_db0@0.2.4_eslint@9.21.0_jiti@2.4._dff270f4def6dc5620d973dea8099f72/node_modules/nuxt/dist/app/composables/payload')['isPrerendered']
   const isProxy: typeof import('vue')['isProxy']
@@ -800,6 +804,7 @@ declare module 'vue' {
     readonly addRouteMiddleware: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.15.4_@parcel+watcher@2.5.1_@types+node@22.13.9_db0@0.2.4_eslint@9.21.0_jiti@2.4._dff270f4def6dc5620d973dea8099f72/node_modules/nuxt/dist/app/composables/router')['addRouteMiddleware']>
     readonly callOnce: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.15.4_@parcel+watcher@2.5.1_@types+node@22.13.9_db0@0.2.4_eslint@9.21.0_jiti@2.4._dff270f4def6dc5620d973dea8099f72/node_modules/nuxt/dist/app/composables/once')['callOnce']>
     readonly cancelIdleCallback: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.15.4_@parcel+watcher@2.5.1_@types+node@22.13.9_db0@0.2.4_eslint@9.21.0_jiti@2.4._dff270f4def6dc5620d973dea8099f72/node_modules/nuxt/dist/app/compat/idle-callback')['cancelIdleCallback']>
+    readonly checkAppInstalled: UnwrapRef<typeof import('../../src/utils/detect')['checkAppInstalled']>
     readonly clearError: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.15.4_@parcel+watcher@2.5.1_@types+node@22.13.9_db0@0.2.4_eslint@9.21.0_jiti@2.4._dff270f4def6dc5620d973dea8099f72/node_modules/nuxt/dist/app/composables/error')['clearError']>
     readonly clearNuxtData: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.15.4_@parcel+watcher@2.5.1_@types+node@22.13.9_db0@0.2.4_eslint@9.21.0_jiti@2.4._dff270f4def6dc5620d973dea8099f72/node_modules/nuxt/dist/app/composables/asyncData')['clearNuxtData']>
     readonly clearNuxtState: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.15.4_@parcel+watcher@2.5.1_@types+node@22.13.9_db0@0.2.4_eslint@9.21.0_jiti@2.4._dff270f4def6dc5620d973dea8099f72/node_modules/nuxt/dist/app/composables/state')['clearNuxtState']>
@@ -832,6 +837,9 @@ declare module 'vue' {
     readonly hasInjectionContext: UnwrapRef<typeof import('vue')['hasInjectionContext']>
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
     readonly injectHead: UnwrapRef<typeof import('../../node_modules/.pnpm/@unhead+vue@1.11.20_vue@3.5.13_typescript@5.8.2_/node_modules/@unhead/vue')['injectHead']>
+    readonly isAndroid: UnwrapRef<typeof import('../../src/utils/detect')['isAndroid']>
+    readonly isIOS: UnwrapRef<typeof import('../../src/utils/detect')['isIOS']>
+    readonly isMobileDevice: UnwrapRef<typeof import('../../src/utils/detect')['isMobileDevice']>
     readonly isNuxtError: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.15.4_@parcel+watcher@2.5.1_@types+node@22.13.9_db0@0.2.4_eslint@9.21.0_jiti@2.4._dff270f4def6dc5620d973dea8099f72/node_modules/nuxt/dist/app/composables/error')['isNuxtError']>
     readonly isPrerendered: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.15.4_@parcel+watcher@2.5.1_@types+node@22.13.9_db0@0.2.4_eslint@9.21.0_jiti@2.4._dff270f4def6dc5620d973dea8099f72/node_modules/nuxt/dist/app/composables/payload')['isPrerendered']>
     readonly isProxy: UnwrapRef<typeof import('vue')['isProxy']>

@@ -38,6 +38,7 @@ export { AddLocation as ElIconAddLocation, Aim as ElIconAim, AlarmClock as ElIco
 export { injectHead, useHead, useSeoMeta, useHeadSafe, useServerHead, useServerSeoMeta, useServerHeadSafe } from '@unhead/vue';
 export { useFetchGet, useFetchPost, useFetchPut, useFetchDelete } from '../src/composables/useFetchRequest';
 export { getRouteLink, searchPush, getWatchQueryFunc } from '../src/utils/comblie-inject';
+export { isAndroid, isIOS, isMobileDevice, checkAppInstalled } from '../src/utils/detect';
 export { useI18n } from '../node_modules/.pnpm/vue-i18n@10.0.5_vue@3.5.13_typescript@5.8.2_/node_modules/vue-i18n/dist/vue-i18n';
 export { useRouteBaseName, useLocalePath, useLocaleRoute, useSwitchLocalePath, useLocaleHead, useBrowserLocale, useCookieLocale, useSetI18nParams, defineI18nRoute, defineI18nLocale, defineI18nConfig } from '../node_modules/.pnpm/@nuxtjs+i18n@9.2.1_@vue+compiler-dom@3.5.13_eslint@9.21.0_jiti@2.4.2__magicast@0.3.5_ro_e03a130fdb959a0d52686cd0f9ec0577/node_modules/@nuxtjs/i18n/dist/runtime/composables/index';
 export { definePageMeta } from '../node_modules/.pnpm/nuxt@3.15.4_@parcel+watcher@2.5.1_@types+node@22.13.9_db0@0.2.4_eslint@9.21.0_jiti@2.4._dff270f4def6dc5620d973dea8099f72/node_modules/nuxt/dist/pages/runtime/composables';
