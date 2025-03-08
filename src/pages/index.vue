@@ -199,17 +199,27 @@ const handleView = (alias) => {
   const href = getRouteLink(`/tag/${alias}`);
   navigateTo(href);
 };
+// 判断设备类型
+const deviceType = computed(() => 
+  typeof window !== 'undefined' ? window.innerWidth > 640 ? 'pc' : 'h5' : 'pc'
+)
 const visible = ref(false);
 // 鼠标悬停时显示
 const showPopover = () => {
-  visible.value = true;
+  if (deviceType.value === 'pc') {
+    visible.value = true;
+  }
 };
 const hidePopover = () => {
   visible.value = false;
 };
 // 点击时切换显示状态
 const togglePopover = () => {
-  visible.value = true;
+  if (deviceType.value === 'pc') {
+    visible.value = true;
+  } else {
+    window.location.href = 'https://chaomanpao.com/jogging/share.html';
+  }
 };
 </script>
 

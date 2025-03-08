@@ -23,31 +23,35 @@
           class="download-type-imgs tw-w-full md:tw-w-[386px] tw-pt-[50px] tw-flex tw-flex-wrap"
         >
           <div
-            class="download-type-imgs-item tw-w-full md:tw-w-1/2 tw-mb-[10px] md:tw-pr-[8px]"
-          >
-            <img
-              src="~assets/images/apple-download.png"
-              @click="handleClickType('app-store')"
-              class="tw-w-full tw-h-auto"
-            />
-          </div>
-          <div
             class="download-type-imgs-item tw-w-full md:tw-w-1/2 tw-mb-[10px]"
+            v-for="(item, index) in downloadImgs"
+            :key="index"
+            :class="item.type === 'app-store' ? 'md:tw-pr-[8px]' : ''"
           >
-            <img
-              src="~assets/images/google-download.png"
-              @click="handleClickType('google-play')"
-              class="tw-w-full tw-h-auto"
-            />
-          </div>
-          <div
-            class="download-type-imgs-item tw-w-full md:tw-w-1/2 tw-mb-[10px]"
-          >
-            <img
-              src="~assets/images/anzhuo-download.png"
-              @click="handleClickType('android')"
-              class="tw-w-full tw-h-auto"
-            />
+            <el-popover
+              popper-class="download-app-popover"
+              trigger="manual"
+              v-model:visible="item.visible"
+              placement="bottom-start"
+            >
+              <template #reference>
+                <img
+                  :src="item.img"
+                  @click="handleClickType(item.type, index)"
+                  class="tw-w-full tw-h-auto tw-cursor-pointer"
+                />
+              </template>
+              <div
+                class="popover-download tw-flex tw-flex-col tw-items-center tw-justify-center"
+              >
+                <img
+                  :src="item.popoverImg"
+                  class="tw-w-[125px] tw-mb-[5px]"
+                  loading="lazy"
+                  alt=""
+                />
+              </div>
+            </el-popover>
           </div>
         </div>
       </div>
@@ -64,21 +68,65 @@
   </div>
 </template>
 <script lang="ts" setup>
-type DownloadType = 'app-store' | 'google-play' | 'android';
+import appleDownload from "@/assets/images/apple-download.png";
+import googleDownload from "@/assets/images/google-download.png";
+import anzhuoDownload from "@/assets/images/anzhuo-download.png";
+import apple from "@/assets/images/apple.png";
+import google from "@/assets/images/google.png";
+import anzhuo from "@/assets/images/anzhuo.png";
 
-const handleClickType = (type: DownloadType) => {
-  const isMdOrLarger = window.innerWidth >= 768;
-  // 如果是 md或者md以上，打开图片；否则跳转链接  
-  const downloadLinks = {
-    // TODO 需要提供下载链接
-    'app-store': '',
-    'google-play': '',
-    'android': ''
+type DownloadType = string;
+
+const downloadImgs = ref([
+  {
+    type: "app-store",
+    img: appleDownload,
+    popoverImg: apple,
+    visible: false,
+  },
+  {
+    type: "google-play",
+    img: googleDownload,
+    popoverImg: google,
+    visible: false,
+  },
+  {
+    type: "android",
+    img: anzhuoDownload,
+    popoverImg: anzhuo,
+    visible: false,
+  },
+]);
+
+// 屏幕尺寸变关闭popover
+onMounted(() => {
+  const handleResize = () => {
+    if (window.innerWidth < 640) {
+      downloadImgs.value.forEach((item: any) => {
+        item.visible = false;
+      });
+    }
   };
+  window.addEventListener('resize', handleResize);
+  onUnmounted(() => {
+    window.removeEventListener('resize', handleResize);
+  });
+});
 
-  if (isMdOrLarger && type === 'app-store') {
+const handleClickType = (type: DownloadType, index: number) => {
+  const isMdOrLarger = typeof window !== 'undefined' && window.innerWidth >= 640;
+  
+  // 如果是 md或者md以上，打开图片；否则跳转链接
+  const downloadLinks = {
+    "app-store":
+      "https://apps.apple.com/app/apple-store/id6502583295?pt=126570476&ct=webtoapp&mt=8",
+    "google-play":
+      "https://play.google.com/store/apps/details?id=joggingtracker.joglog.metronome",
+    "android": "https://chaomanpao.com/jogging/share.html",
+  };
+  if (isMdOrLarger) {
     // 在桌面端点击 App Store 图标时显示二维码弹窗
-    // TODO: 实现 el-popover 显示
+    downloadImgs.value[index].visible = true;
   } else {
     // 直接跳转到对应的下载链接
     const link = downloadLinks[type];
