@@ -5,6 +5,7 @@
       backgroundColor: isEquipment
         ? 'transparent'
         : 'rgba(248, 255, 248, 0.44)',
+      borderBottomColor: isEquipment ? '#424242' : '#F7F7F7',
     }"
   >
     <div class="container-custom tw-px-4 md:tw-px-6">
@@ -13,12 +14,11 @@
         class="tw-flex tw-items-center tw-justify-between tw-py-3 md:tw-py-4 tw-w-full"
       >
         <!-- Logo部分 -->
-        <div class="tw-flex tw-items-center tw-space-x-2 md:tw-space-x-3">
-          <img
-            src="~/assets/images/logo.png"
-            alt="Logo"
-            class="tw-w-8 tw-h-8 md:tw-w-10 sm·:tw-h-10"
-          />
+        <div
+          class="tw-flex tw-items-center tw-space-x-2 md:tw-space-x-3 tw-cursor-pointer"
+          @click="goHome"
+        >
+          <img src="~/assets/images/logo.png" alt="Logo" class="tw-w-[48px]" />
           <div>
             <h1
               class="tw-text-base md:tw-text-lg tw-text-[#3EDB30] tw-font-bold tw-text-green-500"
@@ -183,9 +183,13 @@ const languageName = computed(() => {
 const changeLanguage = (str) => {
   navigateTo(switchLocalePath(str));
 };
+const goHome = () => {
+  navigateTo("/");
+};
 </script>
 <style lang="scss" scoped>
 .layout-header {
+  border-bottom: 1px solid #424242;
   z-index: 100;
   .navBtn {
     border-radius: 14px;
@@ -210,6 +214,9 @@ const changeLanguage = (str) => {
     }
   }
   .navBtn-equipment {
+    color: #fff;
+  }
+  .navBtn-h5 {
     color: #4a4a4a;
   }
 }

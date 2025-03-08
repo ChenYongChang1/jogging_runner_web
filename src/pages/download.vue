@@ -84,27 +84,22 @@
         >
           <img
             src="@/assets/images/download-image-1.png"
-            class="tw-h-[430px]"
             alt=""
           />
           <img
             src="@/assets/images/download-image-2.png"
-            class="tw-h-[502px]"
             alt=""
           />
           <img
             src="@/assets/images/download-image-3.png"
-            class="tw-h-[544px]"
             alt=""
           />
           <img
             src="@/assets/images/download-image-4.png"
-            class="tw-h-[502px]"
             alt=""
           />
           <img
             src="@/assets/images/download-image-5.png"
-            class="tw-h-[430px]"
             alt=""
           />
         </div>

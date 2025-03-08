@@ -8,7 +8,7 @@
       <div class="left-content">
         <div class="download-text tw-flex tw-items-center tw-pb-[20px]">
           <div
-            class="tw-pb-[10px] tw-rounded-[6px] tw-w-[10px] tw-h-[10px] tw-bg-[green]"
+            class="tw-mr-[8px] tw-rounded-[2px] tw-w-[8px] tw-h-[8px] tw-bg-[green]"
           ></div>
           <div class="tw-text-[18px] tw-font-[500]">
             {{ $t("common.下载APP") }}

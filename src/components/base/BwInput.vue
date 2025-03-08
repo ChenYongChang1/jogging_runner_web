@@ -56,7 +56,7 @@ const handleClear = () => {
   align-items: center;
   border: 2px solid #e5e7eb;
   border-radius: 20px;
-  padding: 0 5px;
+  padding: 0 14px;
   background-color: #fff;
   color: theme("colors.basecolor");
   &:hover {

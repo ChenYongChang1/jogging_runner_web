@@ -1,6 +1,7 @@
 <template>
   <div
     class="footer-wrapper justify-center items-center w-full lg:tw-mt-[120px] tw-mt-[44px]"
+    :class="[isEquipment?'tw-transform tw-translate-y-[-93px]': '']"
   >
     <!-- 简介 -->
     <div class="brief-introduction tw-mx-auto">
@@ -53,7 +54,13 @@
   </div>
 </template>
 <script lang="ts" setup>
+import { computed } from "vue";
 import footerIntroduction from "./footerIntroduction.vue";
+import { useRoute } from "vue-router";
+const route = useRoute();
+const isEquipment = computed(() => {
+  return route.name?.includes("equipment");
+});
 // import { isAndroid, isIOS, checkAppInstalled, isMobileDevice } from "@/utils/detect"; // 修改为导入正确的函数
 // import { ref, computed, onMounted } from "vue";
 // import { useRoute } from "vue-router";
