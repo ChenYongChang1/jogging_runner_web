@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 // import tailwindcss from "@tailwindcss/vite";
 import path from "path";
-import { BASE_URL } from "./env";
+const BASE_URL = import.meta.env.BASE_URL;
 
 export default defineNuxtConfig({
   ssr: true,
@@ -43,12 +43,13 @@ export default defineNuxtConfig({
       "/api": {
         target: BASE_URL,
         changeOrigin: true,
+        prependPath: true, // 是否自动添加路径
       },
     },
-  },
-  routeRules: {
-    "/api/**": {
-      proxy: `${BASE_URL}/api/**`,
+    routeRules: {
+      "/api/**": {
+        proxy: `${BASE_URL}/**`,
+      },
     },
   },
   runtimeConfig: {
