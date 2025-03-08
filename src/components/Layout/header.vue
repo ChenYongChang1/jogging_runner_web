@@ -39,7 +39,11 @@
             v-for="item in menuItems"
             :key="item.path"
             :to="getRouteLink(item.path)"
-            :class="['navBtn', isEquipment ? 'navBtn-equipment' : '']"
+            :class="[
+              'navBtn',
+              isEquipment ? 'navBtn-equipment' : '',
+              { active: currentPath === getRouteLink(item.path) },
+            ]"
           >
             {{ item.name }}
           </nuxt-link>
@@ -112,7 +116,11 @@
             v-for="item in menuItems"
             :key="item.path"
             :to="getRouteLink(item.path)"
-            :class="['navBtn-h5', isEquipment ? 'navBtn-equipment' : '']"
+            :class="[
+              'navBtn-h5',
+              isEquipment ? 'navBtn-equipment' : '',
+              { active: currentPath === getRouteLink(item.path) },
+            ]"
             class="tw-block tw-py-3 tw-px-4 tw-text-gray-500 hover:tw-bg-green-50 hover:tw-text-green-600 active:tw-bg-green-100 active:tw-text-green-700"
             @click="isMenuOpen = false"
           >
@@ -167,13 +175,14 @@ const isEquipment = computed(() => {
 });
 const isMenuOpen = ref(false);
 
-const menuItems = [
+const menuItems = computed(() => [
   { name: $t("common.首页"), path: "/" },
   { name: $t("common.超慢跑节拍器180下载"), path: "/download" },
   { name: $t("common.必备装备"), path: "/equipment" },
-];
+]);
 
 const language = computed(() => i18n.locale.value);
+const currentPath = computed(() => route.path);
 const languageName = computed(() => {
   const languageRow =
     languageList.find((item) => item.value === language.value) ||
@@ -184,7 +193,7 @@ const changeLanguage = (str) => {
   navigateTo(switchLocalePath(str));
 };
 const goHome = () => {
-  navigateTo("/");
+  navigateTo(getRouteLink("/"));
 };
 </script>
 <style lang="scss" scoped>
@@ -199,7 +208,8 @@ const goHome = () => {
     border: 1.5px solid #e5e7eb;
     color: #4a4a4a;
     &:hover,
-    &:active {
+    &:active,
+    &.active {
       background-color: #61cd57;
       border-color: #61cd57;
       color: #fff;
@@ -208,7 +218,8 @@ const goHome = () => {
       border: none;
       background-color: #fff;
       &:hover,
-      &:active {
+      &:active,
+      &.active {
         color: #61cd57;
       }
     }

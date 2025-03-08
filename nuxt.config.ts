@@ -10,12 +10,13 @@ export default defineNuxtConfig({
   app: {
     baseURL: "/",
     head: {
+      title: '超慢跑',
       script: [
-        {
-          src: "//unpkg.com/vconsole@latest/dist/vconsole.min.js",
-          type: "text/javascript",
-        },
-        { innerHTML: "new VConsole()" },
+        // {
+        //   src: "//unpkg.com/vconsole@latest/dist/vconsole.min.js",
+        //   type: "text/javascript",
+        // },
+        // { innerHTML: "new VConsole()" },
       ],
       htmlAttrs: {
         lang: "zh",

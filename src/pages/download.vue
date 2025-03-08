@@ -68,6 +68,7 @@
         <div
           class="top-content tw-px-[13.2%] max-xsm:tw-px-[2%] tw-mb-[54px] tw-flex tw-flex-col tw-justify-center tw-items-center"
         >
+        <div class="tw-w-[30%] tw-max-w-[133px] tw-h-[16px] tw-rounded-[16px] tw-bg-themecolor tw-mx-auto tw-mt-[54px] tw-mb-[40px]"></div>
           <div class="download-describe-header dd-fs-84 tw-mb-[26px]">
             {{ $t('download.超慢跑超健康') }}
           </div>

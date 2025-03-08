@@ -42,21 +42,33 @@
             >
               {{ $t("equipment.微信小店") }}
             </div>
-            <img src="@/assets/images/weixin.png" class="tw-w-[100%]" alt="" />
+            <img
+              src="@/assets/images/weixin.png"
+              class="tw-w-[100%] img-shadow"
+              alt=""
+            />
           </div>
           <div class="equipment-main-item">
-            <div class="title dd-fs-36 tw-leading-[56px] max-md:tw-leading-[24px] tw-mb-[33px]">
+            <div
+              class="title dd-fs-36 tw-leading-[56px] max-md:tw-leading-[24px] tw-mb-[33px]"
+            >
               {{ $t("equipment.抖音小店") }}
             </div>
-            <img src="@/assets/images/douyin.png" class="tw-w-[100%]" alt="" />
+            <img
+              src="@/assets/images/douyin.png"
+              class="tw-w-[100%] img-shadow"
+              alt=""
+            />
           </div>
           <div class="equipment-main-item">
-            <div class="title dd-fs-36 tw-leading-[56px] max-md:tw-leading-[24px] tw-mb-[33px]">
+            <div
+              class="title dd-fs-36 tw-leading-[56px] max-md:tw-leading-[24px] tw-mb-[33px]"
+            >
               {{ $t("equipment.小红书小店") }}
             </div>
             <img
               src="@/assets/images/xiaohongshu.png"
-              class="tw-w-[100%]"
+              class="tw-w-[100%] img-shadow"
               alt=""
             />
           </div>
@@ -84,10 +96,12 @@
       justify-content: center;
       align-items: center;
       padding: 0 11px;
-      box-shadow: 0px 13px 26.1px 0px #0000000a, 0px -8px 20.9px 0px #00000005;
 
       .img {
         width: 26.7%;
+      }
+      .img-shadow {
+        box-shadow: 0px 13px 26.1px 0px #0000000a, 0px -8px 20.9px 0px #00000005;
       }
     }
   }

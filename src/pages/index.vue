@@ -33,9 +33,11 @@
                   @mouseenter="showPopover"
                   @mouseleave="hidePopover"
                   @click="togglePopover"
-                  >{{ $t("index.下载APP")
-                  }}<el-icon class="tw-ml-[5px] tw-font-[500]"
-                    ><img src="@/assets/icon/Download.svg" alt="" /></el-icon
+                  >
+                  <span class="tw-text-[18px]">{{ $t("index.下载APP")
+                  }}</span>
+                  <el-icon class="tw-ml-[10px] tw-font-[500]"
+                    ><img src="@/assets/icon/Download.svg" class="tw-w-[18px]" alt="" /></el-icon
                 ></BwButton>
               </template>
               <div
@@ -128,7 +130,7 @@
 
     <!-- pc端search -->
     <div
-      class="search-input tw-h-[68px] tw-mt-[-11px] tw-mb-[68px] max-lg:tw-mb-[28px] dd-container tw-mx-auto max-lg:tw-mt-[28px]"
+      class="search-input lg:tw-h-[68px] max-lg:tw-h-[54px] tw-mt-[-11px] tw-mb-[68px] max-lg:tw-mb-[28px] dd-container tw-mx-auto max-lg:tw-mt-[28px]"
     >
       <BwInput
         class="tw-h-[100%]"
@@ -137,10 +139,10 @@
         @keyup.down="handleSearch"
       >
         <template #append>
-          <BwButton @click="handleSearch" class="tw-h-[46px]" :active="true">
-            <div class="tw-flex">
+          <BwButton @click="handleSearch" class=" max-lg:tw-h-[40px] lg:tw-h-[46px] tw-flex tw-items-center" :active="true">
+            <div class="tw-flex tw-items-center">
               <img
-                class="tw-w-[16px] tw-mr-[4px] max-md:tw-mt-[15px] max-md:tw-mr-[0]"
+                class="tw-w-[16px] tw-mr-[4px] max-md:tw-mr-[0]"
                 src="@/assets/icon/Search.svg"
                 alt=""
               />
