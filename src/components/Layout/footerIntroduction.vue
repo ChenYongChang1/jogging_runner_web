@@ -37,6 +37,7 @@
               <template #reference>
                 <img
                   :src="item.img"
+                  alt="超慢跑"
                   @click="handleClickType(item.type, index)"
                   class="tw-w-full tw-h-auto tw-cursor-pointer"
                 />
@@ -48,7 +49,7 @@
                   :src="item.popoverImg"
                   class="tw-w-[125px] tw-mb-[5px]"
                   loading="lazy"
-                  alt=""
+                  alt="超慢跑"
                 />
               </div>
             </el-popover>
@@ -58,9 +59,10 @@
       <div
         class="right-content tw-flex tw-jusify-center tw-mr-[20px] max-md:tw-mr-0 tw-items-baseline max-md:tw-transform max-md:tw-translate-x-[-4.2%] tw-relative"
       >
-        <img src="~assets/images/footer-1.png" class="" />
+        <img src="~assets/images/footer-1.png" alt="全新3.0超慢跑超健康" class="" />
         <img
           src="~assets/images/footer-2.png"
+          alt="全新3.0超慢跑超健康"
           class="tw-absolute tw-left-[58px] tw-h-[100%] tw-top-0"
         />
       </div>

@@ -45,7 +45,7 @@
                 <img
                   src="@/assets/images/erweima.png"
                   class="tw-w-[125px] tw-mb-[5px]"
-                  alt=""
+                  alt="超慢跑"
                 />
                 <div
                   class="text tw-text-[#4A4A4A] tw-text-[16px] tw-font-[500] tw-leading-[24px]"
@@ -59,6 +59,7 @@
         <img
           src="@/assets/images/home.png"
           class="tw-w-[36.1%] max-sm:tw-w-[69.6%] max-sm:tw-mt-[35px]"
+          alt="超慢跑"
         />
       </div>
       <!-- pc端介绍 -->
@@ -85,23 +86,23 @@
         >
           <img
             src="@/assets/images/download-image-1.png"
-            alt=""
+            alt="超慢跑"
           />
           <img
             src="@/assets/images/download-image-2.png"
-            alt=""
+            alt="超慢跑"
           />
           <img
             src="@/assets/images/download-image-3.png"
-            alt=""
+            alt="超慢跑"
           />
           <img
             src="@/assets/images/download-image-4.png"
-            alt=""
+            alt="超慢跑"
           />
           <img
             src="@/assets/images/download-image-5.png"
-            alt=""
+            alt="超慢跑"
           />
         </div>
       </div>

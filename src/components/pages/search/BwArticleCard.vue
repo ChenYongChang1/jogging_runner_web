@@ -3,7 +3,7 @@
     <div class="card-title dd-title-text">
       {{ article.title }}
     </div>
-    <bw-media class="tw-mb-[22px]" :src="article.cover" type="image"></bw-media>
+    <bw-media class="tw-mb-[22px]" :src="article.cover" :alt="article.title" type="image"></bw-media>
     <!-- <div
       class="next-title dd-fs-30 tw-font-[600] tw-text-basecolor tw-leading-[55px]"
     >

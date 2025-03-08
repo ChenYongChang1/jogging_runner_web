@@ -45,7 +45,7 @@
             <img
               src="@/assets/images/weixin.png"
               class="tw-w-[100%] img-shadow"
-              alt=""
+              alt="超慢跑"
             />
           </div>
           <div class="equipment-main-item">
@@ -57,7 +57,7 @@
             <img
               src="@/assets/images/douyin.png"
               class="tw-w-[100%] img-shadow"
-              alt=""
+              alt="超慢跑"
             />
           </div>
           <div class="equipment-main-item">
@@ -69,7 +69,7 @@
             <img
               src="@/assets/images/xiaohongshu.png"
               class="tw-w-[100%] img-shadow"
-              alt=""
+              alt="超慢跑"
             />
           </div>
         </div>
