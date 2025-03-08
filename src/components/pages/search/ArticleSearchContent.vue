@@ -57,7 +57,7 @@
       </div>
       <nuxt-link
         v-for="citem in item.childs || []"
-        class="article-type tw-pl-[18px] tw-text-[20px] tw-font-[500] tw-text-text666 tw-mb-[12px]"
+        class="article-type tw-block tw-pl-[18px] tw-text-[20px] tw-font-[500] tw-text-text666 tw-mb-[12px]"
         :to="`/tag/${citem.id}`"
       >
         {{ citem.name }}
