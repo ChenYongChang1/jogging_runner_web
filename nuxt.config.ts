@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 // import tailwindcss from "@tailwindcss/vite";
 import path from "path";
-const BASE_URL = import.meta.env.BASE_URL;
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 export default defineNuxtConfig({
   ssr: true,
@@ -10,6 +10,13 @@ export default defineNuxtConfig({
   app: {
     baseURL: "/",
     head: {
+      script: [
+        {
+          src: "//unpkg.com/vconsole@latest/dist/vconsole.min.js",
+          type: "text/javascript",
+        },
+        { innerHTML: "new VConsole()" },
+      ],
       htmlAttrs: {
         lang: "zh",
       },

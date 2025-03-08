@@ -50,46 +50,6 @@
         </p>
       </div>
     </div>
-    <!-- 移动端展示下载或者打开app -->
-     <!--       v-if="isMobileDevice()" -->
-    <div
-      class="mobile-download tw-w-full tw-h-[58px] tw-flex tw-items-center tw-justify-between"
-    >
-      <div class="tw-flex tw-items-center tw-space-x-2 md:tw-space-x-3">
-        <img
-          src="~/assets/images/logo.png"
-          alt="Logo"
-          class="tw-w-8 tw-h-8 md:tw-w-10 sm·:tw-h-10"
-        />
-        <div>
-          <div
-            class="tw-text-base md:tw-text-lg tw-text-[#3EDB30] tw-font-bold tw-text-green-500"
-          >
-            超慢跑专用APP
-          </div>
-          <div class="tw-text-xs md:tw-text-sm tw-text-[#ccc] tw-text-gray-500">
-            节拍器、打卡、更多内容
-          </div>
-        </div>
-      </div>
-      <div>
-        <!-- 下载 -->
-        <bw-button
-          :active="true"
-          v-if="isAppInstalled"
-          class="tw-w-[74px] tw-h-[34px] tw-rounded-[17px]"
-          @click="openOrDownloadApp('open')"
-          >打开</bw-button
-        >
-        <bw-button
-          :active="true"
-          v-else
-          class="tw-w-[74px] tw-h-[34px] tw-rounded-[17px]"
-          @click="openOrDownloadApp('download')"
-          >下载</bw-button
-        >
-      </div>
-    </div>
   </div>
 </template>
 <script lang="ts" setup>
@@ -98,26 +58,6 @@ import footerIntroduction from "./footerIntroduction.vue";
 // import { ref, computed, onMounted } from "vue";
 // import { useRoute } from "vue-router";
 
-// const isAppInstalled = ref<boolean>(false);
-// const scheme = ref<string>("");
-// const downloadUrl = ref<string>(""); // 下载软件地址
-
-// onMounted(async () => {
-//   if (isAndroid()) {
-//     scheme.value = "windjog://article?id=1&title=标题&url=http://www.baidu.com";
-//     downloadUrl.value = "";
-//   } else if (isIOS()) {
-//     scheme.value =
-//       "jogging://jogging.net/article?id=1&title=标题&url=http://www.baidu.com";
-//     downloadUrl.value = "";
-//   }
-//   // 使用新的异步函数来检查应用是否已安装
-//   isAppInstalled.value = await checkAppInstalled(scheme.value);
-// });
-
-// const openOrDownloadApp = (str: string) => {
-//   window.location.href = str === "open" ? scheme.value : downloadUrl.value;
-// };
 </script>
 <style lang="scss" scoped>
 .footer-wrapper {

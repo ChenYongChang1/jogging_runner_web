@@ -16,20 +16,28 @@
       <div v-html="articleInfo.content"></div>
     </div>
   </div>
+  <app-download v-if="showDownload" :article-info="articleInfo"></app-download>
 </template>
 
 <script lang="ts" setup>
 import { getArticleInfo } from "~/composables/api/home";
+import AppDownload from "~/components/pages/info/AppDownload.vue";
 
 const route = useRoute();
 const id = route.params.id;
 const articleInfo = ref({});
+const showDownload = ref(false);
 // const categoryTitle = ref('入门与技巧');
 // const alias = ref('getting-started-skills');
 const getArticleInfoById = async () => {
   articleInfo.value = await getArticleInfo(id as string);
 };
 useAsyncData("getArticleInfoById", getArticleInfoById);
+onMounted(() => {
+  nextTick(() => {
+    showDownload.value = true;
+  });
+});
 </script>
 
 <style lang="scss" scoped></style>
