@@ -1,5 +1,8 @@
 <template>
   <div class="dd-container">
+    <div
+      class="xl:tw-pt-[56px] lg:tw-pt-[44px] ss:tw-pt-[32px]"
+    >
     <bw-breadcrumb :items="[
       {
         title: articleInfo.categoryName,
@@ -11,6 +14,8 @@
     ]" />
     <h1>{{ articleInfo.title }}</h1>
     <div v-html="articleInfo.content"></div>
+  </div>
+
   </div>
 </template>
 
@@ -27,7 +32,6 @@ const getArticleInfoById = async () => {
 };
 useAsyncData("getArticleInfoById", getArticleInfoById);
 
-console.log(articleInfo);
 </script>
 
 <style lang="scss" scoped></style>

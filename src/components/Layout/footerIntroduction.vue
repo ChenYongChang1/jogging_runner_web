@@ -11,13 +11,13 @@
             class="tw-pb-[10px] tw-rounded-[6px] tw-w-[10px] tw-h-[10px] tw-bg-[green]"
           ></div>
           <div class="tw-text-[18px] tw-font-[500]">
-            {{ $t('common.下载APP') }}
+            {{ $t("common.下载APP") }}
           </div>
         </div>
         <div
           class="left-content-header tw-text-[#4A4A4A] dd-fs-48 tw-font-[600] tw-leading-[56px] tw-text-left tw-pb-[17px]"
         >
-          {{ $t('common.下载超慢跑节拍器') }}
+          {{ $t("common.下载超慢跑节拍器") }}
         </div>
         <div
           class="download-type-imgs tw-w-full md:tw-w-[386px] tw-pt-[50px] tw-flex tw-flex-wrap"
@@ -64,15 +64,29 @@
   </div>
 </template>
 <script lang="ts" setup>
-const handleClickType = (type: string) => {
-  if (type === 'app-store') {
-    // 点击iphone download
-  } else if (type === 'google-play') {
-    // window.open('');
-  } else if (type === 'android') {
-    // window.open('');
+type DownloadType = 'app-store' | 'google-play' | 'android';
+
+const handleClickType = (type: DownloadType) => {
+  const isMdOrLarger = window.innerWidth >= 768;
+  // 如果是 md或者md以上，打开图片；否则跳转链接  
+  const downloadLinks = {
+    // TODO 需要提供下载链接
+    'app-store': '',
+    'google-play': '',
+    'android': ''
+  };
+
+  if (isMdOrLarger && type === 'app-store') {
+    // 在桌面端点击 App Store 图标时显示二维码弹窗
+    // TODO: 实现 el-popover 显示
+  } else {
+    // 直接跳转到对应的下载链接
+    const link = downloadLinks[type];
+    if (link) {
+      window.open(link);
+    }
   }
-}
+};
 </script>
 <style lang="scss" scoped>
 .download-type-imgs {

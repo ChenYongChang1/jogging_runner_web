@@ -114,7 +114,6 @@ const handleSearch = () => {
 }
 const getCategoryList = async () => {
   const res = await getCategory()
-  console.log(res, '0000000')
   return res
 }
 useAsyncData('getCategoryList', getCategoryList)

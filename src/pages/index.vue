@@ -11,10 +11,10 @@
           <p
             class="home-tabar-title tw-text-[#333333] dd-fs-84 tw-font-[400] tw-pb-[15px]"
           >
-            超慢跑超健康
+            {{ $t("index.超慢跑超健康") }}
           </p>
           <p class="home-tabar-title tw-text-[#333333] dd-fs-54 tw-font-[400]">
-            随时随地健康健美
+            {{ $t("index.随时随地健康健美") }}
           </p>
           <div class="download-app tw-pt-[25px]">
             <el-popover
@@ -33,7 +33,8 @@
                   @mouseenter="showPopover"
                   @mouseleave="hidePopover"
                   @click="togglePopover"
-                  >下载APP<el-icon class="tw-ml-[5px] tw-font-[500]"
+                  >{{ $t("index.下载APP")
+                  }}<el-icon class="tw-ml-[5px] tw-font-[500]"
                     ><Download /></el-icon
                 ></BwButton>
               </template>
@@ -49,7 +50,7 @@
                 <div
                   class="text tw-text-[#4A4A4A] tw-text-[16px] tw-font-[500] tw-leading-[24px]"
                 >
-                  扫码下载超慢跑
+                  {{ $t("index.扫码下载超慢跑") }}
                 </div>
               </div>
             </el-popover>
@@ -94,7 +95,7 @@
               class="tw-w-[132px] tw-h-[46px] tw-rounded-[30px] tw-leading-[46px] max-md:tw-w-[98px] max-md:tw-h-[30px!important] max-md:tw-leading-[30px!important] max-xsm:tw-w-[78px] max-xsm:tw-h-[27px] max-sxm:tw-leading-[27px] dd-fs-20-12 max-xsm:tw-px-[8px] tw-text-center"
               :active="true"
               @click="handleView(item.alias)"
-              >点击查看</bw-button
+              >{{ $t("home.点击查看") }}</bw-button
             >
             <img
               :src="item.icon"
@@ -131,69 +132,61 @@
     >
       <BwInput
         v-model="searchValue"
-        placeholder="请输入搜索内容"
+        :placeholder="$t('index.请输入搜索内容')"
         @keyup.down="handleSearch"
       >
         <template #append>
           <BwButton @click="handleSearch" :active="true">
-            <el-icon><Search /></el-icon> 搜索
-          </BwButton>
+           <div class="tw-flex">
+            <img class="tw-w-[16px] tw-mr-[4px]" src="@/assets/icon/Search.svg" alt="" />
+            <span>{{ $t("index.搜索") }}</span>
+           </div>
+            </BwButton
+          >
         </template>
       </BwInput>
     </div>
     <!-- pc端list -->
     <bw-list
       ref="homeBwListRef"
-      :getListApi="getSearchInfo"
       :searchValue="searchValue"
       class="dd-container tw-mx-auto"
     ></bw-list>
   </div>
 </template>
-
 <script setup>
 import BwButton from "~/components/base/BwButton.vue";
 import BwInput from "~/components/base/BwInput.vue";
 import BwList from "~/components/base/BwList.vue";
-import tabarOne from "@/assets/images/tabar-1.png";
-import tabarTwo from "@/assets/images/tabar-2.png";
-import tabarThree from "@/assets/images/tabar-3.png";
-import tabarFour from "@/assets/images/tabar-4.png";
-import { getCategory, getSearchInfo } from "~/composables/api/home";
+import { getCategory } from "~/composables/api/home";
 
-const tabarListStyles = ref([
-  "background: linear-gradient(180deg, #E9F9FF 0%, #F4FFFD 100%)",
-  "background: linear-gradient(180deg, #FFF7DE 0%, #FFFCF4 100%)",
-  "background: linear-gradient(180deg, #E9ECFF 0%, #F4F5FF 100%)",
-  "background: linear-gradient(180deg, #E3FFE5 0%, #F3FFF9 100%);margin-right: 0",
-]);
 const tabarList = ref([]);
 const searchValue = ref("");
 const homeBwListRef = ref();
-const router = useRouter();
 
 const handleSearch = () => {
   // 触发搜索
   // homeBwListRef.value?.getList();
   searchPush(searchValue.value);
 };
-const { data: categoryData } = useAsyncData("getCategoryList", async () => {
+useAsyncData("getCategoryList", async () => {
   const res = await getCategory();
-  return res.value?.data;
+  tabarList.value = res.value?.data || [];
+  return tabarList.value 
 });
-watchEffect(() => {
-  if (categoryData.value) {
-    tabarList.value = categoryData.value;
-  }
-});
+// watchEffect(() => {
+//   if (categoryData.value) {
+//     tabarList.value = categoryData.value;
+//   }
+// });
 const getDataList = async () => {
-  await nextTick();
-  if (homeBwListRef.value) {
-    return await homeBwListRef.value.getList();
-  }
+  // await nextTick()
+  // if (homeBwListRef.value) {
+  //   return await homeBwListRef.value.getList()
+  // }
 };
 // useAsyncData("getCategoryList", getCategoryList);
-useAsyncData("getDataList", getDataList);
+// useAsyncData('getDataList', getDataList)
 // 跳转
 const handleView = (alias) => {
   // navigateTo(`/article/${alias}`);

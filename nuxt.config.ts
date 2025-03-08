@@ -1,10 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 // import tailwindcss from "@tailwindcss/vite";
 import path from "path";
-import { BASE_URL } from "./env";
+const BASE_URL = import.meta.env.BASE_URL;
 
 export default defineNuxtConfig({
-  ssr: false,
+  ssr: true,
   srcDir: "src/",
 
   app: {
@@ -18,7 +18,13 @@ export default defineNuxtConfig({
     },
   },
 
-  devtools: { enabled: true },
+  devtools: {
+    enabled: true,
+
+    timeline: {
+      enabled: true,
+    },
+  },
   modules: [
     [
       "@nuxtjs/i18n",
@@ -37,10 +43,15 @@ export default defineNuxtConfig({
       "/api": {
         target: BASE_URL,
         changeOrigin: true,
+        prependPath: true, // 是否自动添加路径
+      },
+    },
+    routeRules: {
+      "/api/**": {
+        proxy: `${BASE_URL}/**`,
       },
     },
   },
-
   runtimeConfig: {
     public: {
       API_BASE_ENV: BASE_URL,
@@ -70,4 +81,3 @@ export default defineNuxtConfig({
 
   compatibilityDate: "2025-03-05",
 });
-console.log(__dirname);
