@@ -4,14 +4,6 @@
       class="search-box lg:tw-flex xl:tw-pt-[56px] lg:tw-pt-[44px] ss:tw-pt-[32px]"
     >
       <div class="search-content">
-        <!-- 添加面包屑 -->
-        <bw-breadcrumb
-          :items="[
-            {
-              title: categoryTitle,
-            },
-          ]"
-        />
         <search-empty v-if="!tableList.length"></search-empty>
         <bw-article-card
           v-for="item in tableList"

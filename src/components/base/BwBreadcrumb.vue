@@ -2,18 +2,16 @@
   <div class="breadcrumb tw-flex tw-flex-wrap tw-items-center tw-text-[16px]">
     <div class="tw-flex tw-items-center">
       <nuxt-link :to="getRouteLink('/')" class="home-link">
-        <span class="tw-text-[#00B578]">{{
-          items[0]?.title || $t('common.超慢跑')
-        }}</span>
+        <span class="tw-text-themecolor">{{ $t("common.超慢跑") }}</span>
       </nuxt-link>
-      <span class="separator tw-mx-2 tw-text-[#00B578]">>></span>
+      <span class="separator tw-mx-2 tw-text-themecolor">>></span>
       <template v-for="(item, index) in items.slice(0, -1)" :key="index">
         <nuxt-link
           :to="getRouteLink(item.path || '')"
-          class="tw-text-[#00B578]"
+          class="tw-text-themecolor"
           >{{ item.title }}</nuxt-link
         >
-        <span class="separator tw-mx-2 tw-text-[#00B578]">>></span>
+        <span class="separator tw-mx-2 tw-text-themecolor">>></span>
       </template>
     </div>
 
@@ -24,13 +22,13 @@
 </template>
 <script lang="ts" setup>
 interface BreadcrumbItem {
-  title: string
-  path?: string
+  title: string;
+  path?: string;
 }
 
 defineProps<{
-  items: BreadcrumbItem[]
-}>()
+  items: BreadcrumbItem[];
+}>();
 </script>
 <style lang="scss" scoped>
 .breadcrumb {
@@ -44,7 +42,7 @@ defineProps<{
   }
 
   .separator {
-    font-family: 'Arial', sans-serif;
+    font-family: "Arial", sans-serif;
     font-weight: normal;
   }
 

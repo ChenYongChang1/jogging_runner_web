@@ -2,8 +2,6 @@
   <div
     class="footer-wrapper justify-center items-center w-full lg:tw-mt-[120px] tw-mt-[44px]"
   >
-  {{ isMobileDevice() }}
-
     <!-- 简介 -->
     <div class="brief-introduction tw-mx-auto">
       <!-- pc端简介 1280px-->
@@ -96,30 +94,30 @@
 </template>
 <script lang="ts" setup>
 import footerIntroduction from "./footerIntroduction.vue";
-import { isAndroid, isIOS, checkAppInstalled, isMobileDevice } from "@/utils/detect"; // 修改为导入正确的函数
-import { ref, computed, onMounted } from "vue";
-import { useRoute } from "vue-router";
+// import { isAndroid, isIOS, checkAppInstalled, isMobileDevice } from "@/utils/detect"; // 修改为导入正确的函数
+// import { ref, computed, onMounted } from "vue";
+// import { useRoute } from "vue-router";
 
-const isAppInstalled = ref<boolean>(false);
-const scheme = ref<string>("");
-const downloadUrl = ref<string>(""); // 下载软件地址
+// const isAppInstalled = ref<boolean>(false);
+// const scheme = ref<string>("");
+// const downloadUrl = ref<string>(""); // 下载软件地址
 
-onMounted(async () => {
-  if (isAndroid()) {
-    scheme.value = "windjog://article?id=1&title=标题&url=http://www.baidu.com";
-    downloadUrl.value = "";
-  } else if (isIOS()) {
-    scheme.value =
-      "jogging://jogging.net/article?id=1&title=标题&url=http://www.baidu.com";
-    downloadUrl.value = "";
-  }
-  // 使用新的异步函数来检查应用是否已安装
-  isAppInstalled.value = await checkAppInstalled(scheme.value);
-});
+// onMounted(async () => {
+//   if (isAndroid()) {
+//     scheme.value = "windjog://article?id=1&title=标题&url=http://www.baidu.com";
+//     downloadUrl.value = "";
+//   } else if (isIOS()) {
+//     scheme.value =
+//       "jogging://jogging.net/article?id=1&title=标题&url=http://www.baidu.com";
+//     downloadUrl.value = "";
+//   }
+//   // 使用新的异步函数来检查应用是否已安装
+//   isAppInstalled.value = await checkAppInstalled(scheme.value);
+// });
 
-const openOrDownloadApp = (str: string) => {
-  window.location.href = str === "open" ? scheme.value : downloadUrl.value;
-};
+// const openOrDownloadApp = (str: string) => {
+//   window.location.href = str === "open" ? scheme.value : downloadUrl.value;
+// };
 </script>
 <style lang="scss" scoped>
 .footer-wrapper {
