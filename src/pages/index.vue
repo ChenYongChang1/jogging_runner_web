@@ -47,7 +47,7 @@
                   src="@/assets/images/erweima.png"
                   class="tw-w-[125px] tw-mb-[5px]"
                   loading="lazy"
-                  alt=""
+                  alt="超慢跑"
                 />
                 <div
                   class="text tw-text-[#4A4A4A] tw-text-[16px] tw-font-[500] tw-leading-[24px]"
@@ -62,6 +62,7 @@
           src="@/assets/images/home.png"
           loading="lazy"
           class="tw-w-[36.1%] max-lg:tw-hidden"
+          alt="超慢跑"
         />
       </div>
     </div>
