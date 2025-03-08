@@ -1,0 +1,228 @@
+{
+  "resolvedId": "/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/node_modules/.pnpm/element-plus@2.9.5_vue@3.5.13_typescript@5.8.2_/node_modules/element-plus/es/components/select/src/option.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineComponent, computed, unref, reactive, toRefs, getCurrentInstance, onBeforeUnmount, nextTick, withDirectives, openBlock, createElementBlock, normalizeClass, withModifiers, renderSlot, createElementVNode, toDisplayString, vShow } from 'vue';\nimport { useOption } from './useOption.mjs';\nimport _export_sfc from '../../../_virtual/plugin-vue_export-helper.mjs';\nimport { useNamespace } from '../../../hooks/use-namespace/index.mjs';\nimport { useId } from '../../../hooks/use-id/index.mjs';\n\nconst _sfc_main = defineComponent({\n  name: \"ElOption\",\n  componentName: \"ElOption\",\n  props: {\n    value: {\n      required: true,\n      type: [String, Number, Boolean, Object]\n    },\n    label: [String, Number],\n    created: Boolean,\n    disabled: Boolean\n  },\n  setup(props) {\n    const ns = useNamespace(\"select\");\n    const id = useId();\n    const containerKls = computed(() => [\n      ns.be(\"dropdown\", \"item\"),\n      ns.is(\"disabled\", unref(isDisabled)),\n      ns.is(\"selected\", unref(itemSelected)),\n      ns.is(\"hovering\", unref(hover))\n    ]);\n    const states = reactive({\n      index: -1,\n      groupDisabled: false,\n      visible: true,\n      hover: false\n    });\n    const {\n      currentLabel,\n      itemSelected,\n      isDisabled,\n      select,\n      hoverItem,\n      updateOption\n    } = useOption(props, states);\n    const { visible, hover } = toRefs(states);\n    const vm = getCurrentInstance().proxy;\n    select.onOptionCreate(vm);\n    onBeforeUnmount(() => {\n      const key = vm.value;\n      const { selected: selectedOptions } = select.states;\n      const doesSelected = selectedOptions.some((item) => {\n        return item.value === vm.value;\n      });\n      nextTick(() => {\n        if (select.states.cachedOptions.get(key) === vm && !doesSelected) {\n          select.states.cachedOptions.delete(key);\n        }\n      });\n      select.onOptionDestroy(key, vm);\n    });\n    function selectOptionClick() {\n      if (!isDisabled.value) {\n        select.handleOptionSelect(vm);\n      }\n    }\n    return {\n      ns,\n      id,\n      containerKls,\n      currentLabel,\n      itemSelected,\n      isDisabled,\n      select,\n      hoverItem,\n      updateOption,\n      visible,\n      hover,\n      selectOptionClick,\n      states\n    };\n  }\n});\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  return withDirectives((openBlock(), createElementBlock(\"li\", {\n    id: _ctx.id,\n    class: normalizeClass(_ctx.containerKls),\n    role: \"option\",\n    \"aria-disabled\": _ctx.isDisabled || void 0,\n    \"aria-selected\": _ctx.itemSelected,\n    onMousemove: _ctx.hoverItem,\n    onClick: withModifiers(_ctx.selectOptionClick, [\"stop\"])\n  }, [\n    renderSlot(_ctx.$slots, \"default\", {}, () => [\n      createElementVNode(\"span\", null, toDisplayString(_ctx.currentLabel), 1)\n    ])\n  ], 42, [\"id\", \"aria-disabled\", \"aria-selected\", \"onMousemove\", \"onClick\"])), [\n    [vShow, _ctx.visible]\n  ]);\n}\nvar Option = /* @__PURE__ */ _export_sfc(_sfc_main, [[\"render\", _sfc_render], [\"__file\", \"option.vue\"]]);\n\nexport { Option as default };\n//# sourceMappingURL=option.mjs.map\n",
+      "start": 1741448034135,
+      "end": 1741448034249,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1741448034249,
+      "end": 1741448034249,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1741448034249,
+      "end": 1741448034249,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:resource",
+      "start": 1741448034249,
+      "end": 1741448034249,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:directive",
+      "start": 1741448034249,
+      "end": 1741448034249,
+      "order": "pre"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1741448034249,
+      "end": 1741448034249,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1741448034249,
+      "end": 1741448034249,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1741448034249,
+      "end": 1741448034249,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1741448034249,
+      "end": 1741448034249,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1741448034249,
+      "end": 1741448034249,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1741448034249,
+      "end": 1741448034249,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1741448034249,
+      "end": 1741448034249,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448034249,
+      "end": 1741448034249,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1741448034249,
+      "end": 1741448034249,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1741448034249,
+      "end": 1741448034249,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448034249,
+      "end": 1741448034249,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1741448034249,
+      "end": 1741448034249,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1741448034249,
+      "end": 1741448034249,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1741448034249,
+      "end": 1741448034249,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1741448034249,
+      "end": 1741448034249,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1741448034249,
+      "end": 1741448034249,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1741448034249,
+      "end": 1741448034249,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1741448034249,
+      "end": 1741448034249,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1741448034249,
+      "end": 1741448034249,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1741448034249,
+      "end": 1741448034249,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1741448034249,
+      "end": 1741448034249,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1741448034249,
+      "end": 1741448034249,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1741448034249,
+      "end": 1741448034249,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1741448034249,
+      "end": 1741448034249,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1741448034249,
+      "end": 1741448034249,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1741448034249,
+      "end": 1741448034249,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1741448034249,
+      "end": 1741448034249,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1741448034249,
+      "end": 1741448034249,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1741448034249,
+      "end": 1741448034249,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1741448034249,
+      "end": 1741448034249,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1741448034249,
+      "end": 1741448034249,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1741448034249,
+      "end": 1741448034249,
+      "order": "normal"
+    }
+  ]
+}

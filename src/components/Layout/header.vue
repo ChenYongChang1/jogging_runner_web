@@ -5,6 +5,7 @@
       backgroundColor: isEquipment
         ? 'transparent'
         : 'rgba(248, 255, 248, 0.44)',
+      borderBottomColor: isEquipment ? '#424242' : '#F7F7F7',
     }"
   >
     <div class="container-custom tw-px-4 md:tw-px-6">
@@ -13,12 +14,11 @@
         class="tw-flex tw-items-center tw-justify-between tw-py-3 md:tw-py-4 tw-w-full"
       >
         <!-- Logo部分 -->
-        <div class="tw-flex tw-items-center tw-space-x-2 md:tw-space-x-3">
-          <img
-            src="~/assets/images/logo.png"
-            alt="Logo"
-            class="tw-w-8 tw-h-8 md:tw-w-10 sm·:tw-h-10"
-          />
+        <div
+          class="tw-flex tw-items-center tw-space-x-2 md:tw-space-x-3 tw-cursor-pointer"
+          @click="goHome"
+        >
+          <img src="~/assets/images/logo.png" alt="Logo" class="tw-w-[48px]" />
           <div>
             <h1
               class="tw-text-base md:tw-text-lg tw-text-[#3EDB30] tw-font-bold tw-text-green-500"
@@ -39,7 +39,11 @@
             v-for="item in menuItems"
             :key="item.path"
             :to="getRouteLink(item.path)"
-            :class="['navBtn', isEquipment ? 'navBtn-equipment' : '']"
+            :class="[
+              'navBtn',
+              isEquipment ? 'navBtn-equipment' : '',
+              { active: currentPath === getRouteLink(item.path) },
+            ]"
           >
             {{ item.name }}
           </nuxt-link>
@@ -112,7 +116,11 @@
             v-for="item in menuItems"
             :key="item.path"
             :to="getRouteLink(item.path)"
-            :class="['navBtn-h5', isEquipment ? 'navBtn-equipment' : '']"
+            :class="[
+              'navBtn-h5',
+              isEquipment ? 'navBtn-equipment' : '',
+              { active: currentPath === getRouteLink(item.path) },
+            ]"
             class="tw-block tw-py-3 tw-px-4 tw-text-gray-500 hover:tw-bg-green-50 hover:tw-text-green-600 active:tw-bg-green-100 active:tw-text-green-700"
             @click="isMenuOpen = false"
           >
@@ -167,13 +175,14 @@ const isEquipment = computed(() => {
 });
 const isMenuOpen = ref(false);
 
-const menuItems = [
+const menuItems = computed(() => [
   { name: $t("common.首页"), path: "/" },
   { name: $t("common.超慢跑节拍器180下载"), path: "/download" },
   { name: $t("common.必备装备"), path: "/equipment" },
-];
+]);
 
 const language = computed(() => i18n.locale.value);
+const currentPath = computed(() => route.path);
 const languageName = computed(() => {
   const languageRow =
     languageList.find((item) => item.value === language.value) ||
@@ -183,9 +192,13 @@ const languageName = computed(() => {
 const changeLanguage = (str) => {
   navigateTo(switchLocalePath(str));
 };
+const goHome = () => {
+  navigateTo(getRouteLink("/"));
+};
 </script>
 <style lang="scss" scoped>
 .layout-header {
+  border-bottom: 1px solid #424242;
   z-index: 100;
   .navBtn {
     border-radius: 14px;
@@ -195,7 +208,8 @@ const changeLanguage = (str) => {
     border: 1.5px solid #e5e7eb;
     color: #4a4a4a;
     &:hover,
-    &:active {
+    &:active,
+    &.active {
       background-color: #61cd57;
       border-color: #61cd57;
       color: #fff;
@@ -204,12 +218,16 @@ const changeLanguage = (str) => {
       border: none;
       background-color: #fff;
       &:hover,
-      &:active {
+      &:active,
+      &.active {
         color: #61cd57;
       }
     }
   }
   .navBtn-equipment {
+    color: #fff;
+  }
+  .navBtn-h5 {
     color: #4a4a4a;
   }
 }

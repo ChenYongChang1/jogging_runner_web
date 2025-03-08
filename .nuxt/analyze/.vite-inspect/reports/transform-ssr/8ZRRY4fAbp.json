@@ -1,0 +1,12 @@
+{
+  "resolvedId": "\u0000virtual:nuxt-i18n-logger",
+  "transforms": [
+    {
+      "name": "nuxtjs:i18n-logger",
+      "result": "export function createLogger() {}",
+      "start": 1741448039084,
+      "end": 1741448039086,
+      "sourcemaps": null
+    }
+  ]
+}

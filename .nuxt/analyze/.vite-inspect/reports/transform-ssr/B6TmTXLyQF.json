@@ -1,0 +1,308 @@
+{
+  "resolvedId": "virtual:nuxt:%2FUsers%2Fchenyongchang%2Flib%2Foutsource%2Fhz%2Fultra_jogging_web%2F.nuxt%2Froutes.mjs",
+  "transforms": [
+    {
+      "name": "nuxt:virtual",
+      "result": "\nif (import.meta.hot) {\n  import.meta.hot.accept((mod) => {\n    const router = import.meta.hot.data.router\n    const generateRoutes = import.meta.hot.data.generateRoutes\n    if (!router || !generateRoutes) {\n      import.meta.hot.invalidate('[nuxt] Cannot replace routes because there is no active router. Reloading.')\n      return\n    }\n    router.clearRoutes()\n    const routes = generateRoutes(mod.default || mod)\n    function addRoutes (routes) {\n      for (const route of routes) {\n        router.addRoute(route)\n      }\n      router.replace(router.currentRoute.value.fullPath)\n    }\n    if (routes && 'then' in routes) {\n      routes.then(addRoutes)\n    } else {\n      addRoutes(routes)\n    }\n  })\n}\n\nexport function handleHotUpdate(_router, _generateRoutes) {\n  if (import.meta.hot) {\n    import.meta.hot.data ||= {}\n    import.meta.hot.data.router = _router\n    import.meta.hot.data.generateRoutes = _generateRoutes\n  }\n}\nimport { default as _404NNoLbPBL5jMeta } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/404.vue?macro=true\";\nimport { default as downloadsZRxB0uwLoMeta } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/download.vue?macro=true\";\nimport { default as equipment7VTei6Ib7DMeta } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/equipment.vue?macro=true\";\nimport { default as indexa35oCquWjlMeta } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/index.vue?macro=true\";\nimport { default as info_45_91id_93PIjVj374uiMeta } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/moblie/info-[id].vue?macro=true\";\nimport { default as _91id_93_46htmlukEQs9RtjkMeta } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/post/[id].html.vue?macro=true\";\nimport { default as searchltRvUFJ62eMeta } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/search.vue?macro=true\";\nimport { default as _91page_93tXO0oUI00mMeta } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/tag/[keyword]/[page].vue?macro=true\";\nimport { default as indexD23ognPUTjMeta } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/tag/[keyword]/index.vue?macro=true\";\nimport { default as _404MJfefLKko5Meta } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/404.vue?macro=true\";\nimport { default as download3l7itnr745Meta } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/download.vue?macro=true\";\nimport { default as equipment3VG0RMkKM8Meta } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/equipment.vue?macro=true\";\nimport { default as homeZMUBMS3SEhMeta } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/home.vue?macro=true\";\nimport { default as indexbopIgdcML9Meta } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/index.vue?macro=true\";\nimport { default as info_45_91id_93glJJc8YaHjMeta } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/moblie/info-[id].vue?macro=true\";\nimport { default as _91id_93_46htmlmEouH189NLMeta } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/post/[id].html.vue?macro=true\";\nimport { default as searchYKTeezuEsKMeta } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/search.vue?macro=true\";\nimport { default as _91page_93HeCSVuUTNJMeta } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/tag/[keyword]/[page].vue?macro=true\";\nimport { default as index1Th1zDitsYMeta } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/tag/[keyword]/index.vue?macro=true\";\nexport default [\n  {\n    name: \"lang-404___zh___default\",\n    path: \"/:lang()/404\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/404.vue\")\n  },\n  {\n    name: \"lang-404___zh\",\n    path: \"/zh/:lang()/404\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/404.vue\")\n  },\n  {\n    name: \"lang-404___zht\",\n    path: \"/zht/:lang()/404\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/404.vue\")\n  },\n  {\n    name: \"lang-download___zh___default\",\n    path: \"/:lang()/download\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/download.vue\")\n  },\n  {\n    name: \"lang-download___zh\",\n    path: \"/zh/:lang()/download\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/download.vue\")\n  },\n  {\n    name: \"lang-download___zht\",\n    path: \"/zht/:lang()/download\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/download.vue\")\n  },\n  {\n    name: \"lang-equipment___zh___default\",\n    path: \"/:lang()/equipment\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/equipment.vue\")\n  },\n  {\n    name: \"lang-equipment___zh\",\n    path: \"/zh/:lang()/equipment\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/equipment.vue\")\n  },\n  {\n    name: \"lang-equipment___zht\",\n    path: \"/zht/:lang()/equipment\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/equipment.vue\")\n  },\n  {\n    name: \"lang___zh___default\",\n    path: \"/:lang()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/index.vue\")\n  },\n  {\n    name: \"lang___zh\",\n    path: \"/zh/:lang()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/index.vue\")\n  },\n  {\n    name: \"lang___zht\",\n    path: \"/zht/:lang()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/index.vue\")\n  },\n  {\n    name: \"lang-moblie-info-id___zh___default\",\n    path: \"/:lang()/moblie/info-:id()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/moblie/info-[id].vue\")\n  },\n  {\n    name: \"lang-moblie-info-id___zh\",\n    path: \"/zh/:lang()/moblie/info-:id()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/moblie/info-[id].vue\")\n  },\n  {\n    name: \"lang-moblie-info-id___zht\",\n    path: \"/zht/:lang()/moblie/info-:id()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/moblie/info-[id].vue\")\n  },\n  {\n    name: \"lang-post-id.html___zh___default\",\n    path: \"/:lang()/post/:id().html\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/post/[id].html.vue\")\n  },\n  {\n    name: \"lang-post-id.html___zh\",\n    path: \"/zh/:lang()/post/:id().html\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/post/[id].html.vue\")\n  },\n  {\n    name: \"lang-post-id.html___zht\",\n    path: \"/zht/:lang()/post/:id().html\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/post/[id].html.vue\")\n  },\n  {\n    name: \"lang-search___zh___default\",\n    path: \"/:lang()/search\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/search.vue\")\n  },\n  {\n    name: \"lang-search___zh\",\n    path: \"/zh/:lang()/search\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/search.vue\")\n  },\n  {\n    name: \"lang-search___zht\",\n    path: \"/zht/:lang()/search\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/search.vue\")\n  },\n  {\n    name: \"lang-tag-keyword-page___zh___default\",\n    path: \"/:lang()/tag/:keyword()/:page()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/tag/[keyword]/[page].vue\")\n  },\n  {\n    name: \"lang-tag-keyword-page___zh\",\n    path: \"/zh/:lang()/tag/:keyword()/:page()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/tag/[keyword]/[page].vue\")\n  },\n  {\n    name: \"lang-tag-keyword-page___zht\",\n    path: \"/zht/:lang()/tag/:keyword()/:page()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/tag/[keyword]/[page].vue\")\n  },\n  {\n    name: \"lang-tag-keyword___zh___default\",\n    path: \"/:lang()/tag/:keyword()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/tag/[keyword]/index.vue\")\n  },\n  {\n    name: \"lang-tag-keyword___zh\",\n    path: \"/zh/:lang()/tag/:keyword()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/tag/[keyword]/index.vue\")\n  },\n  {\n    name: \"lang-tag-keyword___zht\",\n    path: \"/zht/:lang()/tag/:keyword()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/tag/[keyword]/index.vue\")\n  },\n  {\n    name: \"404___zh___default\",\n    path: \"/404\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/404.vue\")\n  },\n  {\n    name: \"404___zh\",\n    path: \"/zh/404\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/404.vue\")\n  },\n  {\n    name: \"404___zht\",\n    path: \"/zht/404\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/404.vue\")\n  },\n  {\n    name: \"download___zh___default\",\n    path: \"/download\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/download.vue\")\n  },\n  {\n    name: \"download___zh\",\n    path: \"/zh/download\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/download.vue\")\n  },\n  {\n    name: \"download___zht\",\n    path: \"/zht/download\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/download.vue\")\n  },\n  {\n    name: \"equipment___zh___default\",\n    path: \"/equipment\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/equipment.vue\")\n  },\n  {\n    name: \"equipment___zh\",\n    path: \"/zh/equipment\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/equipment.vue\")\n  },\n  {\n    name: \"equipment___zht\",\n    path: \"/zht/equipment\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/equipment.vue\")\n  },\n  {\n    name: \"home___zh___default\",\n    path: \"/home\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/home.vue\")\n  },\n  {\n    name: \"home___zh\",\n    path: \"/zh/home\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/home.vue\")\n  },\n  {\n    name: \"home___zht\",\n    path: \"/zht/home\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/home.vue\")\n  },\n  {\n    name: \"index___zh___default\",\n    path: \"/\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/index.vue\")\n  },\n  {\n    name: \"index___zh\",\n    path: \"/zh\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/index.vue\")\n  },\n  {\n    name: \"index___zht\",\n    path: \"/zht\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/index.vue\")\n  },\n  {\n    name: \"moblie-info-id___zh___default\",\n    path: \"/moblie/info-:id()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/moblie/info-[id].vue\")\n  },\n  {\n    name: \"moblie-info-id___zh\",\n    path: \"/zh/moblie/info-:id()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/moblie/info-[id].vue\")\n  },\n  {\n    name: \"moblie-info-id___zht\",\n    path: \"/zht/moblie/info-:id()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/moblie/info-[id].vue\")\n  },\n  {\n    name: \"post-id.html___zh___default\",\n    path: \"/post/:id().html\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/post/[id].html.vue\")\n  },\n  {\n    name: \"post-id.html___zh\",\n    path: \"/zh/post/:id().html\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/post/[id].html.vue\")\n  },\n  {\n    name: \"post-id.html___zht\",\n    path: \"/zht/post/:id().html\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/post/[id].html.vue\")\n  },\n  {\n    name: \"search___zh___default\",\n    path: \"/search\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/search.vue\")\n  },\n  {\n    name: \"search___zh\",\n    path: \"/zh/search\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/search.vue\")\n  },\n  {\n    name: \"search___zht\",\n    path: \"/zht/search\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/search.vue\")\n  },\n  {\n    name: \"tag-keyword-page___zh___default\",\n    path: \"/tag/:keyword()/:page()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/tag/[keyword]/[page].vue\")\n  },\n  {\n    name: \"tag-keyword-page___zh\",\n    path: \"/zh/tag/:keyword()/:page()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/tag/[keyword]/[page].vue\")\n  },\n  {\n    name: \"tag-keyword-page___zht\",\n    path: \"/zht/tag/:keyword()/:page()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/tag/[keyword]/[page].vue\")\n  },\n  {\n    name: \"tag-keyword___zh___default\",\n    path: \"/tag/:keyword()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/tag/[keyword]/index.vue\")\n  },\n  {\n    name: \"tag-keyword___zh\",\n    path: \"/zh/tag/:keyword()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/tag/[keyword]/index.vue\")\n  },\n  {\n    name: \"tag-keyword___zht\",\n    path: \"/zht/tag/:keyword()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/tag/[keyword]/index.vue\")\n  }\n]",
+      "start": 1741448039144,
+      "end": 1741448039144,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1741448039144,
+      "end": 1741448039144,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1741448039144,
+      "end": 1741448039144,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1741448039144,
+      "end": 1741448039144,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1741448039144,
+      "end": 1741448039144,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:resource",
+      "start": 1741448039144,
+      "end": 1741448039145,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:resource",
+      "start": 1741448039144,
+      "end": 1741448039145,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:directive",
+      "start": 1741448039145,
+      "end": 1741448039145,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:directive",
+      "start": 1741448039145,
+      "end": 1741448039145,
+      "order": "pre"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1741448039145,
+      "end": 1741448039145,
+      "order": "pre"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1741448039145,
+      "end": 1741448039145,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-only-component-transform",
+      "start": 1741448039145,
+      "end": 1741448039145,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1741448039145,
+      "end": 1741448039145,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1741448039145,
+      "end": 1741448039145,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1741448039145,
+      "end": 1741448039145,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1741448039145,
+      "end": 1741448039145,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1741448039145,
+      "end": 1741448039145,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1741448039145,
+      "end": 1741448039145,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448039145,
+      "end": 1741448039145,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448039145,
+      "end": 1741448039145,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1741448039145,
+      "end": 1741448039145,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1741448039145,
+      "end": 1741448039145,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1741448039145,
+      "end": 1741448039145,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1741448039145,
+      "end": 1741448039145,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448039145,
+      "end": 1741448039145,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1741448039145,
+      "end": 1741448039146,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "if (void 0) {\n  (void 0).accept((mod) => {\n    const router = (void 0).data.router;\n    const generateRoutes = (void 0).data.generateRoutes;\n    if (!router || !generateRoutes) {\n      (void 0).invalidate(\"[nuxt] Cannot replace routes because there is no active router. Reloading.\");\n      return;\n    }\n    router.clearRoutes();\n    const routes = generateRoutes(mod.default || mod);\n    function addRoutes(routes2) {\n      for (const route of routes2) {\n        router.addRoute(route);\n      }\n      router.replace(router.currentRoute.value.fullPath);\n    }\n    if (routes && \"then\" in routes) {\n      routes.then(addRoutes);\n    } else {\n      addRoutes(routes);\n    }\n  });\n}\nexport function handleHotUpdate(_router, _generateRoutes) {\n  if (void 0) {\n    (void 0).data ||= {};\n    (void 0).data.router = _router;\n    (void 0).data.generateRoutes = _generateRoutes;\n  }\n}\nimport { default as _404NNoLbPBL5jMeta } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/404.vue?macro=true\";\nimport { default as downloadsZRxB0uwLoMeta } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/download.vue?macro=true\";\nimport { default as equipment7VTei6Ib7DMeta } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/equipment.vue?macro=true\";\nimport { default as indexa35oCquWjlMeta } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/index.vue?macro=true\";\nimport { default as info_45_91id_93PIjVj374uiMeta } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/moblie/info-[id].vue?macro=true\";\nimport { default as _91id_93_46htmlukEQs9RtjkMeta } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/post/[id].html.vue?macro=true\";\nimport { default as searchltRvUFJ62eMeta } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/search.vue?macro=true\";\nimport { default as _91page_93tXO0oUI00mMeta } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/tag/[keyword]/[page].vue?macro=true\";\nimport { default as indexD23ognPUTjMeta } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/tag/[keyword]/index.vue?macro=true\";\nimport { default as _404MJfefLKko5Meta } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/404.vue?macro=true\";\nimport { default as download3l7itnr745Meta } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/download.vue?macro=true\";\nimport { default as equipment3VG0RMkKM8Meta } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/equipment.vue?macro=true\";\nimport { default as homeZMUBMS3SEhMeta } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/home.vue?macro=true\";\nimport { default as indexbopIgdcML9Meta } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/index.vue?macro=true\";\nimport { default as info_45_91id_93glJJc8YaHjMeta } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/moblie/info-[id].vue?macro=true\";\nimport { default as _91id_93_46htmlmEouH189NLMeta } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/post/[id].html.vue?macro=true\";\nimport { default as searchYKTeezuEsKMeta } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/search.vue?macro=true\";\nimport { default as _91page_93HeCSVuUTNJMeta } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/tag/[keyword]/[page].vue?macro=true\";\nimport { default as index1Th1zDitsYMeta } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/tag/[keyword]/index.vue?macro=true\";\nexport default [\n  {\n    name: \"lang-404___zh___default\",\n    path: \"/:lang()/404\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/404.vue\")\n  },\n  {\n    name: \"lang-404___zh\",\n    path: \"/zh/:lang()/404\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/404.vue\")\n  },\n  {\n    name: \"lang-404___zht\",\n    path: \"/zht/:lang()/404\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/404.vue\")\n  },\n  {\n    name: \"lang-download___zh___default\",\n    path: \"/:lang()/download\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/download.vue\")\n  },\n  {\n    name: \"lang-download___zh\",\n    path: \"/zh/:lang()/download\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/download.vue\")\n  },\n  {\n    name: \"lang-download___zht\",\n    path: \"/zht/:lang()/download\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/download.vue\")\n  },\n  {\n    name: \"lang-equipment___zh___default\",\n    path: \"/:lang()/equipment\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/equipment.vue\")\n  },\n  {\n    name: \"lang-equipment___zh\",\n    path: \"/zh/:lang()/equipment\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/equipment.vue\")\n  },\n  {\n    name: \"lang-equipment___zht\",\n    path: \"/zht/:lang()/equipment\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/equipment.vue\")\n  },\n  {\n    name: \"lang___zh___default\",\n    path: \"/:lang()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/index.vue\")\n  },\n  {\n    name: \"lang___zh\",\n    path: \"/zh/:lang()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/index.vue\")\n  },\n  {\n    name: \"lang___zht\",\n    path: \"/zht/:lang()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/index.vue\")\n  },\n  {\n    name: \"lang-moblie-info-id___zh___default\",\n    path: \"/:lang()/moblie/info-:id()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/moblie/info-[id].vue\")\n  },\n  {\n    name: \"lang-moblie-info-id___zh\",\n    path: \"/zh/:lang()/moblie/info-:id()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/moblie/info-[id].vue\")\n  },\n  {\n    name: \"lang-moblie-info-id___zht\",\n    path: \"/zht/:lang()/moblie/info-:id()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/moblie/info-[id].vue\")\n  },\n  {\n    name: \"lang-post-id.html___zh___default\",\n    path: \"/:lang()/post/:id().html\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/post/[id].html.vue\")\n  },\n  {\n    name: \"lang-post-id.html___zh\",\n    path: \"/zh/:lang()/post/:id().html\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/post/[id].html.vue\")\n  },\n  {\n    name: \"lang-post-id.html___zht\",\n    path: \"/zht/:lang()/post/:id().html\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/post/[id].html.vue\")\n  },\n  {\n    name: \"lang-search___zh___default\",\n    path: \"/:lang()/search\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/search.vue\")\n  },\n  {\n    name: \"lang-search___zh\",\n    path: \"/zh/:lang()/search\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/search.vue\")\n  },\n  {\n    name: \"lang-search___zht\",\n    path: \"/zht/:lang()/search\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/search.vue\")\n  },\n  {\n    name: \"lang-tag-keyword-page___zh___default\",\n    path: \"/:lang()/tag/:keyword()/:page()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/tag/[keyword]/[page].vue\")\n  },\n  {\n    name: \"lang-tag-keyword-page___zh\",\n    path: \"/zh/:lang()/tag/:keyword()/:page()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/tag/[keyword]/[page].vue\")\n  },\n  {\n    name: \"lang-tag-keyword-page___zht\",\n    path: \"/zht/:lang()/tag/:keyword()/:page()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/tag/[keyword]/[page].vue\")\n  },\n  {\n    name: \"lang-tag-keyword___zh___default\",\n    path: \"/:lang()/tag/:keyword()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/tag/[keyword]/index.vue\")\n  },\n  {\n    name: \"lang-tag-keyword___zh\",\n    path: \"/zh/:lang()/tag/:keyword()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/tag/[keyword]/index.vue\")\n  },\n  {\n    name: \"lang-tag-keyword___zht\",\n    path: \"/zht/:lang()/tag/:keyword()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/[lang]/tag/[keyword]/index.vue\")\n  },\n  {\n    name: \"404___zh___default\",\n    path: \"/404\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/404.vue\")\n  },\n  {\n    name: \"404___zh\",\n    path: \"/zh/404\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/404.vue\")\n  },\n  {\n    name: \"404___zht\",\n    path: \"/zht/404\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/404.vue\")\n  },\n  {\n    name: \"download___zh___default\",\n    path: \"/download\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/download.vue\")\n  },\n  {\n    name: \"download___zh\",\n    path: \"/zh/download\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/download.vue\")\n  },\n  {\n    name: \"download___zht\",\n    path: \"/zht/download\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/download.vue\")\n  },\n  {\n    name: \"equipment___zh___default\",\n    path: \"/equipment\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/equipment.vue\")\n  },\n  {\n    name: \"equipment___zh\",\n    path: \"/zh/equipment\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/equipment.vue\")\n  },\n  {\n    name: \"equipment___zht\",\n    path: \"/zht/equipment\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/equipment.vue\")\n  },\n  {\n    name: \"home___zh___default\",\n    path: \"/home\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/home.vue\")\n  },\n  {\n    name: \"home___zh\",\n    path: \"/zh/home\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/home.vue\")\n  },\n  {\n    name: \"home___zht\",\n    path: \"/zht/home\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/home.vue\")\n  },\n  {\n    name: \"index___zh___default\",\n    path: \"/\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/index.vue\")\n  },\n  {\n    name: \"index___zh\",\n    path: \"/zh\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/index.vue\")\n  },\n  {\n    name: \"index___zht\",\n    path: \"/zht\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/index.vue\")\n  },\n  {\n    name: \"moblie-info-id___zh___default\",\n    path: \"/moblie/info-:id()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/moblie/info-[id].vue\")\n  },\n  {\n    name: \"moblie-info-id___zh\",\n    path: \"/zh/moblie/info-:id()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/moblie/info-[id].vue\")\n  },\n  {\n    name: \"moblie-info-id___zht\",\n    path: \"/zht/moblie/info-:id()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/moblie/info-[id].vue\")\n  },\n  {\n    name: \"post-id.html___zh___default\",\n    path: \"/post/:id().html\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/post/[id].html.vue\")\n  },\n  {\n    name: \"post-id.html___zh\",\n    path: \"/zh/post/:id().html\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/post/[id].html.vue\")\n  },\n  {\n    name: \"post-id.html___zht\",\n    path: \"/zht/post/:id().html\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/post/[id].html.vue\")\n  },\n  {\n    name: \"search___zh___default\",\n    path: \"/search\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/search.vue\")\n  },\n  {\n    name: \"search___zh\",\n    path: \"/zh/search\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/search.vue\")\n  },\n  {\n    name: \"search___zht\",\n    path: \"/zht/search\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/search.vue\")\n  },\n  {\n    name: \"tag-keyword-page___zh___default\",\n    path: \"/tag/:keyword()/:page()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/tag/[keyword]/[page].vue\")\n  },\n  {\n    name: \"tag-keyword-page___zh\",\n    path: \"/zh/tag/:keyword()/:page()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/tag/[keyword]/[page].vue\")\n  },\n  {\n    name: \"tag-keyword-page___zht\",\n    path: \"/zht/tag/:keyword()/:page()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/tag/[keyword]/[page].vue\")\n  },\n  {\n    name: \"tag-keyword___zh___default\",\n    path: \"/tag/:keyword()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/tag/[keyword]/index.vue\")\n  },\n  {\n    name: \"tag-keyword___zh\",\n    path: \"/zh/tag/:keyword()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/tag/[keyword]/index.vue\")\n  },\n  {\n    name: \"tag-keyword___zht\",\n    path: \"/zht/tag/:keyword()\",\n    component: () => import(\"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/tag/[keyword]/index.vue\")\n  }\n];\n",
+      "start": 1741448039146,
+      "end": 1741448039520,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1741448039520,
+      "end": 1741448039520,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1741448039520,
+      "end": 1741448039520,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1741448039520,
+      "end": 1741448039520,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1741448039520,
+      "end": 1741448039520,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1741448039520,
+      "end": 1741448039520,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1741448039520,
+      "end": 1741448039520,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1741448039520,
+      "end": 1741448039520,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1741448039520,
+      "end": 1741448039520,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1741448039520,
+      "end": 1741448039520,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1741448039520,
+      "end": 1741448039520,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1741448039520,
+      "end": 1741448039524,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1741448039520,
+      "end": 1741448039524,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1741448039524,
+      "end": 1741448039524,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1741448039524,
+      "end": 1741448039524,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1741448039524,
+      "end": 1741448039524,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1741448039524,
+      "end": 1741448039524,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1741448039524,
+      "end": 1741448039525,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1741448039525,
+      "end": 1741448039525,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1741448039525,
+      "end": 1741448039525,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1741448039525,
+      "end": 1741448039525,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1741448039525,
+      "end": 1741448039525,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1741448039525,
+      "end": 1741448039525,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1741448039525,
+      "end": 1741448039525,
+      "order": "normal"
+    }
+  ]
+}

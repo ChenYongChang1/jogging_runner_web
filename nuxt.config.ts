@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 // import tailwindcss from "@tailwindcss/vite";
 import path from "path";
-const BASE_URL = import.meta.env.BASE_URL;
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 export default defineNuxtConfig({
   ssr: true,
@@ -10,6 +10,14 @@ export default defineNuxtConfig({
   app: {
     baseURL: "/",
     head: {
+      title: '超慢跑',
+      script: [
+        // {
+        //   src: "//unpkg.com/vconsole@latest/dist/vconsole.min.js",
+        //   type: "text/javascript",
+        // },
+        // { innerHTML: "new VConsole()" },
+      ],
       htmlAttrs: {
         lang: "zh",
       },
@@ -67,17 +75,43 @@ export default defineNuxtConfig({
     },
   ],
 
+
   vite: {
     resolve: {
-      alias: {
-        "@locales": path.resolve(__dirname, "locales"),
-      },
+      alias: {},
     },
     plugins: [
       // tailwindcss(),
     ],
     ssr: {},
+    build: {
+      // sourcemap: false,
+      // rollupOptions: {
+      //   output: {
+      //     manualChunks: (id) => {
+      //       if (id.includes("element-plus")) {
+      //         return "componentUi";
+      //       } else if (id.includes("pages")) {
+      //         return "pages";
+      //       } else if (id.includes("lodash")) {
+      //         return "lodash";
+      //       } else if (id.includes("nuxt")) {
+      //         return "nuxt";
+      //       }else if (id.includes("vue-router")) {
+      //         return "vue-router";
+      //       }else if (id.includes("vue")) {
+      //         return "vue";
+      //       }
+      //     },
+      //   },
+      // },
+    },
   },
+  build: {
+    // analyze: true,
+  },
+
+ 
 
   compatibilityDate: "2025-03-05",
 });

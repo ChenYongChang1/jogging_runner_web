@@ -1,6 +1,6 @@
 <!-- BwInput.vue -->
 <template>
-  <div class="bw-input">
+  <div class="bw-input tw-bg-[#F8F8F8]">
     <input
       v-model="modelValue"
       :type="type"
@@ -56,8 +56,8 @@ const handleClear = () => {
   align-items: center;
   border: 2px solid #e5e7eb;
   border-radius: 20px;
-  padding: 0 5px;
-  background-color: #fff;
+  padding: 0 8px 0 12px;
+  // background-color: ;
   color: theme("colors.basecolor");
   &:hover {
     border-color: theme("colors.themecolor/0.5");

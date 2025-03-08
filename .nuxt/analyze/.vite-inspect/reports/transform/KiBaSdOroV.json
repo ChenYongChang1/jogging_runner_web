@@ -1,0 +1,240 @@
+{
+  "resolvedId": "/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/components/base/BwPagination.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div class=\"custom-pagination\">\n    <bw-button\n      type=\"border\"\n      :class=\"['button-page', currentPage === 1 ? 'disabled' : '']\"\n      :active=\"false\"\n      :disabled=\"currentPage === 1\"\n      @click=\"goToFirstPage\"\n      >{{ $t(\"common.首页\") }}</bw-button\n    >\n    <bw-button\n      type=\"border\"\n      :class=\"['button-page', currentPage === 1 ? 'disabled' : '']\"\n      class=\"tw-text-center tw-w-[46px] tw-flex tw-justify-center tw-items-center\"\n      :active=\"false\"\n      @mouseenter=\"\n        () => {\n          isLeftHover = true;\n        }\n      \"\n      @mouseleave=\"\n        () => {\n          isLeftHover = false;\n        }\n      \"\n      :disabled=\"currentPage === 1\"\n      @click=\"goToPrevPage\"\n    >\n      <el-icon\n        ><img\n          v-if=\"isLeftHover && currentPage !== 1\"\n          src=\"@/assets/icon/arrow-left.svg\" />\n        <img v-else src=\"@/assets/icon/arrow-left-black.svg\"\n      /></el-icon>\n    </bw-button>\n    <client-only>\n      <el-pagination\n        :current-page=\"currentPage\"\n        :page-count=\"pageCount\"\n        layout=\"pager\"\n        @current-change=\"handleCurrentChange\"\n      />\n    </client-only>\n\n    <bw-button\n      type=\"border\"\n      :class=\"['button-page', currentPage === totalPages ? 'disabled' : '']\"\n      class=\"tw-text-center tw-w-[46px] tw-flex tw-justify-center tw-items-center\"\n      :active=\"false\"\n      :disabled=\"currentPage === totalPages\"\n      @mouseenter=\"\n        () => {\n          isRightHover = true;\n        }\n      \"\n      @mouseleave=\"\n        () => {\n          isRightHover = false;\n        }\n      \"\n      @click=\"goToNextPage\"\n    >\n      <el-icon>\n        <img\n          v-if=\"isRightHover && currentPage !== totalPages\"\n          src=\"@/assets/icon/arrow-right.svg\" />\n        <img v-else src=\"@/assets/icon/arrow-right-black.svg\"\n      /></el-icon>\n    </bw-button>\n    <bw-button\n      type=\"border\"\n      :class=\"['button-page', currentPage === totalPages ? 'disabled' : '']\"\n      :active=\"false\"\n      :disabled=\"currentPage === totalPages\"\n      @click=\"goToLastPage\"\n      >{{ $t(\"common.尾页\") }}</bw-button\n    >\n  </div>\n</template>\n<script setup>\nimport { ref, computed } from \"vue\";\n\n// 定义组件的 props\nconst props = defineProps({\n  currentPage: {\n    type: Number,\n    required: true,\n    default: 1,\n  },\n  pageCount: {\n    type: Number,\n    required: true,\n    default: 0,\n  },\n});\n\n// 定义 emits\nconst emit = defineEmits([\n  \"update:currentPage\",\n  \"update:pageSize\",\n  \"size-change\",\n  \"current-change\",\n]);\n\n// 计算总页数\nconst totalPages = computed(() => props.pageCount);\nconst isRightHover = ref(false);\nconst isLeftHover = ref(false);\n// 跳转到首页\nconst goToFirstPage = () => {\n  emit(\"update:currentPage\", 1);\n  emit(\"current-change\", 1);\n};\n\n// 跳转到尾页\nconst goToLastPage = () => {\n  emit(\"update:currentPage\", totalPages.value);\n  emit(\"current-change\", totalPages.value);\n};\n\n// 跳转到上一页\nconst goToPrevPage = () => {\n  if (props.currentPage > 1) {\n    const newPage = props.currentPage - 1;\n    emit(\"update:currentPage\", newPage);\n    emit(\"current-change\", newPage);\n  }\n};\n\n// 跳转到下一页\nconst goToNextPage = () => {\n  if (props.currentPage < totalPages.value) {\n    const newPage = props.currentPage + 1;\n    emit(\"update:currentPage\", newPage);\n    emit(\"current-change\", newPage);\n  }\n};\n\n// 处理每页条数变化\nconst handleSizeChange = (newSize) => {\n  emit(\"update:pageSize\", newSize);\n  emit(\"size-change\", newSize);\n};\n\n// 处理页码变化\nconst handleCurrentChange = (newPage) => {\n  emit(\"update:currentPage\", newPage);\n  emit(\"current-change\", newPage);\n};\n</script>\n<style lang=\"scss\" scoped>\n.custom-pagination {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  .button-page {\n    border-color: #c0c4cc;\n    color: #4a4a4a;\n    &:hover,\n    &:active {\n      background-color: #61cd57;\n      border-color: #61cd57;\n      color: #fff;\n    }\n  }\n  .disabled {\n    border-color: #c0c4cc;\n    color: #4a4a4a;\n    cursor: not-allowed;\n    &:hover,\n    &:active {\n      background-color: #fff;\n      border-color: #c0c4cc;\n      color: #4a4a4a;\n    }\n  }\n}\n\n.bw-button {\n  margin: 0;\n  padding: 0 8px;\n}\n</style>\n<style lang=\"scss\">\n.el-pager li.is-active,\n.el-pager li:hover {\n  color: rgb(97 205 87) !important;\n}\n</style>\n",
+      "start": 1741448033334,
+      "end": 1741448033404,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1741448033405,
+      "end": 1741448033405,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1741448033405,
+      "end": 1741448033405,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:resource",
+      "start": 1741448033405,
+      "end": 1741448033405,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:directive",
+      "result": "<template>\n  <div class=\"custom-pagination\">\n    <bw-button\n      type=\"border\"\n      :class=\"['button-page', currentPage === 1 ? 'disabled' : '']\"\n      :active=\"false\"\n      :disabled=\"currentPage === 1\"\n      @click=\"goToFirstPage\"\n      >{{ $t(\"common.首页\") }}</bw-button\n    >\n    <bw-button\n      type=\"border\"\n      :class=\"['button-page', currentPage === 1 ? 'disabled' : '']\"\n      class=\"tw-text-center tw-w-[46px] tw-flex tw-justify-center tw-items-center\"\n      :active=\"false\"\n      @mouseenter=\"\n        () => {\n          isLeftHover = true;\n        }\n      \"\n      @mouseleave=\"\n        () => {\n          isLeftHover = false;\n        }\n      \"\n      :disabled=\"currentPage === 1\"\n      @click=\"goToPrevPage\"\n    >\n      <el-icon\n        ><img\n          v-if=\"isLeftHover && currentPage !== 1\"\n          src=\"@/assets/icon/arrow-left.svg\" />\n        <img v-else src=\"@/assets/icon/arrow-left-black.svg\"\n      /></el-icon>\n    </bw-button>\n    <client-only>\n      <el-pagination\n        :current-page=\"currentPage\"\n        :page-count=\"pageCount\"\n        layout=\"pager\"\n        @current-change=\"handleCurrentChange\"\n      />\n    </client-only>\n\n    <bw-button\n      type=\"border\"\n      :class=\"['button-page', currentPage === totalPages ? 'disabled' : '']\"\n      class=\"tw-text-center tw-w-[46px] tw-flex tw-justify-center tw-items-center\"\n      :active=\"false\"\n      :disabled=\"currentPage === totalPages\"\n      @mouseenter=\"\n        () => {\n          isRightHover = true;\n        }\n      \"\n      @mouseleave=\"\n        () => {\n          isRightHover = false;\n        }\n      \"\n      @click=\"goToNextPage\"\n    >\n      <el-icon>\n        <img\n          v-if=\"isRightHover && currentPage !== totalPages\"\n          src=\"@/assets/icon/arrow-right.svg\" />\n        <img v-else src=\"@/assets/icon/arrow-right-black.svg\"\n      /></el-icon>\n    </bw-button>\n    <bw-button\n      type=\"border\"\n      :class=\"['button-page', currentPage === totalPages ? 'disabled' : '']\"\n      :active=\"false\"\n      :disabled=\"currentPage === totalPages\"\n      @click=\"goToLastPage\"\n      >{{ $t(\"common.尾页\") }}</bw-button\n    >\n  </div>\n</template>\n<script setup>\nimport { ref, computed } from \"vue\";\n\n// 定义组件的 props\nconst props = defineProps({\n  currentPage: {\n    type: Number,\n    required: true,\n    default: 1,\n  },\n  pageCount: {\n    type: Number,\n    required: true,\n    default: 0,\n  },\n});\n\n// 定义 emits\nconst emit = defineEmits([\n  \"update:currentPage\",\n  \"update:pageSize\",\n  \"size-change\",\n  \"current-change\",\n]);\n\n// 计算总页数\nconst totalPages = computed(() => props.pageCount);\nconst isRightHover = ref(false);\nconst isLeftHover = ref(false);\n// 跳转到首页\nconst goToFirstPage = () => {\n  emit(\"update:currentPage\", 1);\n  emit(\"current-change\", 1);\n};\n\n// 跳转到尾页\nconst goToLastPage = () => {\n  emit(\"update:currentPage\", totalPages.value);\n  emit(\"current-change\", totalPages.value);\n};\n\n// 跳转到上一页\nconst goToPrevPage = () => {\n  if (props.currentPage > 1) {\n    const newPage = props.currentPage - 1;\n    emit(\"update:currentPage\", newPage);\n    emit(\"current-change\", newPage);\n  }\n};\n\n// 跳转到下一页\nconst goToNextPage = () => {\n  if (props.currentPage < totalPages.value) {\n    const newPage = props.currentPage + 1;\n    emit(\"update:currentPage\", newPage);\n    emit(\"current-change\", newPage);\n  }\n};\n\n// 处理每页条数变化\nconst handleSizeChange = (newSize) => {\n  emit(\"update:pageSize\", newSize);\n  emit(\"size-change\", newSize);\n};\n\n// 处理页码变化\nconst handleCurrentChange = (newPage) => {\n  emit(\"update:currentPage\", newPage);\n  emit(\"current-change\", newPage);\n};\n</script>\n<style lang=\"scss\" scoped>\n.custom-pagination {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  .button-page {\n    border-color: #c0c4cc;\n    color: #4a4a4a;\n    &:hover,\n    &:active {\n      background-color: #61cd57;\n      border-color: #61cd57;\n      color: #fff;\n    }\n  }\n  .disabled {\n    border-color: #c0c4cc;\n    color: #4a4a4a;\n    cursor: not-allowed;\n    &:hover,\n    &:active {\n      background-color: #fff;\n      border-color: #c0c4cc;\n      color: #4a4a4a;\n    }\n  }\n}\n\n.bw-button {\n  margin: 0;\n  padding: 0 8px;\n}\n</style>\n<style lang=\"scss\">\n.el-pager li.is-active,\n.el-pager li:hover {\n  color: rgb(97 205 87) !important;\n}\n</style>\n",
+      "start": 1741448033405,
+      "end": 1741448033410,
+      "order": "pre",
+      "sourcemaps": {
+        "version": 3,
+        "mappings": "",
+        "sources": []
+      }
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1741448033410,
+      "end": 1741448033412,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1741448033412,
+      "end": 1741448033412,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1741448033412,
+      "end": 1741448033412,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1741448033412,
+      "end": 1741448033412,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1741448033412,
+      "end": 1741448033412,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, normalizeClass as _normalizeClass, withCtx as _withCtx, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode } from \"vue\"\nimport _imports_0 from '@/assets/icon/arrow-left.svg'\nimport _imports_1 from '@/assets/icon/arrow-left-black.svg'\nimport _imports_2 from '@/assets/icon/arrow-right.svg'\nimport _imports_3 from '@/assets/icon/arrow-right-black.svg'\n\n\nconst _hoisted_1 = { class: \"custom-pagination\" }\nconst _hoisted_2 = {\n  key: 0,\n  src: _imports_0\n}\nconst _hoisted_3 = {\n  key: 1,\n  src: _imports_1\n}\nconst _hoisted_4 = {\n  key: 0,\n  src: _imports_2\n}\nconst _hoisted_5 = {\n  key: 1,\n  src: _imports_3\n}\n\nimport { ref, computed } from \"vue\";\n\n// 定义组件的 props\n\nconst _sfc_main = {\n  __name: 'BwPagination',\n  props: {\n  currentPage: {\n    type: Number,\n    required: true,\n    default: 1,\n  },\n  pageCount: {\n    type: Number,\n    required: true,\n    default: 0,\n  },\n},\n  emits: [\n  \"update:currentPage\",\n  \"update:pageSize\",\n  \"size-change\",\n  \"current-change\",\n],\n  setup(__props, { emit: __emit }) {\n\nconst props = __props;\n\n// 定义 emits\nconst emit = __emit;\n\n// 计算总页数\nconst totalPages = computed(() => props.pageCount);\nconst isRightHover = ref(false);\nconst isLeftHover = ref(false);\n// 跳转到首页\nconst goToFirstPage = () => {\n  emit(\"update:currentPage\", 1);\n  emit(\"current-change\", 1);\n};\n\n// 跳转到尾页\nconst goToLastPage = () => {\n  emit(\"update:currentPage\", totalPages.value);\n  emit(\"current-change\", totalPages.value);\n};\n\n// 跳转到上一页\nconst goToPrevPage = () => {\n  if (props.currentPage > 1) {\n    const newPage = props.currentPage - 1;\n    emit(\"update:currentPage\", newPage);\n    emit(\"current-change\", newPage);\n  }\n};\n\n// 跳转到下一页\nconst goToNextPage = () => {\n  if (props.currentPage < totalPages.value) {\n    const newPage = props.currentPage + 1;\n    emit(\"update:currentPage\", newPage);\n    emit(\"current-change\", newPage);\n  }\n};\n\n// 处理每页条数变化\nconst handleSizeChange = (newSize) => {\n  emit(\"update:pageSize\", newSize);\n  emit(\"size-change\", newSize);\n};\n\n// 处理页码变化\nconst handleCurrentChange = (newPage) => {\n  emit(\"update:currentPage\", newPage);\n  emit(\"current-change\", newPage);\n};\n\nreturn (_ctx, _cache) => {\n  const _component_bw_button = _resolveComponent(\"bw-button\")\n  const _component_el_icon = _resolveComponent(\"el-icon\")\n  const _component_el_pagination = _resolveComponent(\"el-pagination\")\n  const _component_client_only = _resolveComponent(\"client-only\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createVNode(_component_bw_button, {\n      type: \"border\",\n      class: _normalizeClass(['button-page', __props.currentPage === 1 ? 'disabled' : '']),\n      active: false,\n      disabled: __props.currentPage === 1,\n      onClick: goToFirstPage\n    }, {\n      default: _withCtx(() => [\n        _createTextVNode(_toDisplayString(_ctx.$t(\"common.首页\")), 1)\n      ]),\n      _: 1\n    }, 8, [\"class\", \"disabled\"]),\n    _createVNode(_component_bw_button, {\n      type: \"border\",\n      class: _normalizeClass([['button-page', __props.currentPage === 1 ? 'disabled' : ''], \"tw-text-center tw-w-[46px] tw-flex tw-justify-center tw-items-center\"]),\n      active: false,\n      onMouseenter: _cache[0] || (_cache[0] = \n        () => {\n          isLeftHover.value = true;\n        }\n      ),\n      onMouseleave: _cache[1] || (_cache[1] = \n        () => {\n          isLeftHover.value = false;\n        }\n      ),\n      disabled: __props.currentPage === 1,\n      onClick: goToPrevPage\n    }, {\n      default: _withCtx(() => [\n        _createVNode(_component_el_icon, null, {\n          default: _withCtx(() => [\n            (isLeftHover.value && __props.currentPage !== 1)\n              ? (_openBlock(), _createElementBlock(\"img\", _hoisted_2))\n              : (_openBlock(), _createElementBlock(\"img\", _hoisted_3))\n          ]),\n          _: 1\n        })\n      ]),\n      _: 1\n    }, 8, [\"class\", \"disabled\"]),\n    _createVNode(_component_client_only, null, {\n      default: _withCtx(() => [\n        _createVNode(_component_el_pagination, {\n          \"current-page\": __props.currentPage,\n          \"page-count\": __props.pageCount,\n          layout: \"pager\",\n          onCurrentChange: handleCurrentChange\n        }, null, 8, [\"current-page\", \"page-count\"])\n      ]),\n      _: 1\n    }),\n    _createVNode(_component_bw_button, {\n      type: \"border\",\n      class: _normalizeClass([['button-page', __props.currentPage === totalPages.value ? 'disabled' : ''], \"tw-text-center tw-w-[46px] tw-flex tw-justify-center tw-items-center\"]),\n      active: false,\n      disabled: __props.currentPage === totalPages.value,\n      onMouseenter: _cache[2] || (_cache[2] = \n        () => {\n          isRightHover.value = true;\n        }\n      ),\n      onMouseleave: _cache[3] || (_cache[3] = \n        () => {\n          isRightHover.value = false;\n        }\n      ),\n      onClick: goToNextPage\n    }, {\n      default: _withCtx(() => [\n        _createVNode(_component_el_icon, null, {\n          default: _withCtx(() => [\n            (isRightHover.value && __props.currentPage !== totalPages.value)\n              ? (_openBlock(), _createElementBlock(\"img\", _hoisted_4))\n              : (_openBlock(), _createElementBlock(\"img\", _hoisted_5))\n          ]),\n          _: 1\n        })\n      ]),\n      _: 1\n    }, 8, [\"class\", \"disabled\"]),\n    _createVNode(_component_bw_button, {\n      type: \"border\",\n      class: _normalizeClass(['button-page', __props.currentPage === totalPages.value ? 'disabled' : '']),\n      active: false,\n      disabled: __props.currentPage === totalPages.value,\n      onClick: goToLastPage\n    }, {\n      default: _withCtx(() => [\n        _createTextVNode(_toDisplayString(_ctx.$t(\"common.尾页\")), 1)\n      ]),\n      _: 1\n    }, 8, [\"class\", \"disabled\"])\n  ]))\n}\n}\n\n}\n\n\nimport \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/components/base/BwPagination.vue?vue&type=style&index=0&scoped=3750b61e&lang.scss\"\nimport \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/components/base/BwPagination.vue?vue&type=style&index=1&lang.scss\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['__scopeId',\"data-v-3750b61e\"]])",
+      "start": 1741448033412,
+      "end": 1741448033418,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1741448033418,
+      "end": 1741448033418,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448033418,
+      "end": 1741448033418,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1741448033418,
+      "end": 1741448033418,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1741448033418,
+      "end": 1741448033418,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448033418,
+      "end": 1741448033418,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1741448033418,
+      "end": 1741448033418,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1741448033418,
+      "end": 1741448033418,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1741448033418,
+      "end": 1741448033418,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1741448033418,
+      "end": 1741448033418,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1741448033418,
+      "end": 1741448033418,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1741448033418,
+      "end": 1741448033418,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1741448033418,
+      "end": 1741448033418,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1741448033418,
+      "end": 1741448033418,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1741448033418,
+      "end": 1741448033418,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1741448033418,
+      "end": 1741448033418,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1741448033418,
+      "end": 1741448033421,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1741448033421,
+      "end": 1741448033421,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1741448033421,
+      "end": 1741448033421,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1741448033421,
+      "end": 1741448033421,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "result": "import '/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/node_modules/.pnpm/element-plus@2.9.5_vue@3.5.13_typescript@5.8.2_/node_modules/element-plus/es/components/icon/style/css.mjs';\nimport '/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/node_modules/.pnpm/element-plus@2.9.5_vue@3.5.13_typescript@5.8.2_/node_modules/element-plus/es/components/pagination/style/css.mjs';\nimport { toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, normalizeClass as _normalizeClass, withCtx as _withCtx, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode } from \"vue\"\nimport _imports_0 from '@/assets/icon/arrow-left.svg'\nimport _imports_1 from '@/assets/icon/arrow-left-black.svg'\nimport _imports_2 from '@/assets/icon/arrow-right.svg'\nimport _imports_3 from '@/assets/icon/arrow-right-black.svg'\n\n\nconst _hoisted_1 = { class: \"custom-pagination\" }\nconst _hoisted_2 = {\n  key: 0,\n  src: _imports_0\n}\nconst _hoisted_3 = {\n  key: 1,\n  src: _imports_1\n}\nconst _hoisted_4 = {\n  key: 0,\n  src: _imports_2\n}\nconst _hoisted_5 = {\n  key: 1,\n  src: _imports_3\n}\n\nimport { ref, computed } from \"vue\";\n\n// 定义组件的 props\n\nconst _sfc_main = {\n  __name: 'BwPagination',\n  props: {\n  currentPage: {\n    type: Number,\n    required: true,\n    default: 1,\n  },\n  pageCount: {\n    type: Number,\n    required: true,\n    default: 0,\n  },\n},\n  emits: [\n  \"update:currentPage\",\n  \"update:pageSize\",\n  \"size-change\",\n  \"current-change\",\n],\n  setup(__props, { emit: __emit }) {\n\nconst props = __props;\n\n// 定义 emits\nconst emit = __emit;\n\n// 计算总页数\nconst totalPages = computed(() => props.pageCount);\nconst isRightHover = ref(false);\nconst isLeftHover = ref(false);\n// 跳转到首页\nconst goToFirstPage = () => {\n  emit(\"update:currentPage\", 1);\n  emit(\"current-change\", 1);\n};\n\n// 跳转到尾页\nconst goToLastPage = () => {\n  emit(\"update:currentPage\", totalPages.value);\n  emit(\"current-change\", totalPages.value);\n};\n\n// 跳转到上一页\nconst goToPrevPage = () => {\n  if (props.currentPage > 1) {\n    const newPage = props.currentPage - 1;\n    emit(\"update:currentPage\", newPage);\n    emit(\"current-change\", newPage);\n  }\n};\n\n// 跳转到下一页\nconst goToNextPage = () => {\n  if (props.currentPage < totalPages.value) {\n    const newPage = props.currentPage + 1;\n    emit(\"update:currentPage\", newPage);\n    emit(\"current-change\", newPage);\n  }\n};\n\n// 处理每页条数变化\nconst handleSizeChange = (newSize) => {\n  emit(\"update:pageSize\", newSize);\n  emit(\"size-change\", newSize);\n};\n\n// 处理页码变化\nconst handleCurrentChange = (newPage) => {\n  emit(\"update:currentPage\", newPage);\n  emit(\"current-change\", newPage);\n};\n\nreturn (_ctx, _cache) => {\n  const _component_bw_button = _resolveComponent(\"bw-button\")\n  const _component_el_icon = _resolveComponent(\"el-icon\")\n  const _component_el_pagination = _resolveComponent(\"el-pagination\")\n  const _component_client_only = _resolveComponent(\"client-only\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createVNode(_component_bw_button, {\n      type: \"border\",\n      class: _normalizeClass(['button-page', __props.currentPage === 1 ? 'disabled' : '']),\n      active: false,\n      disabled: __props.currentPage === 1,\n      onClick: goToFirstPage\n    }, {\n      default: _withCtx(() => [\n        _createTextVNode(_toDisplayString(_ctx.$t(\"common.首页\")), 1)\n      ]),\n      _: 1\n    }, 8, [\"class\", \"disabled\"]),\n    _createVNode(_component_bw_button, {\n      type: \"border\",\n      class: _normalizeClass([['button-page', __props.currentPage === 1 ? 'disabled' : ''], \"tw-text-center tw-w-[46px] tw-flex tw-justify-center tw-items-center\"]),\n      active: false,\n      onMouseenter: _cache[0] || (_cache[0] = \n        () => {\n          isLeftHover.value = true;\n        }\n      ),\n      onMouseleave: _cache[1] || (_cache[1] = \n        () => {\n          isLeftHover.value = false;\n        }\n      ),\n      disabled: __props.currentPage === 1,\n      onClick: goToPrevPage\n    }, {\n      default: _withCtx(() => [\n        _createVNode(_component_el_icon, null, {\n          default: _withCtx(() => [\n            (isLeftHover.value && __props.currentPage !== 1)\n              ? (_openBlock(), _createElementBlock(\"img\", _hoisted_2))\n              : (_openBlock(), _createElementBlock(\"img\", _hoisted_3))\n          ]),\n          _: 1\n        })\n      ]),\n      _: 1\n    }, 8, [\"class\", \"disabled\"]),\n    _createVNode(_component_client_only, null, {\n      default: _withCtx(() => [\n        _createVNode(_component_el_pagination, {\n          \"current-page\": __props.currentPage,\n          \"page-count\": __props.pageCount,\n          layout: \"pager\",\n          onCurrentChange: handleCurrentChange\n        }, null, 8, [\"current-page\", \"page-count\"])\n      ]),\n      _: 1\n    }),\n    _createVNode(_component_bw_button, {\n      type: \"border\",\n      class: _normalizeClass([['button-page', __props.currentPage === totalPages.value ? 'disabled' : ''], \"tw-text-center tw-w-[46px] tw-flex tw-justify-center tw-items-center\"]),\n      active: false,\n      disabled: __props.currentPage === totalPages.value,\n      onMouseenter: _cache[2] || (_cache[2] = \n        () => {\n          isRightHover.value = true;\n        }\n      ),\n      onMouseleave: _cache[3] || (_cache[3] = \n        () => {\n          isRightHover.value = false;\n        }\n      ),\n      onClick: goToNextPage\n    }, {\n      default: _withCtx(() => [\n        _createVNode(_component_el_icon, null, {\n          default: _withCtx(() => [\n            (isRightHover.value && __props.currentPage !== totalPages.value)\n              ? (_openBlock(), _createElementBlock(\"img\", _hoisted_4))\n              : (_openBlock(), _createElementBlock(\"img\", _hoisted_5))\n          ]),\n          _: 1\n        })\n      ]),\n      _: 1\n    }, 8, [\"class\", \"disabled\"]),\n    _createVNode(_component_bw_button, {\n      type: \"border\",\n      class: _normalizeClass(['button-page', __props.currentPage === totalPages.value ? 'disabled' : '']),\n      active: false,\n      disabled: __props.currentPage === totalPages.value,\n      onClick: goToLastPage\n    }, {\n      default: _withCtx(() => [\n        _createTextVNode(_toDisplayString(_ctx.$t(\"common.尾页\")), 1)\n      ]),\n      _: 1\n    }, 8, [\"class\", \"disabled\"])\n  ]))\n}\n}\n\n}\n\n\nimport \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/components/base/BwPagination.vue?vue&type=style&index=0&scoped=3750b61e&lang.scss\"\nimport \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/components/base/BwPagination.vue?vue&type=style&index=1&lang.scss\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['__scopeId',\"data-v-3750b61e\"]])",
+      "start": 1741448033421,
+      "end": 1741448033664,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1741448033664,
+      "end": 1741448033664,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1741448033664,
+      "end": 1741448033664,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/components/base/BwButton.vue\";\nimport { ElIcon as __nuxt_component_1 } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/node_modules/.pnpm/element-plus@2.9.5_vue@3.5.13_typescript@5.8.2_/node_modules/element-plus/es/components/icon/index.mjs\";\nimport { ElPagination as __nuxt_component_2 } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/node_modules/.pnpm/element-plus@2.9.5_vue@3.5.13_typescript@5.8.2_/node_modules/element-plus/es/components/pagination/index.mjs\";\nimport { default as __nuxt_component_3 } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/node_modules/.pnpm/nuxt@3.15.4_@parcel+watcher@2.5.1_@types+node@22.13.9_db0@0.2.4_eslint@9.21.0_jiti@2.4._dff270f4def6dc5620d973dea8099f72/node_modules/nuxt/dist/app/components/client-only.js\";\nimport '/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/node_modules/.pnpm/element-plus@2.9.5_vue@3.5.13_typescript@5.8.2_/node_modules/element-plus/es/components/icon/style/css.mjs';\nimport '/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/node_modules/.pnpm/element-plus@2.9.5_vue@3.5.13_typescript@5.8.2_/node_modules/element-plus/es/components/pagination/style/css.mjs';\nimport { toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, normalizeClass as _normalizeClass, withCtx as _withCtx, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode } from \"vue\"\nimport _imports_0 from '@/assets/icon/arrow-left.svg'\nimport _imports_1 from '@/assets/icon/arrow-left-black.svg'\nimport _imports_2 from '@/assets/icon/arrow-right.svg'\nimport _imports_3 from '@/assets/icon/arrow-right-black.svg'\n\n\nconst _hoisted_1 = { class: \"custom-pagination\" }\nconst _hoisted_2 = {\n  key: 0,\n  src: _imports_0\n}\nconst _hoisted_3 = {\n  key: 1,\n  src: _imports_1\n}\nconst _hoisted_4 = {\n  key: 0,\n  src: _imports_2\n}\nconst _hoisted_5 = {\n  key: 1,\n  src: _imports_3\n}\n\nimport { ref, computed } from \"vue\";\n\n// 定义组件的 props\n\nconst _sfc_main = {\n  __name: 'BwPagination',\n  props: {\n  currentPage: {\n    type: Number,\n    required: true,\n    default: 1,\n  },\n  pageCount: {\n    type: Number,\n    required: true,\n    default: 0,\n  },\n},\n  emits: [\n  \"update:currentPage\",\n  \"update:pageSize\",\n  \"size-change\",\n  \"current-change\",\n],\n  setup(__props, { emit: __emit }) {\n\nconst props = __props;\n\n// 定义 emits\nconst emit = __emit;\n\n// 计算总页数\nconst totalPages = computed(() => props.pageCount);\nconst isRightHover = ref(false);\nconst isLeftHover = ref(false);\n// 跳转到首页\nconst goToFirstPage = () => {\n  emit(\"update:currentPage\", 1);\n  emit(\"current-change\", 1);\n};\n\n// 跳转到尾页\nconst goToLastPage = () => {\n  emit(\"update:currentPage\", totalPages.value);\n  emit(\"current-change\", totalPages.value);\n};\n\n// 跳转到上一页\nconst goToPrevPage = () => {\n  if (props.currentPage > 1) {\n    const newPage = props.currentPage - 1;\n    emit(\"update:currentPage\", newPage);\n    emit(\"current-change\", newPage);\n  }\n};\n\n// 跳转到下一页\nconst goToNextPage = () => {\n  if (props.currentPage < totalPages.value) {\n    const newPage = props.currentPage + 1;\n    emit(\"update:currentPage\", newPage);\n    emit(\"current-change\", newPage);\n  }\n};\n\n// 处理每页条数变化\nconst handleSizeChange = (newSize) => {\n  emit(\"update:pageSize\", newSize);\n  emit(\"size-change\", newSize);\n};\n\n// 处理页码变化\nconst handleCurrentChange = (newPage) => {\n  emit(\"update:currentPage\", newPage);\n  emit(\"current-change\", newPage);\n};\n\nreturn (_ctx, _cache) => {\n  const _component_bw_button = __nuxt_component_0\n  const _component_el_icon = __nuxt_component_1\n  const _component_el_pagination = __nuxt_component_2\n  const _component_client_only = __nuxt_component_3\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createVNode(_component_bw_button, {\n      type: \"border\",\n      class: _normalizeClass(['button-page', __props.currentPage === 1 ? 'disabled' : '']),\n      active: false,\n      disabled: __props.currentPage === 1,\n      onClick: goToFirstPage\n    }, {\n      default: _withCtx(() => [\n        _createTextVNode(_toDisplayString(_ctx.$t(\"common.首页\")), 1)\n      ]),\n      _: 1\n    }, 8, [\"class\", \"disabled\"]),\n    _createVNode(_component_bw_button, {\n      type: \"border\",\n      class: _normalizeClass([['button-page', __props.currentPage === 1 ? 'disabled' : ''], \"tw-text-center tw-w-[46px] tw-flex tw-justify-center tw-items-center\"]),\n      active: false,\n      onMouseenter: _cache[0] || (_cache[0] = \n        () => {\n          isLeftHover.value = true;\n        }\n      ),\n      onMouseleave: _cache[1] || (_cache[1] = \n        () => {\n          isLeftHover.value = false;\n        }\n      ),\n      disabled: __props.currentPage === 1,\n      onClick: goToPrevPage\n    }, {\n      default: _withCtx(() => [\n        _createVNode(_component_el_icon, null, {\n          default: _withCtx(() => [\n            (isLeftHover.value && __props.currentPage !== 1)\n              ? (_openBlock(), _createElementBlock(\"img\", _hoisted_2))\n              : (_openBlock(), _createElementBlock(\"img\", _hoisted_3))\n          ]),\n          _: 1\n        })\n      ]),\n      _: 1\n    }, 8, [\"class\", \"disabled\"]),\n    _createVNode(_component_client_only, null, {\n      default: _withCtx(() => [\n        _createVNode(_component_el_pagination, {\n          \"current-page\": __props.currentPage,\n          \"page-count\": __props.pageCount,\n          layout: \"pager\",\n          onCurrentChange: handleCurrentChange\n        }, null, 8, [\"current-page\", \"page-count\"])\n      ]),\n      _: 1\n    }),\n    _createVNode(_component_bw_button, {\n      type: \"border\",\n      class: _normalizeClass([['button-page', __props.currentPage === totalPages.value ? 'disabled' : ''], \"tw-text-center tw-w-[46px] tw-flex tw-justify-center tw-items-center\"]),\n      active: false,\n      disabled: __props.currentPage === totalPages.value,\n      onMouseenter: _cache[2] || (_cache[2] = \n        () => {\n          isRightHover.value = true;\n        }\n      ),\n      onMouseleave: _cache[3] || (_cache[3] = \n        () => {\n          isRightHover.value = false;\n        }\n      ),\n      onClick: goToNextPage\n    }, {\n      default: _withCtx(() => [\n        _createVNode(_component_el_icon, null, {\n          default: _withCtx(() => [\n            (isRightHover.value && __props.currentPage !== totalPages.value)\n              ? (_openBlock(), _createElementBlock(\"img\", _hoisted_4))\n              : (_openBlock(), _createElementBlock(\"img\", _hoisted_5))\n          ]),\n          _: 1\n        })\n      ]),\n      _: 1\n    }, 8, [\"class\", \"disabled\"]),\n    _createVNode(_component_bw_button, {\n      type: \"border\",\n      class: _normalizeClass(['button-page', __props.currentPage === totalPages.value ? 'disabled' : '']),\n      active: false,\n      disabled: __props.currentPage === totalPages.value,\n      onClick: goToLastPage\n    }, {\n      default: _withCtx(() => [\n        _createTextVNode(_toDisplayString(_ctx.$t(\"common.尾页\")), 1)\n      ]),\n      _: 1\n    }, 8, [\"class\", \"disabled\"])\n  ]))\n}\n}\n\n}\n\n\nimport \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/components/base/BwPagination.vue?vue&type=style&index=0&scoped=3750b61e&lang.scss\"\nimport \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/components/base/BwPagination.vue?vue&type=style&index=1&lang.scss\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['__scopeId',\"data-v-3750b61e\"]])",
+      "start": 1741448033664,
+      "end": 1741448033664,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1741448033664,
+      "end": 1741448033664,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1741448033664,
+      "end": 1741448033664,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1741448033664,
+      "end": 1741448033664,
+      "order": "normal"
+    }
+  ]
+}

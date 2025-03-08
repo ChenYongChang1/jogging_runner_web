@@ -1,0 +1,322 @@
+{
+  "resolvedId": "/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/components/pages/search/BwArticleCard.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div class=\"card-row\">\n    <div class=\"card-title dd-title-text\">\n      {{ article.title }}\n    </div>\n    <bw-media class=\"tw-mb-[22px]\" :src=\"article.cover\" type=\"image\"></bw-media>\n    <!-- <div\n      class=\"next-title dd-fs-30 tw-font-[600] tw-text-basecolor tw-leading-[55px]\"\n    >\n      Zone 2 心率計算：\n    </div> -->\n    <div class=\"sub-text tw-mb-[10px]\">\n      {{ article.desc || \"\" }}\n    </div>\n    <div\n      class=\"look-views lg:tw-flex tw-justify-between tw-items-center tw-flex-wrap ss:tw-mb-[1.125rem]\"\n    >\n      <div class=\"look-nums tw-flex max-lg:tw-mb-[1.125rem]\">\n        <img\n          src=\"@/assets/icon/look.svg\"\n          class=\"tw-w-[18px] tw-mr-[8px]\"\n          alt=\"\"\n        />\n        <span class=\"tw-text-[14px] tw-font-[500] tw-text-text999\"\n          >{{ article.visitNum || 0 }}{{ $t(\"common.人看过\") }}</span\n        >\n      </div>\n      <bw-button\n        type=\"border\"\n        class=\"ss:tw-mx-auto lg:tw-mx-0 tw-w-fit\"\n        @click=\"linkToInfo\"\n      >\n        <div class=\"tw-flex\">\n          <span class=\"tw-mr-[6px]\">{{ $t(\"common.阅读全文\") }}</span>\n          <img src=\"@/assets/icon/to-right.svg\" class=\"tw-w-[18px]\" alt=\"\" />\n        </div>\n      </bw-button>\n    </div>\n  </div>\n</template>\n<script lang=\"ts\" setup>\ndefineOptions({ name: \"BwArticleCard\" });\nconst props = defineProps({\n  article: {\n    type: Object,\n    default: () => ({}),\n  },\n});\nconst router = useRouter();\nconst linkToInfo = () => {\n  const href = getRouteLink(`/post/${props.article.id}.html`);\n  navigateTo(href);\n};\n</script>\n<style lang=\"scss\" scoped>\n.card-row {\n  width: 100%;\n  box-shadow: 0 6px 14px 0 rgba($color: #000000, $alpha: 0.06),\n    0 -4px 14px 0 rgba($color: #000000, $alpha: 0.04);\n  @apply tw-rounded-[32px] tw-p-[24px] tw-text-justify;\n  .card-title {\n    @apply tw-font-[600] tw-text-basecolor lg:tw-leading-[55px] lg:tw-mb-[30px] ss:tw-mb-[1.375rem];\n  }\n  .sub-text {\n    @apply tw-text-text666 lg:tw-text-[20px] ss:tw-text-[1rem] tw-font-[500] lg:tw-leading-[32px] ss:tw-leading-[1.5rem];\n  }\n}\n</style>\n",
+      "start": 1741448042678,
+      "end": 1741448042724,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1741448042724,
+      "end": 1741448042724,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1741448042724,
+      "end": 1741448042724,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1741448042724,
+      "end": 1741448042724,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1741448042724,
+      "end": 1741448042724,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:resource",
+      "start": 1741448042724,
+      "end": 1741448042724,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:resource",
+      "start": 1741448042724,
+      "end": 1741448042724,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:directive",
+      "result": "<template>\n  <div class=\"card-row\">\n    <div class=\"card-title dd-title-text\">\n      {{ article.title }}\n    </div>\n    <bw-media class=\"tw-mb-[22px]\" :src=\"article.cover\" type=\"image\"></bw-media>\n    <!-- <div\n      class=\"next-title dd-fs-30 tw-font-[600] tw-text-basecolor tw-leading-[55px]\"\n    >\n      Zone 2 心率計算：\n    </div> -->\n    <div class=\"sub-text tw-mb-[10px]\">\n      {{ article.desc || \"\" }}\n    </div>\n    <div\n      class=\"look-views lg:tw-flex tw-justify-between tw-items-center tw-flex-wrap ss:tw-mb-[1.125rem]\"\n    >\n      <div class=\"look-nums tw-flex max-lg:tw-mb-[1.125rem]\">\n        <img\n          src=\"@/assets/icon/look.svg\"\n          class=\"tw-w-[18px] tw-mr-[8px]\"\n          alt=\"\"\n        />\n        <span class=\"tw-text-[14px] tw-font-[500] tw-text-text999\"\n          >{{ article.visitNum || 0 }}{{ $t(\"common.人看过\") }}</span\n        >\n      </div>\n      <bw-button\n        type=\"border\"\n        class=\"ss:tw-mx-auto lg:tw-mx-0 tw-w-fit\"\n        @click=\"linkToInfo\"\n      >\n        <div class=\"tw-flex\">\n          <span class=\"tw-mr-[6px]\">{{ $t(\"common.阅读全文\") }}</span>\n          <img src=\"@/assets/icon/to-right.svg\" class=\"tw-w-[18px]\" alt=\"\" />\n        </div>\n      </bw-button>\n    </div>\n  </div>\n</template>\n<script lang=\"ts\" setup>\ndefineOptions({ name: \"BwArticleCard\" });\nconst props = defineProps({\n  article: {\n    type: Object,\n    default: () => ({}),\n  },\n});\nconst router = useRouter();\nconst linkToInfo = () => {\n  const href = getRouteLink(`/post/${props.article.id}.html`);\n  navigateTo(href);\n};\n</script>\n<style lang=\"scss\" scoped>\n.card-row {\n  width: 100%;\n  box-shadow: 0 6px 14px 0 rgba($color: #000000, $alpha: 0.06),\n    0 -4px 14px 0 rgba($color: #000000, $alpha: 0.04);\n  @apply tw-rounded-[32px] tw-p-[24px] tw-text-justify;\n  .card-title {\n    @apply tw-font-[600] tw-text-basecolor lg:tw-leading-[55px] lg:tw-mb-[30px] ss:tw-mb-[1.375rem];\n  }\n  .sub-text {\n    @apply tw-text-text666 lg:tw-text-[20px] ss:tw-text-[1rem] tw-font-[500] lg:tw-leading-[32px] ss:tw-leading-[1.5rem];\n  }\n}\n</style>\n",
+      "start": 1741448042724,
+      "end": 1741448042725,
+      "order": "pre",
+      "sourcemaps": {
+        "version": 3,
+        "mappings": "",
+        "sources": []
+      }
+    },
+    {
+      "name": "unplugin-vue-i18n:directive",
+      "result": "<template>\n  <div class=\"card-row\">\n    <div class=\"card-title dd-title-text\">\n      {{ article.title }}\n    </div>\n    <bw-media class=\"tw-mb-[22px]\" :src=\"article.cover\" type=\"image\"></bw-media>\n    <!-- <div\n      class=\"next-title dd-fs-30 tw-font-[600] tw-text-basecolor tw-leading-[55px]\"\n    >\n      Zone 2 心率計算：\n    </div> -->\n    <div class=\"sub-text tw-mb-[10px]\">\n      {{ article.desc || \"\" }}\n    </div>\n    <div\n      class=\"look-views lg:tw-flex tw-justify-between tw-items-center tw-flex-wrap ss:tw-mb-[1.125rem]\"\n    >\n      <div class=\"look-nums tw-flex max-lg:tw-mb-[1.125rem]\">\n        <img\n          src=\"@/assets/icon/look.svg\"\n          class=\"tw-w-[18px] tw-mr-[8px]\"\n          alt=\"\"\n        />\n        <span class=\"tw-text-[14px] tw-font-[500] tw-text-text999\"\n          >{{ article.visitNum || 0 }}{{ $t(\"common.人看过\") }}</span\n        >\n      </div>\n      <bw-button\n        type=\"border\"\n        class=\"ss:tw-mx-auto lg:tw-mx-0 tw-w-fit\"\n        @click=\"linkToInfo\"\n      >\n        <div class=\"tw-flex\">\n          <span class=\"tw-mr-[6px]\">{{ $t(\"common.阅读全文\") }}</span>\n          <img src=\"@/assets/icon/to-right.svg\" class=\"tw-w-[18px]\" alt=\"\" />\n        </div>\n      </bw-button>\n    </div>\n  </div>\n</template>\n<script lang=\"ts\" setup>\ndefineOptions({ name: \"BwArticleCard\" });\nconst props = defineProps({\n  article: {\n    type: Object,\n    default: () => ({}),\n  },\n});\nconst router = useRouter();\nconst linkToInfo = () => {\n  const href = getRouteLink(`/post/${props.article.id}.html`);\n  navigateTo(href);\n};\n</script>\n<style lang=\"scss\" scoped>\n.card-row {\n  width: 100%;\n  box-shadow: 0 6px 14px 0 rgba($color: #000000, $alpha: 0.06),\n    0 -4px 14px 0 rgba($color: #000000, $alpha: 0.04);\n  @apply tw-rounded-[32px] tw-p-[24px] tw-text-justify;\n  .card-title {\n    @apply tw-font-[600] tw-text-basecolor lg:tw-leading-[55px] lg:tw-mb-[30px] ss:tw-mb-[1.375rem];\n  }\n  .sub-text {\n    @apply tw-text-text666 lg:tw-text-[20px] ss:tw-text-[1rem] tw-font-[500] lg:tw-leading-[32px] ss:tw-leading-[1.5rem];\n  }\n}\n</style>\n",
+      "start": 1741448042724,
+      "end": 1741448042725,
+      "order": "pre",
+      "sourcemaps": {
+        "version": 3,
+        "mappings": "",
+        "sources": []
+      }
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1741448042725,
+      "end": 1741448042725,
+      "order": "pre"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1741448042725,
+      "end": 1741448042725,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-only-component-transform",
+      "start": 1741448042725,
+      "end": 1741448042725,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1741448042725,
+      "end": 1741448042725,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1741448042725,
+      "end": 1741448042726,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1741448042726,
+      "end": 1741448042726,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1741448042726,
+      "end": 1741448042726,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/components/pages/search/BwArticleCard.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/components/pages/search/BwArticleCard.vue?vue&type=script&setup=true&lang.ts\";\nimport \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/components/pages/search/BwArticleCard.vue?vue&type=style&index=0&scoped=3568d7ec&lang.scss\";\nimport { useSSRContext as __vite_useSSRContext } from \"vue\";\nconst _sfc_setup = _sfc_main.setup;\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext();\n  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add(\"components/pages/search/BwArticleCard.vue\");\n  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;\n};\nimport _export_sfc from \"\\0plugin-vue:export-helper\";\nexport default /* @__PURE__ */ _export_sfc(_sfc_main, [[\"__scopeId\", \"data-v-3568d7ec\"]]);\n",
+      "start": 1741448042726,
+      "end": 1741448042805,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1741448042805,
+      "end": 1741448042805,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448042805,
+      "end": 1741448042805,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448042805,
+      "end": 1741448042805,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1741448042805,
+      "end": 1741448042805,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1741448042805,
+      "end": 1741448042805,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1741448042805,
+      "end": 1741448042805,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1741448042805,
+      "end": 1741448042805,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448042805,
+      "end": 1741448042805,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1741448042805,
+      "end": 1741448042809,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1741448042809,
+      "end": 1741448042809,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1741448042809,
+      "end": 1741448042809,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1741448042809,
+      "end": 1741448042809,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1741448042809,
+      "end": 1741448042809,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1741448042809,
+      "end": 1741448042809,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1741448042809,
+      "end": 1741448042809,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1741448042809,
+      "end": 1741448042809,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1741448042809,
+      "end": 1741448042809,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1741448042809,
+      "end": 1741448042809,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1741448042809,
+      "end": 1741448042809,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1741448042809,
+      "end": 1741448042809,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1741448042809,
+      "end": 1741448042809,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1741448042809,
+      "end": 1741448042809,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1741448042809,
+      "end": 1741448042809,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1741448042809,
+      "end": 1741448042809,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1741448042809,
+      "end": 1741448042809,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1741448042809,
+      "end": 1741448042809,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1741448042809,
+      "end": 1741448042809,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1741448042809,
+      "end": 1741448042809,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1741448042809,
+      "end": 1741448042810,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1741448042810,
+      "end": 1741448042810,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1741448042810,
+      "end": 1741448042810,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1741448042810,
+      "end": 1741448042810,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1741448042810,
+      "end": 1741448042810,
+      "order": "normal"
+    }
+  ]
+}

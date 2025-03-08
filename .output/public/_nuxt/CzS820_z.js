@@ -1,1 +1,0 @@
-import{X as n,g as r,b9 as u,n as t}from"./mCCcBg1a.js";const a=e=>u()(e),i=e=>{if(e){const s=encodeURIComponent(e);t(a(`/search?kw=${s}`));return}t(a("/search"))},k=(e,s)=>{const o=n();return r(()=>e.map(c=>o.query[c]),s),s};export{k as a,a as g,i as s};

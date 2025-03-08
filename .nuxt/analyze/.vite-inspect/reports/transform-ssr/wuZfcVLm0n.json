@@ -1,0 +1,322 @@
+{
+  "resolvedId": "/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/components/base/BwInput.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<!-- BwInput.vue -->\n<template>\n  <div class=\"bw-input tw-bg-[#F8F8F8]\">\n    <input\n      v-model=\"modelValue\"\n      :type=\"type\"\n      :placeholder=\"placeholder\"\n      class=\"bw-input-field\"\n      v-bind=\"$attrs\"\n    />\n    <!-- 添加清除按钮 -->\n    <div\n      v-if=\"clearable && modelValue\"\n      class=\"clear-icon tw-cursor-pointer tw-text-[#999] tw-text-[16px] tw-mr-[10px]\"\n      @click=\"handleClear\"\n    >\n      ✕\n    </div>\n    <slot name=\"append\"></slot>\n    <!-- 用来插入自定义按钮 -->\n  </div>\n</template>\n\n<script setup>\nimport { defineProps, defineModel } from \"vue\";\n\n// 定义传入的props\nconst props = defineProps({\n  type: {\n    type: String,\n    default: \"text\",\n  },\n  placeholder: {\n    type: String,\n    default: \"\",\n  },\n  clearable: {\n    type: Boolean,\n    default: true\n  }\n});\nconst modelValue = defineModel(\"modelValue\", {\n  type: String,\n  default: \"\",\n});\n// 添加清除方法\nconst handleClear = () => {\n  modelValue.value = '';\n};\n\n</script>\n\n<style scoped lang=\"scss\">\n.bw-input {\n  display: flex;\n  align-items: center;\n  border: 2px solid #e5e7eb;\n  border-radius: 20px;\n  padding: 0 8px 0 12px;\n  // background-color: ;\n  color: theme(\"colors.basecolor\");\n  &:hover {\n    border-color: theme(\"colors.themecolor/0.5\");\n  }\n  &:focus-within {\n    border-color: theme(\"colors.themecolor\");\n  }\n}\n\n.bw-input-field {\n  border: none;\n  outline: none;\n  flex-grow: 1;\n  padding: 8px;\n  height: 100%;\n  font-size: 16px;\n  border-radius: inherit;\n  background: transparent;\n}\n\n.bw-input input::placeholder {\n  color: #aaa;\n}\n\n.bw-input .append {\n  margin-left: 10px;\n}\n</style>\n",
+      "start": 1741448041299,
+      "end": 1741448041379,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1741448041380,
+      "end": 1741448041380,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1741448041380,
+      "end": 1741448041380,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1741448041380,
+      "end": 1741448041380,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1741448041380,
+      "end": 1741448041380,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:resource",
+      "start": 1741448041380,
+      "end": 1741448041380,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:resource",
+      "start": 1741448041380,
+      "end": 1741448041380,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:directive",
+      "result": "<!-- BwInput.vue -->\n<template>\n  <div class=\"bw-input tw-bg-[#F8F8F8]\">\n    <input\n      v-model=\"modelValue\"\n      :type=\"type\"\n      :placeholder=\"placeholder\"\n      class=\"bw-input-field\"\n      v-bind=\"$attrs\"\n    />\n    <!-- 添加清除按钮 -->\n    <div\n      v-if=\"clearable && modelValue\"\n      class=\"clear-icon tw-cursor-pointer tw-text-[#999] tw-text-[16px] tw-mr-[10px]\"\n      @click=\"handleClear\"\n    >\n      ✕\n    </div>\n    <slot name=\"append\"></slot>\n    <!-- 用来插入自定义按钮 -->\n  </div>\n</template>\n\n<script setup>\nimport { defineProps, defineModel } from \"vue\";\n\n// 定义传入的props\nconst props = defineProps({\n  type: {\n    type: String,\n    default: \"text\",\n  },\n  placeholder: {\n    type: String,\n    default: \"\",\n  },\n  clearable: {\n    type: Boolean,\n    default: true\n  }\n});\nconst modelValue = defineModel(\"modelValue\", {\n  type: String,\n  default: \"\",\n});\n// 添加清除方法\nconst handleClear = () => {\n  modelValue.value = '';\n};\n\n</script>\n\n<style scoped lang=\"scss\">\n.bw-input {\n  display: flex;\n  align-items: center;\n  border: 2px solid #e5e7eb;\n  border-radius: 20px;\n  padding: 0 8px 0 12px;\n  // background-color: ;\n  color: theme(\"colors.basecolor\");\n  &:hover {\n    border-color: theme(\"colors.themecolor/0.5\");\n  }\n  &:focus-within {\n    border-color: theme(\"colors.themecolor\");\n  }\n}\n\n.bw-input-field {\n  border: none;\n  outline: none;\n  flex-grow: 1;\n  padding: 8px;\n  height: 100%;\n  font-size: 16px;\n  border-radius: inherit;\n  background: transparent;\n}\n\n.bw-input input::placeholder {\n  color: #aaa;\n}\n\n.bw-input .append {\n  margin-left: 10px;\n}\n</style>\n",
+      "start": 1741448041380,
+      "end": 1741448041382,
+      "order": "pre",
+      "sourcemaps": {
+        "version": 3,
+        "mappings": "",
+        "sources": []
+      }
+    },
+    {
+      "name": "unplugin-vue-i18n:directive",
+      "result": "<!-- BwInput.vue -->\n<template>\n  <div class=\"bw-input tw-bg-[#F8F8F8]\">\n    <input\n      v-model=\"modelValue\"\n      :type=\"type\"\n      :placeholder=\"placeholder\"\n      class=\"bw-input-field\"\n      v-bind=\"$attrs\"\n    />\n    <!-- 添加清除按钮 -->\n    <div\n      v-if=\"clearable && modelValue\"\n      class=\"clear-icon tw-cursor-pointer tw-text-[#999] tw-text-[16px] tw-mr-[10px]\"\n      @click=\"handleClear\"\n    >\n      ✕\n    </div>\n    <slot name=\"append\"></slot>\n    <!-- 用来插入自定义按钮 -->\n  </div>\n</template>\n\n<script setup>\nimport { defineProps, defineModel } from \"vue\";\n\n// 定义传入的props\nconst props = defineProps({\n  type: {\n    type: String,\n    default: \"text\",\n  },\n  placeholder: {\n    type: String,\n    default: \"\",\n  },\n  clearable: {\n    type: Boolean,\n    default: true\n  }\n});\nconst modelValue = defineModel(\"modelValue\", {\n  type: String,\n  default: \"\",\n});\n// 添加清除方法\nconst handleClear = () => {\n  modelValue.value = '';\n};\n\n</script>\n\n<style scoped lang=\"scss\">\n.bw-input {\n  display: flex;\n  align-items: center;\n  border: 2px solid #e5e7eb;\n  border-radius: 20px;\n  padding: 0 8px 0 12px;\n  // background-color: ;\n  color: theme(\"colors.basecolor\");\n  &:hover {\n    border-color: theme(\"colors.themecolor/0.5\");\n  }\n  &:focus-within {\n    border-color: theme(\"colors.themecolor\");\n  }\n}\n\n.bw-input-field {\n  border: none;\n  outline: none;\n  flex-grow: 1;\n  padding: 8px;\n  height: 100%;\n  font-size: 16px;\n  border-radius: inherit;\n  background: transparent;\n}\n\n.bw-input input::placeholder {\n  color: #aaa;\n}\n\n.bw-input .append {\n  margin-left: 10px;\n}\n</style>\n",
+      "start": 1741448041380,
+      "end": 1741448041382,
+      "order": "pre",
+      "sourcemaps": {
+        "version": 3,
+        "mappings": "",
+        "sources": []
+      }
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1741448041382,
+      "end": 1741448041382,
+      "order": "pre"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1741448041382,
+      "end": 1741448041382,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-only-component-transform",
+      "start": 1741448041382,
+      "end": 1741448041382,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1741448041382,
+      "end": 1741448041382,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1741448041382,
+      "end": 1741448041382,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1741448041382,
+      "end": 1741448041382,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1741448041383,
+      "end": 1741448041383,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { useModel as _useModel, mergeModels as _mergeModels } from 'vue'\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderDynamicModel as _ssrRenderDynamicModel, ssrRenderAttrs as _ssrRenderAttrs, ssrGetDynamicModelProps as _ssrGetDynamicModelProps, ssrRenderSlot as _ssrRenderSlot } from \"vue/server-renderer\"\n\n\n\n// 定义传入的props\n\nconst _sfc_main = {\n  __name: 'BwInput',\n  __ssrInlineRender: true,\n  props: /*@__PURE__*/_mergeModels({\n  type: {\n    type: String,\n    default: \"text\",\n  },\n  placeholder: {\n    type: String,\n    default: \"\",\n  },\n  clearable: {\n    type: Boolean,\n    default: true\n  }\n}, {\n    \"modelValue\": {\n  type: String,\n  default: \"\",\n},\n    \"modelModifiers\": {},\n  }),\n  emits: [\"update:modelValue\"],\n  setup(__props) {\n\nconst props = __props;\nconst modelValue = _useModel(__props, \"modelValue\");\n// 添加清除方法\nconst handleClear = () => {\n  modelValue.value = '';\n};\n\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  let _temp0\n\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({ class: \"bw-input tw-bg-[#F8F8F8]\" }, _attrs))\n  } data-v-aab909c7><input${\n    _ssrRenderAttrs((_temp0 = _mergeProps({\n      type: __props.type,\n      placeholder: __props.placeholder,\n      class: \"bw-input-field\"\n    }, _ctx.$attrs), _mergeProps(_temp0, _ssrGetDynamicModelProps(_temp0, modelValue.value))))\n  } data-v-aab909c7>`)\n  if (__props.clearable && modelValue.value) {\n    _push(`<div class=\"clear-icon tw-cursor-pointer tw-text-[#999] tw-text-[16px] tw-mr-[10px]\" data-v-aab909c7> ✕ </div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _ssrRenderSlot(_ctx.$slots, \"append\", {}, null, _push, _parent)\n  _push(`</div>`)\n}\n}\n\n}\n\n\nimport \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/components/base/BwInput.vue?vue&type=style&index=0&scoped=aab909c7&lang.scss\"\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/base/BwInput.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['__scopeId',\"data-v-aab909c7\"]])",
+      "start": 1741448041383,
+      "end": 1741448041386,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1741448041386,
+      "end": 1741448041386,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448041386,
+      "end": 1741448041386,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448041386,
+      "end": 1741448041386,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1741448041386,
+      "end": 1741448041386,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1741448041386,
+      "end": 1741448041387,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1741448041387,
+      "end": 1741448041387,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1741448041387,
+      "end": 1741448041387,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448041387,
+      "end": 1741448041387,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1741448041387,
+      "end": 1741448041389,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1741448041389,
+      "end": 1741448041390,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1741448041390,
+      "end": 1741448041390,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1741448041390,
+      "end": 1741448041390,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1741448041390,
+      "end": 1741448041390,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1741448041390,
+      "end": 1741448041390,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1741448041390,
+      "end": 1741448041390,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1741448041390,
+      "end": 1741448041390,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1741448041390,
+      "end": 1741448041390,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1741448041390,
+      "end": 1741448041390,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1741448041390,
+      "end": 1741448041390,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1741448041390,
+      "end": 1741448041390,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1741448041390,
+      "end": 1741448041393,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1741448041390,
+      "end": 1741448041393,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1741448041393,
+      "end": 1741448041393,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1741448041393,
+      "end": 1741448041393,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1741448041393,
+      "end": 1741448041393,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1741448041393,
+      "end": 1741448041393,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1741448041393,
+      "end": 1741448041394,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1741448041394,
+      "end": 1741448041394,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1741448041394,
+      "end": 1741448041394,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1741448041394,
+      "end": 1741448041394,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1741448041394,
+      "end": 1741448041394,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1741448041394,
+      "end": 1741448041394,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1741448041394,
+      "end": 1741448041394,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,239 @@
+{
+  "resolvedId": "/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/composables/goods/BwGoodsRow.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"goods-row\" }\nconst _hoisted_2 = { class: \"goods-img\" }\nconst _hoisted_3 = [\"src\"]\nconst _hoisted_4 = { class: \"goods-next\" }\nconst _hoisted_5 = { class: \"goods-title\" }\nconst _hoisted_6 = { class: \"goods-buy\" }\nconst _hoisted_7 = { class: \"goods-price\" }\n\n\nexport default /*@__PURE__*/_defineComponent({\n  __name: 'BwGoodsRow',\n  props: {\n  goodsRow: {\n    type: Object,\n    default: () => ({}),\n  },\n},\n  setup(__props) {\n\nconst props = __props\nconst onTapBuyGoods = () => {\n  let param = {\n    timestamp: Date.now(),\n    type: 'buyGoods',\n    data: {\n      // 商品id 可为空\n      id: props.goodsRow.id,\n      /// 商品 url 地址\n      url: props.goodsRow.url,\n      goods: props.goodsRow,\n    },\n  }\n  let paramString = JSON.stringify(param)\n  //@ts-ignore\n  JSCallNative.postMessage(paramString)\n}\n\nreturn (_ctx: any,_cache: any) => {\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"img\", {\n        src: __props.goodsRow.cover,\n        alt: \"\"\n      }, null, 8, _hoisted_3)\n    ]),\n    _createElementVNode(\"div\", _hoisted_4, [\n      _createElementVNode(\"div\", _hoisted_5, _toDisplayString(__props.goodsRow.title), 1),\n      _createElementVNode(\"div\", _hoisted_6, [\n        _createElementVNode(\"div\", _hoisted_7, [\n          _cache[0] || (_cache[0] = _createElementVNode(\"span\", null, \"¥\", -1)),\n          _createTextVNode(\" \" + _toDisplayString(((__props.goodsRow.price || 0) / 100)?.toFixed(2)), 1)\n        ]),\n        _createElementVNode(\"div\", {\n          class: \"goods-tobuy\",\n          onClick: onTapBuyGoods\n        }, _toDisplayString(_ctx.$t('common.立即购买')), 1)\n      ])\n    ])\n  ]))\n}\n}\n\n})",
+      "start": 1741448034900,
+      "end": 1741448034900
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1741448034900,
+      "end": 1741448034900,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1741448034900,
+      "end": 1741448034900,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:resource",
+      "start": 1741448034900,
+      "end": 1741448034900,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:directive",
+      "start": 1741448034900,
+      "end": 1741448034900,
+      "order": "pre"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1741448034900,
+      "end": 1741448034900,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1741448034900,
+      "end": 1741448034900,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\";\nconst _hoisted_1 = { class: \"goods-row\" };\nconst _hoisted_2 = { class: \"goods-img\" };\nconst _hoisted_3 = [\"src\"];\nconst _hoisted_4 = { class: \"goods-next\" };\nconst _hoisted_5 = { class: \"goods-title\" };\nconst _hoisted_6 = { class: \"goods-buy\" };\nconst _hoisted_7 = { class: \"goods-price\" };\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"BwGoodsRow\",\n  props: {\n    goodsRow: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    const onTapBuyGoods = () => {\n      let param = {\n        timestamp: Date.now(),\n        type: \"buyGoods\",\n        data: {\n          // 商品id 可为空\n          id: props.goodsRow.id,\n          /// 商品 url 地址\n          url: props.goodsRow.url,\n          goods: props.goodsRow\n        }\n      };\n      let paramString = JSON.stringify(param);\n      JSCallNative.postMessage(paramString);\n    };\n    return (_ctx, _cache) => {\n      return _openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createElementVNode(\"div\", _hoisted_2, [\n          _createElementVNode(\"img\", {\n            src: __props.goodsRow.cover,\n            alt: \"\"\n          }, null, 8, _hoisted_3)\n        ]),\n        _createElementVNode(\"div\", _hoisted_4, [\n          _createElementVNode(\"div\", _hoisted_5, _toDisplayString(__props.goodsRow.title), 1),\n          _createElementVNode(\"div\", _hoisted_6, [\n            _createElementVNode(\"div\", _hoisted_7, [\n              _cache[0] || (_cache[0] = _createElementVNode(\"span\", null, \"¥\", -1)),\n              _createTextVNode(\" \" + _toDisplayString(((__props.goodsRow.price || 0) / 100)?.toFixed(2)), 1)\n            ]),\n            _createElementVNode(\"div\", {\n              class: \"goods-tobuy\",\n              onClick: onTapBuyGoods\n            }, _toDisplayString(_ctx.$t(\"common.立即购买\")), 1)\n          ])\n        ])\n      ]);\n    };\n  }\n});\n",
+      "start": 1741448034903,
+      "end": 1741448034938,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/composables/goods/BwGoodsRow.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"goods-row\" }\nconst _hoisted_2 = { class: \"goods-img\" }\nconst _hoisted_3 = [\"src\"]\nconst _hoisted_4 = { class: \"goods-next\" }\nconst _hoisted_5 = { class: \"goods-title\" }\nconst _hoisted_6 = { class: \"goods-buy\" }\nconst _hoisted_7 = { class: \"goods-price\" }\n\n\nexport default /*@__PURE__*/_defineComponent({\n  __name: 'BwGoodsRow',\n  props: {\n  goodsRow: {\n    type: Object,\n    default: () => ({}),\n  },\n},\n  setup(__props) {\n\nconst props = __props\nconst onTapBuyGoods = () => {\n  let param = {\n    timestamp: Date.now(),\n    type: 'buyGoods',\n    data: {\n      // 商品id 可为空\n      id: props.goodsRow.id,\n      /// 商品 url 地址\n      url: props.goodsRow.url,\n      goods: props.goodsRow,\n    },\n  }\n  let paramString = JSON.stringify(param)\n  //@ts-ignore\n  JSCallNative.postMessage(paramString)\n}\n\nreturn (_ctx: any,_cache: any) => {\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"img\", {\n        src: __props.goodsRow.cover,\n        alt: \"\"\n      }, null, 8, _hoisted_3)\n    ]),\n    _createElementVNode(\"div\", _hoisted_4, [\n      _createElementVNode(\"div\", _hoisted_5, _toDisplayString(__props.goodsRow.title), 1),\n      _createElementVNode(\"div\", _hoisted_6, [\n        _createElementVNode(\"div\", _hoisted_7, [\n          _cache[0] || (_cache[0] = _createElementVNode(\"span\", null, \"¥\", -1)),\n          _createTextVNode(\" \" + _toDisplayString(((__props.goodsRow.price || 0) / 100)?.toFixed(2)), 1)\n        ]),\n        _createElementVNode(\"div\", {\n          class: \"goods-tobuy\",\n          onClick: onTapBuyGoods\n        }, _toDisplayString(_ctx.$t('common.立即购买')), 1)\n      ])\n    ])\n  ]))\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,sBAAsB,qBAAqB,mBAAmB,kBAAkB,mBAAmB,kBAAkB,aAAa,YAAY,sBAAsB,2BAA2B;AAExM,MAAM,aAAa,EAAE,OAAO,YAAY;AACxC,MAAM,aAAa,EAAE,OAAO,YAAY;AACxC,MAAM,aAAa,CAAC,KAAK;AACzB,MAAM,aAAa,EAAE,OAAO,aAAa;AACzC,MAAM,aAAa,EAAE,OAAO,cAAc;AAC1C,MAAM,aAAa,EAAE,OAAO,YAAY;AACxC,MAAM,aAAa,EAAE,OAAO,cAAc;AAG1C,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,OAAO;AAAA,IACP,UAAU;AAAA,MACR,MAAM;AAAA,MACN,SAAS,OAAO,CAAC;AAAA,IACnB;AAAA,EACF;AAAA,EACE,MAAM,SAAS;AAEjB,UAAM,QAAQ;AACd,UAAM,gBAAgB,MAAM;AAC1B,UAAI,QAAQ;AAAA,QACV,WAAW,KAAK,IAAI;AAAA,QACpB,MAAM;AAAA,QACN,MAAM;AAAA;AAAA,UAEJ,IAAI,MAAM,SAAS;AAAA;AAAA,UAEnB,KAAK,MAAM,SAAS;AAAA,UACpB,OAAO,MAAM;AAAA,QACf;AAAA,MACF;AACA,UAAI,cAAc,KAAK,UAAU,KAAK;AAEtC,mBAAa,YAAY,WAAW;AAAA,IACtC;AAEA,WAAO,CAAC,MAAU,WAAgB;AAChC,aAAQ,WAAW,GAAG,oBAAoB,OAAO,YAAY;AAAA,QAC3D,oBAAoB,OAAO,YAAY;AAAA,UACrC,oBAAoB,OAAO;AAAA,YACzB,KAAK,QAAQ,SAAS;AAAA,YACtB,KAAK;AAAA,UACP,GAAG,MAAM,GAAG,UAAU;AAAA,QACxB,CAAC;AAAA,QACD,oBAAoB,OAAO,YAAY;AAAA,UACrC,oBAAoB,OAAO,YAAY,iBAAiB,QAAQ,SAAS,KAAK,GAAG,CAAC;AAAA,UAClF,oBAAoB,OAAO,YAAY;AAAA,YACrC,oBAAoB,OAAO,YAAY;AAAA,cACrC,OAAO,CAAC,MAAM,OAAO,CAAC,IAAI,oBAAoB,QAAQ,MAAM,KAAK,EAAE;AAAA,cACnE,iBAAiB,MAAM,mBAAmB,QAAQ,SAAS,SAAS,KAAK,MAAM,QAAQ,CAAC,CAAC,GAAG,CAAC;AAAA,YAC/F,CAAC;AAAA,YACD,oBAAoB,OAAO;AAAA,cACzB,OAAO;AAAA,cACP,SAAS;AAAA,YACX,GAAG,iBAAiB,KAAK,GAAG,aAAa,CAAC,GAAG,CAAC;AAAA,UAChD,CAAC;AAAA,QACH,CAAC;AAAA,MACH,CAAC;AAAA,IACH;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1741448034938,
+      "end": 1741448034938,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1741448034938,
+      "end": 1741448034938,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1741448034938,
+      "end": 1741448034938,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1741448034938,
+      "end": 1741448034938,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448034938,
+      "end": 1741448034938,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1741448034938,
+      "end": 1741448034938,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1741448034938,
+      "end": 1741448034938,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448034938,
+      "end": 1741448034938,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1741448034938,
+      "end": 1741448034938,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1741448034938,
+      "end": 1741448034938,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1741448034938,
+      "end": 1741448034938,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1741448034938,
+      "end": 1741448034938,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1741448034938,
+      "end": 1741448034938,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1741448034938,
+      "end": 1741448034938,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1741448034938,
+      "end": 1741448034938,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1741448034938,
+      "end": 1741448034938,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1741448034938,
+      "end": 1741448034938,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1741448034938,
+      "end": 1741448034938,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1741448034938,
+      "end": 1741448034939,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1741448034939,
+      "end": 1741448034939,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1741448034939,
+      "end": 1741448034939,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1741448034939,
+      "end": 1741448034939,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1741448034939,
+      "end": 1741448034939,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1741448034939,
+      "end": 1741448034940,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1741448034940,
+      "end": 1741448034940,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1741448034940,
+      "end": 1741448034940,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1741448034940,
+      "end": 1741448034940,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1741448034940,
+      "end": 1741448034940,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1741448034940,
+      "end": 1741448034940,
+      "order": "normal"
+    }
+  ]
+}

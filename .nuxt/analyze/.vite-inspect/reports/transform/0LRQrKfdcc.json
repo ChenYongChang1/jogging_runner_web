@@ -1,0 +1,250 @@
+{
+  "resolvedId": "/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/components/base/BwList.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, resolveDirective as _resolveDirective, openBlock as _openBlock, createElementBlock as _createElementBlock, withDirectives as _withDirectives, createElementVNode as _createElementVNode } from \"vue\"\n\nconst _hoisted_1 = { class: \"bwList tw-mx-auto\" }\nconst _hoisted_2 = { class: \"bw-list-main tw-flex tw-flex-wrap tw-justify-between tw-gap-4\" }\nconst _hoisted_3 = { class: \"tw-flex tw-justify-end tw-mt-[42px] max-md:tw-mt-[24px]\" }\n\nimport { ref } from \"vue\";\nimport { getSearchInfo } from \"~/composables/api/home\";\ninterface TableListItem {\n  id: string;\n  cover: string;\n  isVideo: number;\n  visitNum?: number;\n  title?: string;\n  desc?: string;\n  [key: string]: string | number | undefined; // 添加number类型到索引签名\n}\n\nexport default /*@__PURE__*/_defineComponent({\n  __name: 'BwList',\n  props: {\n  searchValue: {\n    type: String,\n    required: false,\n    default: \"\",\n  },\n},\n  setup(__props) {\n\nconst props = __props;\nconst tableList = ref<TableListItem[]>([]);\nconst totalPage = ref<number>(0); // 总页数\nconst currentPage = ref<number>(1);\nconst loading = ref<boolean>(false); // 添加 loading 状态\n\nconst getList = async () => {\n  loading.value = true; // 请求开始时设置 loading\n\n  try {\n    const data = await getSearchInfo({\n      page: currentPage.value,\n      alias: \"\",\n      keyword: props.searchValue,\n    });\n\n    totalPage.value = data?.totalPage;\n    currentPage.value = data?.page;\n    tableList.value = data?.list;\n  } catch (e) {\n    console.log(e);\n  } finally {\n    loading.value = false; // 请求结束后关闭 loading\n  }\n};\n\n// 处理页码变化\nconst handleCurrentChange = (newPage: number) => {\n  currentPage.value = newPage;\n  getList();\n};\nconst router = useRouter();\nconst linkToInfo = (item: TableListItem) => {\n  const href = getRouteLink(`/post/${item.id}.html`);\n  navigateTo(href);\n};\n// useFetch()\ngetList();\n// 暴露getList方法供父组件调用\n// defineExpose({\n//   getList,\n// });\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_bw_list_main = _resolveComponent(\"bw-list-main\")!\n  const _component_BwPagination = _resolveComponent(\"BwPagination\")!\n  const _directive_loading = _resolveDirective(\"loading\")!\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _withDirectives((_openBlock(), _createElementBlock(\"div\", _hoisted_2, [\n      _createVNode(_component_bw_list_main, { tableList: tableList.value }, null, 8, [\"tableList\"])\n    ])), [\n      [_directive_loading, loading.value]\n    ]),\n    _createElementVNode(\"div\", _hoisted_3, [\n      _createVNode(_component_BwPagination, {\n        \"current-page\": currentPage.value,\n        \"page-count\": totalPage.value,\n        onCurrentChange: handleCurrentChange\n      }, null, 8, [\"current-page\", \"page-count\"])\n    ])\n  ]))\n}\n}\n\n})",
+      "start": 1741448032772,
+      "end": 1741448032772
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1741448032772,
+      "end": 1741448032772,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1741448032772,
+      "end": 1741448032772,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:resource",
+      "start": 1741448032772,
+      "end": 1741448032772,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:directive",
+      "start": 1741448032772,
+      "end": 1741448032772,
+      "order": "pre"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1741448032772,
+      "end": 1741448032772,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1741448032773,
+      "end": 1741448032773,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, resolveDirective as _resolveDirective, openBlock as _openBlock, createElementBlock as _createElementBlock, withDirectives as _withDirectives, createElementVNode as _createElementVNode } from \"vue\";\nconst _hoisted_1 = { class: \"bwList tw-mx-auto\" };\nconst _hoisted_2 = { class: \"bw-list-main tw-flex tw-flex-wrap tw-justify-between tw-gap-4\" };\nconst _hoisted_3 = { class: \"tw-flex tw-justify-end tw-mt-[42px] max-md:tw-mt-[24px]\" };\nimport { ref } from \"vue\";\nimport { getSearchInfo } from \"~/composables/api/home\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"BwList\",\n  props: {\n    searchValue: {\n      type: String,\n      required: false,\n      default: \"\"\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    const tableList = ref([]);\n    const totalPage = ref(0);\n    const currentPage = ref(1);\n    const loading = ref(false);\n    const getList = async () => {\n      loading.value = true;\n      try {\n        const data = await getSearchInfo({\n          page: currentPage.value,\n          alias: \"\",\n          keyword: props.searchValue\n        });\n        totalPage.value = data?.totalPage;\n        currentPage.value = data?.page;\n        tableList.value = data?.list;\n      } catch (e) {\n        console.log(e);\n      } finally {\n        loading.value = false;\n      }\n    };\n    const handleCurrentChange = (newPage) => {\n      currentPage.value = newPage;\n      getList();\n    };\n    const router = useRouter();\n    const linkToInfo = (item) => {\n      const href = getRouteLink(`/post/${item.id}.html`);\n      navigateTo(href);\n    };\n    getList();\n    return (_ctx, _cache) => {\n      const _component_bw_list_main = _resolveComponent(\"bw-list-main\");\n      const _component_BwPagination = _resolveComponent(\"BwPagination\");\n      const _directive_loading = _resolveDirective(\"loading\");\n      return _openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _withDirectives((_openBlock(), _createElementBlock(\"div\", _hoisted_2, [\n          _createVNode(_component_bw_list_main, { tableList: tableList.value }, null, 8, [\"tableList\"])\n        ])), [\n          [_directive_loading, loading.value]\n        ]),\n        _createElementVNode(\"div\", _hoisted_3, [\n          _createVNode(_component_BwPagination, {\n            \"current-page\": currentPage.value,\n            \"page-count\": totalPage.value,\n            onCurrentChange: handleCurrentChange\n          }, null, 8, [\"current-page\", \"page-count\"])\n        ])\n      ]);\n    };\n  }\n});\n",
+      "start": 1741448032773,
+      "end": 1741448033591,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/components/base/BwList.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, resolveDirective as _resolveDirective, openBlock as _openBlock, createElementBlock as _createElementBlock, withDirectives as _withDirectives, createElementVNode as _createElementVNode } from \"vue\"\n\nconst _hoisted_1 = { class: \"bwList tw-mx-auto\" }\nconst _hoisted_2 = { class: \"bw-list-main tw-flex tw-flex-wrap tw-justify-between tw-gap-4\" }\nconst _hoisted_3 = { class: \"tw-flex tw-justify-end tw-mt-[42px] max-md:tw-mt-[24px]\" }\n\nimport { ref } from \"vue\";\nimport { getSearchInfo } from \"~/composables/api/home\";\ninterface TableListItem {\n  id: string;\n  cover: string;\n  isVideo: number;\n  visitNum?: number;\n  title?: string;\n  desc?: string;\n  [key: string]: string | number | undefined; // 添加number类型到索引签名\n}\n\nexport default /*@__PURE__*/_defineComponent({\n  __name: 'BwList',\n  props: {\n  searchValue: {\n    type: String,\n    required: false,\n    default: \"\",\n  },\n},\n  setup(__props) {\n\nconst props = __props;\nconst tableList = ref<TableListItem[]>([]);\nconst totalPage = ref<number>(0); // 总页数\nconst currentPage = ref<number>(1);\nconst loading = ref<boolean>(false); // 添加 loading 状态\n\nconst getList = async () => {\n  loading.value = true; // 请求开始时设置 loading\n\n  try {\n    const data = await getSearchInfo({\n      page: currentPage.value,\n      alias: \"\",\n      keyword: props.searchValue,\n    });\n\n    totalPage.value = data?.totalPage;\n    currentPage.value = data?.page;\n    tableList.value = data?.list;\n  } catch (e) {\n    console.log(e);\n  } finally {\n    loading.value = false; // 请求结束后关闭 loading\n  }\n};\n\n// 处理页码变化\nconst handleCurrentChange = (newPage: number) => {\n  currentPage.value = newPage;\n  getList();\n};\nconst router = useRouter();\nconst linkToInfo = (item: TableListItem) => {\n  const href = getRouteLink(`/post/${item.id}.html`);\n  navigateTo(href);\n};\n// useFetch()\ngetList();\n// 暴露getList方法供父组件调用\n// defineExpose({\n//   getList,\n// });\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_bw_list_main = _resolveComponent(\"bw-list-main\")!\n  const _component_BwPagination = _resolveComponent(\"BwPagination\")!\n  const _directive_loading = _resolveDirective(\"loading\")!\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _withDirectives((_openBlock(), _createElementBlock(\"div\", _hoisted_2, [\n      _createVNode(_component_bw_list_main, { tableList: tableList.value }, null, 8, [\"tableList\"])\n    ])), [\n      [_directive_loading, loading.value]\n    ]),\n    _createElementVNode(\"div\", _hoisted_3, [\n      _createVNode(_component_BwPagination, {\n        \"current-page\": currentPage.value,\n        \"page-count\": totalPage.value,\n        onCurrentChange: handleCurrentChange\n      }, null, 8, [\"current-page\", \"page-count\"])\n    ])\n  ]))\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,oBAAoB,mBAAmB,eAAe,cAAc,oBAAoB,mBAAmB,aAAa,YAAY,sBAAsB,qBAAqB,kBAAkB,iBAAiB,sBAAsB,2BAA2B;AAE5Q,MAAM,aAAa,EAAE,OAAO,oBAAoB;AAChD,MAAM,aAAa,EAAE,OAAO,gEAAgE;AAC5F,MAAM,aAAa,EAAE,OAAO,0DAA0D;AAEtF,SAAS,WAAW;AACpB,SAAS,qBAAqB;AAW9B,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,OAAO;AAAA,IACP,aAAa;AAAA,MACX,MAAM;AAAA,MACN,UAAU;AAAA,MACV,SAAS;AAAA,IACX;AAAA,EACF;AAAA,EACE,MAAM,SAAS;AAEjB,UAAM,QAAQ;AACd,UAAM,YAAY,IAAqB,CAAC,CAAC;AACzC,UAAM,YAAY,IAAY,CAAC;AAC/B,UAAM,cAAc,IAAY,CAAC;AACjC,UAAM,UAAU,IAAa,KAAK;AAElC,UAAM,UAAU,YAAY;AAC1B,cAAQ,QAAQ;AAEhB,UAAI;AACF,cAAM,OAAO,MAAM,cAAc;AAAA,UAC/B,MAAM,YAAY;AAAA,UAClB,OAAO;AAAA,UACP,SAAS,MAAM;AAAA,QACjB,CAAC;AAED,kBAAU,QAAQ,MAAM;AACxB,oBAAY,QAAQ,MAAM;AAC1B,kBAAU,QAAQ,MAAM;AAAA,MAC1B,SAAS,GAAG;AACV,gBAAQ,IAAI,CAAC;AAAA,MACf,UAAE;AACA,gBAAQ,QAAQ;AAAA,MAClB;AAAA,IACF;AAGA,UAAM,sBAAsB,CAAC,YAAoB;AAC/C,kBAAY,QAAQ;AACpB,cAAQ;AAAA,IACV;AACA,UAAM,SAAS,UAAU;AACzB,UAAM,aAAa,CAAC,SAAwB;AAC1C,YAAM,OAAO,aAAa,SAAS,KAAK,EAAE,OAAO;AACjD,iBAAW,IAAI;AAAA,IACjB;AAEA,YAAQ;AAMR,WAAO,CAAC,MAAU,WAAgB;AAChC,YAAM,0BAA0B,kBAAkB,cAAc;AAChE,YAAM,0BAA0B,kBAAkB,cAAc;AAChE,YAAM,qBAAqB,kBAAkB,SAAS;AAEtD,aAAQ,WAAW,GAAG,oBAAoB,OAAO,YAAY;AAAA,QAC3D,iBAAiB,WAAW,GAAG,oBAAoB,OAAO,YAAY;AAAA,UACpE,aAAa,yBAAyB,EAAE,WAAW,UAAU,MAAM,GAAG,MAAM,GAAG,CAAC,WAAW,CAAC;AAAA,QAC9F,CAAC,IAAI;AAAA,UACH,CAAC,oBAAoB,QAAQ,KAAK;AAAA,QACpC,CAAC;AAAA,QACD,oBAAoB,OAAO,YAAY;AAAA,UACrC,aAAa,yBAAyB;AAAA,YACpC,gBAAgB,YAAY;AAAA,YAC5B,cAAc,UAAU;AAAA,YACxB,iBAAiB;AAAA,UACnB,GAAG,MAAM,GAAG,CAAC,gBAAgB,YAAY,CAAC;AAAA,QAC5C,CAAC;AAAA,MACH,CAAC;AAAA,IACH;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1741448033591,
+      "end": 1741448033591,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1741448033591,
+      "end": 1741448033591,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1741448033591,
+      "end": 1741448033592,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1741448033592,
+      "end": 1741448033592,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448033592,
+      "end": 1741448033592,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1741448033592,
+      "end": 1741448033592,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1741448033592,
+      "end": 1741448033592,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448033592,
+      "end": 1741448033592,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1741448033592,
+      "end": 1741448033592,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1741448033592,
+      "end": 1741448033592,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1741448033592,
+      "end": 1741448033592,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1741448033592,
+      "end": 1741448033592,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1741448033592,
+      "end": 1741448033592,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1741448033592,
+      "end": 1741448033592,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1741448033592,
+      "end": 1741448033592,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1741448033592,
+      "end": 1741448033592,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1741448033592,
+      "end": 1741448033592,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1741448033592,
+      "end": 1741448033592,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, resolveDirective as _resolveDirective, openBlock as _openBlock, createElementBlock as _createElementBlock, withDirectives as _withDirectives, createElementVNode as _createElementVNode } from \"vue\";\nconst _hoisted_1 = { class: \"bwList tw-mx-auto\" };\nconst _hoisted_2 = { class: \"bw-list-main tw-flex tw-flex-wrap tw-justify-between tw-gap-4\" };\nconst _hoisted_3 = { class: \"tw-flex tw-justify-end tw-mt-[42px] max-md:tw-mt-[24px]\" };\nimport { ref } from \"vue\";\nimport { getSearchInfo } from \"~/composables/api/home\";\n\nimport { useRouter, navigateTo } from '#app/composables/router';\nimport { getRouteLink } from '/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/utils/comblie-inject.ts';\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"BwList\",\n  props: {\n    searchValue: {\n      type: String,\n      required: false,\n      default: \"\"\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    const tableList = ref([]);\n    const totalPage = ref(0);\n    const currentPage = ref(1);\n    const loading = ref(false);\n    const getList = async () => {\n      loading.value = true;\n      try {\n        const data = await getSearchInfo({\n          page: currentPage.value,\n          alias: \"\",\n          keyword: props.searchValue\n        });\n        totalPage.value = data?.totalPage;\n        currentPage.value = data?.page;\n        tableList.value = data?.list;\n      } catch (e) {\n        console.log(e);\n      } finally {\n        loading.value = false;\n      }\n    };\n    const handleCurrentChange = (newPage) => {\n      currentPage.value = newPage;\n      getList();\n    };\n    const router = useRouter();\n    const linkToInfo = (item) => {\n      const href = getRouteLink(`/post/${item.id}.html`);\n      navigateTo(href);\n    };\n    getList();\n    return (_ctx, _cache) => {\n      const _component_bw_list_main = _resolveComponent(\"bw-list-main\");\n      const _component_BwPagination = _resolveComponent(\"BwPagination\");\n      const _directive_loading = _resolveDirective(\"loading\");\n      return _openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _withDirectives((_openBlock(), _createElementBlock(\"div\", _hoisted_2, [\n          _createVNode(_component_bw_list_main, { tableList: tableList.value }, null, 8, [\"tableList\"])\n        ])), [\n          [_directive_loading, loading.value]\n        ]),\n        _createElementVNode(\"div\", _hoisted_3, [\n          _createVNode(_component_BwPagination, {\n            \"current-page\": currentPage.value,\n            \"page-count\": totalPage.value,\n            onCurrentChange: handleCurrentChange\n          }, null, 8, [\"current-page\", \"page-count\"])\n        ])\n      ]);\n    };\n  }\n});\n",
+      "start": 1741448033592,
+      "end": 1741448033594,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjR,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7F,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvF,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;;;;AACtD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACT,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChB,CAAC,CAAC,CAAC,CAAC;AACJ,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACV,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACV,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACN,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACf,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtB,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACb,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9E,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtG,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACb,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACV,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACT,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACR,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC;AACF,CAAC,CAAC;"
+      }
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1741448033594,
+      "end": 1741448033594,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1741448033594,
+      "end": 1741448033594,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1741448033594,
+      "end": 1741448033594,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "result": "import { ElLoadingDirective as __el_directive_0 } from '/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/node_modules/.pnpm/element-plus@2.9.5_vue@3.5.13_typescript@5.8.2_/node_modules/element-plus/es/components/loading/index.mjs';\nimport '/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/node_modules/.pnpm/element-plus@2.9.5_vue@3.5.13_typescript@5.8.2_/node_modules/element-plus/es/components/loading/style/css.mjs';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, resolveDirective as _resolveDirective, openBlock as _openBlock, createElementBlock as _createElementBlock, withDirectives as _withDirectives, createElementVNode as _createElementVNode } from \"vue\";\nconst _hoisted_1 = { class: \"bwList tw-mx-auto\" };\nconst _hoisted_2 = { class: \"bw-list-main tw-flex tw-flex-wrap tw-justify-between tw-gap-4\" };\nconst _hoisted_3 = { class: \"tw-flex tw-justify-end tw-mt-[42px] max-md:tw-mt-[24px]\" };\nimport { ref } from \"vue\";\nimport { getSearchInfo } from \"~/composables/api/home\";\n\nimport { useRouter, navigateTo } from '#app/composables/router';\nimport { getRouteLink } from '/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/utils/comblie-inject.ts';\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"BwList\",\n  props: {\n    searchValue: {\n      type: String,\n      required: false,\n      default: \"\"\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    const tableList = ref([]);\n    const totalPage = ref(0);\n    const currentPage = ref(1);\n    const loading = ref(false);\n    const getList = async () => {\n      loading.value = true;\n      try {\n        const data = await getSearchInfo({\n          page: currentPage.value,\n          alias: \"\",\n          keyword: props.searchValue\n        });\n        totalPage.value = data?.totalPage;\n        currentPage.value = data?.page;\n        tableList.value = data?.list;\n      } catch (e) {\n        console.log(e);\n      } finally {\n        loading.value = false;\n      }\n    };\n    const handleCurrentChange = (newPage) => {\n      currentPage.value = newPage;\n      getList();\n    };\n    const router = useRouter();\n    const linkToInfo = (item) => {\n      const href = getRouteLink(`/post/${item.id}.html`);\n      navigateTo(href);\n    };\n    getList();\n    return (_ctx, _cache) => {\n      const _component_bw_list_main = _resolveComponent(\"bw-list-main\");\n      const _component_BwPagination = _resolveComponent(\"BwPagination\");\n      const _directive_loading = __el_directive_0;\n      return _openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _withDirectives((_openBlock(), _createElementBlock(\"div\", _hoisted_2, [\n          _createVNode(_component_bw_list_main, { tableList: tableList.value }, null, 8, [\"tableList\"])\n        ])), [\n          [_directive_loading, loading.value]\n        ]),\n        _createElementVNode(\"div\", _hoisted_3, [\n          _createVNode(_component_BwPagination, {\n            \"current-page\": currentPage.value,\n            \"page-count\": totalPage.value,\n            onCurrentChange: handleCurrentChange\n          }, null, 8, [\"current-page\", \"page-count\"])\n        ])\n      ]);\n    };\n  }\n});\n",
+      "start": 1741448033594,
+      "end": 1741448033806,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1741448033806,
+      "end": 1741448033806,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1741448033806,
+      "end": 1741448033806,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/components/base/BwListMain.vue\";\nimport { default as __nuxt_component_1 } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/components/base/BwPagination.vue\";\nimport { ElLoadingDirective as __el_directive_0 } from '/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/node_modules/.pnpm/element-plus@2.9.5_vue@3.5.13_typescript@5.8.2_/node_modules/element-plus/es/components/loading/index.mjs';\nimport '/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/node_modules/.pnpm/element-plus@2.9.5_vue@3.5.13_typescript@5.8.2_/node_modules/element-plus/es/components/loading/style/css.mjs';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, resolveDirective as _resolveDirective, openBlock as _openBlock, createElementBlock as _createElementBlock, withDirectives as _withDirectives, createElementVNode as _createElementVNode } from \"vue\";\nconst _hoisted_1 = { class: \"bwList tw-mx-auto\" };\nconst _hoisted_2 = { class: \"bw-list-main tw-flex tw-flex-wrap tw-justify-between tw-gap-4\" };\nconst _hoisted_3 = { class: \"tw-flex tw-justify-end tw-mt-[42px] max-md:tw-mt-[24px]\" };\nimport { ref } from \"vue\";\nimport { getSearchInfo } from \"~/composables/api/home\";\n\nimport { useRouter, navigateTo } from '#app/composables/router';\nimport { getRouteLink } from '/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/utils/comblie-inject.ts';\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"BwList\",\n  props: {\n    searchValue: {\n      type: String,\n      required: false,\n      default: \"\"\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    const tableList = ref([]);\n    const totalPage = ref(0);\n    const currentPage = ref(1);\n    const loading = ref(false);\n    const getList = async () => {\n      loading.value = true;\n      try {\n        const data = await getSearchInfo({\n          page: currentPage.value,\n          alias: \"\",\n          keyword: props.searchValue\n        });\n        totalPage.value = data?.totalPage;\n        currentPage.value = data?.page;\n        tableList.value = data?.list;\n      } catch (e) {\n        console.log(e);\n      } finally {\n        loading.value = false;\n      }\n    };\n    const handleCurrentChange = (newPage) => {\n      currentPage.value = newPage;\n      getList();\n    };\n    const router = useRouter();\n    const linkToInfo = (item) => {\n      const href = getRouteLink(`/post/${item.id}.html`);\n      navigateTo(href);\n    };\n    getList();\n    return (_ctx, _cache) => {\n      const _component_bw_list_main = __nuxt_component_0;\n      const _component_BwPagination = __nuxt_component_1;\n      const _directive_loading = __el_directive_0;\n      return _openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _withDirectives((_openBlock(), _createElementBlock(\"div\", _hoisted_2, [\n          _createVNode(_component_bw_list_main, { tableList: tableList.value }, null, 8, [\"tableList\"])\n        ])), [\n          [_directive_loading, loading.value]\n        ]),\n        _createElementVNode(\"div\", _hoisted_3, [\n          _createVNode(_component_BwPagination, {\n            \"current-page\": currentPage.value,\n            \"page-count\": totalPage.value,\n            onCurrentChange: handleCurrentChange\n          }, null, 8, [\"current-page\", \"page-count\"])\n        ])\n      ]);\n    };\n  }\n});\n",
+      "start": 1741448033806,
+      "end": 1741448033806,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1741448033806,
+      "end": 1741448033806,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1741448033806,
+      "end": 1741448033806,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1741448033806,
+      "end": 1741448033806,
+      "order": "normal"
+    }
+  ]
+}

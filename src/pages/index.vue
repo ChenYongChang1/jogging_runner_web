@@ -33,9 +33,11 @@
                   @mouseenter="showPopover"
                   @mouseleave="hidePopover"
                   @click="togglePopover"
-                  >{{ $t("index.下载APP")
-                  }}<el-icon class="tw-ml-[5px] tw-font-[500]"
-                    ><Download /></el-icon
+                  >
+                  <span class="tw-text-[18px]">{{ $t("index.下载APP")
+                  }}</span>
+                  <el-icon class="tw-ml-[10px] tw-font-[500]"
+                    ><img src="@/assets/icon/Download.svg" class="tw-w-[18px]" alt="" /></el-icon
                 ></BwButton>
               </template>
               <div
@@ -92,7 +94,7 @@
                 background: item.buttonColor,
                 borderColor: item.buttonColor,
               }"
-              class="tw-w-[132px] tw-h-[46px] tw-rounded-[30px] tw-leading-[46px] max-md:tw-w-[98px] max-md:tw-h-[30px!important] max-md:tw-leading-[30px!important] max-xsm:tw-w-[78px] max-xsm:tw-h-[27px] max-sxm:tw-leading-[27px] dd-fs-20-12 max-xsm:tw-px-[8px] tw-text-center"
+              class="tw-w-[132px] tw-h-[46px] tw-rounded-[30px] tw-leading-[46px] max-md:tw-w-[98px] max-md:tw-h-[30px!important] max-md:tw-leading-[28px!important] max-xsm:tw-w-[78px] max-xsm:tw-h-[27px] max-sxm:tw-leading-[27px] dd-fs-20-12 max-xsm:tw-px-[8px] tw-text-center"
               :active="true"
               @click="handleView(item.alias)"
               >{{ $t("home.点击查看") }}</bw-button
@@ -128,21 +130,25 @@
 
     <!-- pc端search -->
     <div
-      class="search-input tw-mt-[-11px] dd-container tw-mx-auto max-lg:tw-mt-[28px]"
+      class="search-input lg:tw-h-[68px] max-lg:tw-h-[54px] tw-mt-[-11px] tw-mb-[68px] max-lg:tw-mb-[28px] dd-container tw-mx-auto max-lg:tw-mt-[28px]"
     >
       <BwInput
+        class="tw-h-[100%]"
         v-model="searchValue"
         :placeholder="$t('index.请输入搜索内容')"
         @keyup.down="handleSearch"
       >
         <template #append>
-          <BwButton @click="handleSearch" :active="true">
-           <div class="tw-flex">
-            <img class="tw-w-[16px] tw-mr-[4px]" src="@/assets/icon/Search.svg" alt="" />
-            <span>{{ $t("index.搜索") }}</span>
-           </div>
-            </BwButton
-          >
+          <BwButton @click="handleSearch" class=" max-lg:tw-h-[40px] lg:tw-h-[46px] tw-flex tw-items-center" :active="true">
+            <div class="tw-flex tw-items-center">
+              <img
+                class="tw-w-[16px] tw-mr-[4px] max-md:tw-mr-[0]"
+                src="@/assets/icon/Search.svg"
+                alt=""
+              />
+              <span class="max-md:tw-hidden">{{ $t("index.搜索") }}</span>
+            </div>
+          </BwButton>
         </template>
       </BwInput>
     </div>
@@ -172,7 +178,7 @@ const handleSearch = () => {
 useAsyncData("getCategoryList", async () => {
   const res = await getCategory();
   tabarList.value = res.value?.data || [];
-  return tabarList.value 
+  return tabarList.value;
 });
 // watchEffect(() => {
 //   if (categoryData.value) {
@@ -206,3 +212,27 @@ const togglePopover = () => {
   visible.value = true;
 };
 </script>
+
+<style lang="scss" scoped>
+.home-tabar {
+  background: url("@/assets/images/home-bg.png") repeat-x center center;
+  background-size: cover;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: brightness(1.1) contrast(0.95);
+    z-index: 0;
+  }
+
+  .home-tabar-pc {
+    position: relative;
+  }
+}
+</style>

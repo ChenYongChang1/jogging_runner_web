@@ -1,0 +1,317 @@
+{
+  "resolvedId": "/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/node_modules/.pnpm/element-plus@2.9.5_vue@3.5.13_typescript@5.8.2_/node_modules/element-plus/es/hooks/use-escape-keydown/index.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { onMounted, onBeforeUnmount } from 'vue';\nimport { isClient } from '@vueuse/core';\nimport { EVENT_CODE } from '../../constants/aria.mjs';\n\nlet registeredEscapeHandlers = [];\nconst cachedHandler = (event) => {\n  if (event.code === EVENT_CODE.esc) {\n    registeredEscapeHandlers.forEach((registeredHandler) => registeredHandler(event));\n  }\n};\nconst useEscapeKeydown = (handler) => {\n  onMounted(() => {\n    if (registeredEscapeHandlers.length === 0) {\n      document.addEventListener(\"keydown\", cachedHandler);\n    }\n    if (isClient)\n      registeredEscapeHandlers.push(handler);\n  });\n  onBeforeUnmount(() => {\n    registeredEscapeHandlers = registeredEscapeHandlers.filter((registeredHandler) => registeredHandler !== handler);\n    if (registeredEscapeHandlers.length === 0) {\n      if (isClient)\n        document.removeEventListener(\"keydown\", cachedHandler);\n    }\n  });\n};\n\nexport { useEscapeKeydown };\n//# sourceMappingURL=index.mjs.map\n",
+      "start": 1741448044421,
+      "end": 1741448044440,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1741448044440,
+      "end": 1741448044440,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1741448044440,
+      "end": 1741448044440,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1741448044440,
+      "end": 1741448044440,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1741448044440,
+      "end": 1741448044440,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:resource",
+      "start": 1741448044440,
+      "end": 1741448044440,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:resource",
+      "start": 1741448044440,
+      "end": 1741448044440,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:directive",
+      "start": 1741448044440,
+      "end": 1741448044440,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:directive",
+      "start": 1741448044440,
+      "end": 1741448044440,
+      "order": "pre"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1741448044440,
+      "end": 1741448044440,
+      "order": "pre"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1741448044440,
+      "end": 1741448044440,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-only-component-transform",
+      "start": 1741448044440,
+      "end": 1741448044440,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1741448044440,
+      "end": 1741448044440,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1741448044440,
+      "end": 1741448044440,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1741448044440,
+      "end": 1741448044440,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1741448044440,
+      "end": 1741448044440,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1741448044440,
+      "end": 1741448044440,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1741448044440,
+      "end": 1741448044440,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448044440,
+      "end": 1741448044440,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448044440,
+      "end": 1741448044440,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1741448044440,
+      "end": 1741448044440,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1741448044440,
+      "end": 1741448044440,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1741448044440,
+      "end": 1741448044440,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1741448044440,
+      "end": 1741448044440,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448044440,
+      "end": 1741448044440,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1741448044440,
+      "end": 1741448044441,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "import { onMounted, onBeforeUnmount } from \"vue\";\nimport { isClient } from \"@vueuse/core\";\nimport { EVENT_CODE } from \"../../constants/aria.mjs\";\nlet registeredEscapeHandlers = [];\nconst cachedHandler = (event) => {\n  if (event.code === EVENT_CODE.esc) {\n    registeredEscapeHandlers.forEach((registeredHandler) => registeredHandler(event));\n  }\n};\nconst useEscapeKeydown = (handler) => {\n  onMounted(() => {\n    if (registeredEscapeHandlers.length === 0) {\n      (void 0).addEventListener(\"keydown\", cachedHandler);\n    }\n    if (isClient)\n      registeredEscapeHandlers.push(handler);\n  });\n  onBeforeUnmount(() => {\n    registeredEscapeHandlers = registeredEscapeHandlers.filter((registeredHandler) => registeredHandler !== handler);\n    if (registeredEscapeHandlers.length === 0) {\n      if (isClient)\n        (void 0).removeEventListener(\"keydown\", cachedHandler);\n    }\n  });\n};\nexport { useEscapeKeydown };\n",
+      "start": 1741448044441,
+      "end": 1741448044540,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1741448044540,
+      "end": 1741448044540,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1741448044540,
+      "end": 1741448044540,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1741448044540,
+      "end": 1741448044540,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1741448044540,
+      "end": 1741448044540,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1741448044540,
+      "end": 1741448044540,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1741448044540,
+      "end": 1741448044540,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1741448044540,
+      "end": 1741448044540,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1741448044540,
+      "end": 1741448044540,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1741448044540,
+      "end": 1741448044540,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1741448044540,
+      "end": 1741448044540,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1741448044540,
+      "end": 1741448044540,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1741448044540,
+      "end": 1741448044540,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1741448044540,
+      "end": 1741448044541,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1741448044540,
+      "end": 1741448044541,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1741448044541,
+      "end": 1741448044541,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1741448044541,
+      "end": 1741448044541,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1741448044541,
+      "end": 1741448044541,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1741448044541,
+      "end": 1741448044541,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1741448044541,
+      "end": 1741448044541,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1741448044541,
+      "end": 1741448044541,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "result": "import { onMounted, onBeforeUnmount } from \"vue\";\nimport { isClient } from \"@vueuse/core\";\nimport { EVENT_CODE } from \"../../constants/aria.mjs\";\nlet registeredEscapeHandlers = [];\nconst cachedHandler = (event) => {\n  if (event.code === EVENT_CODE.esc) {\n    registeredEscapeHandlers.forEach((registeredHandler) => registeredHandler(event));\n  }\n};\nconst useEscapeKeydown = (handler) => {\n   false && /*@__PURE__*/ onMounted(() => {\n    if (registeredEscapeHandlers.length === 0) {\n      (void 0).addEventListener(\"keydown\", cachedHandler);\n    }\n    if (isClient)\n      registeredEscapeHandlers.push(handler);\n  });\n   false && /*@__PURE__*/ onBeforeUnmount(() => {\n    registeredEscapeHandlers = registeredEscapeHandlers.filter((registeredHandler) => registeredHandler !== handler);\n    if (registeredEscapeHandlers.length === 0) {\n      if (isClient)\n        (void 0).removeEventListener(\"keydown\", cachedHandler);\n    }\n  });\n};\nexport { useEscapeKeydown };\n",
+      "start": 1741448044541,
+      "end": 1741448044541,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrF,CAAC,CAAC;AACF,CAAC;AACD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtC,mCAAW,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzD,CAAC,CAAC,CAAC,CAAC;AACJ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5C,CAAC,CAAC,CAAC,CAAC;AACJ,yCAAiB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpH,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9D,CAAC,CAAC,CAAC,CAAC;AACJ,CAAC,CAAC,CAAC,CAAC;AACJ,CAAC;AACD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;"
+      }
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1741448044541,
+      "end": 1741448044541,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1741448044541,
+      "end": 1741448044541,
+      "order": "normal"
+    }
+  ]
+}

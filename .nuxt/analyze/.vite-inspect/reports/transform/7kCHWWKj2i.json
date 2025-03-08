@@ -1,0 +1,228 @@
+{
+  "resolvedId": "/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/node_modules/.pnpm/element-plus@2.9.5_vue@3.5.13_typescript@5.8.2_/node_modules/element-plus/es/components/dropdown/src/dropdown-menu.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineComponent, inject, computed, openBlock, createElementBlock, normalizeClass, normalizeStyle, withModifiers, renderSlot, unref } from 'vue';\nimport { DROPDOWN_INJECTION_KEY } from './tokens.mjs';\nimport { dropdownMenuProps, DROPDOWN_COLLECTION_INJECTION_KEY as COLLECTION_INJECTION_KEY, FIRST_LAST_KEYS, LAST_KEYS } from './dropdown.mjs';\nimport { useDropdown } from './useDropdown.mjs';\nimport _export_sfc from '../../../_virtual/plugin-vue_export-helper.mjs';\nimport { ROVING_FOCUS_GROUP_INJECTION_KEY } from '../../roving-focus-group/src/tokens.mjs';\nimport { ROVING_FOCUS_COLLECTION_INJECTION_KEY as COLLECTION_INJECTION_KEY$1 } from '../../roving-focus-group/src/roving-focus-group.mjs';\nimport { focusFirst } from '../../roving-focus-group/src/utils.mjs';\nimport { useNamespace } from '../../../hooks/use-namespace/index.mjs';\nimport { FOCUS_TRAP_INJECTION_KEY } from '../../focus-trap/src/tokens.mjs';\nimport { composeRefs } from '../../../utils/vue/refs.mjs';\nimport { composeEventHandlers } from '../../../utils/dom/event.mjs';\nimport { EVENT_CODE } from '../../../constants/aria.mjs';\n\nconst _sfc_main = defineComponent({\n  name: \"ElDropdownMenu\",\n  props: dropdownMenuProps,\n  setup(props) {\n    const ns = useNamespace(\"dropdown\");\n    const { _elDropdownSize } = useDropdown();\n    const size = _elDropdownSize.value;\n    const { focusTrapRef, onKeydown } = inject(FOCUS_TRAP_INJECTION_KEY, void 0);\n    const { contentRef, role, triggerId } = inject(DROPDOWN_INJECTION_KEY, void 0);\n    const { collectionRef: dropdownCollectionRef, getItems } = inject(COLLECTION_INJECTION_KEY, void 0);\n    const {\n      rovingFocusGroupRef,\n      rovingFocusGroupRootStyle,\n      tabIndex,\n      onBlur,\n      onFocus,\n      onMousedown\n    } = inject(ROVING_FOCUS_GROUP_INJECTION_KEY, void 0);\n    const { collectionRef: rovingFocusGroupCollectionRef } = inject(COLLECTION_INJECTION_KEY$1, void 0);\n    const dropdownKls = computed(() => {\n      return [ns.b(\"menu\"), ns.bm(\"menu\", size == null ? void 0 : size.value)];\n    });\n    const dropdownListWrapperRef = composeRefs(contentRef, dropdownCollectionRef, focusTrapRef, rovingFocusGroupRef, rovingFocusGroupCollectionRef);\n    const composedKeydown = composeEventHandlers((e) => {\n      var _a;\n      (_a = props.onKeydown) == null ? void 0 : _a.call(props, e);\n    }, (e) => {\n      const { currentTarget, code, target } = e;\n      currentTarget.contains(target);\n      if (EVENT_CODE.tab === code) {\n        e.stopImmediatePropagation();\n      }\n      e.preventDefault();\n      if (target !== unref(contentRef) || !FIRST_LAST_KEYS.includes(code))\n        return;\n      const items = getItems().filter((item) => !item.disabled);\n      const targets = items.map((item) => item.ref);\n      if (LAST_KEYS.includes(code)) {\n        targets.reverse();\n      }\n      focusFirst(targets);\n    });\n    const handleKeydown = (e) => {\n      composedKeydown(e);\n      onKeydown(e);\n    };\n    return {\n      size,\n      rovingFocusGroupRootStyle,\n      tabIndex,\n      dropdownKls,\n      role,\n      triggerId,\n      dropdownListWrapperRef,\n      handleKeydown,\n      onBlur,\n      onFocus,\n      onMousedown\n    };\n  }\n});\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  return openBlock(), createElementBlock(\"ul\", {\n    ref: _ctx.dropdownListWrapperRef,\n    class: normalizeClass(_ctx.dropdownKls),\n    style: normalizeStyle(_ctx.rovingFocusGroupRootStyle),\n    tabindex: -1,\n    role: _ctx.role,\n    \"aria-labelledby\": _ctx.triggerId,\n    onBlur: _ctx.onBlur,\n    onFocus: _ctx.onFocus,\n    onKeydown: withModifiers(_ctx.handleKeydown, [\"self\"]),\n    onMousedown: withModifiers(_ctx.onMousedown, [\"self\"])\n  }, [\n    renderSlot(_ctx.$slots, \"default\")\n  ], 46, [\"role\", \"aria-labelledby\", \"onBlur\", \"onFocus\", \"onKeydown\", \"onMousedown\"]);\n}\nvar DropdownMenu = /* @__PURE__ */ _export_sfc(_sfc_main, [[\"render\", _sfc_render], [\"__file\", \"dropdown-menu.vue\"]]);\n\nexport { DropdownMenu as default };\n//# sourceMappingURL=dropdown-menu.mjs.map\n",
+      "start": 1741448034400,
+      "end": 1741448034574,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1741448034574,
+      "end": 1741448034574,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1741448034574,
+      "end": 1741448034575,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:resource",
+      "start": 1741448034575,
+      "end": 1741448034575,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:directive",
+      "start": 1741448034575,
+      "end": 1741448034575,
+      "order": "pre"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1741448034575,
+      "end": 1741448034575,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1741448034575,
+      "end": 1741448034575,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1741448034575,
+      "end": 1741448034575,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1741448034575,
+      "end": 1741448034575,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1741448034575,
+      "end": 1741448034575,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1741448034575,
+      "end": 1741448034575,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1741448034575,
+      "end": 1741448034575,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448034575,
+      "end": 1741448034575,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1741448034575,
+      "end": 1741448034575,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1741448034575,
+      "end": 1741448034575,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448034575,
+      "end": 1741448034575,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1741448034575,
+      "end": 1741448034575,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1741448034575,
+      "end": 1741448034575,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1741448034575,
+      "end": 1741448034575,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1741448034575,
+      "end": 1741448034575,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1741448034575,
+      "end": 1741448034575,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1741448034575,
+      "end": 1741448034575,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1741448034575,
+      "end": 1741448034575,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1741448034575,
+      "end": 1741448034575,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1741448034575,
+      "end": 1741448034575,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1741448034575,
+      "end": 1741448034575,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1741448034575,
+      "end": 1741448034575,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1741448034575,
+      "end": 1741448034575,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1741448034575,
+      "end": 1741448034575,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1741448034575,
+      "end": 1741448034575,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1741448034575,
+      "end": 1741448034575,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1741448034575,
+      "end": 1741448034575,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1741448034575,
+      "end": 1741448034575,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1741448034575,
+      "end": 1741448034575,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1741448034575,
+      "end": 1741448034575,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1741448034575,
+      "end": 1741448034575,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1741448034575,
+      "end": 1741448034575,
+      "order": "normal"
+    }
+  ]
+}

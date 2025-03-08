@@ -1,0 +1,328 @@
+{
+  "resolvedId": "/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/equipment.vue?macro=true",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div class=\"equipment\">\n    <div class=\"equipment-content tw-transform tw-translate-y-[-93px]\">\n      <div class=\"equipment-introduce-pc tw-relative\">\n        <div\n          class=\"header-text tw-top-[347px] sm:tw-top-[225px] tw-absolute tw-left-[9.2%] max-sm:tw-left-[50%] max-sm:tw-min-w-[339px] max-sm:tw-translate-x-[-50%]\"\n        >\n          <div\n            class=\"header-text-one tw-text-[#fff] dd-fs-84 tw-font-[400] tw-leading-[94px] tw-mb-[18px]\"\n          >\n            {{ $t(\"equipment.Roomfit超慢跑\") }}\n          </div>\n          <div\n            class=\"context-text-two tw-text-[#fff] dd-fs-42 tw-font-[500] tw-leading-[50px]\"\n          >\n            {{ $t(\"equipment.为超慢跑而生的运动品牌\") }}\n          </div>\n        </div>\n      </div>\n      <div\n        class=\"equipment-content-pc dd-container tw-bg-[#fff] tw-mt-[80px] max-md:tw-mt-[44px]\"\n      >\n        <div\n          class=\"title tw-flex max-sm:tw-justify-center tw-justify-left tw-items-center tw-mb-[48px] max-md:tw-mb-[32px]\"\n        >\n          <div\n            class=\"tw-text-[#4a4a4a] dd-fs-46 tw-font-[600] tw-leading-[50px] tw-mr-[10px]\"\n          >\n            {{ $t(\"equipment.扫码查看详情\") }}\n          </div>\n          <img\n            src=\"@/assets/images/up-down.png\"\n            class=\"tw-w-[42px] tw-h-[42px]\"\n          />\n        </div>\n        <div\n          class=\"equipment-main tw-flex tw-items-center tw-justify-between sm:tw-flex-row tw-flex-col\"\n        >\n          <div class=\"equipment-main-item tw-w[342px] max-sm:tw-w[252px]\">\n            <div\n              class=\"title dd-fs-36 tw-leading-[56px] max-md:tw-leading-[24px] tw-mb-[33px]\"\n            >\n              {{ $t(\"equipment.微信小店\") }}\n            </div>\n            <img\n              src=\"@/assets/images/weixin.png\"\n              class=\"tw-w-[100%] img-shadow\"\n              alt=\"\"\n            />\n          </div>\n          <div class=\"equipment-main-item\">\n            <div\n              class=\"title dd-fs-36 tw-leading-[56px] max-md:tw-leading-[24px] tw-mb-[33px]\"\n            >\n              {{ $t(\"equipment.抖音小店\") }}\n            </div>\n            <img\n              src=\"@/assets/images/douyin.png\"\n              class=\"tw-w-[100%] img-shadow\"\n              alt=\"\"\n            />\n          </div>\n          <div class=\"equipment-main-item\">\n            <div\n              class=\"title dd-fs-36 tw-leading-[56px] max-md:tw-leading-[24px] tw-mb-[33px]\"\n            >\n              {{ $t(\"equipment.小红书小店\") }}\n            </div>\n            <img\n              src=\"@/assets/images/xiaohongshu.png\"\n              class=\"tw-w-[100%] img-shadow\"\n              alt=\"\"\n            />\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</template>\n<style lang=\"scss\" scoped>\n.equipment {\n  .equipment-introduce-pc {\n    background-image: url(\"@/assets/images/equipment-bg.png\"); /* 路径根据实际文件位置修改 */\n    background-size: cover;\n    background-position: center;\n    width: 100%;\n    height: 573px;\n    // transform: translateY(-93px);\n  }\n  .equipment-main {\n    width: 100%;\n    .equipment-main-item {\n      // width: 26.7%;\n      display: flex;\n      flex-direction: column;\n      justify-content: center;\n      align-items: center;\n      padding: 0 11px;\n\n      .img {\n        width: 26.7%;\n      }\n      .img-shadow {\n        box-shadow: 0px 13px 26.1px 0px #0000000a, 0px -8px 20.9px 0px #00000005;\n      }\n    }\n  }\n}\n</style>\n",
+      "start": 1741448039552,
+      "end": 1741448039631,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1741448039631,
+      "end": 1741448039631,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1741448039631,
+      "end": 1741448039631,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1741448039631,
+      "end": 1741448039631,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1741448039631,
+      "end": 1741448039631,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:resource",
+      "start": 1741448039631,
+      "end": 1741448039631,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:resource",
+      "start": 1741448039631,
+      "end": 1741448039631,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:directive",
+      "start": 1741448039631,
+      "end": 1741448039631,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:directive",
+      "start": 1741448039631,
+      "end": 1741448039631,
+      "order": "pre"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1741448039631,
+      "end": 1741448039631,
+      "order": "pre"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1741448039631,
+      "end": 1741448039631,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-only-component-transform",
+      "start": 1741448039631,
+      "end": 1741448039631,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1741448039631,
+      "end": 1741448039631,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1741448039631,
+      "end": 1741448039631,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1741448039631,
+      "end": 1741448039631,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1741448039631,
+      "end": 1741448039631,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "const _sfc_main = {}\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\nimport _imports_0 from '@/assets/images/up-down.png'\nimport _imports_1 from '@/assets/images/weixin.png'\nimport _imports_2 from '@/assets/images/douyin.png'\nimport _imports_3 from '@/assets/images/xiaohongshu.png'\n\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs) {\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({ class: \"equipment\" }, _attrs))\n  } data-v-be86d4c5><div class=\"equipment-content tw-transform tw-translate-y-[-93px]\" data-v-be86d4c5><div class=\"equipment-introduce-pc tw-relative\" data-v-be86d4c5><div class=\"header-text tw-top-[347px] sm:tw-top-[225px] tw-absolute tw-left-[9.2%] max-sm:tw-left-[50%] max-sm:tw-min-w-[339px] max-sm:tw-translate-x-[-50%]\" data-v-be86d4c5><div class=\"header-text-one tw-text-[#fff] dd-fs-84 tw-font-[400] tw-leading-[94px] tw-mb-[18px]\" data-v-be86d4c5>${\n    _ssrInterpolate(_ctx.$t(\"equipment.Roomfit超慢跑\"))\n  }</div><div class=\"context-text-two tw-text-[#fff] dd-fs-42 tw-font-[500] tw-leading-[50px]\" data-v-be86d4c5>${\n    _ssrInterpolate(_ctx.$t(\"equipment.为超慢跑而生的运动品牌\"))\n  }</div></div></div><div class=\"equipment-content-pc dd-container tw-bg-[#fff] tw-mt-[80px] max-md:tw-mt-[44px]\" data-v-be86d4c5><div class=\"title tw-flex max-sm:tw-justify-center tw-justify-left tw-items-center tw-mb-[48px] max-md:tw-mb-[32px]\" data-v-be86d4c5><div class=\"tw-text-[#4a4a4a] dd-fs-46 tw-font-[600] tw-leading-[50px] tw-mr-[10px]\" data-v-be86d4c5>${\n    _ssrInterpolate(_ctx.$t(\"equipment.扫码查看详情\"))\n  }</div><img${\n    _ssrRenderAttr(\"src\", _imports_0)\n  } class=\"tw-w-[42px] tw-h-[42px]\" data-v-be86d4c5></div><div class=\"equipment-main tw-flex tw-items-center tw-justify-between sm:tw-flex-row tw-flex-col\" data-v-be86d4c5><div class=\"equipment-main-item tw-w[342px] max-sm:tw-w[252px]\" data-v-be86d4c5><div class=\"title dd-fs-36 tw-leading-[56px] max-md:tw-leading-[24px] tw-mb-[33px]\" data-v-be86d4c5>${\n    _ssrInterpolate(_ctx.$t(\"equipment.微信小店\"))\n  }</div><img${\n    _ssrRenderAttr(\"src\", _imports_1)\n  } class=\"tw-w-[100%] img-shadow\" alt=\"\" data-v-be86d4c5></div><div class=\"equipment-main-item\" data-v-be86d4c5><div class=\"title dd-fs-36 tw-leading-[56px] max-md:tw-leading-[24px] tw-mb-[33px]\" data-v-be86d4c5>${\n    _ssrInterpolate(_ctx.$t(\"equipment.抖音小店\"))\n  }</div><img${\n    _ssrRenderAttr(\"src\", _imports_2)\n  } class=\"tw-w-[100%] img-shadow\" alt=\"\" data-v-be86d4c5></div><div class=\"equipment-main-item\" data-v-be86d4c5><div class=\"title dd-fs-36 tw-leading-[56px] max-md:tw-leading-[24px] tw-mb-[33px]\" data-v-be86d4c5>${\n    _ssrInterpolate(_ctx.$t(\"equipment.小红书小店\"))\n  }</div><img${\n    _ssrRenderAttr(\"src\", _imports_3)\n  } class=\"tw-w-[100%] img-shadow\" alt=\"\" data-v-be86d4c5></div></div></div></div></div>`)\n}\n\nimport \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/pages/equipment.vue?vue&type=style&index=0&scoped=be86d4c5&lang.scss\"\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"pages/equipment.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender],['__scopeId',\"data-v-be86d4c5\"]])",
+      "start": 1741448039631,
+      "end": 1741448039632,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1741448039632,
+      "end": 1741448039632,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448039632,
+      "end": 1741448039632,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448039632,
+      "end": 1741448039632,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1741448039632,
+      "end": 1741448039633,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1741448039632,
+      "end": 1741448039633,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1741448039633,
+      "end": 1741448039633,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1741448039633,
+      "end": 1741448039633,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448039633,
+      "end": 1741448039633,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1741448039633,
+      "end": 1741448039633,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1741448039633,
+      "end": 1741448039633,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1741448039633,
+      "end": 1741448039633,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1741448039633,
+      "end": 1741448039633,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1741448039633,
+      "end": 1741448039633,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1741448039633,
+      "end": 1741448039633,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1741448039633,
+      "end": 1741448039633,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1741448039633,
+      "end": 1741448039633,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1741448039633,
+      "end": 1741448039633,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1741448039633,
+      "end": 1741448039633,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1741448039633,
+      "end": 1741448039633,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1741448039633,
+      "end": 1741448039633,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1741448039633,
+      "end": 1741448039634,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1741448039633,
+      "end": 1741448039634,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1741448039634,
+      "end": 1741448039634,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1741448039634,
+      "end": 1741448039634,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "result": "\nconst __nuxt_page_meta = null\nexport default __nuxt_page_meta\n",
+      "start": 1741448039634,
+      "end": 1741448039635,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "AAAA;AAAA;AAAA;"
+      }
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "result": "\nconst __nuxt_page_meta = null\nexport default __nuxt_page_meta\n",
+      "start": 1741448039634,
+      "end": 1741448039635,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "AAAA;AAAA;AAAA;"
+      }
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1741448039635,
+      "end": 1741448039635,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1741448039635,
+      "end": 1741448039635,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1741448039635,
+      "end": 1741448039635,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1741448039635,
+      "end": 1741448039635,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1741448039635,
+      "end": 1741448039635,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1741448039635,
+      "end": 1741448039635,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1741448039635,
+      "end": 1741448039635,
+      "order": "normal"
+    }
+  ]
+}

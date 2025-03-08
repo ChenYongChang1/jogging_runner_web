@@ -1,0 +1,238 @@
+{
+  "resolvedId": "/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/components/Layout/footer.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div\n    class=\"footer-wrapper justify-center items-center w-full lg:tw-mt-[120px] tw-mt-[44px]\"\n    :class=\"[isEquipment?'tw-transform tw-translate-y-[-93px]': '']\"\n  >\n    <!-- 简介 -->\n    <div class=\"brief-introduction tw-mx-auto\">\n      <!-- pc端简介 1280px-->\n      <div\n        class=\"brief-introduction-pc dd-container sm:tw-flex lg:tw-items-start lg:tw-flex-row-reverse tw-flex-col tw-justify-center lg:tw-mb-[120px]\"\n      >\n        <div class=\"right-content lg:tw-w-[40.6%]\">\n          <div\n            class=\"right-content-header max-lg:tw-text-center tw-text-[#4A4A4A] dd-fs-48 tw-font-[600] tw-leading-[56px] tw-text-left tw-pb-[17px]\"\n          >\n            {{ $t(\"common.超慢跑\") }}\n          </div>\n          <p\n            class=\"tw-text-[#666666] tw-text-[18px] tw-font-[500] tw-leading-[28.8px] tw-text-left\"\n          >\n            {{\n              $t(\n                \"common.欢迎来到_超慢跑_，这里是超慢跑爱好者的专属家园！我们致力于全方位推广超慢跑，让这项运动被更多人认识和喜爱。在超慢跑内容方面，我们精心打造了丰富多元的资讯库。从跑者们的真实故事分享，到不同环境下超慢跑的独特体验，每一篇内容都饱含着对超慢跑的热爱，希望能给大家带来激励与启发。超慢跑科普是我们的重点板块。我们邀请专业的运动专家，深入浅出地讲解超慢跑的原理、益处，比如它如何提升心肺功能、增强关节灵活性，以及相较于其他运动，超慢跑在运动损伤风险上的优势，让大家科学地认识超慢跑。\"\n              )\n            }}\n          </p>\n        </div>\n        <img\n          src=\"~assets/images/footer-introduction.png\"\n          class=\"lg:tw-w-[48%] lg:tw-mr-[9.4%] tw-w-full tw-mb-[2rem]\"\n        />\n      </div>\n    </div>\n    <!-- 下载方式 -->\n    <footerIntroduction />\n    <!-- 网站备案 -->\n    <div\n      class=\"website-approve tw-mx-[24px] tw-mt-[25px] tw-rounded-[26px]\"\n      style=\"background-color: #1e293b\"\n    >\n      <div class=\"website-approve-pc tw-pt-[93px] tw-pb-[78px] tw-text-center\">\n        <p\n          class=\"tw-text-[#fff] tw-text-[22px] tw-font-[500] tw-leading-[20px] tw-mb-[33px]\"\n        >\n          The Wind Technology Co., Ltd. © 2025 All rights reserved.\n        </p>\n        <p\n          class=\"tw-text-[#fff] tw-text-[22px] tw-font-[500] tw-leading-[20px]\"\n        >\n          {{ $t(\"common.网站备案号：沪ICP备2024086239号-2\") }}\n        </p>\n      </div>\n    </div>\n  </div>\n</template>\n<script lang=\"ts\" setup>\nimport { computed } from \"vue\";\nimport footerIntroduction from \"./footerIntroduction.vue\";\nimport { useRoute } from \"vue-router\";\nconst route = useRoute();\nconst isEquipment = computed(() => {\n  return route.name?.includes(\"equipment\");\n});\n// import { isAndroid, isIOS, checkAppInstalled, isMobileDevice } from \"@/utils/detect\"; // 修改为导入正确的函数\n// import { ref, computed, onMounted } from \"vue\";\n// import { useRoute } from \"vue-router\";\n\n</script>\n<style lang=\"scss\" scoped>\n.footer-wrapper {\n  .website-approve {\n    background-image: url(\"../../assets/images/footer-bg.png\");\n    background-size: cover;\n    background-position: center;\n  }\n}\n</style>\n",
+      "start": 1741448033243,
+      "end": 1741448033310,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1741448033310,
+      "end": 1741448033310,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1741448033310,
+      "end": 1741448033310,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:resource",
+      "start": 1741448033310,
+      "end": 1741448033310,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:directive",
+      "result": "<template>\n  <div\n    class=\"footer-wrapper justify-center items-center w-full lg:tw-mt-[120px] tw-mt-[44px]\"\n    :class=\"[isEquipment?'tw-transform tw-translate-y-[-93px]': '']\"\n  >\n    <!-- 简介 -->\n    <div class=\"brief-introduction tw-mx-auto\">\n      <!-- pc端简介 1280px-->\n      <div\n        class=\"brief-introduction-pc dd-container sm:tw-flex lg:tw-items-start lg:tw-flex-row-reverse tw-flex-col tw-justify-center lg:tw-mb-[120px]\"\n      >\n        <div class=\"right-content lg:tw-w-[40.6%]\">\n          <div\n            class=\"right-content-header max-lg:tw-text-center tw-text-[#4A4A4A] dd-fs-48 tw-font-[600] tw-leading-[56px] tw-text-left tw-pb-[17px]\"\n          >\n            {{ $t(\"common.超慢跑\") }}\n          </div>\n          <p\n            class=\"tw-text-[#666666] tw-text-[18px] tw-font-[500] tw-leading-[28.8px] tw-text-left\"\n          >\n            {{\n              $t(\n                \"common.欢迎来到_超慢跑_，这里是超慢跑爱好者的专属家园！我们致力于全方位推广超慢跑，让这项运动被更多人认识和喜爱。在超慢跑内容方面，我们精心打造了丰富多元的资讯库。从跑者们的真实故事分享，到不同环境下超慢跑的独特体验，每一篇内容都饱含着对超慢跑的热爱，希望能给大家带来激励与启发。超慢跑科普是我们的重点板块。我们邀请专业的运动专家，深入浅出地讲解超慢跑的原理、益处，比如它如何提升心肺功能、增强关节灵活性，以及相较于其他运动，超慢跑在运动损伤风险上的优势，让大家科学地认识超慢跑。\"\n              )\n            }}\n          </p>\n        </div>\n        <img\n          src=\"~assets/images/footer-introduction.png\"\n          class=\"lg:tw-w-[48%] lg:tw-mr-[9.4%] tw-w-full tw-mb-[2rem]\"\n        />\n      </div>\n    </div>\n    <!-- 下载方式 -->\n    <footerIntroduction />\n    <!-- 网站备案 -->\n    <div\n      class=\"website-approve tw-mx-[24px] tw-mt-[25px] tw-rounded-[26px]\"\n      style=\"background-color: #1e293b\"\n    >\n      <div class=\"website-approve-pc tw-pt-[93px] tw-pb-[78px] tw-text-center\">\n        <p\n          class=\"tw-text-[#fff] tw-text-[22px] tw-font-[500] tw-leading-[20px] tw-mb-[33px]\"\n        >\n          The Wind Technology Co., Ltd. © 2025 All rights reserved.\n        </p>\n        <p\n          class=\"tw-text-[#fff] tw-text-[22px] tw-font-[500] tw-leading-[20px]\"\n        >\n          {{ $t(\"common.网站备案号：沪ICP备2024086239号-2\") }}\n        </p>\n      </div>\n    </div>\n  </div>\n</template>\n<script lang=\"ts\" setup>\nimport { computed } from \"vue\";\nimport footerIntroduction from \"./footerIntroduction.vue\";\nimport { useRoute } from \"vue-router\";\nconst route = useRoute();\nconst isEquipment = computed(() => {\n  return route.name?.includes(\"equipment\");\n});\n// import { isAndroid, isIOS, checkAppInstalled, isMobileDevice } from \"@/utils/detect\"; // 修改为导入正确的函数\n// import { ref, computed, onMounted } from \"vue\";\n// import { useRoute } from \"vue-router\";\n\n</script>\n<style lang=\"scss\" scoped>\n.footer-wrapper {\n  .website-approve {\n    background-image: url(\"../../assets/images/footer-bg.png\");\n    background-size: cover;\n    background-position: center;\n  }\n}\n</style>\n",
+      "start": 1741448033310,
+      "end": 1741448033312,
+      "order": "pre",
+      "sourcemaps": {
+        "version": 3,
+        "mappings": "",
+        "sources": []
+      }
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1741448033312,
+      "end": 1741448033313,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1741448033313,
+      "end": 1741448033313,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1741448033313,
+      "end": 1741448033313,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1741448033313,
+      "end": 1741448033313,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1741448033313,
+      "end": 1741448033313,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/components/Layout/footer.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/components/Layout/footer.vue?vue&type=script&setup=true&lang.ts\";\nimport \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/components/Layout/footer.vue?vue&type=style&index=0&scoped=40e78e80&lang.scss\";\nimport _export_sfc from \"\\0plugin-vue:export-helper\";\nexport default /* @__PURE__ */ _export_sfc(_sfc_main, [[\"__scopeId\", \"data-v-40e78e80\"]]);\n",
+      "start": 1741448033313,
+      "end": 1741448034257,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1741448034257,
+      "end": 1741448034257,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448034257,
+      "end": 1741448034257,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1741448034257,
+      "end": 1741448034257,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1741448034257,
+      "end": 1741448034257,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448034257,
+      "end": 1741448034257,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1741448034257,
+      "end": 1741448034257,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1741448034257,
+      "end": 1741448034257,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1741448034257,
+      "end": 1741448034257,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1741448034257,
+      "end": 1741448034257,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1741448034257,
+      "end": 1741448034257,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1741448034258,
+      "end": 1741448034258,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1741448034258,
+      "end": 1741448034258,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1741448034258,
+      "end": 1741448034258,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1741448034258,
+      "end": 1741448034258,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1741448034258,
+      "end": 1741448034258,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1741448034258,
+      "end": 1741448034260,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1741448034260,
+      "end": 1741448034260,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1741448034261,
+      "end": 1741448034261,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1741448034261,
+      "end": 1741448034261,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1741448034262,
+      "end": 1741448034262,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1741448034262,
+      "end": 1741448034262,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1741448034262,
+      "end": 1741448034262,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1741448034262,
+      "end": 1741448034262,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1741448034262,
+      "end": 1741448034262,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1741448034262,
+      "end": 1741448034263,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1741448034263,
+      "end": 1741448034263,
+      "order": "normal"
+    }
+  ]
+}

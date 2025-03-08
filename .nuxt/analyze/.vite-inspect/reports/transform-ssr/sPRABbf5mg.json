@@ -1,0 +1,317 @@
+{
+  "resolvedId": "/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/composables/goods/BwGoodsRow.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\n\nexport default /*@__PURE__*/_defineComponent({\n  __name: 'BwGoodsRow',\n  __ssrInlineRender: true,\n  props: {\n  goodsRow: {\n    type: Object,\n    default: () => ({}),\n  },\n},\n  setup(__props) {\n\nconst props = __props\nconst onTapBuyGoods = () => {\n  let param = {\n    timestamp: Date.now(),\n    type: 'buyGoods',\n    data: {\n      // 商品id 可为空\n      id: props.goodsRow.id,\n      /// 商品 url 地址\n      url: props.goodsRow.url,\n      goods: props.goodsRow,\n    },\n  }\n  let paramString = JSON.stringify(param)\n  //@ts-ignore\n  JSCallNative.postMessage(paramString)\n}\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({ class: \"goods-row\" }, _attrs))\n  } data-v-90907ebb><div class=\"goods-img\" data-v-90907ebb><img${\n    _ssrRenderAttr(\"src\", __props.goodsRow.cover)\n  } alt=\"\" data-v-90907ebb></div><div class=\"goods-next\" data-v-90907ebb><div class=\"goods-title\" data-v-90907ebb>${\n    _ssrInterpolate(__props.goodsRow.title)\n  }</div><div class=\"goods-buy\" data-v-90907ebb><div class=\"goods-price\" data-v-90907ebb><span data-v-90907ebb>¥</span> ${\n    _ssrInterpolate(((__props.goodsRow.price || 0) / 100)?.toFixed(2))\n  }</div><div class=\"goods-tobuy\" data-v-90907ebb>${\n    _ssrInterpolate(_ctx.$t('common.立即购买'))\n  }</div></div></div></div>`)\n}\n}\n\n})",
+      "start": 1741448043616,
+      "end": 1741448043616
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1741448043616,
+      "end": 1741448043616,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1741448043616,
+      "end": 1741448043616,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1741448043616,
+      "end": 1741448043616,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1741448043616,
+      "end": 1741448043616,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:resource",
+      "start": 1741448043616,
+      "end": 1741448043616,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:resource",
+      "start": 1741448043616,
+      "end": 1741448043616,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:directive",
+      "start": 1741448043616,
+      "end": 1741448043616,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:directive",
+      "start": 1741448043616,
+      "end": 1741448043616,
+      "order": "pre"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1741448043616,
+      "end": 1741448043616,
+      "order": "pre"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1741448043616,
+      "end": 1741448043616,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-only-component-transform",
+      "start": 1741448043617,
+      "end": 1741448043617,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1741448043617,
+      "end": 1741448043617,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"BwGoodsRow\",\n  __ssrInlineRender: true,\n  props: {\n    goodsRow: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    const onTapBuyGoods = () => {\n      let param = {\n        timestamp: Date.now(),\n        type: \"buyGoods\",\n        data: {\n          // 商品id 可为空\n          id: props.goodsRow.id,\n          /// 商品 url 地址\n          url: props.goodsRow.url,\n          goods: props.goodsRow\n        }\n      };\n      let paramString = JSON.stringify(param);\n      JSCallNative.postMessage(paramString);\n    };\n    return (_ctx, _push, _parent, _attrs) => {\n      _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"goods-row\" }, _attrs))} data-v-90907ebb><div class=\"goods-img\" data-v-90907ebb><img${_ssrRenderAttr(\"src\", __props.goodsRow.cover)} alt=\"\" data-v-90907ebb></div><div class=\"goods-next\" data-v-90907ebb><div class=\"goods-title\" data-v-90907ebb>${_ssrInterpolate(__props.goodsRow.title)}</div><div class=\"goods-buy\" data-v-90907ebb><div class=\"goods-price\" data-v-90907ebb><span data-v-90907ebb>¥</span> ${_ssrInterpolate(((__props.goodsRow.price || 0) / 100)?.toFixed(2))}</div><div class=\"goods-tobuy\" data-v-90907ebb>${_ssrInterpolate(_ctx.$t(\"common.立即购买\"))}</div></div></div></div>`);\n    };\n  }\n});\n",
+      "start": 1741448043619,
+      "end": 1741448044478,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/composables/goods/BwGoodsRow.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\n\nexport default /*@__PURE__*/_defineComponent({\n  __name: 'BwGoodsRow',\n  __ssrInlineRender: true,\n  props: {\n  goodsRow: {\n    type: Object,\n    default: () => ({}),\n  },\n},\n  setup(__props) {\n\nconst props = __props\nconst onTapBuyGoods = () => {\n  let param = {\n    timestamp: Date.now(),\n    type: 'buyGoods',\n    data: {\n      // 商品id 可为空\n      id: props.goodsRow.id,\n      /// 商品 url 地址\n      url: props.goodsRow.url,\n      goods: props.goodsRow,\n    },\n  }\n  let paramString = JSON.stringify(param)\n  //@ts-ignore\n  JSCallNative.postMessage(paramString)\n}\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({ class: \"goods-row\" }, _attrs))\n  } data-v-90907ebb><div class=\"goods-img\" data-v-90907ebb><img${\n    _ssrRenderAttr(\"src\", __props.goodsRow.cover)\n  } alt=\"\" data-v-90907ebb></div><div class=\"goods-next\" data-v-90907ebb><div class=\"goods-title\" data-v-90907ebb>${\n    _ssrInterpolate(__props.goodsRow.title)\n  }</div><div class=\"goods-buy\" data-v-90907ebb><div class=\"goods-price\" data-v-90907ebb><span data-v-90907ebb>¥</span> ${\n    _ssrInterpolate(((__props.goodsRow.price || 0) / 100)?.toFixed(2))\n  }</div><div class=\"goods-tobuy\" data-v-90907ebb>${\n    _ssrInterpolate(_ctx.$t('common.立即购买'))\n  }</div></div></div></div>`)\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,cAAc,mBAAmB;AAC1C,SAAS,iBAAiB,gBAAgB,kBAAkB,iBAAiB,kBAAkB,uBAAuB;AAGtH,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,mBAAmB;AAAA,EACnB,OAAO;AAAA,IACP,UAAU;AAAA,MACR,MAAM;AAAA,MACN,SAAS,OAAO,CAAC;AAAA,IACnB;AAAA,EACF;AAAA,EACE,MAAM,SAAS;AAEjB,UAAM,QAAQ;AACd,UAAM,gBAAgB,MAAM;AAC1B,UAAI,QAAQ;AAAA,QACV,WAAW,KAAK,IAAI;AAAA,QACpB,MAAM;AAAA,QACN,MAAM;AAAA;AAAA,UAEJ,IAAI,MAAM,SAAS;AAAA;AAAA,UAEnB,KAAK,MAAM,SAAS;AAAA,UACpB,OAAO,MAAM;AAAA,QACf;AAAA,MACF;AACA,UAAI,cAAc,KAAK,UAAU,KAAK;AAEtC,mBAAa,YAAY,WAAW;AAAA,IACtC;AAEA,WAAO,CAAC,MAAU,OAAW,SAAa,WAAgB;AACxD,YAAM,OACJ,gBAAgB,YAAY,EAAE,OAAO,YAAY,GAAG,MAAM,CAAC,CAC7D,+DACE,eAAe,OAAO,QAAQ,SAAS,KAAK,CAC9C,kHACE,gBAAgB,QAAQ,SAAS,KAAK,CACxC,wHACE,kBAAkB,QAAQ,SAAS,SAAS,KAAK,MAAM,QAAQ,CAAC,CAAC,CACnE,kDACE,gBAAgB,KAAK,GAAG,aAAa,CAAC,CACxC,0BAA0B;AAAA,IAC5B;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1741448044478,
+      "end": 1741448044478,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1741448044478,
+      "end": 1741448044478,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1741448044478,
+      "end": 1741448044478,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1741448044479,
+      "end": 1741448044479,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448044479,
+      "end": 1741448044479,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448044479,
+      "end": 1741448044479,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1741448044479,
+      "end": 1741448044479,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1741448044479,
+      "end": 1741448044479,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1741448044479,
+      "end": 1741448044479,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1741448044479,
+      "end": 1741448044479,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448044479,
+      "end": 1741448044479,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1741448044479,
+      "end": 1741448044479,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1741448044479,
+      "end": 1741448044479,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1741448044479,
+      "end": 1741448044479,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1741448044479,
+      "end": 1741448044479,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1741448044479,
+      "end": 1741448044479,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1741448044479,
+      "end": 1741448044479,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1741448044479,
+      "end": 1741448044479,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1741448044479,
+      "end": 1741448044479,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1741448044479,
+      "end": 1741448044479,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1741448044479,
+      "end": 1741448044479,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1741448044479,
+      "end": 1741448044479,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1741448044479,
+      "end": 1741448044479,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1741448044479,
+      "end": 1741448044480,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1741448044479,
+      "end": 1741448044480,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1741448044480,
+      "end": 1741448044480,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1741448044480,
+      "end": 1741448044480,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1741448044480,
+      "end": 1741448044480,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1741448044480,
+      "end": 1741448044480,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1741448044480,
+      "end": 1741448044480,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1741448044480,
+      "end": 1741448044480,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1741448044480,
+      "end": 1741448044480,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1741448044480,
+      "end": 1741448044480,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1741448044480,
+      "end": 1741448044480,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1741448044480,
+      "end": 1741448044480,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1741448044480,
+      "end": 1741448044480,
+      "order": "normal"
+    }
+  ]
+}

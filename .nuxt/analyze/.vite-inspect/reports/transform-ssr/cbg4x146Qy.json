@@ -1,0 +1,326 @@
+{
+  "resolvedId": "/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/assets/css/index.scss?inline&used",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "* {\n  box-sizing: border-box;\n}\n\n@import url(\"./ui-scss.scss\");\n\nhtml {\n  // font-size: 4.2vw; /* 根据视口宽度设置字体大小 */\n  @apply tw-text-[16px];\n  // max-sm:tw-text-[4vw];\n}\n\n.dd-container {\n  width: 100%;\n  @apply xl:tw-w-[1280px] md:tw-w-[768px] lg:tw-w-[1000px] tw-mx-auto ss:tw-px-[1rem];\n}\n$fontSizes: (\n  \"20-12\": (\n    12,\n    16,\n    20,\n  ),\n  20: (\n    16,\n    18,\n    20,\n  ),\n  30: (\n    22,\n    28,\n    36,\n  ),\n  34: (\n    20,\n    28,\n    34,\n  ),\n  36: (\n    24,\n    30,\n    36,\n  ),\n  42: (\n    30,\n    35,\n    42,\n  ),\n  46: (\n    36,\n    40,\n    46,\n  ),\n  48: (\n    36,\n    40,\n    48,\n  ),\n  \"48-28\": (\n    28,\n    37,\n    48,\n  ),\n  84: (\n    48,\n    70,\n    84,\n  ),\n  60: (\n    46,\n    50,\n    60,\n  ),\n  54: (\n    42,\n    45,\n    54,\n  ),\n);\n@each $key, $value in $fontSizes {\n  .dd-fs-#{$key} {\n    @apply max-md:tw-text-[#{nth($value, 1)}px] max-lg:tw-text-[#{nth($value, 2)}px] lg:tw-text-[#{nth($value, 3)}px];\n  }\n}\n\n.dd-title-text {\n  @extend .dd-fs-36;\n}\n\n\n.download-app-popover {\n  width: 144px !important;\n  padding: 8px 0 !important;\n  box-sizing: border-box;\n}",
+      "start": 1741448037679,
+      "end": 1741448037792,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1741448037792,
+      "end": 1741448037792,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1741448037792,
+      "end": 1741448037792,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1741448037792,
+      "end": 1741448037792,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1741448037792,
+      "end": 1741448037792,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:resource",
+      "start": 1741448037792,
+      "end": 1741448037792,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:resource",
+      "start": 1741448037792,
+      "end": 1741448037792,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:directive",
+      "start": 1741448037792,
+      "end": 1741448037792,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:directive",
+      "start": 1741448037792,
+      "end": 1741448037792,
+      "order": "pre"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1741448037792,
+      "end": 1741448037792,
+      "order": "pre"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1741448037792,
+      "end": 1741448037792,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-only-component-transform",
+      "start": 1741448037792,
+      "end": 1741448037792,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "result": ".bw-button+.bw-button{margin-left:16px}*{box-sizing:border-box}html{font-size:16px}.dd-container{margin-left:auto;margin-right:auto;width:100%}@media (min-width:100px){.dd-container{padding-left:1rem;padding-right:1rem}}@media (min-width:768px){.dd-container{width:768px}}@media (min-width:1024px){.dd-container{width:1000px}}@media (min-width:1440px){.dd-container{width:1280px}}@media not all and (min-width:1024px){.dd-fs-20-12{font-size:16px}}@media not all and (min-width:768px){.dd-fs-20-12{font-size:12px}}@media (min-width:1024px){.dd-fs-20-12{font-size:20px}}@media not all and (min-width:1024px){.dd-fs-20{font-size:18px}}@media not all and (min-width:768px){.dd-fs-20{font-size:16px}}@media (min-width:1024px){.dd-fs-20{font-size:20px}}@media not all and (min-width:1024px){.dd-fs-30{font-size:28px}}@media not all and (min-width:768px){.dd-fs-30{font-size:22px}}@media (min-width:1024px){.dd-fs-30{font-size:36px}}@media not all and (min-width:1024px){.dd-fs-34{font-size:28px}}@media not all and (min-width:768px){.dd-fs-34{font-size:20px}}@media (min-width:1024px){.dd-fs-34{font-size:34px}}@media not all and (min-width:1024px){.dd-fs-36,.dd-title-text{font-size:30px}}@media not all and (min-width:768px){.dd-fs-36,.dd-title-text{font-size:24px}}@media (min-width:1024px){.dd-fs-36,.dd-title-text{font-size:36px}}@media not all and (min-width:1024px){.dd-fs-42{font-size:35px}}@media not all and (min-width:768px){.dd-fs-42{font-size:30px}}@media (min-width:1024px){.dd-fs-42{font-size:42px}}@media not all and (min-width:1024px){.dd-fs-46{font-size:40px}}@media not all and (min-width:768px){.dd-fs-46{font-size:36px}}@media (min-width:1024px){.dd-fs-46{font-size:46px}}@media not all and (min-width:1024px){.dd-fs-48{font-size:40px}}@media not all and (min-width:768px){.dd-fs-48{font-size:36px}}@media (min-width:1024px){.dd-fs-48{font-size:48px}}@media not all and (min-width:1024px){.dd-fs-48-28{font-size:37px}}@media not all and (min-width:768px){.dd-fs-48-28{font-size:28px}}@media (min-width:1024px){.dd-fs-48-28{font-size:48px}}@media not all and (min-width:1024px){.dd-fs-84{font-size:70px}}@media not all and (min-width:768px){.dd-fs-84{font-size:48px}}@media (min-width:1024px){.dd-fs-84{font-size:84px}}@media not all and (min-width:1024px){.dd-fs-60{font-size:50px}}@media not all and (min-width:768px){.dd-fs-60{font-size:46px}}@media (min-width:1024px){.dd-fs-60{font-size:60px}}@media not all and (min-width:1024px){.dd-fs-54{font-size:45px}}@media not all and (min-width:768px){.dd-fs-54{font-size:42px}}@media (min-width:1024px){.dd-fs-54{font-size:54px}}.download-app-popover{box-sizing:border-box;padding:8px 0!important;width:144px!important}",
+      "start": 1741448037792,
+      "end": 1741448038971,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "file": "/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/assets/css/index.scss",
+        "mappings": "AAAA,sBACE,gBACF,CCFA,EACE,sBAOA,oBAIF,cAEE,mCADA,WACA,6OAkEE,mqEASJ,sBAGE,sBADA,wBADA",
+        "names": [],
+        "ignoreList": [],
+        "sources": [
+          "/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/assets/css/ui-scss.scss",
+          "/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/assets/css/index.scss"
+        ],
+        "sourcesContent": [
+          ".bw-button + .bw-button {\n  margin-left: 16px;\n}",
+          null
+        ]
+      }
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1741448038971,
+      "end": 1741448038971,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1741448038971,
+      "end": 1741448038971,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1741448038971,
+      "end": 1741448038971,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1741448038971,
+      "end": 1741448038971,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1741448038971,
+      "end": 1741448038971,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448038971,
+      "end": 1741448038971,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448038971,
+      "end": 1741448038971,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1741448038971,
+      "end": 1741448038971,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1741448038971,
+      "end": 1741448038971,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1741448038971,
+      "end": 1741448038971,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1741448038971,
+      "end": 1741448038971,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448038971,
+      "end": 1741448038971,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1741448038971,
+      "end": 1741448038971,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1741448038971,
+      "end": 1741448038971,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "result": "export default \".bw-button+.bw-button{margin-left:16px}*{box-sizing:border-box}html{font-size:16px}.dd-container{margin-left:auto;margin-right:auto;width:100%}@media (min-width:100px){.dd-container{padding-left:1rem;padding-right:1rem}}@media (min-width:768px){.dd-container{width:768px}}@media (min-width:1024px){.dd-container{width:1000px}}@media (min-width:1440px){.dd-container{width:1280px}}@media not all and (min-width:1024px){.dd-fs-20-12{font-size:16px}}@media not all and (min-width:768px){.dd-fs-20-12{font-size:12px}}@media (min-width:1024px){.dd-fs-20-12{font-size:20px}}@media not all and (min-width:1024px){.dd-fs-20{font-size:18px}}@media not all and (min-width:768px){.dd-fs-20{font-size:16px}}@media (min-width:1024px){.dd-fs-20{font-size:20px}}@media not all and (min-width:1024px){.dd-fs-30{font-size:28px}}@media not all and (min-width:768px){.dd-fs-30{font-size:22px}}@media (min-width:1024px){.dd-fs-30{font-size:36px}}@media not all and (min-width:1024px){.dd-fs-34{font-size:28px}}@media not all and (min-width:768px){.dd-fs-34{font-size:20px}}@media (min-width:1024px){.dd-fs-34{font-size:34px}}@media not all and (min-width:1024px){.dd-fs-36,.dd-title-text{font-size:30px}}@media not all and (min-width:768px){.dd-fs-36,.dd-title-text{font-size:24px}}@media (min-width:1024px){.dd-fs-36,.dd-title-text{font-size:36px}}@media not all and (min-width:1024px){.dd-fs-42{font-size:35px}}@media not all and (min-width:768px){.dd-fs-42{font-size:30px}}@media (min-width:1024px){.dd-fs-42{font-size:42px}}@media not all and (min-width:1024px){.dd-fs-46{font-size:40px}}@media not all and (min-width:768px){.dd-fs-46{font-size:36px}}@media (min-width:1024px){.dd-fs-46{font-size:46px}}@media not all and (min-width:1024px){.dd-fs-48{font-size:40px}}@media not all and (min-width:768px){.dd-fs-48{font-size:36px}}@media (min-width:1024px){.dd-fs-48{font-size:48px}}@media not all and (min-width:1024px){.dd-fs-48-28{font-size:37px}}@media not all and (min-width:768px){.dd-fs-48-28{font-size:28px}}@media (min-width:1024px){.dd-fs-48-28{font-size:48px}}@media not all and (min-width:1024px){.dd-fs-84{font-size:70px}}@media not all and (min-width:768px){.dd-fs-84{font-size:48px}}@media (min-width:1024px){.dd-fs-84{font-size:84px}}@media not all and (min-width:1024px){.dd-fs-60{font-size:50px}}@media not all and (min-width:768px){.dd-fs-60{font-size:46px}}@media (min-width:1024px){.dd-fs-60{font-size:60px}}@media not all and (min-width:1024px){.dd-fs-54{font-size:45px}}@media not all and (min-width:768px){.dd-fs-54{font-size:42px}}@media (min-width:1024px){.dd-fs-54{font-size:54px}}.download-app-popover{box-sizing:border-box;padding:8px 0!important;width:144px!important}\"",
+      "start": 1741448038971,
+      "end": 1741448039122,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1741448039122,
+      "end": 1741448039122,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1741448039122,
+      "end": 1741448039122,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1741448039122,
+      "end": 1741448039122,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1741448039122,
+      "end": 1741448039122,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1741448039123,
+      "end": 1741448039123,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1741448039124,
+      "end": 1741448039124,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1741448039123,
+      "end": 1741448039124,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1741448039124,
+      "end": 1741448039124,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1741448039124,
+      "end": 1741448039124,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1741448039124,
+      "end": 1741448039124,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1741448039124,
+      "end": 1741448039124,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1741448039124,
+      "end": 1741448039125,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1741448039124,
+      "end": 1741448039125,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1741448039126,
+      "end": 1741448039128,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1741448039126,
+      "end": 1741448039128,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1741448039128,
+      "end": 1741448039128,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1741448039130,
+      "end": 1741448039130,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1741448039130,
+      "end": 1741448039130,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1741448039130,
+      "end": 1741448039130,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1741448039130,
+      "end": 1741448039130,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1741448039130,
+      "end": 1741448039130,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1741448039130,
+      "end": 1741448039130,
+      "order": "normal"
+    }
+  ]
+}

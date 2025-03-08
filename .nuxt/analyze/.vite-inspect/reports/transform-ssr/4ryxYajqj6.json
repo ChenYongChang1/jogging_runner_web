@@ -1,0 +1,336 @@
+{
+  "resolvedId": "/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/middleware/redirect.global.ts",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { languageList } from \"~/assets/js/const\";\n\nexport default defineNuxtRouteMiddleware((to, from) => {\n    // isAuthenticated()是一个验证用户是否已经认证的示例方法\n    const router = useRouter();\n    if (!to.matched?.length) {\n      return navigateTo(\"/404\");\n    }\n    const lang = to.params.lang?.toString();\n    const keyLanguage = languageList.map((i) => i.value);\n    if (lang && !keyLanguage.includes(lang)) {\n      return navigateTo(\"/404\");\n    }\n});\n",
+      "start": 1741448039177,
+      "end": 1741448039294,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1741448039295,
+      "end": 1741448039295,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1741448039295,
+      "end": 1741448039295,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1741448039295,
+      "end": 1741448039295,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1741448039295,
+      "end": 1741448039295,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:resource",
+      "start": 1741448039295,
+      "end": 1741448039295,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:resource",
+      "start": 1741448039295,
+      "end": 1741448039295,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:directive",
+      "start": 1741448039295,
+      "end": 1741448039295,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:directive",
+      "start": 1741448039295,
+      "end": 1741448039295,
+      "order": "pre"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1741448039295,
+      "end": 1741448039295,
+      "order": "pre"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1741448039295,
+      "end": 1741448039295,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-only-component-transform",
+      "start": 1741448039295,
+      "end": 1741448039295,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1741448039295,
+      "end": 1741448039295,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { languageList } from \"~/assets/js/const\";\nexport default defineNuxtRouteMiddleware((to, from) => {\n  const router = useRouter();\n  if (!to.matched?.length) {\n    return navigateTo(\"/404\");\n  }\n  const lang = to.params.lang?.toString();\n  const keyLanguage = languageList.map((i) => i.value);\n  if (lang && !keyLanguage.includes(lang)) {\n    return navigateTo(\"/404\");\n  }\n});\n",
+      "start": 1741448039295,
+      "end": 1741448040605,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/middleware/redirect.global.ts"
+        ],
+        "sourcesContent": [
+          "import { languageList } from \"~/assets/js/const\";\n\nexport default defineNuxtRouteMiddleware((to, from) => {\n    // isAuthenticated()是一个验证用户是否已经认证的示例方法\n    const router = useRouter();\n    if (!to.matched?.length) {\n      return navigateTo(\"/404\");\n    }\n    const lang = to.params.lang?.toString();\n    const keyLanguage = languageList.map((i) => i.value);\n    if (lang && !keyLanguage.includes(lang)) {\n      return navigateTo(\"/404\");\n    }\n});\n"
+        ],
+        "mappings": "AAAA,SAAS,oBAAoB;AAE7B,eAAe,0BAA0B,CAAC,IAAI,SAAS;AAEnD,QAAM,SAAS,UAAU;AACzB,MAAI,CAAC,GAAG,SAAS,QAAQ;AACvB,WAAO,WAAW,MAAM;AAAA,EAC1B;AACA,QAAM,OAAO,GAAG,OAAO,MAAM,SAAS;AACtC,QAAM,cAAc,aAAa,IAAI,CAAC,MAAM,EAAE,KAAK;AACnD,MAAI,QAAQ,CAAC,YAAY,SAAS,IAAI,GAAG;AACvC,WAAO,WAAW,MAAM;AAAA,EAC1B;AACJ,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1741448040605,
+      "end": 1741448040605,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1741448040605,
+      "end": 1741448040605,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1741448040605,
+      "end": 1741448040605,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1741448040605,
+      "end": 1741448040605,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448040605,
+      "end": 1741448040605,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448040605,
+      "end": 1741448040605,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1741448040605,
+      "end": 1741448040606,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1741448040605,
+      "end": 1741448040606,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1741448040606,
+      "end": 1741448040606,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1741448040606,
+      "end": 1741448040606,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448040606,
+      "end": 1741448040606,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1741448040606,
+      "end": 1741448040606,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1741448040606,
+      "end": 1741448040606,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1741448040606,
+      "end": 1741448040606,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1741448040606,
+      "end": 1741448040606,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1741448040606,
+      "end": 1741448040606,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1741448040606,
+      "end": 1741448040606,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1741448040606,
+      "end": 1741448040606,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1741448040606,
+      "end": 1741448040606,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1741448040606,
+      "end": 1741448040606,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1741448040606,
+      "end": 1741448040606,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1741448040606,
+      "end": 1741448040606,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1741448040606,
+      "end": 1741448040606,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { languageList } from \"~/assets/js/const\";\n\nimport { defineNuxtRouteMiddleware, useRouter, navigateTo } from '#app/composables/router';\nexport default defineNuxtRouteMiddleware((to, from) => {\n  const router = useRouter();\n  if (!to.matched?.length) {\n    return navigateTo(\"/404\");\n  }\n  const lang = to.params.lang?.toString();\n  const keyLanguage = languageList.map((i) => i.value);\n  if (lang && !keyLanguage.includes(lang)) {\n    return navigateTo(\"/404\");\n  }\n});\n",
+      "start": 1741448040606,
+      "end": 1741448040607,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;;;AAChD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7B,CAAC,CAAC;AACF,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7B,CAAC,CAAC;AACF,CAAC,CAAC;"
+      }
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { languageList } from \"~/assets/js/const\";\n\nimport { defineNuxtRouteMiddleware, useRouter, navigateTo } from '#app/composables/router';\nexport default defineNuxtRouteMiddleware((to, from) => {\n  const router = useRouter();\n  if (!to.matched?.length) {\n    return navigateTo(\"/404\");\n  }\n  const lang = to.params.lang?.toString();\n  const keyLanguage = languageList.map((i) => i.value);\n  if (lang && !keyLanguage.includes(lang)) {\n    return navigateTo(\"/404\");\n  }\n});\n",
+      "start": 1741448040606,
+      "end": 1741448040607,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;;;AAChD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7B,CAAC,CAAC;AACF,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7B,CAAC,CAAC;AACF,CAAC,CAAC;"
+      }
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1741448040607,
+      "end": 1741448040607,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1741448040607,
+      "end": 1741448040607,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1741448040607,
+      "end": 1741448040607,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1741448040607,
+      "end": 1741448040607,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1741448040607,
+      "end": 1741448040607,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1741448040607,
+      "end": 1741448040607,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1741448040607,
+      "end": 1741448040607,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1741448040607,
+      "end": 1741448040607,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1741448040607,
+      "end": 1741448040607,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1741448040607,
+      "end": 1741448040608,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1741448040608,
+      "end": 1741448040608,
+      "order": "normal"
+    }
+  ]
+}

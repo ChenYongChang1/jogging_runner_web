@@ -1,0 +1,336 @@
+{
+  "resolvedId": "/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/composables/api/home.ts",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "// 网站首页-分类列表\nexport const getCategory = async () => {\n  const result = await useFetchGet(\"/api/jogging/wb/category\");\n  return result.data;\n  // return {\n  //   code: 0,\n  //   msg: \"\",\n  //   show_err: false,\n  //   timestamp: 1740450777,\n  //   data: [\n  //     {\n  //       id: 1,\n  //       name: \"入门与技巧\",\n  //       BackGroup: \"https://static.chaomanpao.com\",\n  //       icon: \"https://static.chaomanpao.com\",\n  //       buttonColor: \"#3A6BEF\",\n  //       appId: \"\",\n  //     },\n  //     {\n  //       id: 2,\n  //       name: \"超慢跑装备\",\n  //       BackGroup: \"https://static.chaomanpao.com\",\n  //       icon: \"https://static.chaomanpao.com\",\n  //       buttonColor: \"#FFB648\",\n  //       appId: \"\",\n  //     },\n  //     {\n  //       id: 3,\n  //       name: \"健康与安全\",\n  //       BackGroup: \"https://static.chaomanpao.com\",\n  //       icon: \"https://static.chaomanpao.com\",\n  //       buttonColor: \"#8995FD\",\n  //       appId: \"\",\n  //     },\n  //     {\n  //       id: 4,\n  //       name: \"运动与营养\",\n  //       BackGroup: \"https://static.chaomanpao.com\",\n  //       icon: \"https://static.chaomanpao.com\",\n  //       buttonColor: \"#61CD57\",\n  //       appId: \"\",\n  //     },\n  //     {\n  //       id: 5,\n  //       name: \"视频与音乐\",\n  //       BackGroup: \"https://static.chaomanpao.com\",\n  //       icon: \"https://static.chaomanpao.com\",\n  //       buttonColor: \"\",\n  //       appId: \"\",\n  //     },\n  //   ],\n  //   count: 0,\n  //   version: 0,\n  // }.data;\n};\n\n// 搜索/分类的接口 首页列表也是这个\nexport const getSearchInfo = async (params: {\n  alias?: string;\n  keyword?: string;\n  page?: number;\n}) => {\n  const result = await useFetchGet(\"/api/jogging/wb/article\", params);\n  \n  return result.data.value?.data;\n  // return {\n  //   code: 0,\n  //   msg: \"\",\n  //   show_err: false,\n  //   timestamp: 1740469967,\n  //   data: {\n  //     page: params.page,\n  //     totalPage: 10,\n  //     list: [\n  //       {\n  //         id: 1,\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 2,\n  //         visitNum: 1000,\n  //       },\n  //       {\n  //         id: 2,\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1001,\n  //       },\n  //       {\n  //         id: 3,\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1002,\n  //       },\n  //       {\n  //         id: 4,\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1003,\n  //       },\n  //       {\n  //         id: 5,\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1004,\n  //       },\n  //       {\n  //         id: 6,\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1005,\n  //       },\n  //       {\n  //         id: 7,\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1006,\n  //       },\n  //       {\n  //         id: 8,\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1007,\n  //       },\n  //       {\n  //         id: 9,\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1008,\n  //       },\n  //       {\n  //         id: 10,\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1009,\n  //       },\n  //       {\n  //         id: 11,\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1010,\n  //       },\n  //       {\n  //         id: 12,\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1011,\n  //       },\n  //       {\n  //         id: 13,\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1012,\n  //       },\n  //       {\n  //         id: 14,\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1013,\n  //       },\n  //       {\n  //         id: 15,\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1014,\n  //       },\n  //       {\n  //         id: 16,\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1015,\n  //       },\n  //       {\n  //         id: 17,\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1016,\n  //       },\n  //       {\n  //         id: 18,\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1017,\n  //       },\n  //       {\n  //         id: 19,\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1018,\n  //       },\n  //     ],\n  //     lasts: [],\n  //     categories: [\n  //       {\n  //         id: 'xxx',\n  //         name: '1级分类',\n  //         childs: [\n  //           {\n  //             id: '123',\n  //             name: '二级分类名'\n  //           }\n  //         ]\n  //       }\n  //     ],\n  //   },\n  //   count: 0,\n  //   version: 0,\n  // }.data;\n};\n\nexport const getArticleInfo = async (id: string) => {\n  const result = await useFetchGet(`/api/jogging/wb/article/${id}`);\n  return result.data.value?.data;\n  // return {\n  //   code: 0,\n  //   msg: \"\",\n  //   show_err: false,\n  //   timestamp: 1740475063,\n  //   data: {\n  //     id: \"1\",\n  //     title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //     desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //     keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //     cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //     isVideo: 1,\n  //     visitNum: 1000,\n  //     content:\n  //       \"<div>\\n\\t\\t<div>\\n\\t\\t<h1>超慢跑三步骤</h1> <h2>🏃 基础要点</h2> <ul> <li>步幅：比走路小一半</li> <li>速度：每小时5-6公里</li> <li>呼吸：鼻子吸气，嘴巴呼气</li> </ul> <h2>⏱️ 每日训练</h2> <ul> <li>新手：15分钟/天 × 3天</li> <li>适应后：30分钟/天 × 5天</li> </ul> <h2>💡 注意事项</h2> <ul> <li>饭后1小时再开始</li> <li>穿缓冲好的运动鞋</li> <li>运动后做拉伸</li> </ul>\\n\\t\\t</div>\\n\\t\\t##insert_goods##\\n\\t</div>\",\n  //     lasts: [\n  //       {\n  //         id: \"D5kSp7ne6Og4KDkxcesp+g==\",\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1000,\n  //       },\n  //       {\n  //         id: \"c0mpKDa+Ccus1A3QYDe42Q==\",\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1001,\n  //       },\n  //       {\n  //         id: \"5hMXN11bax2UcovvRj4YGQ==\",\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1002,\n  //       },\n  //       {\n  //         id: \"yctco0sSfFqQ0TWCA2gHDA==\",\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1003,\n  //       },\n  //       {\n  //         id: \"1t8DxznV1vDUZyUpZYx2tw==\",\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1004,\n  //       },\n  //     ],\n  //     categories: [\n  //       {\n  //         id: 1,\n  //         name: \"入门与技巧\",\n  //         pathName: \"\",\n  //         backGroup: \"https://static.chaomanpao.comcategory/cover/1.webp\",\n  //         icon: \"https://static.chaomanpao.comcategory/cover/book.webp\",\n  //         buttonColor: \"#3A6BEF\",\n  //         childs: [\n  //           {\n  //             id: 6,\n  //             name: \"基础姿势\",\n  //             pathName: \"\",\n  //             backGroup: \"\",\n  //             icon: \"\",\n  //             buttonColor: \"\",\n  //             childs: null,\n  //           },\n  //           {\n  //             id: 7,\n  //             name: \"节奏把控\",\n  //             pathName: \"\",\n  //             backGroup: \"\",\n  //             icon: \"\",\n  //             buttonColor: \"\",\n  //             childs: null,\n  //           },\n  //           {\n  //             id: 8,\n  //             name: \"初跑计划\",\n  //             pathName: \"\",\n  //             backGroup: \"\",\n  //             icon: \"\",\n  //             buttonColor: \"\",\n  //             childs: null,\n  //           },\n  //         ],\n  //       },\n  //       {\n  //         id: 2,\n  //         name: \"超慢跑装备\",\n  //         pathName: \"\",\n  //         backGroup: \"https://static.chaomanpao.comcategory/cover/2.webp\",\n  //         icon: \"https://static.chaomanpao.comcategory/cover/shoe.webp\",\n  //         buttonColor: \"#FFB648\",\n  //         childs: [\n  //           {\n  //             id: 9,\n  //             name: \"超慢跑垫子\",\n  //             pathName: \"\",\n  //             backGroup: \"\",\n  //             icon: \"\",\n  //             buttonColor: \"\",\n  //             childs: null,\n  //           },\n  //           {\n  //             id: 10,\n  //             name: \"跑鞋选择\",\n  //             pathName: \"\",\n  //             backGroup: \"\",\n  //             icon: \"\",\n  //             buttonColor: \"\",\n  //             childs: null,\n  //           },\n  //           {\n  //             id: 13,\n  //             name: \"运动服饰\",\n  //             pathName: \"\",\n  //             backGroup: \"\",\n  //             icon: \"\",\n  //             buttonColor: \"\",\n  //             childs: null,\n  //           },\n  //           {\n  //             id: 14,\n  //             name: \"辅助装备\",\n  //             pathName: \"\",\n  //             backGroup: \"\",\n  //             icon: \"\",\n  //             buttonColor: \"\",\n  //             childs: null,\n  //           },\n  //         ],\n  //       },\n  //       {\n  //         id: 3,\n  //         name: \"健康与安全\",\n  //         pathName: \"\",\n  //         backGroup: \"https://static.chaomanpao.comcategory/cover/3.webp\",\n  //         icon: \"https://static.chaomanpao.comcategory/cover/healthy.webp\",\n  //         buttonColor: \"#8995FD\",\n  //         childs: [\n  //           {\n  //             id: 15,\n  //             name: \"运动损伤预防\",\n  //             pathName: \"\",\n  //             backGroup: \"\",\n  //             icon: \"\",\n  //             buttonColor: \"\",\n  //             childs: null,\n  //           },\n  //           {\n  //             id: 16,\n  //             name: \"身体状态评估\",\n  //             pathName: \"\",\n  //             backGroup: \"\",\n  //             icon: \"\",\n  //             buttonColor: \"\",\n  //             childs: null,\n  //           },\n  //           {\n  //             id: 17,\n  //             name: \"应急处理\",\n  //             pathName: \"\",\n  //             backGroup: \"\",\n  //             icon: \"\",\n  //             buttonColor: \"\",\n  //             childs: null,\n  //           },\n  //         ],\n  //       },\n  //       {\n  //         id: 4,\n  //         name: \"运动与营养\",\n  //         pathName: \"\",\n  //         backGroup: \"https://static.chaomanpao.comcategory/cover/4.webp\",\n  //         icon: \"https://static.chaomanpao.comcategory/cover/nutrition.webp\",\n  //         buttonColor: \"#61CD57\",\n  //         childs: [\n  //           {\n  //             id: 18,\n  //             name: \"饮食搭配\",\n  //             pathName: \"\",\n  //             backGroup: \"\",\n  //             icon: \"\",\n  //             buttonColor: \"\",\n  //             childs: null,\n  //           },\n  //           {\n  //             id: 19,\n  //             name: \"营养补充\",\n  //             pathName: \"\",\n  //             backGroup: \"\",\n  //             icon: \"\",\n  //             buttonColor: \"\",\n  //             childs: null,\n  //           },\n  //           {\n  //             id: 20,\n  //             name: \"水份管理\",\n  //             pathName: \"\",\n  //             backGroup: \"\",\n  //             icon: \"\",\n  //             buttonColor: \"\",\n  //             childs: null,\n  //           },\n  //         ],\n  //       },\n  //       {\n  //         id: 5,\n  //         name: \"视频与音乐\",\n  //         pathName: \"\",\n  //         backGroup: \"\",\n  //         icon: \"\",\n  //         buttonColor: \"\",\n  //         childs: [\n  //           {\n  //             id: 21,\n  //             name: \"超慢跑教学视频\",\n  //             pathName: \"\",\n  //             backGroup: \"\",\n  //             icon: \"\",\n  //             buttonColor: \"\",\n  //             childs: null,\n  //           },\n  //           {\n  //             id: 22,\n  //             name: \"超慢跑音乐\",\n  //             pathName: \"\",\n  //             backGroup: \"\",\n  //             icon: \"\",\n  //             buttonColor: \"\",\n  //             childs: null,\n  //           },\n  //           {\n  //             id: 23,\n  //             name: \"听书超慢跑\",\n  //             pathName: \"\",\n  //             backGroup: \"\",\n  //             icon: \"\",\n  //             buttonColor: \"\",\n  //             childs: null,\n  //           },\n  //         ],\n  //       },\n  //     ],\n  //     recommends: [\n  //       {\n  //         id: \"D5kSp7ne6Og4KDkxcesp+g==\",\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1000,\n  //       },\n  //       {\n  //         id: \"c0mpKDa+Ccus1A3QYDe42Q==\",\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1001,\n  //       },\n  //     ],\n  //     relGoods: {\n  //       title: \"超慢跑跑垫-双面防滑，原地超慢跑必备\",\n  //       subTitle: \"超慢跑跑步垫-TPE材质双面防滑，高回弹\",\n  //       cover:\n  //         \"https://img01.yzcdn.cn/upload_files/2024/10/12/Fkxp_8PmcsuaDLLlJkprJzsXaGkd.png\",\n  //       price: 4350,\n  //       originalPrice: 8990,\n  //       url: \"https://shop146116480.youzan.com/v2/showcase/goods?alias=36260a88j8820u0\",\n  //     },\n  //     recommendGoods: [\n  //       {\n  //         title: \"超慢跑跑垫-双面防滑，原地超慢跑必备\",\n  //         subTitle: \"超慢跑跑步垫-TPE材质双面防滑，高回弹\",\n  //         cover:\n  //           \"https://img01.yzcdn.cn/upload_files/2024/10/12/Fkxp_8PmcsuaDLLlJkprJzsXaGkd.png\",\n  //         price: 4350,\n  //         originalPrice: 8990,\n  //         url: \"https://shop146116480.youzan.com/v2/showcase/goods?alias=36260a88j8820u0\",\n  //       },\n  //       {\n  //         title: \"（独家）班长超慢跑同款跑步垫-PU+TPE双防滑材质\",\n  //         subTitle: \"独家跑步专用垫，pu+tpe复合材质高效防滑，有效支撑保护脚裸\",\n  //         cover:\n  //           \"https://img01.yzcdn.cn/upload_files/2024/10/11/FtBy1OAXfht5b_sCVd__pCEl09k6.png\",\n  //         price: 7990,\n  //         originalPrice: 9990,\n  //         url: \"https://shop146116480.m.youzan.com/wscgoods/detail/2xjholmxq6588zp?ump_type=seckill&ump_alias=nerm9uco&activityType=seckill\",\n  //       },\n  //       {\n  //         title: \"超慢跑硅胶防滑运动护膝-中老年有效支撑，稳定髋骨\",\n  //         subTitle:\n  //           \"中老年运动护膝-升级硅胶防滑、有效减震、保护膝盖减少运动损伤\",\n  //         cover:\n  //           \"https://img01.yzcdn.cn/upload_files/2024/09/27/FhWrxTzHkL-rTB_ax8D9idduCCZq.png\",\n  //         price: 4600,\n  //         originalPrice: 9990,\n  //         url: \"https://shop146116480.youzan.com/v2/showcase/goods?alias=360yd1y7bz8pk9m\",\n  //       },\n  //     ],\n  //   },\n  //   count: 0,\n  //   version: 0,\n  // }.data;\n};\n",
+      "start": 1741448041298,
+      "end": 1741448041378,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1741448041378,
+      "end": 1741448041378,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1741448041378,
+      "end": 1741448041378,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1741448041378,
+      "end": 1741448041379,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1741448041378,
+      "end": 1741448041379,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:resource",
+      "start": 1741448041379,
+      "end": 1741448041379,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:resource",
+      "start": 1741448041379,
+      "end": 1741448041379,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:directive",
+      "start": 1741448041379,
+      "end": 1741448041379,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:directive",
+      "start": 1741448041379,
+      "end": 1741448041379,
+      "order": "pre"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1741448041379,
+      "end": 1741448041379,
+      "order": "pre"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1741448041379,
+      "end": 1741448041379,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-only-component-transform",
+      "start": 1741448041379,
+      "end": 1741448041379,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1741448041379,
+      "end": 1741448041379,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "export const getCategory = async () => {\n  const result = await useFetchGet(\"/api/jogging/wb/category\");\n  return result.data;\n};\nexport const getSearchInfo = async (params) => {\n  const result = await useFetchGet(\"/api/jogging/wb/article\", params);\n  return result.data.value?.data;\n};\nexport const getArticleInfo = async (id) => {\n  const result = await useFetchGet(`/api/jogging/wb/article/${id}`);\n  return result.data.value?.data;\n};\n",
+      "start": 1741448041379,
+      "end": 1741448041577,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/composables/api/home.ts"
+        ],
+        "sourcesContent": [
+          "// 网站首页-分类列表\nexport const getCategory = async () => {\n  const result = await useFetchGet(\"/api/jogging/wb/category\");\n  return result.data;\n  // return {\n  //   code: 0,\n  //   msg: \"\",\n  //   show_err: false,\n  //   timestamp: 1740450777,\n  //   data: [\n  //     {\n  //       id: 1,\n  //       name: \"入门与技巧\",\n  //       BackGroup: \"https://static.chaomanpao.com\",\n  //       icon: \"https://static.chaomanpao.com\",\n  //       buttonColor: \"#3A6BEF\",\n  //       appId: \"\",\n  //     },\n  //     {\n  //       id: 2,\n  //       name: \"超慢跑装备\",\n  //       BackGroup: \"https://static.chaomanpao.com\",\n  //       icon: \"https://static.chaomanpao.com\",\n  //       buttonColor: \"#FFB648\",\n  //       appId: \"\",\n  //     },\n  //     {\n  //       id: 3,\n  //       name: \"健康与安全\",\n  //       BackGroup: \"https://static.chaomanpao.com\",\n  //       icon: \"https://static.chaomanpao.com\",\n  //       buttonColor: \"#8995FD\",\n  //       appId: \"\",\n  //     },\n  //     {\n  //       id: 4,\n  //       name: \"运动与营养\",\n  //       BackGroup: \"https://static.chaomanpao.com\",\n  //       icon: \"https://static.chaomanpao.com\",\n  //       buttonColor: \"#61CD57\",\n  //       appId: \"\",\n  //     },\n  //     {\n  //       id: 5,\n  //       name: \"视频与音乐\",\n  //       BackGroup: \"https://static.chaomanpao.com\",\n  //       icon: \"https://static.chaomanpao.com\",\n  //       buttonColor: \"\",\n  //       appId: \"\",\n  //     },\n  //   ],\n  //   count: 0,\n  //   version: 0,\n  // }.data;\n};\n\n// 搜索/分类的接口 首页列表也是这个\nexport const getSearchInfo = async (params: {\n  alias?: string;\n  keyword?: string;\n  page?: number;\n}) => {\n  const result = await useFetchGet(\"/api/jogging/wb/article\", params);\n  \n  return result.data.value?.data;\n  // return {\n  //   code: 0,\n  //   msg: \"\",\n  //   show_err: false,\n  //   timestamp: 1740469967,\n  //   data: {\n  //     page: params.page,\n  //     totalPage: 10,\n  //     list: [\n  //       {\n  //         id: 1,\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 2,\n  //         visitNum: 1000,\n  //       },\n  //       {\n  //         id: 2,\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1001,\n  //       },\n  //       {\n  //         id: 3,\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1002,\n  //       },\n  //       {\n  //         id: 4,\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1003,\n  //       },\n  //       {\n  //         id: 5,\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1004,\n  //       },\n  //       {\n  //         id: 6,\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1005,\n  //       },\n  //       {\n  //         id: 7,\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1006,\n  //       },\n  //       {\n  //         id: 8,\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1007,\n  //       },\n  //       {\n  //         id: 9,\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1008,\n  //       },\n  //       {\n  //         id: 10,\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1009,\n  //       },\n  //       {\n  //         id: 11,\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1010,\n  //       },\n  //       {\n  //         id: 12,\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1011,\n  //       },\n  //       {\n  //         id: 13,\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1012,\n  //       },\n  //       {\n  //         id: 14,\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1013,\n  //       },\n  //       {\n  //         id: 15,\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1014,\n  //       },\n  //       {\n  //         id: 16,\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1015,\n  //       },\n  //       {\n  //         id: 17,\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1016,\n  //       },\n  //       {\n  //         id: 18,\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1017,\n  //       },\n  //       {\n  //         id: 19,\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1018,\n  //       },\n  //     ],\n  //     lasts: [],\n  //     categories: [\n  //       {\n  //         id: 'xxx',\n  //         name: '1级分类',\n  //         childs: [\n  //           {\n  //             id: '123',\n  //             name: '二级分类名'\n  //           }\n  //         ]\n  //       }\n  //     ],\n  //   },\n  //   count: 0,\n  //   version: 0,\n  // }.data;\n};\n\nexport const getArticleInfo = async (id: string) => {\n  const result = await useFetchGet(`/api/jogging/wb/article/${id}`);\n  return result.data.value?.data;\n  // return {\n  //   code: 0,\n  //   msg: \"\",\n  //   show_err: false,\n  //   timestamp: 1740475063,\n  //   data: {\n  //     id: \"1\",\n  //     title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //     desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //     keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //     cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //     isVideo: 1,\n  //     visitNum: 1000,\n  //     content:\n  //       \"<div>\\n\\t\\t<div>\\n\\t\\t<h1>超慢跑三步骤</h1> <h2>🏃 基础要点</h2> <ul> <li>步幅：比走路小一半</li> <li>速度：每小时5-6公里</li> <li>呼吸：鼻子吸气，嘴巴呼气</li> </ul> <h2>⏱️ 每日训练</h2> <ul> <li>新手：15分钟/天 × 3天</li> <li>适应后：30分钟/天 × 5天</li> </ul> <h2>💡 注意事项</h2> <ul> <li>饭后1小时再开始</li> <li>穿缓冲好的运动鞋</li> <li>运动后做拉伸</li> </ul>\\n\\t\\t</div>\\n\\t\\t##insert_goods##\\n\\t</div>\",\n  //     lasts: [\n  //       {\n  //         id: \"D5kSp7ne6Og4KDkxcesp+g==\",\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1000,\n  //       },\n  //       {\n  //         id: \"c0mpKDa+Ccus1A3QYDe42Q==\",\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1001,\n  //       },\n  //       {\n  //         id: \"5hMXN11bax2UcovvRj4YGQ==\",\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1002,\n  //       },\n  //       {\n  //         id: \"yctco0sSfFqQ0TWCA2gHDA==\",\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1003,\n  //       },\n  //       {\n  //         id: \"1t8DxznV1vDUZyUpZYx2tw==\",\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1004,\n  //       },\n  //     ],\n  //     categories: [\n  //       {\n  //         id: 1,\n  //         name: \"入门与技巧\",\n  //         pathName: \"\",\n  //         backGroup: \"https://static.chaomanpao.comcategory/cover/1.webp\",\n  //         icon: \"https://static.chaomanpao.comcategory/cover/book.webp\",\n  //         buttonColor: \"#3A6BEF\",\n  //         childs: [\n  //           {\n  //             id: 6,\n  //             name: \"基础姿势\",\n  //             pathName: \"\",\n  //             backGroup: \"\",\n  //             icon: \"\",\n  //             buttonColor: \"\",\n  //             childs: null,\n  //           },\n  //           {\n  //             id: 7,\n  //             name: \"节奏把控\",\n  //             pathName: \"\",\n  //             backGroup: \"\",\n  //             icon: \"\",\n  //             buttonColor: \"\",\n  //             childs: null,\n  //           },\n  //           {\n  //             id: 8,\n  //             name: \"初跑计划\",\n  //             pathName: \"\",\n  //             backGroup: \"\",\n  //             icon: \"\",\n  //             buttonColor: \"\",\n  //             childs: null,\n  //           },\n  //         ],\n  //       },\n  //       {\n  //         id: 2,\n  //         name: \"超慢跑装备\",\n  //         pathName: \"\",\n  //         backGroup: \"https://static.chaomanpao.comcategory/cover/2.webp\",\n  //         icon: \"https://static.chaomanpao.comcategory/cover/shoe.webp\",\n  //         buttonColor: \"#FFB648\",\n  //         childs: [\n  //           {\n  //             id: 9,\n  //             name: \"超慢跑垫子\",\n  //             pathName: \"\",\n  //             backGroup: \"\",\n  //             icon: \"\",\n  //             buttonColor: \"\",\n  //             childs: null,\n  //           },\n  //           {\n  //             id: 10,\n  //             name: \"跑鞋选择\",\n  //             pathName: \"\",\n  //             backGroup: \"\",\n  //             icon: \"\",\n  //             buttonColor: \"\",\n  //             childs: null,\n  //           },\n  //           {\n  //             id: 13,\n  //             name: \"运动服饰\",\n  //             pathName: \"\",\n  //             backGroup: \"\",\n  //             icon: \"\",\n  //             buttonColor: \"\",\n  //             childs: null,\n  //           },\n  //           {\n  //             id: 14,\n  //             name: \"辅助装备\",\n  //             pathName: \"\",\n  //             backGroup: \"\",\n  //             icon: \"\",\n  //             buttonColor: \"\",\n  //             childs: null,\n  //           },\n  //         ],\n  //       },\n  //       {\n  //         id: 3,\n  //         name: \"健康与安全\",\n  //         pathName: \"\",\n  //         backGroup: \"https://static.chaomanpao.comcategory/cover/3.webp\",\n  //         icon: \"https://static.chaomanpao.comcategory/cover/healthy.webp\",\n  //         buttonColor: \"#8995FD\",\n  //         childs: [\n  //           {\n  //             id: 15,\n  //             name: \"运动损伤预防\",\n  //             pathName: \"\",\n  //             backGroup: \"\",\n  //             icon: \"\",\n  //             buttonColor: \"\",\n  //             childs: null,\n  //           },\n  //           {\n  //             id: 16,\n  //             name: \"身体状态评估\",\n  //             pathName: \"\",\n  //             backGroup: \"\",\n  //             icon: \"\",\n  //             buttonColor: \"\",\n  //             childs: null,\n  //           },\n  //           {\n  //             id: 17,\n  //             name: \"应急处理\",\n  //             pathName: \"\",\n  //             backGroup: \"\",\n  //             icon: \"\",\n  //             buttonColor: \"\",\n  //             childs: null,\n  //           },\n  //         ],\n  //       },\n  //       {\n  //         id: 4,\n  //         name: \"运动与营养\",\n  //         pathName: \"\",\n  //         backGroup: \"https://static.chaomanpao.comcategory/cover/4.webp\",\n  //         icon: \"https://static.chaomanpao.comcategory/cover/nutrition.webp\",\n  //         buttonColor: \"#61CD57\",\n  //         childs: [\n  //           {\n  //             id: 18,\n  //             name: \"饮食搭配\",\n  //             pathName: \"\",\n  //             backGroup: \"\",\n  //             icon: \"\",\n  //             buttonColor: \"\",\n  //             childs: null,\n  //           },\n  //           {\n  //             id: 19,\n  //             name: \"营养补充\",\n  //             pathName: \"\",\n  //             backGroup: \"\",\n  //             icon: \"\",\n  //             buttonColor: \"\",\n  //             childs: null,\n  //           },\n  //           {\n  //             id: 20,\n  //             name: \"水份管理\",\n  //             pathName: \"\",\n  //             backGroup: \"\",\n  //             icon: \"\",\n  //             buttonColor: \"\",\n  //             childs: null,\n  //           },\n  //         ],\n  //       },\n  //       {\n  //         id: 5,\n  //         name: \"视频与音乐\",\n  //         pathName: \"\",\n  //         backGroup: \"\",\n  //         icon: \"\",\n  //         buttonColor: \"\",\n  //         childs: [\n  //           {\n  //             id: 21,\n  //             name: \"超慢跑教学视频\",\n  //             pathName: \"\",\n  //             backGroup: \"\",\n  //             icon: \"\",\n  //             buttonColor: \"\",\n  //             childs: null,\n  //           },\n  //           {\n  //             id: 22,\n  //             name: \"超慢跑音乐\",\n  //             pathName: \"\",\n  //             backGroup: \"\",\n  //             icon: \"\",\n  //             buttonColor: \"\",\n  //             childs: null,\n  //           },\n  //           {\n  //             id: 23,\n  //             name: \"听书超慢跑\",\n  //             pathName: \"\",\n  //             backGroup: \"\",\n  //             icon: \"\",\n  //             buttonColor: \"\",\n  //             childs: null,\n  //           },\n  //         ],\n  //       },\n  //     ],\n  //     recommends: [\n  //       {\n  //         id: \"D5kSp7ne6Og4KDkxcesp+g==\",\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1000,\n  //       },\n  //       {\n  //         id: \"c0mpKDa+Ccus1A3QYDe42Q==\",\n  //         title: \"跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         desc: \"这是网站描述：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         keywords: \"这是关键词：跑步机间歇跑计划：跑步机如何设置间歇跑?\",\n  //         cover: \"https://www.jirou.com/uploads/180926/148-1P92614453V04.jpg\",\n  //         isVideo: 1,\n  //         visitNum: 1001,\n  //       },\n  //     ],\n  //     relGoods: {\n  //       title: \"超慢跑跑垫-双面防滑，原地超慢跑必备\",\n  //       subTitle: \"超慢跑跑步垫-TPE材质双面防滑，高回弹\",\n  //       cover:\n  //         \"https://img01.yzcdn.cn/upload_files/2024/10/12/Fkxp_8PmcsuaDLLlJkprJzsXaGkd.png\",\n  //       price: 4350,\n  //       originalPrice: 8990,\n  //       url: \"https://shop146116480.youzan.com/v2/showcase/goods?alias=36260a88j8820u0\",\n  //     },\n  //     recommendGoods: [\n  //       {\n  //         title: \"超慢跑跑垫-双面防滑，原地超慢跑必备\",\n  //         subTitle: \"超慢跑跑步垫-TPE材质双面防滑，高回弹\",\n  //         cover:\n  //           \"https://img01.yzcdn.cn/upload_files/2024/10/12/Fkxp_8PmcsuaDLLlJkprJzsXaGkd.png\",\n  //         price: 4350,\n  //         originalPrice: 8990,\n  //         url: \"https://shop146116480.youzan.com/v2/showcase/goods?alias=36260a88j8820u0\",\n  //       },\n  //       {\n  //         title: \"（独家）班长超慢跑同款跑步垫-PU+TPE双防滑材质\",\n  //         subTitle: \"独家跑步专用垫，pu+tpe复合材质高效防滑，有效支撑保护脚裸\",\n  //         cover:\n  //           \"https://img01.yzcdn.cn/upload_files/2024/10/11/FtBy1OAXfht5b_sCVd__pCEl09k6.png\",\n  //         price: 7990,\n  //         originalPrice: 9990,\n  //         url: \"https://shop146116480.m.youzan.com/wscgoods/detail/2xjholmxq6588zp?ump_type=seckill&ump_alias=nerm9uco&activityType=seckill\",\n  //       },\n  //       {\n  //         title: \"超慢跑硅胶防滑运动护膝-中老年有效支撑，稳定髋骨\",\n  //         subTitle:\n  //           \"中老年运动护膝-升级硅胶防滑、有效减震、保护膝盖减少运动损伤\",\n  //         cover:\n  //           \"https://img01.yzcdn.cn/upload_files/2024/09/27/FhWrxTzHkL-rTB_ax8D9idduCCZq.png\",\n  //         price: 4600,\n  //         originalPrice: 9990,\n  //         url: \"https://shop146116480.youzan.com/v2/showcase/goods?alias=360yd1y7bz8pk9m\",\n  //       },\n  //     ],\n  //   },\n  //   count: 0,\n  //   version: 0,\n  // }.data;\n};\n"
+        ],
+        "mappings": "AACO,aAAM,cAAc,YAAY;AACrC,QAAM,SAAS,MAAM,YAAY,0BAA0B;AAC3D,SAAO,OAAO;AAmDhB;AAGO,aAAM,gBAAgB,OAAO,WAI9B;AACJ,QAAM,SAAS,MAAM,YAAY,2BAA2B,MAAM;AAElE,SAAO,OAAO,KAAK,OAAO;AAuM5B;AAEO,aAAM,iBAAiB,OAAO,OAAe;AAClD,QAAM,SAAS,MAAM,YAAY,2BAA2B,EAAE,EAAE;AAChE,SAAO,OAAO,KAAK,OAAO;AAkU5B;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1741448041577,
+      "end": 1741448041577,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1741448041577,
+      "end": 1741448041577,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1741448041577,
+      "end": 1741448041577,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1741448041577,
+      "end": 1741448041577,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448041577,
+      "end": 1741448041577,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448041577,
+      "end": 1741448041577,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1741448041577,
+      "end": 1741448041577,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1741448041577,
+      "end": 1741448041577,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1741448041577,
+      "end": 1741448041577,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1741448041577,
+      "end": 1741448041577,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448041577,
+      "end": 1741448041577,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1741448041577,
+      "end": 1741448041578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1741448041578,
+      "end": 1741448041578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1741448041578,
+      "end": 1741448041578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1741448041578,
+      "end": 1741448041578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1741448041578,
+      "end": 1741448041578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1741448041578,
+      "end": 1741448041578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1741448041578,
+      "end": 1741448041578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1741448041578,
+      "end": 1741448041578,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1741448041578,
+      "end": 1741448041578,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1741448041578,
+      "end": 1741448041578,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1741448041578,
+      "end": 1741448041578,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1741448041578,
+      "end": 1741448041578,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { useFetchGet } from '/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/composables/useFetchRequest.ts';\nexport const getCategory = async () => {\n  const result = await useFetchGet(\"/api/jogging/wb/category\");\n  return result.data;\n};\nexport const getSearchInfo = async (params) => {\n  const result = await useFetchGet(\"/api/jogging/wb/article\", params);\n  return result.data.value?.data;\n};\nexport const getArticleInfo = async (id) => {\n  const result = await useFetchGet(`/api/jogging/wb/article/${id}`);\n  return result.data.value?.data;\n};\n",
+      "start": 1741448041578,
+      "end": 1741448041579,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB,CAAC;AACD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChC,CAAC;AACD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChC,CAAC;"
+      }
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { useFetchGet } from '/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/composables/useFetchRequest.ts';\nexport const getCategory = async () => {\n  const result = await useFetchGet(\"/api/jogging/wb/category\");\n  return result.data;\n};\nexport const getSearchInfo = async (params) => {\n  const result = await useFetchGet(\"/api/jogging/wb/article\", params);\n  return result.data.value?.data;\n};\nexport const getArticleInfo = async (id) => {\n  const result = await useFetchGet(`/api/jogging/wb/article/${id}`);\n  return result.data.value?.data;\n};\n",
+      "start": 1741448041578,
+      "end": 1741448041579,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB,CAAC;AACD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChC,CAAC;AACD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChC,CAAC;"
+      }
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1741448041579,
+      "end": 1741448041579,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1741448041579,
+      "end": 1741448041579,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1741448041579,
+      "end": 1741448041579,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1741448041579,
+      "end": 1741448041579,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1741448041579,
+      "end": 1741448041579,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1741448041579,
+      "end": 1741448041579,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1741448041579,
+      "end": 1741448041579,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1741448041579,
+      "end": 1741448041579,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1741448041579,
+      "end": 1741448041579,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1741448041579,
+      "end": 1741448041579,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1741448041579,
+      "end": 1741448041579,
+      "order": "normal"
+    }
+  ]
+}

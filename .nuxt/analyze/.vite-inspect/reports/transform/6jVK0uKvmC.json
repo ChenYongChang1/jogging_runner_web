@@ -1,0 +1,249 @@
+{
+  "resolvedId": "/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/components/base/BwBreadcrumb.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, createTextVNode as _createTextVNode, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = { class: \"breadcrumb tw-flex tw-flex-wrap tw-items-center tw-text-[16px]\" }\nconst _hoisted_2 = { class: \"tw-leading-[32px]\" }\nconst _hoisted_3 = { class: \"tw-text-themecolor\" }\nconst _hoisted_4 = {\n  key: 0,\n  class: \"last-item tw-text-[#999] tw-flex-shrink-0 tw-text-wrap\"\n}\n\ninterface BreadcrumbItem {\n  title: string;\n  path?: string;\n}\n\n\nexport default /*@__PURE__*/_defineComponent({\n  __name: 'BwBreadcrumb',\n  props: {\n    items: {}\n  },\n  setup(__props: any) {\n\n\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_nuxt_link = _resolveComponent(\"nuxt-link\")!\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createVNode(_component_nuxt_link, {\n        to: _ctx.getRouteLink('/'),\n        class: \"home-link tw-flex-shrink-0\"\n      }, {\n        default: _withCtx(() => [\n          _createElementVNode(\"span\", _hoisted_3, _toDisplayString(_ctx.$t(\"common.超慢跑\")), 1)\n        ]),\n        _: 1\n      }, 8, [\"to\"]),\n      _cache[1] || (_cache[1] = _createElementVNode(\"span\", { class: \"separator tw-mx-2 tw-text-themecolor tw-flex-shrink-0\" }, \">>\", -1)),\n      (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_ctx.items.slice(0, -1), (item, index) => {\n        return (_openBlock(), _createElementBlock(_Fragment, { key: index }, [\n          _createVNode(_component_nuxt_link, {\n            to: _ctx.getRouteLink(item.path || ''),\n            class: \"tw-text-themecolor tw-flex-shrink-0\"\n          }, {\n            default: _withCtx(() => [\n              _createTextVNode(_toDisplayString(item.title), 1)\n            ]),\n            _: 2\n          }, 1032, [\"to\"]),\n          _cache[0] || (_cache[0] = _createElementVNode(\"span\", { class: \"separator tw-mx-2 tw-text-themecolor tw-flex-shrink-0\" }, \">>\", -1))\n        ], 64))\n      }), 128)),\n      (_ctx.items.length)\n        ? (_openBlock(), _createElementBlock(\"span\", _hoisted_4, _toDisplayString(_ctx.items[_ctx.items.length - 1].title), 1))\n        : _createCommentVNode(\"\", true)\n    ])\n  ]))\n}\n}\n\n})",
+      "start": 1741448034264,
+      "end": 1741448034265
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1741448034265,
+      "end": 1741448034265,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1741448034265,
+      "end": 1741448034265,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:resource",
+      "start": 1741448034265,
+      "end": 1741448034265,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:directive",
+      "start": 1741448034265,
+      "end": 1741448034265,
+      "order": "pre"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1741448034265,
+      "end": 1741448034265,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1741448034265,
+      "end": 1741448034265,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, createTextVNode as _createTextVNode, createCommentVNode as _createCommentVNode } from \"vue\";\nconst _hoisted_1 = { class: \"breadcrumb tw-flex tw-flex-wrap tw-items-center tw-text-[16px]\" };\nconst _hoisted_2 = { class: \"tw-leading-[32px]\" };\nconst _hoisted_3 = { class: \"tw-text-themecolor\" };\nconst _hoisted_4 = {\n  key: 0,\n  class: \"last-item tw-text-[#999] tw-flex-shrink-0 tw-text-wrap\"\n};\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"BwBreadcrumb\",\n  props: {\n    items: {}\n  },\n  setup(__props) {\n    return (_ctx, _cache) => {\n      const _component_nuxt_link = _resolveComponent(\"nuxt-link\");\n      return _openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createElementVNode(\"div\", _hoisted_2, [\n          _createVNode(_component_nuxt_link, {\n            to: _ctx.getRouteLink(\"/\"),\n            class: \"home-link tw-flex-shrink-0\"\n          }, {\n            default: _withCtx(() => [\n              _createElementVNode(\"span\", _hoisted_3, _toDisplayString(_ctx.$t(\"common.超慢跑\")), 1)\n            ]),\n            _: 1\n          }, 8, [\"to\"]),\n          _cache[1] || (_cache[1] = _createElementVNode(\"span\", { class: \"separator tw-mx-2 tw-text-themecolor tw-flex-shrink-0\" }, \">>\", -1)),\n          (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_ctx.items.slice(0, -1), (item, index) => {\n            return _openBlock(), _createElementBlock(_Fragment, { key: index }, [\n              _createVNode(_component_nuxt_link, {\n                to: _ctx.getRouteLink(item.path || \"\"),\n                class: \"tw-text-themecolor tw-flex-shrink-0\"\n              }, {\n                default: _withCtx(() => [\n                  _createTextVNode(_toDisplayString(item.title), 1)\n                ]),\n                _: 2\n              }, 1032, [\"to\"]),\n              _cache[0] || (_cache[0] = _createElementVNode(\"span\", { class: \"separator tw-mx-2 tw-text-themecolor tw-flex-shrink-0\" }, \">>\", -1))\n            ], 64);\n          }), 128)),\n          _ctx.items.length ? (_openBlock(), _createElementBlock(\"span\", _hoisted_4, _toDisplayString(_ctx.items[_ctx.items.length - 1].title), 1)) : _createCommentVNode(\"\", true)\n        ])\n      ]);\n    };\n  }\n});\n",
+      "start": 1741448034267,
+      "end": 1741448034468,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/components/base/BwBreadcrumb.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, createTextVNode as _createTextVNode, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = { class: \"breadcrumb tw-flex tw-flex-wrap tw-items-center tw-text-[16px]\" }\nconst _hoisted_2 = { class: \"tw-leading-[32px]\" }\nconst _hoisted_3 = { class: \"tw-text-themecolor\" }\nconst _hoisted_4 = {\n  key: 0,\n  class: \"last-item tw-text-[#999] tw-flex-shrink-0 tw-text-wrap\"\n}\n\ninterface BreadcrumbItem {\n  title: string;\n  path?: string;\n}\n\n\nexport default /*@__PURE__*/_defineComponent({\n  __name: 'BwBreadcrumb',\n  props: {\n    items: {}\n  },\n  setup(__props: any) {\n\n\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_nuxt_link = _resolveComponent(\"nuxt-link\")!\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createVNode(_component_nuxt_link, {\n        to: _ctx.getRouteLink('/'),\n        class: \"home-link tw-flex-shrink-0\"\n      }, {\n        default: _withCtx(() => [\n          _createElementVNode(\"span\", _hoisted_3, _toDisplayString(_ctx.$t(\"common.超慢跑\")), 1)\n        ]),\n        _: 1\n      }, 8, [\"to\"]),\n      _cache[1] || (_cache[1] = _createElementVNode(\"span\", { class: \"separator tw-mx-2 tw-text-themecolor tw-flex-shrink-0\" }, \">>\", -1)),\n      (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_ctx.items.slice(0, -1), (item, index) => {\n        return (_openBlock(), _createElementBlock(_Fragment, { key: index }, [\n          _createVNode(_component_nuxt_link, {\n            to: _ctx.getRouteLink(item.path || ''),\n            class: \"tw-text-themecolor tw-flex-shrink-0\"\n          }, {\n            default: _withCtx(() => [\n              _createTextVNode(_toDisplayString(item.title), 1)\n            ]),\n            _: 2\n          }, 1032, [\"to\"]),\n          _cache[0] || (_cache[0] = _createElementVNode(\"span\", { class: \"separator tw-mx-2 tw-text-themecolor tw-flex-shrink-0\" }, \">>\", -1))\n        ], 64))\n      }), 128)),\n      (_ctx.items.length)\n        ? (_openBlock(), _createElementBlock(\"span\", _hoisted_4, _toDisplayString(_ctx.items[_ctx.items.length - 1].title), 1))\n        : _createCommentVNode(\"\", true)\n    ])\n  ]))\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,mBAAmB,kBAAkB,sBAAsB,qBAAqB,oBAAoB,mBAAmB,WAAW,UAAU,eAAe,cAAc,cAAc,aAAa,YAAY,WAAW,aAAa,YAAY,sBAAsB,qBAAqB,mBAAmB,kBAAkB,sBAAsB,2BAA2B;AAE9X,MAAM,aAAa,EAAE,OAAO,iEAAiE;AAC7F,MAAM,aAAa,EAAE,OAAO,oBAAoB;AAChD,MAAM,aAAa,EAAE,OAAO,qBAAqB;AACjD,MAAM,aAAa;AAAA,EACjB,KAAK;AAAA,EACL,OAAO;AACT;AAQA,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,OAAO;AAAA,IACL,OAAO,CAAC;AAAA,EACV;AAAA,EACA,MAAM,SAAc;AAItB,WAAO,CAAC,MAAU,WAAgB;AAChC,YAAM,uBAAuB,kBAAkB,WAAW;AAE1D,aAAQ,WAAW,GAAG,oBAAoB,OAAO,YAAY;AAAA,QAC3D,oBAAoB,OAAO,YAAY;AAAA,UACrC,aAAa,sBAAsB;AAAA,YACjC,IAAI,KAAK,aAAa,GAAG;AAAA,YACzB,OAAO;AAAA,UACT,GAAG;AAAA,YACD,SAAS,SAAS,MAAM;AAAA,cACtB,oBAAoB,QAAQ,YAAY,iBAAiB,KAAK,GAAG,YAAY,CAAC,GAAG,CAAC;AAAA,YACpF,CAAC;AAAA,YACD,GAAG;AAAA,UACL,GAAG,GAAG,CAAC,IAAI,CAAC;AAAA,UACZ,OAAO,CAAC,MAAM,OAAO,CAAC,IAAI,oBAAoB,QAAQ,EAAE,OAAO,wDAAwD,GAAG,MAAM,EAAE;AAAA,WACjI,WAAW,IAAI,GAAG,oBAAoB,WAAW,MAAM,YAAY,KAAK,MAAM,MAAM,GAAG,EAAE,GAAG,CAAC,MAAM,UAAU;AAC5G,mBAAQ,WAAW,GAAG,oBAAoB,WAAW,EAAE,KAAK,MAAM,GAAG;AAAA,cACnE,aAAa,sBAAsB;AAAA,gBACjC,IAAI,KAAK,aAAa,KAAK,QAAQ,EAAE;AAAA,gBACrC,OAAO;AAAA,cACT,GAAG;AAAA,gBACD,SAAS,SAAS,MAAM;AAAA,kBACtB,iBAAiB,iBAAiB,KAAK,KAAK,GAAG,CAAC;AAAA,gBAClD,CAAC;AAAA,gBACD,GAAG;AAAA,cACL,GAAG,MAAM,CAAC,IAAI,CAAC;AAAA,cACf,OAAO,CAAC,MAAM,OAAO,CAAC,IAAI,oBAAoB,QAAQ,EAAE,OAAO,wDAAwD,GAAG,MAAM,EAAE;AAAA,YACpI,GAAG,EAAE;AAAA,UACP,CAAC,GAAG,GAAG;AAAA,UACN,KAAK,MAAM,UACP,WAAW,GAAG,oBAAoB,QAAQ,YAAY,iBAAiB,KAAK,MAAM,KAAK,MAAM,SAAS,CAAC,EAAE,KAAK,GAAG,CAAC,KACnH,oBAAoB,IAAI,IAAI;AAAA,QAClC,CAAC;AAAA,MACH,CAAC;AAAA,IACH;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1741448034468,
+      "end": 1741448034468,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1741448034468,
+      "end": 1741448034468,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1741448034469,
+      "end": 1741448034469,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1741448034469,
+      "end": 1741448034469,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448034469,
+      "end": 1741448034469,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1741448034469,
+      "end": 1741448034469,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1741448034469,
+      "end": 1741448034469,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448034469,
+      "end": 1741448034469,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1741448034469,
+      "end": 1741448034469,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1741448034469,
+      "end": 1741448034469,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1741448034469,
+      "end": 1741448034469,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1741448034469,
+      "end": 1741448034469,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1741448034469,
+      "end": 1741448034469,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1741448034469,
+      "end": 1741448034469,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1741448034469,
+      "end": 1741448034469,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1741448034469,
+      "end": 1741448034469,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1741448034469,
+      "end": 1741448034469,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1741448034469,
+      "end": 1741448034469,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { getRouteLink as __unimport_getRouteLink } from '/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/utils/comblie-inject.ts';\nimport { unref as __unimport_unref_ } from 'vue';import { defineComponent as _defineComponent } from \"vue\";\nimport { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, createTextVNode as _createTextVNode, createCommentVNode as _createCommentVNode } from \"vue\";\nconst _hoisted_1 = { class: \"breadcrumb tw-flex tw-flex-wrap tw-items-center tw-text-[16px]\" };\nconst _hoisted_2 = { class: \"tw-leading-[32px]\" };\nconst _hoisted_3 = { class: \"tw-text-themecolor\" };\nconst _hoisted_4 = {\n  key: 0,\n  class: \"last-item tw-text-[#999] tw-flex-shrink-0 tw-text-wrap\"\n};\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"BwBreadcrumb\",\n  props: {\n    items: {}\n  },\n  setup(__props) {\n    return (_ctx, _cache) => {\n      const _component_nuxt_link = _resolveComponent(\"nuxt-link\");\n      return _openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createElementVNode(\"div\", _hoisted_2, [\n          _createVNode(_component_nuxt_link, {\n            to: (\"getRouteLink\" in _ctx ? _ctx.getRouteLink : __unimport_unref_(__unimport_getRouteLink))(\"/\"),\n            class: \"home-link tw-flex-shrink-0\"\n          }, {\n            default: _withCtx(() => [\n              _createElementVNode(\"span\", _hoisted_3, _toDisplayString(_ctx.$t(\"common.超慢跑\")), 1)\n            ]),\n            _: 1\n          }, 8, [\"to\"]),\n          _cache[1] || (_cache[1] = _createElementVNode(\"span\", { class: \"separator tw-mx-2 tw-text-themecolor tw-flex-shrink-0\" }, \">>\", -1)),\n          (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_ctx.items.slice(0, -1), (item, index) => {\n            return _openBlock(), _createElementBlock(_Fragment, { key: index }, [\n              _createVNode(_component_nuxt_link, {\n                to: (\"getRouteLink\" in _ctx ? _ctx.getRouteLink : __unimport_unref_(__unimport_getRouteLink))(item.path || \"\"),\n                class: \"tw-text-themecolor tw-flex-shrink-0\"\n              }, {\n                default: _withCtx(() => [\n                  _createTextVNode(_toDisplayString(item.title), 1)\n                ]),\n                _: 2\n              }, 1032, [\"to\"]),\n              _cache[0] || (_cache[0] = _createElementVNode(\"span\", { class: \"separator tw-mx-2 tw-text-themecolor tw-flex-shrink-0\" }, \">>\", -1))\n            ], 64);\n          }), 128)),\n          _ctx.items.length ? (_openBlock(), _createElementBlock(\"span\", _hoisted_4, _toDisplayString(_ctx.items[_ctx.items.length - 1].title), 1)) : _createCommentVNode(\"\", true)\n        ])\n      ]);\n    };\n  }\n});\n",
+      "start": 1741448034469,
+      "end": 1741448034471,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";iDAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnY,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9F,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACR,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChE,CAAC;AACD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACT,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACZ,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,yFAAiB,CAAC,CAAC,CAAC,CAAC,CAAC;AACtC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACb,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChG,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACf,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9I,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxH,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChF,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,yFAAiB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjJ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClL,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACT,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACR,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC;AACF,CAAC,CAAC;"
+      }
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1741448034471,
+      "end": 1741448034471,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1741448034471,
+      "end": 1741448034471,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1741448034471,
+      "end": 1741448034471,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1741448034471,
+      "end": 1741448034471,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1741448034471,
+      "end": 1741448034471,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1741448034471,
+      "end": 1741448034471,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/node_modules/.pnpm/nuxt@3.15.4_@parcel+watcher@2.5.1_@types+node@22.13.9_db0@0.2.4_eslint@9.21.0_jiti@2.4._dff270f4def6dc5620d973dea8099f72/node_modules/nuxt/dist/app/components/nuxt-link.js\";\nimport { getRouteLink as __unimport_getRouteLink } from '/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/utils/comblie-inject.ts';\nimport { unref as __unimport_unref_ } from 'vue';import { defineComponent as _defineComponent } from \"vue\";\nimport { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, createTextVNode as _createTextVNode, createCommentVNode as _createCommentVNode } from \"vue\";\nconst _hoisted_1 = { class: \"breadcrumb tw-flex tw-flex-wrap tw-items-center tw-text-[16px]\" };\nconst _hoisted_2 = { class: \"tw-leading-[32px]\" };\nconst _hoisted_3 = { class: \"tw-text-themecolor\" };\nconst _hoisted_4 = {\n  key: 0,\n  class: \"last-item tw-text-[#999] tw-flex-shrink-0 tw-text-wrap\"\n};\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"BwBreadcrumb\",\n  props: {\n    items: {}\n  },\n  setup(__props) {\n    return (_ctx, _cache) => {\n      const _component_nuxt_link = __nuxt_component_0;\n      return _openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createElementVNode(\"div\", _hoisted_2, [\n          _createVNode(_component_nuxt_link, {\n            to: (\"getRouteLink\" in _ctx ? _ctx.getRouteLink : __unimport_unref_(__unimport_getRouteLink))(\"/\"),\n            class: \"home-link tw-flex-shrink-0\"\n          }, {\n            default: _withCtx(() => [\n              _createElementVNode(\"span\", _hoisted_3, _toDisplayString(_ctx.$t(\"common.超慢跑\")), 1)\n            ]),\n            _: 1\n          }, 8, [\"to\"]),\n          _cache[1] || (_cache[1] = _createElementVNode(\"span\", { class: \"separator tw-mx-2 tw-text-themecolor tw-flex-shrink-0\" }, \">>\", -1)),\n          (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_ctx.items.slice(0, -1), (item, index) => {\n            return _openBlock(), _createElementBlock(_Fragment, { key: index }, [\n              _createVNode(_component_nuxt_link, {\n                to: (\"getRouteLink\" in _ctx ? _ctx.getRouteLink : __unimport_unref_(__unimport_getRouteLink))(item.path || \"\"),\n                class: \"tw-text-themecolor tw-flex-shrink-0\"\n              }, {\n                default: _withCtx(() => [\n                  _createTextVNode(_toDisplayString(item.title), 1)\n                ]),\n                _: 2\n              }, 1032, [\"to\"]),\n              _cache[0] || (_cache[0] = _createElementVNode(\"span\", { class: \"separator tw-mx-2 tw-text-themecolor tw-flex-shrink-0\" }, \">>\", -1))\n            ], 64);\n          }), 128)),\n          _ctx.items.length ? (_openBlock(), _createElementBlock(\"span\", _hoisted_4, _toDisplayString(_ctx.items[_ctx.items.length - 1].title), 1)) : _createCommentVNode(\"\", true)\n        ])\n      ]);\n    };\n  }\n});\n",
+      "start": 1741448034472,
+      "end": 1741448034472,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1741448034472,
+      "end": 1741448034472,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1741448034472,
+      "end": 1741448034472,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1741448034472,
+      "end": 1741448034472,
+      "order": "normal"
+    }
+  ]
+}

@@ -70,7 +70,7 @@ const unheadPlugins = true ? [CapoPlugin({ track: true })] : [];
 
 const renderSSRHeadOptions = {"omitLineBreaks":false};
 
-const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1, viewport-fit=cover"},{"charset":"utf-8"}],"link":[],"style":[],"script":[],"noscript":[],"htmlAttrs":{"lang":"zh"},"viewport":"width=device-width, initial-scale=1, viewport-fit=cover"};
+const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1, viewport-fit=cover"},{"charset":"utf-8"}],"link":[],"style":[],"script":[],"noscript":[],"title":"超慢跑","htmlAttrs":{"lang":"zh"},"viewport":"width=device-width, initial-scale=1, viewport-fit=cover"};
 
 const appRootTag = "div";
 

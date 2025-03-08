@@ -1,0 +1,317 @@
+{
+  "resolvedId": "/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/layouts/default.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderSlot as _ssrRenderSlot, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nimport Header from \"../components/Layout/header.vue\";\nimport Footer from \"../components/Layout/footer.vue\";\nimport { useRoute } from \"vue-router\";\nimport { computed } from \"vue\";\n\n\nexport default /*@__PURE__*/_defineComponent({\n  __name: 'default',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nconst route = useRoute();\nconst is404Page = computed(() => route.path.includes(\"/404\"));\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"container tw-flex tw-flex-col tw-w-[100vw] tw-min-h-[100vh]\" }, _attrs))}>`)\n  _push(_ssrRenderComponent(Header, null, null, _parent))\n  _push(`<div class=\"tw-flex-1\">`)\n  _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push, _parent)\n  _push(`</div>`)\n  if (!is404Page.value) {\n    _push(_ssrRenderComponent(Footer, null, null, _parent))\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n}\n}\n\n})",
+      "start": 1741448041755,
+      "end": 1741448041755
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1741448041755,
+      "end": 1741448041755,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1741448041755,
+      "end": 1741448041755,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1741448041755,
+      "end": 1741448041755,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1741448041755,
+      "end": 1741448041755,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:resource",
+      "start": 1741448041755,
+      "end": 1741448041755,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:resource",
+      "start": 1741448041755,
+      "end": 1741448041755,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:directive",
+      "start": 1741448041755,
+      "end": 1741448041755,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:directive",
+      "start": 1741448041755,
+      "end": 1741448041755,
+      "order": "pre"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1741448041755,
+      "end": 1741448041755,
+      "order": "pre"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1741448041755,
+      "end": 1741448041755,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-only-component-transform",
+      "start": 1741448041755,
+      "end": 1741448041755,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1741448041755,
+      "end": 1741448041755,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderSlot as _ssrRenderSlot, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\";\nimport Header from \"../components/Layout/header.vue\";\nimport Footer from \"../components/Layout/footer.vue\";\nimport { useRoute } from \"vue-router\";\nimport { computed } from \"vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"default\",\n  __ssrInlineRender: true,\n  setup(__props) {\n    const route = useRoute();\n    const is404Page = computed(() => route.path.includes(\"/404\"));\n    return (_ctx, _push, _parent, _attrs) => {\n      _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"container tw-flex tw-flex-col tw-w-[100vw] tw-min-h-[100vh]\" }, _attrs))}>`);\n      _push(_ssrRenderComponent(Header, null, null, _parent));\n      _push(`<div class=\"tw-flex-1\">`);\n      _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push, _parent);\n      _push(`</div>`);\n      if (!is404Page.value) {\n        _push(_ssrRenderComponent(Footer, null, null, _parent));\n      } else {\n        _push(`<!---->`);\n      }\n      _push(`</div>`);\n    };\n  }\n});\n",
+      "start": 1741448041755,
+      "end": 1741448041806,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/layouts/default.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderSlot as _ssrRenderSlot, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nimport Header from \"../components/Layout/header.vue\";\nimport Footer from \"../components/Layout/footer.vue\";\nimport { useRoute } from \"vue-router\";\nimport { computed } from \"vue\";\n\n\nexport default /*@__PURE__*/_defineComponent({\n  __name: 'default',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nconst route = useRoute();\nconst is404Page = computed(() => route.path.includes(\"/404\"));\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"container tw-flex tw-flex-col tw-w-[100vw] tw-min-h-[100vh]\" }, _attrs))}>`)\n  _push(_ssrRenderComponent(Header, null, null, _parent))\n  _push(`<div class=\"tw-flex-1\">`)\n  _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push, _parent)\n  _push(`</div>`)\n  if (!is404Page.value) {\n    _push(_ssrRenderComponent(Footer, null, null, _parent))\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,cAAc,mBAAmB;AAC1C,SAAS,sBAAsB,qBAAqB,iBAAiB,gBAAgB,kBAAkB,uBAAuB;AAE9H,OAAO,YAAY;AACnB,OAAO,YAAY;AACnB,SAAS,gBAAgB;AACzB,SAAS,gBAAgB;AAGzB,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,mBAAmB;AAAA,EACnB,MAAM,SAAS;AAEjB,UAAM,QAAQ,SAAS;AACvB,UAAM,YAAY,SAAS,MAAM,MAAM,KAAK,SAAS,MAAM,CAAC;AAE5D,WAAO,CAAC,MAAU,OAAW,SAAa,WAAgB;AACxD,YAAM,OAAO,gBAAgB,YAAY,EAAE,OAAO,8DAA8D,GAAG,MAAM,CAAC,CAAC,GAAG;AAC9H,YAAM,oBAAoB,QAAQ,MAAM,MAAM,OAAO,CAAC;AACtD,YAAM,yBAAyB;AAC/B,qBAAe,KAAK,QAAQ,WAAW,CAAC,GAAG,MAAM,OAAO,OAAO;AAC/D,YAAM,QAAQ;AACd,UAAI,CAAC,UAAU,OAAO;AACpB,cAAM,oBAAoB,QAAQ,MAAM,MAAM,OAAO,CAAC;AAAA,MACxD,OAAO;AACL,cAAM,SAAS;AAAA,MACjB;AACA,YAAM,QAAQ;AAAA,IAChB;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1741448041807,
+      "end": 1741448041807,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1741448041807,
+      "end": 1741448041807,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1741448041807,
+      "end": 1741448041807,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1741448041807,
+      "end": 1741448041807,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448041807,
+      "end": 1741448041807,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448041807,
+      "end": 1741448041807,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1741448041807,
+      "end": 1741448041807,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1741448041807,
+      "end": 1741448041807,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1741448041807,
+      "end": 1741448041807,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1741448041807,
+      "end": 1741448041807,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448041807,
+      "end": 1741448041807,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1741448041807,
+      "end": 1741448041807,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1741448041807,
+      "end": 1741448041807,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1741448041807,
+      "end": 1741448041807,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1741448041807,
+      "end": 1741448041807,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1741448041807,
+      "end": 1741448041807,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1741448041807,
+      "end": 1741448041807,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1741448041807,
+      "end": 1741448041807,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1741448041807,
+      "end": 1741448041807,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1741448041807,
+      "end": 1741448041807,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1741448041807,
+      "end": 1741448041807,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1741448041807,
+      "end": 1741448041808,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1741448041807,
+      "end": 1741448041808,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1741448041808,
+      "end": 1741448041809,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1741448041808,
+      "end": 1741448041809,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1741448041809,
+      "end": 1741448041809,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1741448041809,
+      "end": 1741448041809,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1741448041809,
+      "end": 1741448041809,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1741448041809,
+      "end": 1741448041809,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1741448041809,
+      "end": 1741448041810,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1741448041810,
+      "end": 1741448041810,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1741448041810,
+      "end": 1741448041810,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1741448041810,
+      "end": 1741448041811,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1741448041853,
+      "end": 1741448041853,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1741448041853,
+      "end": 1741448041853,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1741448041853,
+      "end": 1741448041853,
+      "order": "normal"
+    }
+  ]
+}

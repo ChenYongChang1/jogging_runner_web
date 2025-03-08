@@ -1,0 +1,322 @@
+{
+  "resolvedId": "/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/components/pages/search/SearchEmpty.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div class=\"empty-text\">\n    {{\n      $t(\n        'common.很抱歉，没有找到与您搜索内容相关的结果。请确认您的关键词拼写是否正确，或者尝试更换关键词再次搜索'\n      )\n    }}\n  </div>\n  <img\n    class=\"md:tw-w-[300px] ss:tw-w-[33%] max-lg:tw-mx-auto lg:tw-ml-[127px]\"\n    src=\"@/assets/images/empty-search.png\"\n    alt=\"\"\n  />\n</template>\n<style lang=\"scss\" scoped>\n.empty-text {\n  @apply tw-w-full tw-leading-[55px]  tw-font-[600] md:tw-mb-[136px] tw-text-basecolor;\n  @apply max-md:tw-leading-[2.5rem] max-md:tw-mb-[2.75rem] md:tw-text-[36px] ss:tw-text-[1.25rem];\n}\n</style>\n",
+      "start": 1741448042691,
+      "end": 1741448042774,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1741448042775,
+      "end": 1741448042775,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1741448042775,
+      "end": 1741448042775,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1741448042775,
+      "end": 1741448042775,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1741448042775,
+      "end": 1741448042775,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:resource",
+      "start": 1741448042775,
+      "end": 1741448042775,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:resource",
+      "start": 1741448042775,
+      "end": 1741448042775,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:directive",
+      "result": "<template>\n  <div class=\"empty-text\">\n    {{\n      $t(\n        'common.很抱歉，没有找到与您搜索内容相关的结果。请确认您的关键词拼写是否正确，或者尝试更换关键词再次搜索'\n      )\n    }}\n  </div>\n  <img\n    class=\"md:tw-w-[300px] ss:tw-w-[33%] max-lg:tw-mx-auto lg:tw-ml-[127px]\"\n    src=\"@/assets/images/empty-search.png\"\n    alt=\"\"\n  />\n</template>\n<style lang=\"scss\" scoped>\n.empty-text {\n  @apply tw-w-full tw-leading-[55px]  tw-font-[600] md:tw-mb-[136px] tw-text-basecolor;\n  @apply max-md:tw-leading-[2.5rem] max-md:tw-mb-[2.75rem] md:tw-text-[36px] ss:tw-text-[1.25rem];\n}\n</style>\n",
+      "start": 1741448042775,
+      "end": 1741448042775,
+      "order": "pre",
+      "sourcemaps": {
+        "version": 3,
+        "mappings": "",
+        "sources": []
+      }
+    },
+    {
+      "name": "unplugin-vue-i18n:directive",
+      "result": "<template>\n  <div class=\"empty-text\">\n    {{\n      $t(\n        'common.很抱歉，没有找到与您搜索内容相关的结果。请确认您的关键词拼写是否正确，或者尝试更换关键词再次搜索'\n      )\n    }}\n  </div>\n  <img\n    class=\"md:tw-w-[300px] ss:tw-w-[33%] max-lg:tw-mx-auto lg:tw-ml-[127px]\"\n    src=\"@/assets/images/empty-search.png\"\n    alt=\"\"\n  />\n</template>\n<style lang=\"scss\" scoped>\n.empty-text {\n  @apply tw-w-full tw-leading-[55px]  tw-font-[600] md:tw-mb-[136px] tw-text-basecolor;\n  @apply max-md:tw-leading-[2.5rem] max-md:tw-mb-[2.75rem] md:tw-text-[36px] ss:tw-text-[1.25rem];\n}\n</style>\n",
+      "start": 1741448042775,
+      "end": 1741448042775,
+      "order": "pre",
+      "sourcemaps": {
+        "version": 3,
+        "mappings": "",
+        "sources": []
+      }
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1741448042775,
+      "end": 1741448042775,
+      "order": "pre"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1741448042775,
+      "end": 1741448042775,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-only-component-transform",
+      "start": 1741448042775,
+      "end": 1741448042775,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1741448042775,
+      "end": 1741448042775,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1741448042775,
+      "end": 1741448042775,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1741448042775,
+      "end": 1741448042775,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1741448042775,
+      "end": 1741448042775,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "const _sfc_main = {}\nimport { ssrRenderAttr as _ssrRenderAttr, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\nimport _imports_0 from '@/assets/images/empty-search.png'\n\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs) {\n  _push(`<!--[--><div class=\"empty-text\" data-v-3d203b13>${\n    _ssrInterpolate(_ctx.$t(\n        'common.很抱歉，没有找到与您搜索内容相关的结果。请确认您的关键词拼写是否正确，或者尝试更换关键词再次搜索'\n      ))\n  }</div><img class=\"md:tw-w-[300px] ss:tw-w-[33%] max-lg:tw-mx-auto lg:tw-ml-[127px]\"${\n    _ssrRenderAttr(\"src\", _imports_0)\n  } alt=\"\" data-v-3d203b13><!--]-->`)\n}\n\nimport \"/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/components/pages/search/SearchEmpty.vue?vue&type=style&index=0&scoped=3d203b13&lang.scss\"\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/pages/search/SearchEmpty.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender],['__scopeId',\"data-v-3d203b13\"]])",
+      "start": 1741448042775,
+      "end": 1741448042776,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1741448042776,
+      "end": 1741448042776,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448042776,
+      "end": 1741448042776,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448042776,
+      "end": 1741448042776,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1741448042776,
+      "end": 1741448042776,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1741448042776,
+      "end": 1741448042776,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1741448042776,
+      "end": 1741448042776,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1741448042776,
+      "end": 1741448042776,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448042776,
+      "end": 1741448042776,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1741448042776,
+      "end": 1741448042777,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1741448042777,
+      "end": 1741448042777,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1741448042777,
+      "end": 1741448042777,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1741448042777,
+      "end": 1741448042777,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1741448042777,
+      "end": 1741448042777,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1741448042777,
+      "end": 1741448042777,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1741448042777,
+      "end": 1741448042777,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1741448042777,
+      "end": 1741448042777,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1741448042777,
+      "end": 1741448042777,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1741448042777,
+      "end": 1741448042777,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1741448042777,
+      "end": 1741448042777,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1741448042777,
+      "end": 1741448042777,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1741448042777,
+      "end": 1741448042778,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1741448042777,
+      "end": 1741448042778,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1741448042778,
+      "end": 1741448042778,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1741448042778,
+      "end": 1741448042778,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1741448042778,
+      "end": 1741448042778,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1741448042778,
+      "end": 1741448042778,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1741448042778,
+      "end": 1741448042778,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1741448042778,
+      "end": 1741448042778,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1741448042778,
+      "end": 1741448042778,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1741448042778,
+      "end": 1741448042778,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1741448042778,
+      "end": 1741448042778,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1741448042778,
+      "end": 1741448042778,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1741448042778,
+      "end": 1741448042778,
+      "order": "normal"
+    }
+  ]
+}

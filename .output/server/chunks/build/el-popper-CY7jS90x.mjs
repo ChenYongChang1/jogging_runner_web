@@ -127,5 +127,5 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
 var Icon = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "icon.vue"]]);
 const ElIcon = withInstall(Icon);
 
-export { ElIcon as E, _export_sfc as _, addUnit as a, buildProps as b, withInstallDirective as c, withNoopInstall as d, definePropType as e, buildProp as f, fromPairs as g, withInstall as w };
+export { ElIcon as E, _export_sfc as _, withInstallDirective as a, buildProps as b, addUnit as c, withNoopInstall as d, definePropType as e, buildProp as f, fromPairs as g, withInstall as w };
 //# sourceMappingURL=el-popper-CY7jS90x.mjs.map

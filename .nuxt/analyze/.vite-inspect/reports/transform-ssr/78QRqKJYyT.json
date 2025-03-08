@@ -1,0 +1,308 @@
+{
+  "resolvedId": "/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/node_modules/.pnpm/lodash-es@4.17.21/node_modules/lodash-es/isArrayLike.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import isFunction from './isFunction.js';\nimport isLength from './isLength.js';\n\n/**\n * Checks if `value` is array-like. A value is considered array-like if it's\n * not a function and has a `value.length` that's an integer greater than or\n * equal to `0` and less than or equal to `Number.MAX_SAFE_INTEGER`.\n *\n * @static\n * @memberOf _\n * @since 4.0.0\n * @category Lang\n * @param {*} value The value to check.\n * @returns {boolean} Returns `true` if `value` is array-like, else `false`.\n * @example\n *\n * _.isArrayLike([1, 2, 3]);\n * // => true\n *\n * _.isArrayLike(document.body.children);\n * // => true\n *\n * _.isArrayLike('abc');\n * // => true\n *\n * _.isArrayLike(_.noop);\n * // => false\n */\nfunction isArrayLike(value) {\n  return value != null && isLength(value.length) && !isFunction(value);\n}\n\nexport default isArrayLike;\n",
+      "start": 1741448040456,
+      "end": 1741448040590,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1741448040590,
+      "end": 1741448040590,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1741448040590,
+      "end": 1741448040590,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1741448040590,
+      "end": 1741448040590,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1741448040590,
+      "end": 1741448040590,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:resource",
+      "start": 1741448040590,
+      "end": 1741448040590,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:resource",
+      "start": 1741448040590,
+      "end": 1741448040590,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:directive",
+      "start": 1741448040590,
+      "end": 1741448040590,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:directive",
+      "start": 1741448040590,
+      "end": 1741448040590,
+      "order": "pre"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1741448040590,
+      "end": 1741448040590,
+      "order": "pre"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1741448040590,
+      "end": 1741448040590,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-only-component-transform",
+      "start": 1741448040590,
+      "end": 1741448040590,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1741448040590,
+      "end": 1741448040590,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1741448040590,
+      "end": 1741448040590,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1741448040590,
+      "end": 1741448040590,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1741448040590,
+      "end": 1741448040590,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1741448040590,
+      "end": 1741448040590,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1741448040590,
+      "end": 1741448040590,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448040590,
+      "end": 1741448040590,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448040590,
+      "end": 1741448040590,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1741448040590,
+      "end": 1741448040590,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1741448040590,
+      "end": 1741448040590,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1741448040590,
+      "end": 1741448040590,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1741448040590,
+      "end": 1741448040590,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448040590,
+      "end": 1741448040590,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1741448040590,
+      "end": 1741448040591,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "import isFunction from \"./isFunction.js\";\nimport isLength from \"./isLength.js\";\nfunction isArrayLike(value) {\n  return value != null && isLength(value.length) && !isFunction(value);\n}\nexport default isArrayLike;\n",
+      "start": 1741448040591,
+      "end": 1741448041009,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1741448041010,
+      "end": 1741448041010,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1741448041010,
+      "end": 1741448041010,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1741448041010,
+      "end": 1741448041010,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1741448041010,
+      "end": 1741448041010,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1741448041011,
+      "end": 1741448041011,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1741448041011,
+      "end": 1741448041011,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1741448041012,
+      "end": 1741448041012,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1741448041012,
+      "end": 1741448041012,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1741448041012,
+      "end": 1741448041012,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1741448041012,
+      "end": 1741448041012,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1741448041012,
+      "end": 1741448041012,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1741448041012,
+      "end": 1741448041012,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1741448041012,
+      "end": 1741448041012,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1741448041012,
+      "end": 1741448041012,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1741448041013,
+      "end": 1741448041013,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1741448041013,
+      "end": 1741448041013,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1741448041013,
+      "end": 1741448041013,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1741448041013,
+      "end": 1741448041013,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1741448041013,
+      "end": 1741448041013,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1741448041013,
+      "end": 1741448041013,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1741448041014,
+      "end": 1741448041014,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1741448041014,
+      "end": 1741448041014,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1741448041014,
+      "end": 1741448041014,
+      "order": "normal"
+    }
+  ]
+}

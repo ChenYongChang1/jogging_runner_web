@@ -1,0 +1,239 @@
+{
+  "resolvedId": "/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/components/Layout/footerIntroduction.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\nimport _imports_0 from 'assets/images/apple-download.png'\nimport _imports_1 from 'assets/images/google-download.png'\nimport _imports_2 from 'assets/images/anzhuo-download.png'\nimport _imports_3 from 'assets/images/footer-1.png'\nimport _imports_4 from 'assets/images/footer-2.png'\n\n\nconst _hoisted_1 = { class: \"download-type tw-mx-[1.67%] tw-rounded-[26px] tw-bg-[#EDFFEE]\" }\nconst _hoisted_2 = { class: \"download-type-pc tw-flex tw-items-start tw-justify-around md:tw-items-center md:tw-flex-row-reverse tw-flex-col tw-pl-[4.78%] tw-pt-[45px] tw-pr-[4.2%] max-md:tw-px-[4.2%]\" }\nconst _hoisted_3 = { class: \"left-content\" }\nconst _hoisted_4 = { class: \"download-text tw-flex tw-items-center tw-pb-[20px]\" }\nconst _hoisted_5 = { class: \"tw-text-[18px] tw-font-[500]\" }\nconst _hoisted_6 = { class: \"left-content-header tw-text-[#4A4A4A] dd-fs-48 tw-font-[600] tw-leading-[56px] tw-text-left tw-pb-[17px]\" }\nconst _hoisted_7 = { class: \"download-type-imgs tw-w-full md:tw-w-[386px] tw-pt-[50px] tw-flex tw-flex-wrap\" }\nconst _hoisted_8 = { class: \"download-type-imgs-item tw-w-full md:tw-w-1/2 tw-mb-[10px] md:tw-pr-[8px]\" }\nconst _hoisted_9 = { class: \"download-type-imgs-item tw-w-full md:tw-w-1/2 tw-mb-[10px]\" }\nconst _hoisted_10 = { class: \"download-type-imgs-item tw-w-full md:tw-w-1/2 tw-mb-[10px]\" }\n\ntype DownloadType = 'app-store' | 'google-play' | 'android';\n\n\nexport default /*@__PURE__*/_defineComponent({\n  __name: 'footerIntroduction',\n  setup(__props) {\n\nconst handleClickType = (type: DownloadType) => {\n  const isMdOrLarger = window.innerWidth >= 768;\n  // 如果是 md或者md以上，打开图片；否则跳转链接  \n  const downloadLinks = {\n    // TODO 需要提供下载链接\n    'app-store': '',\n    'google-play': '',\n    'android': ''\n  };\n\n  if (isMdOrLarger && type === 'app-store') {\n    // 在桌面端点击 App Store 图标时显示二维码弹窗\n    // TODO: 实现 el-popover 显示\n  } else {\n    // 直接跳转到对应的下载链接\n    const link = downloadLinks[type];\n    if (link) {\n      window.open(link);\n    }\n  }\n};\n\nreturn (_ctx: any,_cache: any) => {\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        _createElementVNode(\"div\", _hoisted_4, [\n          _cache[3] || (_cache[3] = _createElementVNode(\"div\", { class: \"tw-mr-[8px] tw-rounded-[2px] tw-w-[8px] tw-h-[8px] tw-bg-[green]\" }, null, -1)),\n          _createElementVNode(\"div\", _hoisted_5, _toDisplayString(_ctx.$t(\"common.下载APP\")), 1)\n        ]),\n        _createElementVNode(\"div\", _hoisted_6, _toDisplayString(_ctx.$t(\"common.下载超慢跑节拍器\")), 1),\n        _createElementVNode(\"div\", _hoisted_7, [\n          _createElementVNode(\"div\", _hoisted_8, [\n            _createElementVNode(\"img\", {\n              src: _imports_0,\n              onClick: _cache[0] || (_cache[0] = ($event: any) => (handleClickType('app-store'))),\n              class: \"tw-w-full tw-h-auto\"\n            })\n          ]),\n          _createElementVNode(\"div\", _hoisted_9, [\n            _createElementVNode(\"img\", {\n              src: _imports_1,\n              onClick: _cache[1] || (_cache[1] = ($event: any) => (handleClickType('google-play'))),\n              class: \"tw-w-full tw-h-auto\"\n            })\n          ]),\n          _createElementVNode(\"div\", _hoisted_10, [\n            _createElementVNode(\"img\", {\n              src: _imports_2,\n              onClick: _cache[2] || (_cache[2] = ($event: any) => (handleClickType('android'))),\n              class: \"tw-w-full tw-h-auto\"\n            })\n          ])\n        ])\n      ]),\n      _cache[4] || (_cache[4] = _createElementVNode(\"div\", { class: \"right-content tw-flex tw-jusify-center tw-mr-[20px] max-md:tw-mr-0 tw-items-baseline max-md:tw-transform max-md:tw-translate-x-[-4.2%] tw-relative\" }, [\n        _createElementVNode(\"img\", {\n          src: _imports_3,\n          class: \"\"\n        }),\n        _createElementVNode(\"img\", {\n          src: _imports_4,\n          class: \"tw-absolute tw-left-[58px] tw-h-[100%] tw-top-0\"\n        })\n      ], -1))\n    ])\n  ]))\n}\n}\n\n})",
+      "start": 1741448034905,
+      "end": 1741448034905
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1741448034905,
+      "end": 1741448034905,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1741448034905,
+      "end": 1741448034905,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:resource",
+      "start": 1741448034905,
+      "end": 1741448034905,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:directive",
+      "start": 1741448034905,
+      "end": 1741448034905,
+      "order": "pre"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1741448034905,
+      "end": 1741448034906,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1741448034906,
+      "end": 1741448034906,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\";\nimport _imports_0 from \"assets/images/apple-download.png\";\nimport _imports_1 from \"assets/images/google-download.png\";\nimport _imports_2 from \"assets/images/anzhuo-download.png\";\nimport _imports_3 from \"assets/images/footer-1.png\";\nimport _imports_4 from \"assets/images/footer-2.png\";\nconst _hoisted_1 = { class: \"download-type tw-mx-[1.67%] tw-rounded-[26px] tw-bg-[#EDFFEE]\" };\nconst _hoisted_2 = { class: \"download-type-pc tw-flex tw-items-start tw-justify-around md:tw-items-center md:tw-flex-row-reverse tw-flex-col tw-pl-[4.78%] tw-pt-[45px] tw-pr-[4.2%] max-md:tw-px-[4.2%]\" };\nconst _hoisted_3 = { class: \"left-content\" };\nconst _hoisted_4 = { class: \"download-text tw-flex tw-items-center tw-pb-[20px]\" };\nconst _hoisted_5 = { class: \"tw-text-[18px] tw-font-[500]\" };\nconst _hoisted_6 = { class: \"left-content-header tw-text-[#4A4A4A] dd-fs-48 tw-font-[600] tw-leading-[56px] tw-text-left tw-pb-[17px]\" };\nconst _hoisted_7 = { class: \"download-type-imgs tw-w-full md:tw-w-[386px] tw-pt-[50px] tw-flex tw-flex-wrap\" };\nconst _hoisted_8 = { class: \"download-type-imgs-item tw-w-full md:tw-w-1/2 tw-mb-[10px] md:tw-pr-[8px]\" };\nconst _hoisted_9 = { class: \"download-type-imgs-item tw-w-full md:tw-w-1/2 tw-mb-[10px]\" };\nconst _hoisted_10 = { class: \"download-type-imgs-item tw-w-full md:tw-w-1/2 tw-mb-[10px]\" };\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"footerIntroduction\",\n  setup(__props) {\n    const handleClickType = (type) => {\n      const isMdOrLarger = window.innerWidth >= 768;\n      const downloadLinks = {\n        // TODO 需要提供下载链接\n        \"app-store\": \"\",\n        \"google-play\": \"\",\n        \"android\": \"\"\n      };\n      if (isMdOrLarger && type === \"app-store\") {\n      } else {\n        const link = downloadLinks[type];\n        if (link) {\n          window.open(link);\n        }\n      }\n    };\n    return (_ctx, _cache) => {\n      return _openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createElementVNode(\"div\", _hoisted_2, [\n          _createElementVNode(\"div\", _hoisted_3, [\n            _createElementVNode(\"div\", _hoisted_4, [\n              _cache[3] || (_cache[3] = _createElementVNode(\"div\", { class: \"tw-mr-[8px] tw-rounded-[2px] tw-w-[8px] tw-h-[8px] tw-bg-[green]\" }, null, -1)),\n              _createElementVNode(\"div\", _hoisted_5, _toDisplayString(_ctx.$t(\"common.下载APP\")), 1)\n            ]),\n            _createElementVNode(\"div\", _hoisted_6, _toDisplayString(_ctx.$t(\"common.下载超慢跑节拍器\")), 1),\n            _createElementVNode(\"div\", _hoisted_7, [\n              _createElementVNode(\"div\", _hoisted_8, [\n                _createElementVNode(\"img\", {\n                  src: _imports_0,\n                  onClick: _cache[0] || (_cache[0] = ($event) => handleClickType(\"app-store\")),\n                  class: \"tw-w-full tw-h-auto\"\n                })\n              ]),\n              _createElementVNode(\"div\", _hoisted_9, [\n                _createElementVNode(\"img\", {\n                  src: _imports_1,\n                  onClick: _cache[1] || (_cache[1] = ($event) => handleClickType(\"google-play\")),\n                  class: \"tw-w-full tw-h-auto\"\n                })\n              ]),\n              _createElementVNode(\"div\", _hoisted_10, [\n                _createElementVNode(\"img\", {\n                  src: _imports_2,\n                  onClick: _cache[2] || (_cache[2] = ($event) => handleClickType(\"android\")),\n                  class: \"tw-w-full tw-h-auto\"\n                })\n              ])\n            ])\n          ]),\n          _cache[4] || (_cache[4] = _createElementVNode(\"div\", { class: \"right-content tw-flex tw-jusify-center tw-mr-[20px] max-md:tw-mr-0 tw-items-baseline max-md:tw-transform max-md:tw-translate-x-[-4.2%] tw-relative\" }, [\n            _createElementVNode(\"img\", {\n              src: _imports_3,\n              class: \"\"\n            }),\n            _createElementVNode(\"img\", {\n              src: _imports_4,\n              class: \"tw-absolute tw-left-[58px] tw-h-[100%] tw-top-0\"\n            })\n          ], -1))\n        ])\n      ]);\n    };\n  }\n});\n",
+      "start": 1741448034907,
+      "end": 1741448034952,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/components/Layout/footerIntroduction.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\nimport _imports_0 from 'assets/images/apple-download.png'\nimport _imports_1 from 'assets/images/google-download.png'\nimport _imports_2 from 'assets/images/anzhuo-download.png'\nimport _imports_3 from 'assets/images/footer-1.png'\nimport _imports_4 from 'assets/images/footer-2.png'\n\n\nconst _hoisted_1 = { class: \"download-type tw-mx-[1.67%] tw-rounded-[26px] tw-bg-[#EDFFEE]\" }\nconst _hoisted_2 = { class: \"download-type-pc tw-flex tw-items-start tw-justify-around md:tw-items-center md:tw-flex-row-reverse tw-flex-col tw-pl-[4.78%] tw-pt-[45px] tw-pr-[4.2%] max-md:tw-px-[4.2%]\" }\nconst _hoisted_3 = { class: \"left-content\" }\nconst _hoisted_4 = { class: \"download-text tw-flex tw-items-center tw-pb-[20px]\" }\nconst _hoisted_5 = { class: \"tw-text-[18px] tw-font-[500]\" }\nconst _hoisted_6 = { class: \"left-content-header tw-text-[#4A4A4A] dd-fs-48 tw-font-[600] tw-leading-[56px] tw-text-left tw-pb-[17px]\" }\nconst _hoisted_7 = { class: \"download-type-imgs tw-w-full md:tw-w-[386px] tw-pt-[50px] tw-flex tw-flex-wrap\" }\nconst _hoisted_8 = { class: \"download-type-imgs-item tw-w-full md:tw-w-1/2 tw-mb-[10px] md:tw-pr-[8px]\" }\nconst _hoisted_9 = { class: \"download-type-imgs-item tw-w-full md:tw-w-1/2 tw-mb-[10px]\" }\nconst _hoisted_10 = { class: \"download-type-imgs-item tw-w-full md:tw-w-1/2 tw-mb-[10px]\" }\n\ntype DownloadType = 'app-store' | 'google-play' | 'android';\n\n\nexport default /*@__PURE__*/_defineComponent({\n  __name: 'footerIntroduction',\n  setup(__props) {\n\nconst handleClickType = (type: DownloadType) => {\n  const isMdOrLarger = window.innerWidth >= 768;\n  // 如果是 md或者md以上，打开图片；否则跳转链接  \n  const downloadLinks = {\n    // TODO 需要提供下载链接\n    'app-store': '',\n    'google-play': '',\n    'android': ''\n  };\n\n  if (isMdOrLarger && type === 'app-store') {\n    // 在桌面端点击 App Store 图标时显示二维码弹窗\n    // TODO: 实现 el-popover 显示\n  } else {\n    // 直接跳转到对应的下载链接\n    const link = downloadLinks[type];\n    if (link) {\n      window.open(link);\n    }\n  }\n};\n\nreturn (_ctx: any,_cache: any) => {\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        _createElementVNode(\"div\", _hoisted_4, [\n          _cache[3] || (_cache[3] = _createElementVNode(\"div\", { class: \"tw-mr-[8px] tw-rounded-[2px] tw-w-[8px] tw-h-[8px] tw-bg-[green]\" }, null, -1)),\n          _createElementVNode(\"div\", _hoisted_5, _toDisplayString(_ctx.$t(\"common.下载APP\")), 1)\n        ]),\n        _createElementVNode(\"div\", _hoisted_6, _toDisplayString(_ctx.$t(\"common.下载超慢跑节拍器\")), 1),\n        _createElementVNode(\"div\", _hoisted_7, [\n          _createElementVNode(\"div\", _hoisted_8, [\n            _createElementVNode(\"img\", {\n              src: _imports_0,\n              onClick: _cache[0] || (_cache[0] = ($event: any) => (handleClickType('app-store'))),\n              class: \"tw-w-full tw-h-auto\"\n            })\n          ]),\n          _createElementVNode(\"div\", _hoisted_9, [\n            _createElementVNode(\"img\", {\n              src: _imports_1,\n              onClick: _cache[1] || (_cache[1] = ($event: any) => (handleClickType('google-play'))),\n              class: \"tw-w-full tw-h-auto\"\n            })\n          ]),\n          _createElementVNode(\"div\", _hoisted_10, [\n            _createElementVNode(\"img\", {\n              src: _imports_2,\n              onClick: _cache[2] || (_cache[2] = ($event: any) => (handleClickType('android'))),\n              class: \"tw-w-full tw-h-auto\"\n            })\n          ])\n        ])\n      ]),\n      _cache[4] || (_cache[4] = _createElementVNode(\"div\", { class: \"right-content tw-flex tw-jusify-center tw-mr-[20px] max-md:tw-mr-0 tw-items-baseline max-md:tw-transform max-md:tw-translate-x-[-4.2%] tw-relative\" }, [\n        _createElementVNode(\"img\", {\n          src: _imports_3,\n          class: \"\"\n        }),\n        _createElementVNode(\"img\", {\n          src: _imports_4,\n          class: \"tw-absolute tw-left-[58px] tw-h-[100%] tw-top-0\"\n        })\n      ], -1))\n    ])\n  ]))\n}\n}\n\n})"
+        ],
+        "mappings": "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",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1741448034952,
+      "end": 1741448034952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1741448034952,
+      "end": 1741448034952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1741448034952,
+      "end": 1741448034952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1741448034952,
+      "end": 1741448034952,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448034952,
+      "end": 1741448034952,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1741448034952,
+      "end": 1741448034952,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1741448034952,
+      "end": 1741448034952,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448034952,
+      "end": 1741448034952,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1741448034952,
+      "end": 1741448034952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1741448034952,
+      "end": 1741448034952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1741448034952,
+      "end": 1741448034952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1741448034952,
+      "end": 1741448034952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1741448034952,
+      "end": 1741448034952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1741448034952,
+      "end": 1741448034952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1741448034952,
+      "end": 1741448034952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1741448034952,
+      "end": 1741448034952,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1741448034952,
+      "end": 1741448034952,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1741448034952,
+      "end": 1741448034952,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1741448034952,
+      "end": 1741448034953,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1741448034953,
+      "end": 1741448034953,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1741448034953,
+      "end": 1741448034953,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1741448034953,
+      "end": 1741448034953,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1741448034953,
+      "end": 1741448034954,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1741448034954,
+      "end": 1741448034954,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1741448034954,
+      "end": 1741448034954,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1741448034954,
+      "end": 1741448034954,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1741448034954,
+      "end": 1741448034954,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1741448034954,
+      "end": 1741448034954,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1741448034954,
+      "end": 1741448034954,
+      "order": "normal"
+    }
+  ]
+}

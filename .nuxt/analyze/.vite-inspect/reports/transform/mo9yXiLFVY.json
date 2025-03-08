@@ -1,0 +1,17 @@
+{
+  "resolvedId": "/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/node_modules/.pnpm/element-plus@2.9.5_vue@3.5.13_typescript@5.8.2_/node_modules/element-plus/theme-chalk/el-dropdown-item.css",
+  "transforms": [
+    {
+      "name": "__load__",
+      "result": "",
+      "start": 1741448034574,
+      "end": 1741448034574
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1741448034574,
+      "end": 1741448034574,
+      "order": "normal"
+    }
+  ]
+}

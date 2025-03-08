@@ -1,5 +1,5 @@
 import { watch } from 'vue';
-import { L as useLocalePath, n as navigateTo, M as useRoute } from './server.mjs';
+import { L as useLocalePath, M as useRoute, n as navigateTo } from './server.mjs';
 
 const getRouteLink = (link) => {
   const localePath = useLocalePath();

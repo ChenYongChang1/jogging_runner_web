@@ -1,0 +1,239 @@
+{
+  "resolvedId": "/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/layouts/default.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { createVNode as _createVNode, renderSlot as _renderSlot, createElementVNode as _createElementVNode, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"container tw-flex tw-flex-col tw-w-[100vw] tw-min-h-[100vh]\" }\nconst _hoisted_2 = { class: \"tw-flex-1\" }\n\nimport Header from \"../components/Layout/header.vue\";\nimport Footer from \"../components/Layout/footer.vue\";\nimport { useRoute } from \"vue-router\";\nimport { computed } from \"vue\";\n\n\nexport default /*@__PURE__*/_defineComponent({\n  __name: 'default',\n  setup(__props) {\n\nconst route = useRoute();\nconst is404Page = computed(() => route.path.includes(\"/404\"));\n\nreturn (_ctx: any,_cache: any) => {\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createVNode(Header),\n    _createElementVNode(\"div\", _hoisted_2, [\n      _renderSlot(_ctx.$slots, \"default\")\n    ]),\n    (!is404Page.value)\n      ? (_openBlock(), _createBlock(Footer, { key: 0 }))\n      : _createCommentVNode(\"\", true)\n  ]))\n}\n}\n\n})",
+      "start": 1741448032542,
+      "end": 1741448032542
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1741448032543,
+      "end": 1741448032543,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1741448032543,
+      "end": 1741448032543,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:resource",
+      "start": 1741448032543,
+      "end": 1741448032543,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n:directive",
+      "start": 1741448032543,
+      "end": 1741448032543,
+      "order": "pre"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1741448032543,
+      "end": 1741448032543,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1741448032543,
+      "end": 1741448032543,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { createVNode as _createVNode, renderSlot as _renderSlot, createElementVNode as _createElementVNode, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createElementBlock as _createElementBlock } from \"vue\";\nconst _hoisted_1 = { class: \"container tw-flex tw-flex-col tw-w-[100vw] tw-min-h-[100vh]\" };\nconst _hoisted_2 = { class: \"tw-flex-1\" };\nimport Header from \"../components/Layout/header.vue\";\nimport Footer from \"../components/Layout/footer.vue\";\nimport { useRoute } from \"vue-router\";\nimport { computed } from \"vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"default\",\n  setup(__props) {\n    const route = useRoute();\n    const is404Page = computed(() => route.path.includes(\"/404\"));\n    return (_ctx, _cache) => {\n      return _openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createVNode(Header),\n        _createElementVNode(\"div\", _hoisted_2, [\n          _renderSlot(_ctx.$slots, \"default\")\n        ]),\n        !is404Page.value ? (_openBlock(), _createBlock(Footer, { key: 0 })) : _createCommentVNode(\"\", true)\n      ]);\n    };\n  }\n});\n",
+      "start": 1741448032543,
+      "end": 1741448032731,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/chenyongchang/lib/outsource/hz/ultra_jogging_web/src/layouts/default.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { createVNode as _createVNode, renderSlot as _renderSlot, createElementVNode as _createElementVNode, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"container tw-flex tw-flex-col tw-w-[100vw] tw-min-h-[100vh]\" }\nconst _hoisted_2 = { class: \"tw-flex-1\" }\n\nimport Header from \"../components/Layout/header.vue\";\nimport Footer from \"../components/Layout/footer.vue\";\nimport { useRoute } from \"vue-router\";\nimport { computed } from \"vue\";\n\n\nexport default /*@__PURE__*/_defineComponent({\n  __name: 'default',\n  setup(__props) {\n\nconst route = useRoute();\nconst is404Page = computed(() => route.path.includes(\"/404\"));\n\nreturn (_ctx: any,_cache: any) => {\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createVNode(Header),\n    _createElementVNode(\"div\", _hoisted_2, [\n      _renderSlot(_ctx.$slots, \"default\")\n    ]),\n    (!is404Page.value)\n      ? (_openBlock(), _createBlock(Footer, { key: 0 }))\n      : _createCommentVNode(\"\", true)\n  ]))\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,eAAe,cAAc,cAAc,aAAa,sBAAsB,qBAAqB,aAAa,YAAY,eAAe,cAAc,sBAAsB,qBAAqB,sBAAsB,2BAA2B;AAE9P,MAAM,aAAa,EAAE,OAAO,8DAA8D;AAC1F,MAAM,aAAa,EAAE,OAAO,YAAY;AAExC,OAAO,YAAY;AACnB,OAAO,YAAY;AACnB,SAAS,gBAAgB;AACzB,SAAS,gBAAgB;AAGzB,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,MAAM,SAAS;AAEjB,UAAM,QAAQ,SAAS;AACvB,UAAM,YAAY,SAAS,MAAM,MAAM,KAAK,SAAS,MAAM,CAAC;AAE5D,WAAO,CAAC,MAAU,WAAgB;AAChC,aAAQ,WAAW,GAAG,oBAAoB,OAAO,YAAY;AAAA,QAC3D,aAAa,MAAM;AAAA,QACnB,oBAAoB,OAAO,YAAY;AAAA,UACrC,YAAY,KAAK,QAAQ,SAAS;AAAA,QACpC,CAAC;AAAA,QACA,CAAC,UAAU,SACP,WAAW,GAAG,aAAa,QAAQ,EAAE,KAAK,EAAE,CAAC,KAC9C,oBAAoB,IAAI,IAAI;AAAA,MAClC,CAAC;AAAA,IACH;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1741448032731,
+      "end": 1741448032731,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1741448032731,
+      "end": 1741448032731,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1741448032731,
+      "end": 1741448032731,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1741448032731,
+      "end": 1741448032731,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448032731,
+      "end": 1741448032731,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1741448032731,
+      "end": 1741448032731,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1741448032731,
+      "end": 1741448032731,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1741448032731,
+      "end": 1741448032731,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1741448032731,
+      "end": 1741448032731,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1741448032731,
+      "end": 1741448032731,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1741448032731,
+      "end": 1741448032731,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1741448032731,
+      "end": 1741448032731,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1741448032731,
+      "end": 1741448032731,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1741448032731,
+      "end": 1741448032731,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1741448032731,
+      "end": 1741448032731,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1741448032731,
+      "end": 1741448032731,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1741448032731,
+      "end": 1741448032731,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1741448032731,
+      "end": 1741448032731,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1741448032731,
+      "end": 1741448032732,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1741448032732,
+      "end": 1741448032732,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1741448032732,
+      "end": 1741448032732,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1741448032732,
+      "end": 1741448032732,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1741448032732,
+      "end": 1741448032732,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1741448032732,
+      "end": 1741448032732,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1741448032732,
+      "end": 1741448032732,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1741448032732,
+      "end": 1741448032732,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1741448032733,
+      "end": 1741448032733,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1741448032733,
+      "end": 1741448032733,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1741448032733,
+      "end": 1741448032733,
+      "order": "normal"
+    }
+  ]
+}
