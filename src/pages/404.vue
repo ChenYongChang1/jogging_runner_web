@@ -18,7 +18,7 @@
   </div>
 </template>
 <script setup>
-const router = useRouter()
+setPageLayout("error");
 
 const goToHome = () => {
   const href = getRouteLink('/')

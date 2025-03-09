@@ -33,11 +33,13 @@
                   @mouseenter="showPopover"
                   @mouseleave="hidePopover"
                   @click="togglePopover"
-                  >
-                  <span class="tw-text-[18px]">{{ $t("index.下载APP")
-                  }}</span>
+                >
+                  <span class="tw-text-[18px]">{{ $t("index.下载APP") }}</span>
                   <el-icon class="tw-ml-[10px] tw-font-[500]"
-                    ><img src="@/assets/icon/Download.svg" class="tw-w-[18px]" alt="" /></el-icon
+                    ><img
+                      src="@/assets/icon/Download.svg"
+                      class="tw-w-[18px]"
+                      alt="" /></el-icon
                 ></BwButton>
               </template>
               <div
@@ -89,16 +91,17 @@
           <div
             class="tabar-item-right tw-flex tw-justify-between tw-items-center"
           >
-            <bw-button
-              :style="{
-                background: item.buttonColor,
-                borderColor: item.buttonColor,
-              }"
-              class="tw-w-[132px] tw-h-[46px] tw-rounded-[30px] tw-leading-[46px] max-md:tw-w-[98px] max-md:tw-h-[30px!important] max-md:tw-leading-[28px!important] max-xsm:tw-w-[78px] max-xsm:tw-h-[27px] max-sxm:tw-leading-[27px] dd-fs-20-12 max-xsm:tw-px-[8px] tw-text-center"
-              :active="true"
-              @click="handleView(item.alias)"
-              >{{ $t("home.点击查看") }}</bw-button
-            >
+            <nuxt-link :to="getRouteLink(`/tag/${item.alias}`)">
+              <bw-button
+                :style="{
+                  background: item.buttonColor,
+                  borderColor: item.buttonColor,
+                }"
+                class="tw-w-[132px] tw-h-[46px] tw-rounded-[30px] tw-leading-[46px] max-md:tw-w-[98px] max-md:tw-h-[30px!important] max-md:tw-leading-[28px!important] max-xsm:tw-w-[78px] max-xsm:tw-h-[27px] max-sxm:tw-leading-[27px] dd-fs-20-12 max-xsm:tw-px-[8px] tw-text-center"
+                :active="true"
+                >{{ $t("home.点击查看") }}</bw-button
+              >
+            </nuxt-link>
             <img
               :src="item.icon"
               class="tw-w-[85px] max-lg:tw-w-[50px]"
@@ -139,7 +142,11 @@
         @keyup.down="handleSearch"
       >
         <template #append>
-          <BwButton @click="handleSearch" class=" max-lg:tw-h-[40px] lg:tw-h-[46px] tw-flex tw-items-center" :active="true">
+          <BwButton
+            @click="handleSearch"
+            class="max-lg:tw-h-[40px] lg:tw-h-[46px] tw-flex tw-items-center"
+            :active="true"
+          >
             <div class="tw-flex tw-items-center">
               <img
                 class="tw-w-[16px] tw-mr-[4px] max-md:tw-mr-[0]"
@@ -161,10 +168,12 @@
   </div>
 </template>
 <script setup>
+setPageLayout("default");
 import BwButton from "~/components/base/BwButton.vue";
 import BwInput from "~/components/base/BwInput.vue";
 import BwList from "~/components/base/BwList.vue";
 import { getCategory } from "~/composables/api/home";
+import { genrePageLink } from "~/utils/seo";
 
 const tabarList = ref([]);
 const searchValue = ref("");
@@ -175,7 +184,7 @@ const handleSearch = () => {
   // homeBwListRef.value?.getList();
   searchPush(searchValue.value);
 };
-useAsyncData("getCategoryList", async () => {
+await useAsyncData("getCategoryList", async () => {
   const res = await getCategory();
   tabarList.value = res.value?.data || [];
   return tabarList.value;
@@ -194,11 +203,11 @@ const getDataList = async () => {
 // useAsyncData("getCategoryList", getCategoryList);
 // useAsyncData('getDataList', getDataList)
 // 跳转
-const handleView = (alias) => {
-  // navigateTo(`/article/${alias}`);
-  const href = getRouteLink(`/tag/${alias}`);
-  navigateTo(href);
-};
+// const handleView = (alias) => {
+//   // navigateTo(`/article/${alias}`);
+//   const href = getRouteLink(`/tag/${alias}`);
+//   navigateTo(href);
+// };
 const visible = ref(false);
 // 鼠标悬停时显示
 const showPopover = () => {
@@ -211,6 +220,21 @@ const hidePopover = () => {
 const togglePopover = () => {
   visible.value = true;
 };
+
+useHead({
+  title: "超慢跑",
+  meta: [
+    {
+      name: "description",
+      content: "超慢跑描述",
+    },
+    {
+      name: "keywords",
+      content: "超慢跑关键词1，超慢跑关键词3，超慢跑关键词2，",
+    },
+  ],
+  link: genrePageLink(),
+});
 </script>
 
 <style lang="scss" scoped>

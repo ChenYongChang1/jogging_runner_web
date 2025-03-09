@@ -31,9 +31,11 @@
 </template>
 
 <script lang="ts" setup>
+setPageLayout("default");
 import ArticleSearchContent from "~/components/pages/search/ArticleSearchContent.vue";
 import SearchEmpty from "~/components/pages/search/SearchEmpty.vue";
 import { getCategory, getSearchInfo } from "~/composables/api/home";
+import { genrePageLink } from "~/utils/seo";
 
 const route = useRoute();
 const router = useRouter();
@@ -70,7 +72,7 @@ const getSearchList = async () => {
 
 const search = getWatchQueryFunc(["kw", "png"], getSearchList);
 
-useAsyncData("search", search);
+await useAsyncData("search", search);
 
 // 监听查询参数变化
 // const res = ref("-");
@@ -83,6 +85,20 @@ useAsyncData("search", search);
 //     }
 //   }
 // );
+useHead({
+  title: `${searchWorld.value}搜索结果-超慢跑`,
+  meta: [
+    {
+      name: "description",
+      content: `${searchWorld.value}搜索结果, 超慢跑`,
+    },
+    {
+      name: "keywords",
+      content: searchWorld.value,
+    },
+  ],
+  link: genrePageLink(),
+});
 </script>
 
 <style lang="scss" scoped>

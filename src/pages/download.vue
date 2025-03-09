@@ -238,6 +238,7 @@
   </div>
 </template>
 <script lang="ts" setup>
+setPageLayout("default");
 const popover = ref(null)
 const visible = ref(false)
 // 鼠标悬停时显示

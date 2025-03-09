@@ -27,7 +27,7 @@ export default defineNuxtConfig({
   },
 
   devtools: {
-    enabled: true,
+    enabled: false,
 
     timeline: {
       enabled: true,
@@ -85,30 +85,30 @@ export default defineNuxtConfig({
     ],
     ssr: {},
     build: {
-      sourcemap: false,
-      rollupOptions: {
-        output: {
-          manualChunks: (id) => {
-            if (id.includes("element-plus")) {
-              return "componentUi";
-            } else if (id.includes("pages")) {
-              return "pages";
-            } else if (id.includes("lodash")) {
-              return "lodash";
-            } else if (id.includes("nuxt")) {
-              return "nuxt";
-            }else if (id.includes("vue-router")) {
-              return "vue-router";
-            }else if (id.includes("vue")) {
-              return "vue";
-            }
-          },
-        },
-      },
+      // sourcemap: false,
+      // rollupOptions: {
+      //   output: {
+      //     manualChunks: (id) => {
+      //       if (id.includes("element-plus")) {
+      //         return "componentUi";
+      //       } else if (id.includes("pages")) {
+      //         return "pages";
+      //       } else if (id.includes("lodash")) {
+      //         return "lodash";
+      //       } else if (id.includes("nuxt")) {
+      //         return "nuxt";
+      //       }else if (id.includes("vue-router")) {
+      //         return "vue-router";
+      //       }else if (id.includes("vue")) {
+      //         return "vue";
+      //       }
+      //     },
+      //   },
+      // },
     },
   },
   build: {
-    analyze: true,
+    // analyze: true,
   },
 
  

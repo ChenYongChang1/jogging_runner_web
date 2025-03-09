@@ -77,6 +77,9 @@
     </div>
   </div>
 </template>
+<script setup>
+setPageLayout("default");
+</script>
 <style lang="scss" scoped>
 .equipment {
   .equipment-introduce-pc {

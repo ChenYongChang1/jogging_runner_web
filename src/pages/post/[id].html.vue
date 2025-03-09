@@ -12,14 +12,20 @@
           },
         ]"
       />
-      <h1>{{ articleInfo.title }}</h1>
-      <div v-html="articleInfo.content"></div>
+      <h1
+        class="dd-fs-36 tw-font-[600] tw-leading-[55px] max-md:tw-leading-[36px] max-md:tw-mb-[22px] tw-mb-[30px]"
+      >
+        {{ articleInfo.title }}
+      </h1>
+      <div v-html="articleInfo.content?.replace(/##insert_goods##/g, '')"></div>
       <!-- 更多阅读 -->
       <div class="more-read tw-mt-[64px] max-md:tw-mt-[44px]">
-        <div class="more-read-title dd-fs-36 tw-font-[600] max-md:tw-mb-[22px] tw-mb-[35px]">更多阅读</div>
         <div
-          class="bw-list-main tw-flex tw-flex-wrap tw-justify-between"
+          class="more-read-title dd-fs-36 tw-font-[600] max-md:tw-mb-[22px] tw-mb-[35px]"
         >
+          更多阅读
+        </div>
+        <div class="bw-list-main tw-flex tw-flex-wrap tw-justify-between">
           <bw-list-main
             ref="homeBwListRef"
             :tableList="articleInfo.recommends"
@@ -34,12 +40,19 @@
       ></article-search-content>
     </div>
   </div>
-  <app-download v-if="showDownload" :article-info="articleInfo"></app-download>
+  <client-only>
+    <app-download
+      v-show="showDownload"
+      :article-info="articleInfo"
+    ></app-download>
+  </client-only>
 </template>
 
 <script lang="ts" setup>
+setPageLayout("default");
 import { getArticleInfo } from "~/composables/api/home";
 import AppDownload from "~/components/pages/info/AppDownload.vue";
+import { genrePageLink } from "~/utils/seo";
 
 interface TableListItem {
   id: string;
@@ -71,11 +84,25 @@ const getArticleInfoById = async () => {
   categoriesList.value = articleInfo.value.categories || [];
   lastsList.value = articleInfo.value.lasts || [];
 };
-useAsyncData("getArticleInfoById", getArticleInfoById);
+await useAsyncData("getArticleInfoById", getArticleInfoById);
 onMounted(() => {
   nextTick(() => {
     showDownload.value = true;
   });
+});
+useHead({
+  title: `${articleInfo.value.title}-超慢跑`,
+  meta: [
+    {
+      name: "description",
+      content: `${articleInfo.value.title}, 超慢跑`,
+    },
+    {
+      name: "keywords",
+      content: articleInfo.value.title,
+    },
+  ],
+  link: genrePageLink(),
 });
 </script>
 
