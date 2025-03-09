@@ -18,7 +18,7 @@
           class="tw-flex tw-items-center tw-space-x-2 md:tw-space-x-3 tw-cursor-pointer"
           @click="goHome"
         >
-          <img src="~/assets/images/logo.png" alt="Logo" class="tw-w-[48px]" />
+          <img src="~/assets/images/logo.png" alt="超慢跑" class="tw-w-[48px]" />
           <div>
             <h1
               class="tw-text-base md:tw-text-lg tw-text-[#3EDB30] tw-font-bold tw-text-green-500"
@@ -85,13 +85,13 @@
           <img
             v-if="!isEquipment"
             src="~/assets/images/morebtn.png"
-            alt="menu"
+            alt="超慢跑"
             class="tw-w-[18px] tw-h-[18px]"
           />
           <img
             v-else
             src="~/assets/images/morebtn-black.png"
-            alt="menu"
+            alt="超慢跑"
             class="tw-w-[18px] tw-h-[18px]"
           />
           <span

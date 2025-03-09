@@ -4,13 +4,14 @@
     :src="src"
     loading="lazy"
     class="tw-w-full tw-object-contain tw-rounded-[8px] media-zoom"
-    alt=""
+    :alt="alt"
   />
   <img
     v-else-if="mediaType === MediaType.video"
     :src="src"
+    loading="lazy"
     class="tw-w-full tw-object-contain tw-rounded-[8px] video"
-    alt=""
+    :alt="alt"
   />
   <!-- <video
     v-else-if="mediaType === MediaType.video"
@@ -29,6 +30,10 @@ const props = defineProps({
     default: "",
   },
   type: {
+    type: String,
+    default: "",
+  },
+  alt: {
     type: String,
     default: "",
   },

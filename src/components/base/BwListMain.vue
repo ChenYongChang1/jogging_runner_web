@@ -10,6 +10,7 @@
       <BwMedia
         class="tw-rounded-[26px] tw-w-[100%]"
         :src="item.cover"
+        :alt="item.title"
         :type="item.isVideo === 1 ? 'image' : 'video'"
       />
     </div>
@@ -25,7 +26,7 @@
         src="@/assets/icon/look.svg"
         class="tw-w-[18px] tw-mr-[8px]"
         loading="lazy"
-        alt=""
+        :alt="item.title"
       />
       <span class="tw-text-[14px] tw-font-[500] tw-text-text999"
         >{{ item.visitNum }}{{ $t("common.人看过") }}</span
@@ -45,7 +46,6 @@
               src="@/assets/icon/to-right.svg"
               loading="lazy"
               class="tw-w-[18px]"
-              alt=""
             />
           </div>
         </bw-button>
@@ -72,7 +72,6 @@ const props = defineProps({
 });
 const linkToInfo = (item: TableListItem) => {
   return getRouteLink(`/post/${item.id}.html`);
-
 };
 </script>
 <style lang="scss" scoped>
