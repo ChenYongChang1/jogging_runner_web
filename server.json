@@ -1,0 +1,10 @@
+{
+  "apps": [
+    {
+      "name": "jogging-web-app",
+      "script": "pnpm run start",
+      "cwd": "./",
+      "version": "1.0.0"
+    }
+  ]
+}
