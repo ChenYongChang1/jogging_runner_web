@@ -38,6 +38,7 @@
                   <img
                     :src="item.img"
                     alt="超慢跑"
+                    loading="lazy"
                     @click="handleClickType(item.type, index)"
                     class="tw-w-full tw-h-auto tw-cursor-pointer"
                   />
@@ -57,8 +58,16 @@
           </div>
         </div>
         <div class="right-content">
-          <img src="~assets/images/footer-phone.png" class="footer-phone max-xl:tw-block xl:tw-hidden" />
-          <img src="~assets/images/footer-phone-pc.png" class="footer-phone xl:tw-block max-xl:tw-hidden" />
+          <img
+            src="~assets/images/footer-phone.png"
+            loading="lazy"
+            class="footer-phone max-xl:tw-block xl:tw-hidden"
+          />
+          <img
+            src="~assets/images/footer-phone-pc.png"
+            loading="lazy"
+            class="footer-phone xl:tw-block max-xl:tw-hidden"
+          />
         </div>
       </div>
     </div>
@@ -94,7 +103,6 @@ const downloadImgs = ref([
     visible: false,
   },
 ]);
-
 // 屏幕尺寸变关闭popover
 onMounted(() => {
   const handleResize = () => {
@@ -109,7 +117,6 @@ onMounted(() => {
     window.removeEventListener("resize", handleResize);
   });
 });
-
 const handleClickType = (type: DownloadType, index: number) => {
   const isMdOrLarger =
     typeof window !== "undefined" && window.innerWidth >= 640;

@@ -22,7 +22,11 @@
               :active="true"
               >{{ $t('home.下载APP')
               }}<el-icon class="tw-ml-[5px] tw-font-[500]"
-                ><img src="@/assets/icon/Download.svg" alt="" /></el-icon
+                ><img
+                  src="@/assets/icon/Download.svg"
+                  loading="lazy"
+                  alt="超慢跑"
+                /></el-icon
             ></BwButton>
           </div>
         </div>
@@ -30,6 +34,7 @@
           src="@/assets/images/home.png"
           class="tw-w-[36.1%] max-lg:tw-hidden"
           alt="超慢跑"
+          loading="lazy"
         />
       </div>
     </div>
@@ -48,6 +53,7 @@
           :src="item.backGroup"
           class="tw-absolute tw-h-[42px] tw-top-[5px] tw-left-[10px]"
           alt="超慢跑"
+          loading="lazy"
         />
         <div
           class="tabar-item-text dd-fs-34 tw-font-[700] tw-leading-[47.6px] tw-text-[#333]"
@@ -63,7 +69,12 @@
             :active="true"
             >{{ $t('home.点击查看') }}</bw-button
           >
-          <img :src="item.icom" class="tw-w-[85px] max-lg:tw-w-[50px]" alt="超慢跑" />
+          <img
+            :src="item.icom"
+            class="tw-w-[85px] max-lg:tw-w-[50px]"
+            alt="超慢跑"
+            loading="lazy"
+          />
         </div>
       </div>
     </div>

@@ -18,7 +18,8 @@
               <img
                 class="tw-w-[16px] tw-mr-[4px]"
                 src="@/assets/icon/Search.svg"
-                alt=""
+                alt="超慢跑"
+                loading="lazy"
               />
               <span> {{ $t("index.搜索") }}</span>
             </div></BwButton

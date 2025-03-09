@@ -36,7 +36,7 @@
                   @click="togglePopover"
                   >{{ $t('download.下载APP')
                   }}<el-icon class="tw-ml-[5px] tw-font-[500]"
-                    ><img src="@/assets/icon/Download.svg" alt="" /></el-icon
+                    ><img src="@/assets/icon/Download.svg" loading="lazy" alt="超慢跑" /></el-icon
                 ></BwButton>
               </template>
               <div
@@ -45,6 +45,7 @@
                 <img
                   src="@/assets/images/erweima.png"
                   class="tw-w-[125px] tw-mb-[5px]"
+                  loading="lazy"
                   alt="超慢跑"
                 />
                 <div
@@ -60,6 +61,7 @@
           src="@/assets/images/home.png"
           class="tw-w-[36.1%] max-sm:tw-w-[69.6%] max-sm:tw-mt-[35px]"
           alt="超慢跑"
+          loading="lazy"
         />
       </div>
       <!-- pc端介绍 -->
@@ -87,22 +89,27 @@
           <img
             src="@/assets/images/download-image-1.png"
             alt="超慢跑"
+            loading="lazy"
           />
           <img
             src="@/assets/images/download-image-2.png"
             alt="超慢跑"
+            loading="lazy"
           />
           <img
             src="@/assets/images/download-image-3.png"
             alt="超慢跑"
+            loading="lazy"
           />
           <img
             src="@/assets/images/download-image-4.png"
             alt="超慢跑"
+            loading="lazy"
           />
           <img
             src="@/assets/images/download-image-5.png"
             alt="超慢跑"
+            loading="lazy"
           />
         </div>
       </div>

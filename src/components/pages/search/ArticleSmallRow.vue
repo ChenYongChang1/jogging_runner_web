@@ -10,7 +10,8 @@
       <img
         src="@/assets/icon/look.svg"
         class="tw-w-[18px] tw-mr-[8px]"
-        alt=""
+        alt="超慢跑"
+        loading="lazy"
       />
       <span class="tw-text-[14px] tw-font-[500] tw-text-text999"
         >{{ article.visitNum }}{{ $t("common.人看过") }}</span

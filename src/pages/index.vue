@@ -39,7 +39,9 @@
                     ><img
                       src="@/assets/icon/Download.svg"
                       class="tw-w-[18px]"
-                      alt="" /></el-icon
+                      loading="lazy"
+                      alt="超慢跑"
+                    /></el-icon
                 ></BwButton>
               </template>
               <div
@@ -107,6 +109,7 @@
               :src="item.icon"
               class="tw-w-[85px] max-lg:tw-w-[50px]"
               loading="lazy"
+              alt="超慢跑"
             />
           </div>
         </div>
@@ -152,7 +155,8 @@
               <img
                 class="tw-w-[16px] tw-mr-[4px] max-md:tw-mr-[0]"
                 src="@/assets/icon/Search.svg"
-                alt=""
+                loading="lazy"
+                alt="超慢跑"
               />
               <span class="max-md:tw-hidden">{{ $t("index.搜索") }}</span>
             </div>

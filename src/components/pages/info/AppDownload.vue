@@ -7,6 +7,7 @@
         src="@/assets/images/app-open.png"
         class="tw-w-full"
         alt="超慢跑专用APP"
+        loading="lazy"
         @click="openOrDownloadApp"
       />
     </div>

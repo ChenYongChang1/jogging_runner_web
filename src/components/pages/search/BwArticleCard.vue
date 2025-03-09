@@ -19,7 +19,8 @@
         <img
           src="@/assets/icon/look.svg"
           class="tw-w-[18px] tw-mr-[8px]"
-          alt=""
+          alt="超慢跑"
+          loading="lazy"
         />
         <span class="tw-text-[14px] tw-font-[500] tw-text-text999"
           >{{ article.visitNum || 0 }}{{ $t("common.人看过") }}</span
@@ -32,7 +33,12 @@
       >
         <div class="tw-flex">
           <span class="tw-mr-[6px]">{{ $t("common.阅读全文") }}</span>
-          <img src="@/assets/icon/to-right.svg" class="tw-w-[18px]" alt="" />
+          <img
+            src="@/assets/icon/to-right.svg"
+            class="tw-w-[18px]"
+            alt="超慢跑"
+            loading="lazy"
+          />
         </div>
       </bw-button>
     </div>
