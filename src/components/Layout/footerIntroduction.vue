@@ -30,7 +30,7 @@
             >
               <el-popover
                 popper-class="download-app-popover"
-                trigger="manual"
+                trigger="hover"
                 v-model:visible="item.visible"
                 placement="bottom-start"
               >
@@ -74,10 +74,10 @@
   </div>
 </template>
 <script lang="ts" setup>
-import appleDownload from '@/assets/images/download.png'
-import apple from '@/assets/images/apple.png'
-import google from '@/assets/images/google.png'
-import anzhuo from '@/assets/images/anzhuo.png'
+import appleDownload from '@/assets/images/apple-download.png'
+import googleDownload from '@/assets/images/google-download.png'
+import anzhuoDownload from '@/assets/images/anzhuo-download.png'
+import apple from '@/assets/images/download.png'
 
 type DownloadType = string
 
@@ -90,14 +90,14 @@ const downloadImgs = ref([
   },
   {
     type: 'google-play',
-    img: appleDownload,
-    popoverImg: google,
+    img: googleDownload,
+    popoverImg: apple,
     visible: false,
   },
   {
     type: 'android',
-    img: appleDownload,
-    popoverImg: anzhuo,
+    img: anzhuoDownload,
+    popoverImg: apple,
     visible: false,
   },
 ])
@@ -150,7 +150,7 @@ const handleClickType = (type: DownloadType, index: number) => {
   @apply max-md:tw-px-[1rem] max-md:tw-pt-[4rem];
 }
 .right-content {
-  @apply md:tw-absolute md:tw-bottom-[0] md:tw-w-[40vw] md:tw-left-[60px];
+  @apply md:tw-absolute md:tw-bottom-[0] md:tw-w-[40vw] md:tw-left-[60px] tw-rounded-[26px] tw-overflow-hidden;
   .footer-phone {
     @apply tw-w-full tw-h-full;
   }

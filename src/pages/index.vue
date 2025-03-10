@@ -13,7 +13,7 @@
           >
             {{ $t("index.超慢跑超健康") }}
           </p>
-          <p class="home-tabar-title tw-text-[#333333] dd-fs-54 tw-font-[400]">
+          <p class="home-tabar-title tw-text-[#333333] dd-fs-54 tw-font-[400] dd-runner-font">
             {{ $t("index.随时随地健康健美") }}
           </p>
           <div class="download-app tw-pt-[25px]">
@@ -175,7 +175,7 @@ const getCategoryList = async () => {
   tabarList.value = res.value?.data || [];
   // return tabarList.value;
 };
-await getCategoryList()
+await getCategoryList();
 // watchEffect(() => {
 //   if (categoryData.value) {
 //     tabarList.value = categoryData.value;
@@ -218,15 +218,15 @@ const togglePopover = () => {
 };
 
 useHead({
-  title: '超慢跑-超慢跑节拍器,超慢跑节拍器180,慢跑',
+  title: $t("index.超慢跑-超慢跑节拍器,超慢跑节拍器180,慢跑"),
   meta: [
     {
       name: "description",
-      content: "超慢跑（Slow Jogging），一种以极低配速（5-8分钟/公里）进行的温和有氧运动，通过缩小步幅、保持高步频（180步/分钟）实现低冲击高效燃脂。适合全年龄段人群，尤其对跑步新手、中老年健身、运动康复者和时间碎片化的上班族友好！无需专业装备，无需复杂技巧，只需一颗坚持的心，就能轻松提升心肺功能、改善代谢、缓解压力，让运动回归“零负担”快乐。",
+      content: $t("index.超慢跑动回归零负担快乐"),
     },
     {
       name: "keywords",
-      content: "超慢跑,超慢跑节拍器,超慢跑节拍器180,慢跑",
+      content: $t("index.超慢跑超慢跑节拍器超慢跑节拍器180慢跑"),
     },
   ],
 

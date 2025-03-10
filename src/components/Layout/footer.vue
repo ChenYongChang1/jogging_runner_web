@@ -1,7 +1,6 @@
 <template>
   <div
     class="footer-wrapper justify-center items-center w-full lg:tw-mt-[120px] tw-mt-[44px]"
-    :class="[isEquipment ? 'tw-transform tw-translate-y-[-93px]' : '']"
   >
     <!-- 简介 -->
     <div class="brief-introduction tw-mx-auto">
@@ -37,7 +36,7 @@
     <footerIntroduction />
     <!-- 网站备案 -->
     <div
-      class="website-approve tw-mx-[24px] tw-mt-[25px] tw-rounded-[26px]"
+      class="website-approve tw-mx-[24px] tw-mt-[25px] tw-rounded-[24px] max-md:tw-mb-[10px]"
       style="background-color: #1e293b"
     >
       <div class="website-approve-pc tw-pt-[93px] tw-pb-[78px] tw-text-center">

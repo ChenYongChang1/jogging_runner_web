@@ -1,12 +1,12 @@
 <template>
   <div class="equipment">
-    <div class="equipment-content tw-transform tw-translate-y-[-93px]">
+    <div class="equipment-content tw-transform">
       <div class="equipment-introduce-pc tw-relative">
         <div
           class="header-text tw-top-[347px] sm:tw-top-[225px] tw-absolute tw-left-[9.2%] max-sm:tw-left-[50%] max-sm:tw-min-w-[339px] max-sm:tw-translate-x-[-50%]"
         >
           <div
-            class="header-text-one tw-text-[#fff] dd-fs-84 tw-font-[400] tw-leading-[94px] tw-mb-[18px]"
+            class="header-text-one tw-text-[#fff] dd-fs-84 tw-font-[400] tw-leading-[94px] tw-mb-[18px] dd-runner-font"
           >
             {{ $t('equipment.Roomfit超慢跑') }}
           </div>
@@ -83,7 +83,7 @@
   </div>
 </template>
 <script setup>
-setPageLayout('default')
+setPageLayout('screen-header')
 </script>
 <style lang="scss" scoped>
 .equipment {

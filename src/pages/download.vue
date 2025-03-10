@@ -9,12 +9,12 @@
           class="download-tabar-left tw-w-[60%] max-sm:tw-w-[100%] max-sm:tw-mr-[0] tw-flex tw-flex-col max-sm:tw-justify-center max-sm:tw-items-center tw-justify-start"
         >
           <p
-            class="download-tabar-title tw-text-[#333333] dd-fs-60 tw-font-[700] tw-pb-[15px]"
+            class="download-tabar-title tw-text-[#333333] dd-fs-60 tw-pb-[15px] dd-runner-font"
           >
             {{ $t('download.超慢跑超健康') }}
           </p>
           <p
-            class="download-tabar-title tw-text-[#333333] dd-fs-54 tw-font-[700]"
+            class="download-tabar-title tw-text-[#333333] dd-fs-54 dd-runner-font"
           >
             {{ $t('download.随时随地健康健美') }}
           </p>
@@ -77,7 +77,7 @@
           <div
             class="tw-w-[30%] tw-max-w-[133px] tw-h-[16px] tw-rounded-[16px] tw-bg-themecolor tw-mx-auto tw-mt-[54px] tw-mb-[40px]"
           ></div>
-          <div class="download-describe-header dd-fs-84 tw-mb-[26px]">
+          <div class="download-describe-header dd-fs-84 tw-mb-[26px] dd-runner-font">
             {{ $t('download.超慢跑超健康') }}
           </div>
           <div class="describe-content-text dd-fs-30">

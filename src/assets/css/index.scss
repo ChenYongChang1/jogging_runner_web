@@ -98,3 +98,7 @@ $fontSizes: (
   padding: 8px 0 !important;
   box-sizing: border-box;
 }
+
+.el-popover.el-popper {
+  min-width: unset;
+}
