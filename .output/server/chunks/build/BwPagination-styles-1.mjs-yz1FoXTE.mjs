@@ -1,4 +1,0 @@
-const BwPagination_vue_vue_type_style_index_0_scoped_3750b61e_lang = ".custom-pagination[data-v-3750b61e]{align-items:center;display:flex;gap:8px;justify-content:center}.custom-pagination .button-page[data-v-3750b61e]{border-color:#c0c4cc;color:#4a4a4a}.custom-pagination .button-page[data-v-3750b61e]:active,.custom-pagination .button-page[data-v-3750b61e]:hover{background-color:#61cd57;border-color:#61cd57;color:#fff}.custom-pagination .disabled[data-v-3750b61e]{border-color:#c0c4cc;color:#4a4a4a;cursor:not-allowed}.custom-pagination .disabled[data-v-3750b61e]:active,.custom-pagination .disabled[data-v-3750b61e]:hover{background-color:#fff;border-color:#c0c4cc;color:#4a4a4a}.bw-button[data-v-3750b61e]{margin:0;padding:0 8px}";
-
-export { BwPagination_vue_vue_type_style_index_0_scoped_3750b61e_lang as B };
-//# sourceMappingURL=BwPagination-styles-1.mjs-yz1FoXTE.mjs.map

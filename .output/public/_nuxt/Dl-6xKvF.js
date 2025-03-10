@@ -1,1 +1,0 @@
-import{_ as t,c as e,o as c}from"./DrMq56Dq.js";const s={},n={class:"tw-w-full tw-h-[300px] dd-fs-42 tw-text-center tw-leading-[300px]"};function o(r,_){return c(),e("div",n,"404")}const d=t(s,[["render",o]]);export{d as default};
