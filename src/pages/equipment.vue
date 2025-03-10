@@ -1,7 +1,7 @@
 <template>
   <div class="equipment">
     <div class="equipment-content tw-transform">
-      <div class="equipment-introduce-pc tw-relative">
+      <div class="equipment-introduce-pc tw-relative dd-content-padding">
         <div
           class="header-text tw-top-[347px] sm:tw-top-[225px] tw-absolute tw-left-[9.2%] max-sm:tw-left-[50%] max-sm:tw-min-w-[339px] max-sm:tw-translate-x-[-50%]"
         >
@@ -83,7 +83,7 @@
   </div>
 </template>
 <script setup>
-setPageLayout('screen-header')
+setPageLayout('default')
 </script>
 <style lang="scss" scoped>
 .equipment {

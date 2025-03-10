@@ -1,6 +1,6 @@
 <template>
   <div class="home-page">
-    <div class="home-tabar tw-w-[100%] tw-bg-[#F8FFF8]">
+    <div class="home-tabar tw-w-[100%] tw-bg-[#F8FFF8] dd-content-padding">
       <!-- pc端 手机logo -->
       <div
         class="home-tabar-pc tw-flex tw-pt-[24px] tw-justify-between tw-items-center dd-container tw-mx-auto"

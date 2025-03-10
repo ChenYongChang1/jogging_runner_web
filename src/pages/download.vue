@@ -1,9 +1,9 @@
 <template>
   <div class="download-page">
-    <div class="download-tabar tw-w-[100%] tw-bg-[#fff]">
+    <div class="download-tabar tw-w-[100%]">
       <!-- pc端 -->
       <div
-        class="download-tabar tw-bg-[#F8FFF8] tw-flex tw-pt-[24px] tw-justify-center tw-items-center max-sm:tw-flex-col tw-flex-row tw-w-[100%] tw-mx-auto tw-mb-[64px]"
+        class="download-tabar dd-content-padding tw-bg-[#F8FFF8] tw-flex tw-pt-[24px] tw-justify-center tw-items-center max-sm:tw-flex-col tw-flex-row tw-w-[100%] tw-mx-auto tw-mb-[64px]"
       >
         <div
           class="download-tabar-left tw-w-[60%] max-sm:tw-w-[100%] max-sm:tw-mr-[0] tw-flex tw-flex-col max-sm:tw-justify-center max-sm:tw-items-center tw-justify-start"

@@ -21,6 +21,9 @@ html {
   width: 100%;
   @apply xl:tw-w-[1280px] md:tw-w-[768px] lg:tw-w-[1000px] tw-mx-auto ss:tw-px-[1rem];
 }
+.dd-content-padding {
+  @apply md:tw-pt-[80px] max-md:tw-pt-[72px];
+}
 $fontSizes: (
   "20-12": (
     12,

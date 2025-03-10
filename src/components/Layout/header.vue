@@ -2,9 +2,6 @@
   <header
     class="layout-header tw-bg-white tw-shadow-sm border-b-1"
     :style="{
-      backgroundColor: isEquipment
-        ? 'transparent'
-        : 'rgba(248, 255, 248, 0.44)',
       borderBottomColor: isEquipment ? '#424242' : '#F7F7F7',
     }"
   >
@@ -25,13 +22,14 @@
             class="tw-w-[48px]"
           />
           <div>
-            <h1
-              class="tw-text-base md:tw-text-lg tw-text-[#3EDB30] tw-font-bold tw-text-green-500"
+            <div
+              class="tw-text-[20px] tw-text-[#3EDB30] tw-text-green-500 dd-runner-font"
             >
-              {{ $t('common.超慢跑节拍器') }}
-            </h1>
+              {{ $t("common.超慢跑节拍器") }}
+            </div>
             <div
               class="tw-text-xs md:tw-text-sm tw-text-[#ccc] tw-text-gray-500"
+              :class="{ 'tw-text-[white]': isEquipment }"
             >
               chaomanpao.com
             </div>
@@ -107,7 +105,7 @@
           <span
             class="tw-text-base"
             :style="{ color: isEquipment ? '#fff' : '#4a4a4a' }"
-            >{{ $t('common.更多') }}</span
+            >{{ $t("common.更多") }}</span
           >
         </div>
       </div>
@@ -175,39 +173,39 @@
   </header>
 </template>
 <script setup>
-const { $i18n: i18n } = useNuxtApp()
-const $t = (...args) => i18n.t(...args)
-const switchLocalePath = useSwitchLocalePath()
-import { languageList } from '~/assets/js/const'
-import { ref, computed } from 'vue'
-import { useRoute } from 'vue-router'
+const { $i18n: i18n } = useNuxtApp();
+const $t = (...args) => i18n.t(...args);
+const switchLocalePath = useSwitchLocalePath();
+import { languageList } from "~/assets/js/const";
+import { ref, computed } from "vue";
+import { useRoute } from "vue-router";
 
-const route = useRoute()
+const route = useRoute();
 const isEquipment = computed(() => {
-  return route.name.includes('equipment')
-})
-const isMenuOpen = ref(false)
+  return route.name.includes("equipment");
+});
+const isMenuOpen = ref(false);
 
 const menuItems = computed(() => [
-  { name: $t('common.首页'), path: '/' },
-  { name: $t('common.超慢跑节拍器180下载'), path: '/download' },
-  { name: $t('common.必备装备'), path: '/equipment' },
-])
+  { name: $t("common.首页"), path: "/" },
+  { name: $t("common.超慢跑节拍器180下载"), path: "/download" },
+  { name: $t("common.必备装备"), path: "/equipment" },
+]);
 
-const language = computed(() => i18n.locale.value)
-const currentPath = computed(() => route.path)
+const language = computed(() => i18n.locale.value);
+const currentPath = computed(() => route.path);
 const languageName = computed(() => {
   const languageRow =
     languageList.find((item) => item.value === language.value) ||
-    languageList[0]
-  return $t(languageRow?.label)
-})
+    languageList[0];
+  return $t(languageRow?.label);
+});
 const changeLanguage = (str) => {
-  navigateTo(switchLocalePath(str))
-}
+  navigateTo(switchLocalePath(str));
+};
 const goHome = () => {
-  navigateTo(getRouteLink('/'))
-}
+  navigateTo(getRouteLink("/"));
+};
 </script>
 <style lang="scss" scoped>
 .layout-header {

@@ -1,6 +1,8 @@
 <template>
   <div class="container tw-flex tw-flex-col tw-w-[100vw] tw-min-h-[100vh]">
-    <Header />
+    <div class="tw-absolute tw-z-[1] tw-w-[100vw]">
+      <Header />
+    </div>
     <div class="tw-flex-1">
       <slot></slot>
     </div>
