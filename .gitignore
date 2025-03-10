@@ -19,3 +19,6 @@ logs
 .idea
 
 .git-2
+.git-3
+
+submit.sh
