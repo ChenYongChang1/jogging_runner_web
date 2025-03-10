@@ -1,5 +1,5 @@
 <template>
-  <div class="page-error">
+  <div class="page-error dd-content-padding">
     <div
       class="page-404 tw-flex tw-justify-center tw-items-center tw-flex-col tw-mt-[120px]"
     >

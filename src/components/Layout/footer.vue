@@ -1,6 +1,6 @@
 <template>
   <div
-    class="footer-wrapper justify-center items-center w-full lg:tw-mt-[120px] tw-mt-[44px]"
+    class="footer-wrapper justify-center items-center w-full lg:tw-mt-[100px] tw-mt-[44px]"
   >
     <!-- 简介 -->
     <div class="brief-introduction tw-mx-auto">

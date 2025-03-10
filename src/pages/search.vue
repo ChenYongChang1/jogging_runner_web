@@ -1,52 +1,54 @@
 <template>
-  <div class="dd-container">
-    <div
-      class="search-box lg:tw-flex xl:tw-pt-[56px] lg:tw-pt-[44px] ss:tw-pt-[32px]"
-    >
-      <div class="search-content">
-        <search-empty v-if="!tableList.length"></search-empty>
-        <bw-article-card
-          v-for="item in tableList"
-          :key="`article-${item.id}`"
-          :article="item"
-          class="card-row-item"
-        ></bw-article-card>
-        <div class="tw-flex tw-justify-end tw-mt-[42px] max-md:tw-mt-[24px]">
-          <BwPagination
-            v-model:current-page="currentPage"
-            :page-count="pageCount"
-            @current-change="handleCurrentChange"
-          />
+  <div class="dd-content-padding">
+    <div class="dd-container">
+      <div
+        class="search-box lg:tw-flex"
+      >
+        <div class="search-content xl:tw-pt-[56px] lg:tw-pt-[44px] ss:tw-pt-[32px]">
+          <search-empty v-if="!tableList.length"></search-empty>
+          <bw-article-card
+            v-for="item in tableList"
+            :key="`article-${item.id}`"
+            :article="item"
+            class="card-row-item"
+          ></bw-article-card>
+          <div class="tw-flex tw-justify-end tw-mt-[42px] max-md:tw-mt-[24px]">
+            <BwPagination
+              v-model:current-page="currentPage"
+              :page-count="pageCount"
+              @current-change="handleCurrentChange"
+            />
+          </div>
         </div>
-      </div>
-      <div class="lg:tw-w-[33.9%] xl:tw-pl-[52px] lg:tw-pl-[30px]">
-        <article-search-content
-          v-model:searchWorld="searchWorld"
-          :categoriesList="categoriesList"
-          :lastsList="lastsList"
-        ></article-search-content>
+        <div class="lg:tw-w-[33.9%] xl:tw-pl-[52px] lg:tw-pl-[30px] xl:tw-pt-[56px] lg:tw-pt-[44px] ss:tw-pt-[32px]">
+          <article-search-content
+            v-model:searchWorld="searchWorld"
+            :categoriesList="categoriesList"
+            :lastsList="lastsList"
+          ></article-search-content>
+        </div>
       </div>
     </div>
   </div>
 </template>
 <script lang="ts" setup>
-const { $i18n: i18n } = useNuxtApp()
-const $t = i18n.t
+const { $i18n: i18n } = useNuxtApp();
+const $t = i18n.t;
 
-setPageLayout('default')
-import ArticleSearchContent from '~/components/pages/search/ArticleSearchContent.vue'
-import SearchEmpty from '~/components/pages/search/SearchEmpty.vue'
-import { getCategory, getSearchInfo } from '~/composables/api/home'
-import { genrePageLink } from '~/utils/seo'
+setPageLayout("default");
+import ArticleSearchContent from "~/components/pages/search/ArticleSearchContent.vue";
+import SearchEmpty from "~/components/pages/search/SearchEmpty.vue";
+import { getCategory, getSearchInfo } from "~/composables/api/home";
+import { genrePageLink } from "~/utils/seo";
 
-const route = useRoute()
-const router = useRouter()
-const searchWorld: Ref<string> = ref(route.query.kw?.toString() || '')
-const currentPage: Ref<number> = ref(Number(route.query.png?.toString() || 1))
-const pageCount: Ref<number> = ref(0)
-const tableList = ref([])
-const categoriesList = ref([])
-const lastsList = ref([])
+const route = useRoute();
+const router = useRouter();
+const searchWorld: Ref<string> = ref(route.query.kw?.toString() || "");
+const currentPage: Ref<number> = ref(Number(route.query.png?.toString() || 1));
+const pageCount: Ref<number> = ref(0);
+const tableList = ref([]);
+const categoriesList = ref([]);
+const lastsList = ref([]);
 // console.log(searchWorld, currentPage);
 
 const handleCurrentChange = () => {
@@ -55,26 +57,26 @@ const handleCurrentChange = () => {
       kw: encodeURIComponent(searchWorld.value),
       png: currentPage.value,
     },
-  })
-}
+  });
+};
 
 const getSearchList = async () => {
   const result = await getSearchInfo({
     page: currentPage.value || 1,
-    keyword: searchWorld.value || '',
-  })
+    keyword: searchWorld.value || "",
+  });
 
-  const { totalPage, page, list, lasts, categories } = result
-  currentPage.value = page || 1
-  pageCount.value = totalPage
-  tableList.value = list
-  lastsList.value = lasts
-  categoriesList.value = categories
-}
+  const { totalPage, page, list, lasts, categories } = result;
+  currentPage.value = page || 1;
+  pageCount.value = totalPage;
+  tableList.value = list;
+  lastsList.value = lasts;
+  categoriesList.value = categories;
+};
 
-const search = getWatchQueryFunc(['kw', 'png'], getSearchList)
+const search = getWatchQueryFunc(["kw", "png"], getSearchList);
 
-await useAsyncData('search', search)
+await search();
 
 // 监听查询参数变化
 // const res = ref("-");
@@ -88,22 +90,22 @@ await useAsyncData('search', search)
 //   }
 // );
 useHead({
-  title: $t('search.{slot1}搜索结果-超慢跑', { slot1: searchWorld.value }),
+  title: $t("search.{slot1}搜索结果-超慢跑", { slot1: searchWorld.value }),
   meta: [
     {
-      name: 'description',
-      content: $t('search.{slot1}搜索结果,超慢跑', {
+      name: "description",
+      content: $t("search.{slot1}搜索结果,超慢跑", {
         slot1: searchWorld.value,
       }),
     },
     {
-      name: 'keywords',
+      name: "keywords",
       content: searchWorld.value,
     },
   ],
 
   link: genrePageLink(),
-})
+});
 </script>
 <style lang="scss" scoped>
 .search-content {

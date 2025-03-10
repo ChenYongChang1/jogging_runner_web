@@ -23,7 +23,7 @@
           />
           <div>
             <div
-              class="tw-text-[20px] tw-text-[#3EDB30] tw-text-green-500 dd-runner-font"
+              class="tw-text-[20px] lg:tw-text-[24px] tw-text-[#3EDB30] tw-text-green-500 dd-runner-font"
             >
               {{ $t("common.超慢跑节拍器") }}
             </div>

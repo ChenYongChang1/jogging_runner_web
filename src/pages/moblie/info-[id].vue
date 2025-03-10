@@ -30,7 +30,7 @@ const contentHtml = computed(() =>
   genreContent(articleInfo.value?.content || "", articleInfo.value.relGoods)
 );
 
-await useAsyncData("info", getArticleInfoById);
+await getArticleInfoById()
 </script>
 
 <style lang="scss" scoped></style>

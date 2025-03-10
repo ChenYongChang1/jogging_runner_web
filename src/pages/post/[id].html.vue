@@ -1,5 +1,5 @@
 <template>
-  <div class="dd-container lg:tw-flex">
+  <div class="dd-container lg:tw-flex dd-content-padding">
     <div class="detail-content xl:tw-pt-[56px] lg:tw-pt-[44px] ss:tw-pt-[32px]">
       <bw-breadcrumb
         :items="[
@@ -33,7 +33,7 @@
         </div>
       </div>
     </div>
-    <div class="lg:tw-w-[33.9%] xl:tw-pl-[52px] lg:tw-pl-[30px]">
+    <div class="lg:tw-w-[33.9%] xl:tw-pl-[52px] lg:tw-pl-[30px] xl:tw-pt-[56px] lg:tw-pt-[44px] ss:tw-pt-[32px]">
       <article-search-content
         :categoriesList="categoriesList"
         :lastsList="lastsList"
@@ -86,7 +86,7 @@ const getArticleInfoById = async () => {
   categoriesList.value = articleInfo.value.categories || []
   lastsList.value = articleInfo.value.lasts || []
 }
-await useAsyncData('getArticleInfoById', getArticleInfoById)
+await getArticleInfoById()
 onMounted(() => {
   nextTick(() => {
     showDownload.value = true

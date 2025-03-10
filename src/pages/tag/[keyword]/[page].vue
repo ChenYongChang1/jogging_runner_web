@@ -1,9 +1,9 @@
 <template>
-  <div class="dd-container">
+  <div class="dd-container dd-content-padding">
     <div
-      class="search-box lg:tw-flex xl:tw-pt-[56px] lg:tw-pt-[44px] ss:tw-pt-[32px]"
+      class="search-box lg:tw-flex"
     >
-      <div class="search-content">
+      <div class="search-content xl:tw-pt-[56px] lg:tw-pt-[44px] ss:tw-pt-[32px]">
         <search-empty v-if="!tableList.length"></search-empty>
         <bw-article-card
           v-for="item in tableList"
@@ -19,7 +19,7 @@
           />
         </div>
       </div>
-      <div class="lg:tw-w-[33.9%] xl:tw-pl-[52px] lg:tw-pl-[30px]">
+      <div class="lg:tw-w-[33.9%] xl:tw-pl-[52px] lg:tw-pl-[30px] xl:tw-pt-[56px] lg:tw-pt-[44px] ss:tw-pt-[32px]">
         <article-search-content
           :categoriesList="categoriesList"
           :lastsList="lastsList"
@@ -75,7 +75,7 @@ const getSearchList = async () => {
   categoryTitle.value = categoryName // TODO 接口需要返回分类名称
 }
 
-await useAsyncData('search-tag', getSearchList)
+await getSearchList()
 
 // 监听查询参数变化
 // const res = ref("-");

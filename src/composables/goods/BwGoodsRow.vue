@@ -13,7 +13,7 @@
           {{ ((goodsRow.price || 0) / 100)?.toFixed(2) }}
         </div>
         <div class="goods-tobuy" @click="onTapBuyGoods">
-          {{ $t('common.立即购买') }}
+          {{ ttt("common.立即购买") }}
         </div>
       </div>
     </div>
@@ -25,11 +25,14 @@ const props = defineProps({
     type: Object,
     default: () => ({}),
   },
-})
+  ttt: {
+    type: Function,
+  },
+});
 const onTapBuyGoods = () => {
   let param = {
     timestamp: Date.now(),
-    type: 'buyGoods',
+    type: "buyGoods",
     data: {
       // 商品id 可为空
       id: props.goodsRow.id,
@@ -37,11 +40,11 @@ const onTapBuyGoods = () => {
       url: props.goodsRow.url,
       goods: props.goodsRow,
     },
-  }
-  let paramString = JSON.stringify(param)
+  };
+  let paramString = JSON.stringify(param);
   //@ts-ignore
-  JSCallNative.postMessage(paramString)
-}
+  JSCallNative.postMessage(paramString);
+};
 </script>
 <style lang="scss" scoped>
 .goods-row {
@@ -51,6 +54,7 @@ const onTapBuyGoods = () => {
   border-radius: 12px;
   padding: 12px 10px;
   display: flex;
+  margin: 0.5rem 0;
   .goods-next {
     flex: 1;
     overflow: hidden;
