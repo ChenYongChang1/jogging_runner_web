@@ -74,9 +74,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import appleDownload from '@/assets/images/apple-download.png'
-import googleDownload from '@/assets/images/google-download.png'
-import anzhuoDownload from '@/assets/images/anzhuo-download.png'
+import appleDownload from '@/assets/images/download.png'
 import apple from '@/assets/images/apple.png'
 import google from '@/assets/images/google.png'
 import anzhuo from '@/assets/images/anzhuo.png'
@@ -92,13 +90,13 @@ const downloadImgs = ref([
   },
   {
     type: 'google-play',
-    img: googleDownload,
+    img: appleDownload,
     popoverImg: google,
     visible: false,
   },
   {
     type: 'android',
-    img: anzhuoDownload,
+    img: appleDownload,
     popoverImg: anzhuo,
     visible: false,
   },
