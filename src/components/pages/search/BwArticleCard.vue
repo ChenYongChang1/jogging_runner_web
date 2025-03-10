@@ -3,7 +3,7 @@
     <div class="card-title dd-title-text">
       {{ article.title }}
     </div>
-    <bw-media class="tw-mb-[22px]" :src="article.cover" type="image"></bw-media>
+    <bw-media class="tw-mb-[22px]" :src="article.cover" :alt="article.title" type="image"></bw-media>
     <!-- <div
       class="next-title dd-fs-30 tw-font-[600] tw-text-basecolor tw-leading-[55px]"
     >
@@ -19,7 +19,8 @@
         <img
           src="@/assets/icon/look.svg"
           class="tw-w-[18px] tw-mr-[8px]"
-          alt=""
+          alt="超慢跑"
+          loading="lazy"
         />
         <span class="tw-text-[14px] tw-font-[500] tw-text-text999"
           >{{ article.visitNum || 0 }}{{ $t("common.人看过") }}</span
@@ -32,7 +33,12 @@
       >
         <div class="tw-flex">
           <span class="tw-mr-[6px]">{{ $t("common.阅读全文") }}</span>
-          <img src="@/assets/icon/to-right.svg" class="tw-w-[18px]" alt="" />
+          <img
+            src="@/assets/icon/to-right.svg"
+            class="tw-w-[18px]"
+            alt="超慢跑"
+            loading="lazy"
+          />
         </div>
       </bw-button>
     </div>

@@ -10,6 +10,7 @@
       <BwMedia
         class="tw-rounded-[26px] tw-w-[100%]"
         :src="item.cover"
+        :alt="item.title"
         :type="item.isVideo === 1 ? 'image' : 'video'"
       />
     </div>
@@ -25,30 +26,30 @@
         src="@/assets/icon/look.svg"
         class="tw-w-[18px] tw-mr-[8px]"
         loading="lazy"
-        alt=""
+        :alt="item.title"
       />
       <span class="tw-text-[14px] tw-font-[500] tw-text-text999"
-        >{{ item.visitNum }}{{ $t("common.万人看过") }}</span
+        >{{ item.visitNum }}{{ $t("common.人看过") }}</span
       >
     </div>
     <div class="tw-flex tw-justify-end">
-      <bw-button
-        type="border"
-        class="tw-w-[141px] tw-text-center tw-h-[46px] tw-pl-[22px] tw-pr-[13px]"
-        @click="linkToInfo(item)"
-      >
-        <div class="tw-flex tw-justify-center tw-h-[46px]">
-          <span class="tw-mr-[6px] tw-leading-[46px]">{{
-            $t("common.阅读全文")
-          }}</span>
-          <img
-            src="@/assets/icon/to-right.svg"
-            loading="lazy"
-            class="tw-w-[18px]"
-            alt=""
-          />
-        </div>
-      </bw-button>
+      <nuxt-link :to="linkToInfo(item)">
+        <bw-button
+          type="border"
+          class="tw-w-[141px] tw-text-center tw-h-[46px] tw-pl-[22px] tw-pr-[13px]"
+        >
+          <div class="tw-flex tw-justify-center tw-h-[46px]">
+            <span class="tw-mr-[6px] tw-leading-[46px]">{{
+              $t("common.阅读全文")
+            }}</span>
+            <img
+              src="@/assets/icon/to-right.svg"
+              loading="lazy"
+              class="tw-w-[18px]"
+            />
+          </div>
+        </bw-button>
+      </nuxt-link>
     </div>
   </div>
 </template>
@@ -70,8 +71,7 @@ const props = defineProps({
   },
 });
 const linkToInfo = (item: TableListItem) => {
-  const href = getRouteLink(`/post/${item.id}.html`);
-  navigateTo(href);
+  return getRouteLink(`/post/${item.id}.html`);
 };
 </script>
 <style lang="scss" scoped>

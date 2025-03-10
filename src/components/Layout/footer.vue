@@ -27,6 +27,8 @@
         </div>
         <img
           src="~assets/images/footer-introduction.png"
+          alt="超慢跑"
+          loading="lazy"
           class="lg:tw-w-[48%] lg:tw-mr-[9.4%] tw-w-full tw-mb-[2rem]"
         />
       </div>

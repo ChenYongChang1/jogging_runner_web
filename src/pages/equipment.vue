@@ -30,6 +30,8 @@
           </div>
           <img
             src="@/assets/images/up-down.png"
+            loading="lazy"
+            alt="超慢跑"
             class="tw-w-[42px] tw-h-[42px]"
           />
         </div>
@@ -44,8 +46,9 @@
             </div>
             <img
               src="@/assets/images/weixin.png"
+              loading="lazy"
               class="tw-w-[100%] img-shadow"
-              alt=""
+              alt="超慢跑"
             />
           </div>
           <div class="equipment-main-item">
@@ -57,7 +60,8 @@
             <img
               src="@/assets/images/douyin.png"
               class="tw-w-[100%] img-shadow"
-              alt=""
+              loading="lazy"
+              alt="超慢跑"
             />
           </div>
           <div class="equipment-main-item">
@@ -69,7 +73,8 @@
             <img
               src="@/assets/images/xiaohongshu.png"
               class="tw-w-[100%] img-shadow"
-              alt=""
+              loading="lazy"
+              alt="超慢跑"
             />
           </div>
         </div>
@@ -77,6 +82,9 @@
     </div>
   </div>
 </template>
+<script setup>
+setPageLayout("default");
+</script>
 <style lang="scss" scoped>
 .equipment {
   .equipment-introduce-pc {

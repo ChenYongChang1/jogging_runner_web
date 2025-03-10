@@ -1,7 +1,7 @@
 <template>
   <div class="goods-row">
     <div class="goods-img">
-      <img :src="goodsRow.cover" alt="" />
+      <img :src="goodsRow.cover" loading="lazy" :alt="goodsRow.title" />
     </div>
     <div class="goods-next">
       <div class="goods-title">

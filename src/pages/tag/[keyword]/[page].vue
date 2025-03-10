@@ -29,58 +29,62 @@
   </div>
 </template>
 <script lang="ts" setup>
-const { $i18n: i18n } = useNuxtApp()
-const $t = i18n.t
+setPageLayout("default");
+const { $i18n: i18n } = useNuxtApp();
+const $t = i18n.t;
 
-import ArticleSearchContent from '~/components/pages/search/ArticleSearchContent.vue'
-import SearchEmpty from '~/components/pages/search/SearchEmpty.vue'
-import { getCategory, getSearchInfo } from '~/composables/api/home'
+import ArticleSearchContent from "~/components/pages/search/ArticleSearchContent.vue";
+import SearchEmpty from "~/components/pages/search/SearchEmpty.vue";
+import { getCategory, getSearchInfo } from "~/composables/api/home";
+import { genrePageLink } from "~/utils/seo";
 
-const route = useRoute()
-const router = useRouter()
-const alias: Ref<string> = ref(route.params.keyword?.toString() || '')
-const categoryTitle: Ref<string | null | undefined> = ref('')
-const currentPage: Ref<number> = ref(Number(route.params.page?.toString() || 1))
-const pageCount: Ref<number> = ref(0)
-const tableList = ref([])
-const categoriesList = ref([])
-const lastsList = ref([])
+const route = useRoute();
+const router = useRouter();
+const alias: Ref<string> = ref(route.params.keyword?.toString() || "");
+const categoryTitle: Ref<string | null | undefined> = ref("");
+const currentPage: Ref<number> = ref(
+  Number(route.params.page?.toString() || 1)
+);
+const pageCount: Ref<number> = ref(0);
+const tableList = ref([]);
+const categoriesList = ref([]);
+const lastsList = ref([]);
 // console.log(alias, currentPage);
 
 const handleCurrentChange = () => {
   navigateTo(
     getRouteLink(`/tag/${encodeURIComponent(alias.value)}/${currentPage.value}`)
-  )
+  );
   // navigateTo({
   //   query: {
   //     kw: encodeURIComponent(alias.value),
   //     png: currentPage.value,
   //   },
   // });
-}
+};
 
 const getSearchList = async () => {
   const result = await getSearchInfo({
     page: currentPage.value || 1,
-    alias: alias.value || '',
-  })
+    alias: alias.value || "",
+  });
   const {
     totalPage,
     page,
     list,
     lasts,
     categories,
-    categoryName = $t('tag.分类名称'),
-  } = result
-  currentPage.value = page || 1
-  pageCount.value = totalPage
-  tableList.value = list
-  lastsList.value = lasts
-  categoriesList.value = categories
-  categoryTitle.value = categoryName // TODO 接口需要返回分类名称
-}
+    categoryName = "",
+  } = result;
+  currentPage.value = page || 1;
+  pageCount.value = totalPage;
+  tableList.value = list;
+  lastsList.value = lasts;
+  categoriesList.value = categories;
+  categoryTitle.value = categoryName; // TODO 接口需要返回分类名称
+};
 
-useAsyncData('search-tag', getSearchList)
+await useAsyncData("search-tag", getSearchList);
 
 // 监听查询参数变化
 // const res = ref("-");
@@ -93,6 +97,20 @@ useAsyncData('search-tag', getSearchList)
 //     }
 //   }
 // );
+useHead({
+  title: `${categoryTitle.value}-超慢跑`,
+  meta: [
+    {
+      name: "description",
+      content: `${categoryTitle.value}, 超慢跑`,
+    },
+    {
+      name: "keywords",
+      content: categoryTitle.value,
+    },
+  ],
+  link: genrePageLink(),
+});
 </script>
 <style lang="scss" scoped>
 .search-content {

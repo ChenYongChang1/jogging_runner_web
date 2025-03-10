@@ -9,6 +9,7 @@
       <bw-input
         v-model="searchWorld"
         class="tw-h-[68px] tw-w-full"
+        placeholder="请输入您需要搜索的信息"
         @keydown.enter="search"
       >
         <template #append>
@@ -17,9 +18,10 @@
               <img
                 class="tw-w-[16px] tw-mr-[4px]"
                 src="@/assets/icon/Search.svg"
-                alt=""
+                alt="超慢跑"
+                loading="lazy"
               />
-             <span> {{ $t("index.搜索") }}</span>
+              <span> {{ $t("index.搜索") }}</span>
             </div></BwButton
           >
         </template>

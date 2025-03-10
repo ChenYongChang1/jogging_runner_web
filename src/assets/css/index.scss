@@ -4,6 +4,13 @@
 
 @import url("./ui-scss.scss");
 
+@font-face {
+  font-family: "runner-font";
+  src: url("https://static.chaomanpao.com/wb/resouce/font/YouSheBiaoTiYuan-2.otf");
+}
+.dd-runner-font {
+  font-family: "runner-font";
+}
 html {
   // font-size: 4.2vw; /* 根据视口宽度设置字体大小 */
   @apply tw-text-[16px];
@@ -85,7 +92,6 @@ $fontSizes: (
 .dd-title-text {
   @extend .dd-fs-36;
 }
-
 
 .download-app-popover {
   width: 144px !important;
