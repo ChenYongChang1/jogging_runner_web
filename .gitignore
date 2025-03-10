@@ -16,6 +16,6 @@ logs
 .fleet
 .idea
 
-.dist
+.nuxt/*
 
 .outputs
