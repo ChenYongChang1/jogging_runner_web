@@ -29,22 +29,24 @@
     </div>
   </div>
 </template>
-
 <script lang="ts" setup>
-setPageLayout("default");
-import ArticleSearchContent from "~/components/pages/search/ArticleSearchContent.vue";
-import SearchEmpty from "~/components/pages/search/SearchEmpty.vue";
-import { getCategory, getSearchInfo } from "~/composables/api/home";
-import { genrePageLink } from "~/utils/seo";
+const { $i18n: i18n } = useNuxtApp()
+const $t = i18n.t
 
-const route = useRoute();
-const router = useRouter();
-const searchWorld: Ref<string> = ref(route.query.kw?.toString() || "");
-const currentPage: Ref<number> = ref(Number(route.query.png?.toString() || 1));
-const pageCount: Ref<number> = ref(0);
-const tableList = ref([]);
-const categoriesList = ref([]);
-const lastsList = ref([]);
+setPageLayout('default')
+import ArticleSearchContent from '~/components/pages/search/ArticleSearchContent.vue'
+import SearchEmpty from '~/components/pages/search/SearchEmpty.vue'
+import { getCategory, getSearchInfo } from '~/composables/api/home'
+import { genrePageLink } from '~/utils/seo'
+
+const route = useRoute()
+const router = useRouter()
+const searchWorld: Ref<string> = ref(route.query.kw?.toString() || '')
+const currentPage: Ref<number> = ref(Number(route.query.png?.toString() || 1))
+const pageCount: Ref<number> = ref(0)
+const tableList = ref([])
+const categoriesList = ref([])
+const lastsList = ref([])
 // console.log(searchWorld, currentPage);
 
 const handleCurrentChange = () => {
@@ -53,26 +55,26 @@ const handleCurrentChange = () => {
       kw: encodeURIComponent(searchWorld.value),
       png: currentPage.value,
     },
-  });
-};
+  })
+}
 
 const getSearchList = async () => {
   const result = await getSearchInfo({
     page: currentPage.value || 1,
-    keyword: searchWorld.value || "",
-  });
+    keyword: searchWorld.value || '',
+  })
 
-  const { totalPage, page, list, lasts, categories } = result;
-  currentPage.value = page || 1;
-  pageCount.value = totalPage;
-  tableList.value = list;
-  lastsList.value = lasts;
-  categoriesList.value = categories;
-};
+  const { totalPage, page, list, lasts, categories } = result
+  currentPage.value = page || 1
+  pageCount.value = totalPage
+  tableList.value = list
+  lastsList.value = lasts
+  categoriesList.value = categories
+}
 
-const search = getWatchQueryFunc(["kw", "png"], getSearchList);
+const search = getWatchQueryFunc(['kw', 'png'], getSearchList)
 
-await useAsyncData("search", search);
+await useAsyncData('search', search)
 
 // 监听查询参数变化
 // const res = ref("-");
@@ -86,21 +88,23 @@ await useAsyncData("search", search);
 //   }
 // );
 useHead({
-  title: `${searchWorld.value}搜索结果-超慢跑`,
+  title: $t('search.{slot1}搜索结果-超慢跑', { slot1: searchWorld.value }),
   meta: [
     {
-      name: "description",
-      content: `${searchWorld.value}搜索结果, 超慢跑`,
+      name: 'description',
+      content: $t('search.{slot1}搜索结果,超慢跑', {
+        slot1: searchWorld.value,
+      }),
     },
     {
-      name: "keywords",
+      name: 'keywords',
       content: searchWorld.value,
     },
   ],
-  link: genrePageLink(),
-});
-</script>
 
+  link: genrePageLink(),
+})
+</script>
 <style lang="scss" scoped>
 .search-content {
   @apply lg:tw-w-[65.4%] lg:tw-border-r-[1px] lg:tw-border-linecolor lg:tw-border-solid lg:tw-pr-[30px];

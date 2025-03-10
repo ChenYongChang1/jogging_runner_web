@@ -3,14 +3,19 @@
     <div class="card-title dd-title-text">
       {{ article.title }}
     </div>
-    <bw-media class="tw-mb-[22px]" :src="article.cover" :alt="article.title" type="image"></bw-media>
+    <bw-media
+      class="tw-mb-[22px]"
+      :src="article.cover"
+      :alt="article.title"
+      type="image"
+    ></bw-media>
     <!-- <div
       class="next-title dd-fs-30 tw-font-[600] tw-text-basecolor tw-leading-[55px]"
     >
       Zone 2 心率計算：
     </div> -->
     <div class="sub-text tw-mb-[10px]">
-      {{ article.desc || "" }}
+      {{ article.desc || '' }}
     </div>
     <div
       class="look-views lg:tw-flex tw-justify-between tw-items-center tw-flex-wrap ss:tw-mb-[1.125rem]"
@@ -19,11 +24,11 @@
         <img
           src="@/assets/icon/look.svg"
           class="tw-w-[18px] tw-mr-[8px]"
-          alt="超慢跑"
+          :alt="$t('common.超慢跑')"
           loading="lazy"
         />
         <span class="tw-text-[14px] tw-font-[500] tw-text-text999"
-          >{{ article.visitNum || 0 }}{{ $t("common.人看过") }}</span
+          >{{ article.visitNum || 0 }}{{ $t('common.人看过') }}</span
         >
       </div>
       <bw-button
@@ -32,11 +37,11 @@
         @click="linkToInfo"
       >
         <div class="tw-flex">
-          <span class="tw-mr-[6px]">{{ $t("common.阅读全文") }}</span>
+          <span class="tw-mr-[6px]">{{ $t('common.阅读全文') }}</span>
           <img
             src="@/assets/icon/to-right.svg"
             class="tw-w-[18px]"
-            alt="超慢跑"
+            :alt="$t('common.超慢跑')"
             loading="lazy"
           />
         </div>
@@ -45,18 +50,18 @@
   </div>
 </template>
 <script lang="ts" setup>
-defineOptions({ name: "BwArticleCard" });
+defineOptions({ name: 'BwArticleCard' })
 const props = defineProps({
   article: {
     type: Object,
     default: () => ({}),
   },
-});
-const router = useRouter();
+})
+const router = useRouter()
 const linkToInfo = () => {
-  const href = getRouteLink(`/post/${props.article.id}.html`);
-  navigateTo(href);
-};
+  const href = getRouteLink(`/post/${props.article.id}.html`)
+  navigateTo(href)
+}
 </script>
 <style lang="scss" scoped>
 .card-row {

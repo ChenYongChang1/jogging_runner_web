@@ -8,12 +8,12 @@
           <div
             class="header-text-one tw-text-[#fff] dd-fs-84 tw-font-[400] tw-leading-[94px] tw-mb-[18px]"
           >
-            {{ $t("equipment.Roomfit超慢跑") }}
+            {{ $t('equipment.Roomfit超慢跑') }}
           </div>
           <div
             class="context-text-two tw-text-[#fff] dd-fs-42 tw-font-[500] tw-leading-[50px]"
           >
-            {{ $t("equipment.为超慢跑而生的运动品牌") }}
+            {{ $t('equipment.为超慢跑而生的运动品牌') }}
           </div>
         </div>
       </div>
@@ -26,12 +26,12 @@
           <div
             class="tw-text-[#4a4a4a] dd-fs-46 tw-font-[600] tw-leading-[50px] tw-mr-[10px]"
           >
-            {{ $t("equipment.扫码查看详情") }}
+            {{ $t('equipment.扫码查看详情') }}
           </div>
           <img
             src="@/assets/images/up-down.png"
             loading="lazy"
-            alt="超慢跑"
+            :alt="$t('equipment.超慢跑')"
             class="tw-w-[42px] tw-h-[42px]"
           />
         </div>
@@ -42,39 +42,39 @@
             <div
               class="title dd-fs-36 tw-leading-[56px] max-md:tw-leading-[24px] tw-mb-[33px]"
             >
-              {{ $t("equipment.微信小店") }}
+              {{ $t('equipment.微信小店') }}
             </div>
             <img
               src="@/assets/images/weixin.png"
               loading="lazy"
               class="tw-w-[100%] img-shadow"
-              alt="超慢跑"
+              :alt="$t('equipment.超慢跑')"
             />
           </div>
           <div class="equipment-main-item">
             <div
               class="title dd-fs-36 tw-leading-[56px] max-md:tw-leading-[24px] tw-mb-[33px]"
             >
-              {{ $t("equipment.抖音小店") }}
+              {{ $t('equipment.抖音小店') }}
             </div>
             <img
               src="@/assets/images/douyin.png"
               class="tw-w-[100%] img-shadow"
               loading="lazy"
-              alt="超慢跑"
+              :alt="$t('equipment.超慢跑')"
             />
           </div>
           <div class="equipment-main-item">
             <div
               class="title dd-fs-36 tw-leading-[56px] max-md:tw-leading-[24px] tw-mb-[33px]"
             >
-              {{ $t("equipment.小红书小店") }}
+              {{ $t('equipment.小红书小店') }}
             </div>
             <img
               src="@/assets/images/xiaohongshu.png"
               class="tw-w-[100%] img-shadow"
               loading="lazy"
-              alt="超慢跑"
+              :alt="$t('equipment.超慢跑')"
             />
           </div>
         </div>
@@ -83,12 +83,12 @@
   </div>
 </template>
 <script setup>
-setPageLayout("default");
+setPageLayout('default')
 </script>
 <style lang="scss" scoped>
 .equipment {
   .equipment-introduce-pc {
-    background-image: url("@/assets/images/equipment-bg.png"); /* 路径根据实际文件位置修改 */
+    background-image: url('@/assets/images/equipment-bg.png'); /* 路径根据实际文件位置修改 */
     background-size: cover;
     background-position: center;
     width: 100%;

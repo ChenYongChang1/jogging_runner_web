@@ -10,7 +10,7 @@
     class="md:tw-w-[300px] ss:tw-w-[33%] max-lg:tw-mx-auto lg:tw-ml-[127px]"
     src="@/assets/images/empty-search.png"
     loading="lazy"
-    alt="超慢跑"
+    :alt="$t('common.超慢跑')"
   />
 </template>
 <style lang="scss" scoped>

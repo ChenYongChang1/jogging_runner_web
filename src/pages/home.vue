@@ -25,15 +25,14 @@
                 ><img
                   src="@/assets/icon/Download.svg"
                   loading="lazy"
-                  alt="超慢跑"
-                /></el-icon
+                  :alt="$t('home.超慢跑')" /></el-icon
             ></BwButton>
           </div>
         </div>
         <img
           src="@/assets/images/home.png"
           class="tw-w-[36.1%] max-lg:tw-hidden"
-          alt="超慢跑"
+          :alt="$t('home.超慢跑')"
           loading="lazy"
         />
       </div>
@@ -52,7 +51,7 @@
         <img
           :src="item.backGroup"
           class="tw-absolute tw-h-[42px] tw-top-[5px] tw-left-[10px]"
-          alt="超慢跑"
+          :alt="$t('home.超慢跑')"
           loading="lazy"
         />
         <div
@@ -72,7 +71,7 @@
           <img
             :src="item.icom"
             class="tw-w-[85px] max-lg:tw-w-[50px]"
-            alt="超慢跑"
+            :alt="$t('home.超慢跑')"
             loading="lazy"
           />
         </div>

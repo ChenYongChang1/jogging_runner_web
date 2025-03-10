@@ -40,8 +40,7 @@
                       src="@/assets/icon/Download.svg"
                       class="tw-w-[18px]"
                       loading="lazy"
-                      alt="超慢跑"
-                    /></el-icon
+                      :alt="$t('index.超慢跑')" /></el-icon
                 ></BwButton>
               </template>
               <div
@@ -51,7 +50,7 @@
                   src="@/assets/images/erweima.png"
                   class="tw-w-[125px] tw-mb-[5px]"
                   loading="lazy"
-                  alt="超慢跑"
+                  :alt="$t('index.超慢跑')"
                 />
                 <div
                   class="text tw-text-[#4A4A4A] tw-text-[16px] tw-font-[500] tw-leading-[24px]"
@@ -66,7 +65,7 @@
           src="@/assets/images/home.png"
           loading="lazy"
           class="tw-w-[36.1%] max-lg:tw-hidden"
-          alt="超慢跑"
+          :alt="$t('index.超慢跑')"
         />
       </div>
     </div>
@@ -74,65 +73,44 @@
     <div
       class="home-tabar-list-pc tw-grid tw-grid-cols-2 lg:tw-grid-cols-4 tw-gap-4 dd-container tw-transform tw-translate-y-[-75px] max-lg:tw-translate-y-0 tw-mx-auto"
     >
-      <template v-if="tabarList.length">
+      <div
+        class="tabar-item tw-relative tw-rounded-[24px] tw-pt-[32px] tw-pb-[4px] tw-pl-[16px] tw-pr-[10px]"
+        v-for="(item, index) in tabarList"
+        :key="index"
+        :style="{
+          backgroundImage: `url(${item?.backGroup})`,
+          backgroundSize: '100% 100%',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+        }"
+      >
         <div
-          class="tabar-item tw-relative tw-rounded-[24px] tw-pt-[32px] tw-pb-[4px] tw-pl-[16px] tw-pr-[10px]"
-          v-for="(item, index) in tabarList"
-          :key="index"
-          :style="{
-            backgroundImage: `url(${item?.backGroup})`,
-            backgroundSize: '100% 100%',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center',
-          }"
+          class="tabar-item-text dd-fs-34 tw-font-[700] tw-leading-[47.6px] tw-text-[#333]"
         >
-          <div
-            class="tabar-item-text dd-fs-34 tw-font-[700] tw-leading-[47.6px] tw-text-[#333]"
-          >
-            {{ item.name }}
-          </div>
-          <div
-            class="tabar-item-right tw-flex tw-justify-between tw-items-center"
-          >
-            <nuxt-link :to="getRouteLink(`/tag/${item.alias}`)">
-              <bw-button
-                :style="{
-                  background: item.buttonColor,
-                  borderColor: item.buttonColor,
-                }"
-                class="tw-w-[132px] tw-h-[46px] tw-rounded-[30px] tw-leading-[46px] max-md:tw-w-[98px] max-md:tw-h-[30px!important] max-md:tw-leading-[28px!important] max-xsm:tw-w-[78px] max-xsm:tw-h-[27px] max-sxm:tw-leading-[27px] dd-fs-20-12 max-xsm:tw-px-[8px] tw-text-center"
-                :active="true"
-                >{{ $t("home.点击查看") }}</bw-button
-              >
-            </nuxt-link>
-            <img
-              :src="item.icon"
-              class="tw-w-[85px] max-lg:tw-w-[50px]"
-              loading="lazy"
-              alt="超慢跑"
-            />
-          </div>
+          {{ item.name }}
         </div>
-      </template>
-      <template v-else>
         <div
-          v-for="i in 4"
-          :key="i"
-          class="tabar-item tw-relative tw-rounded-[24px] tw-pt-[32px] tw-pb-[4px] tw-pl-[16px] tw-pr-[10px] tw-bg-gray-100 tw-animate-pulse"
+          class="tabar-item-right tw-flex tw-justify-between tw-items-center"
         >
-          <div
-            class="tw-h-[47.6px] tw-w-[150px] tw-bg-gray-200 tw-rounded"
-          ></div>
-          <div class="tw-flex tw-justify-between tw-items-center tw-mt-4">
-            <div
-              class="tw-w-[132px] tw-h-[46px] tw-bg-gray-200 tw-rounded-[30px]"
-            ></div>
-            <div
-              class="tw-w-[85px] tw-h-[85px] tw-bg-gray-200 tw-rounded"
-            ></div>
-          </div>
+          <nuxt-link :to="getRouteLink(`/tag/${item.alias}`)">
+            <bw-button
+              :style="{
+                background: item.buttonColor,
+                borderColor: item.buttonColor,
+              }"
+              class="tw-w-[132px] tw-h-[46px] tw-rounded-[30px] tw-leading-[46px] max-md:tw-w-[98px] max-md:tw-h-[30px!important] max-md:tw-leading-[28px!important] max-xsm:tw-w-[78px] max-xsm:tw-h-[27px] max-sxm:tw-leading-[27px] dd-fs-20-12 max-xsm:tw-px-[8px] tw-text-center"
+              :active="true"
+              >{{ $t("home.点击查看") }}</bw-button
+            >
+          </nuxt-link>
+          <img
+            :src="item.icon"
+            class="tw-w-[85px] max-lg:tw-w-[50px]"
+            loading="lazy"
+            :alt="$t('index.超慢跑')"
+          />
         </div>
-      </template>
+      </div>
     </div>
 
     <!-- pc端search -->
@@ -156,7 +134,7 @@
                 class="tw-w-[16px] tw-mr-[4px] max-md:tw-mr-[0]"
                 src="@/assets/icon/Search.svg"
                 loading="lazy"
-                alt="超慢跑"
+                :alt="$t('index.超慢跑')"
               />
               <span class="max-md:tw-hidden">{{ $t("index.搜索") }}</span>
             </div>
@@ -173,6 +151,9 @@
   </div>
 </template>
 <script setup>
+const { $i18n: i18n } = useNuxtApp();
+const $t = i18n.t;
+
 setPageLayout("default");
 import BwButton from "~/components/base/BwButton.vue";
 import BwInput from "~/components/base/BwInput.vue";
@@ -189,11 +170,12 @@ const handleSearch = () => {
   // homeBwListRef.value?.getList();
   searchPush(searchValue.value);
 };
-await useAsyncData("getCategoryList", async () => {
+const getCategoryList = async () => {
   const res = await getCategory();
   tabarList.value = res.value?.data || [];
-  return tabarList.value;
-});
+  // return tabarList.value;
+};
+await getCategoryList()
 // watchEffect(() => {
 //   if (categoryData.value) {
 //     tabarList.value = categoryData.value;
@@ -204,8 +186,7 @@ const getDataList = async () => {
   // if (homeBwListRef.value) {
   //   return await homeBwListRef.value.getList()
   // }
-};
-// useAsyncData("getCategoryList", getCategoryList);
+}; // useAsyncData("getCategoryList", getCategoryList);
 // useAsyncData('getDataList', getDataList)
 // 跳转
 // const handleView = (alias) => {
@@ -214,13 +195,13 @@ const getDataList = async () => {
 //   navigateTo(href);
 // };
 // 判断设备类型
-const deviceType = computed(() => 
-  typeof window !== 'undefined' ? window.innerWidth > 640 ? 'pc' : 'h5' : 'pc'
-)
+const deviceType = computed(() =>
+  typeof window !== "undefined" ? (window.innerWidth > 640 ? "pc" : "h5") : "pc"
+);
 const visible = ref(false);
 // 鼠标悬停时显示
 const showPopover = () => {
-  if (deviceType.value === 'pc') {
+  if (deviceType.value === "pc") {
     visible.value = true;
   }
 };
@@ -229,29 +210,29 @@ const hidePopover = () => {
 };
 // 点击时切换显示状态
 const togglePopover = () => {
-  if (deviceType.value === 'pc') {
+  if (deviceType.value === "pc") {
     visible.value = true;
   } else {
-    window.location.href = 'https://chaomanpao.com/jogging/share.html';
+    window.location.href = "https://chaomanpao.com/jogging/share.html";
   }
 };
 
 useHead({
-  title: "超慢跑",
+  title: $t("index.超慢跑"),
   meta: [
     {
       name: "description",
-      content: "超慢跑描述",
+      content: $t("index.超慢跑描述"),
     },
     {
       name: "keywords",
-      content: "超慢跑关键词1，超慢跑关键词3，超慢跑关键词2，",
+      content: $t("index.超慢跑关键词1，超慢跑关键词3，超慢跑关键词2，"),
     },
   ],
+
   link: genrePageLink(),
 });
 </script>
-
 <style lang="scss" scoped>
 .home-tabar {
   background: url("@/assets/images/home-bg.png") repeat-x center center;

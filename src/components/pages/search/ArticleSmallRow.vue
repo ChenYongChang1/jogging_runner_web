@@ -10,21 +10,21 @@
       <img
         src="@/assets/icon/look.svg"
         class="tw-w-[18px] tw-mr-[8px]"
-        alt="超慢跑"
+        :alt="$t('common.超慢跑')"
         loading="lazy"
       />
       <span class="tw-text-[14px] tw-font-[500] tw-text-text999"
-        >{{ article.visitNum }}{{ $t("common.人看过") }}</span
+        >{{ article.visitNum }}{{ $t('common.人看过') }}</span
       >
     </div>
   </div>
 </template>
 <script lang="ts" setup>
-defineOptions({ name: "ArticleSmallRow" });
+defineOptions({ name: 'ArticleSmallRow' })
 const props = defineProps({
   article: {
     type: Object,
     default: () => ({}),
   },
-});
+})
 </script>

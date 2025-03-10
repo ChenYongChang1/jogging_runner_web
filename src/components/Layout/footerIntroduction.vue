@@ -11,13 +11,13 @@
               class="tw-mr-[8px] tw-rounded-[2px] tw-w-[8px] tw-h-[8px] tw-bg-[green]"
             ></div>
             <div class="tw-text-[18px] tw-font-[500]">
-              {{ $t("common.下载APP") }}
+              {{ $t('common.下载APP') }}
             </div>
           </div>
           <div
             class="left-content-header tw-text-[#4A4A4A] dd-fs-48 tw-font-[600] tw-leading-[56px] tw-text-left tw-pb-[17px]"
           >
-            {{ $t("common.下载超慢跑节拍器") }}
+            {{ $t('common.下载超慢跑节拍器') }}
           </div>
           <div
             class="download-type-imgs tw-w-full md:tw-w-[90%] tw-pt-[50px] tw-flex tw-flex-wrap"
@@ -37,7 +37,7 @@
                 <template #reference>
                   <img
                     :src="item.img"
-                    alt="超慢跑"
+                    :alt="$t('common.超慢跑')"
                     loading="lazy"
                     @click="handleClickType(item.type, index)"
                     class="tw-w-full tw-h-auto tw-cursor-pointer"
@@ -50,7 +50,7 @@
                     :src="item.popoverImg"
                     class="tw-w-[125px] tw-mb-[5px]"
                     loading="lazy"
-                    alt="超慢跑"
+                    :alt="$t('common.超慢跑')"
                   />
                 </div>
               </el-popover>
@@ -74,72 +74,71 @@
   </div>
 </template>
 <script lang="ts" setup>
-import appleDownload from "@/assets/images/apple-download.png";
-import googleDownload from "@/assets/images/google-download.png";
-import anzhuoDownload from "@/assets/images/anzhuo-download.png";
-import apple from "@/assets/images/apple.png";
-import google from "@/assets/images/google.png";
-import anzhuo from "@/assets/images/anzhuo.png";
+import appleDownload from '@/assets/images/apple-download.png'
+import googleDownload from '@/assets/images/google-download.png'
+import anzhuoDownload from '@/assets/images/anzhuo-download.png'
+import apple from '@/assets/images/apple.png'
+import google from '@/assets/images/google.png'
+import anzhuo from '@/assets/images/anzhuo.png'
 
-type DownloadType = string;
+type DownloadType = string
 
 const downloadImgs = ref([
   {
-    type: "app-store",
+    type: 'app-store',
     img: appleDownload,
     popoverImg: apple,
     visible: false,
   },
   {
-    type: "google-play",
+    type: 'google-play',
     img: googleDownload,
     popoverImg: google,
     visible: false,
   },
   {
-    type: "android",
+    type: 'android',
     img: anzhuoDownload,
     popoverImg: anzhuo,
     visible: false,
   },
-]);
+])
 // 屏幕尺寸变关闭popover
 onMounted(() => {
   const handleResize = () => {
     if (window.innerWidth < 640) {
       downloadImgs.value.forEach((item: any) => {
-        item.visible = false;
-      });
+        item.visible = false
+      })
     }
-  };
-  window.addEventListener("resize", handleResize);
+  }
+  window.addEventListener('resize', handleResize)
   onUnmounted(() => {
-    window.removeEventListener("resize", handleResize);
-  });
-});
+    window.removeEventListener('resize', handleResize)
+  })
+})
 const handleClickType = (type: DownloadType, index: number) => {
-  const isMdOrLarger =
-    typeof window !== "undefined" && window.innerWidth >= 640;
+  const isMdOrLarger = typeof window !== 'undefined' && window.innerWidth >= 640
 
   // 如果是 md或者md以上，打开图片；否则跳转链接
   const downloadLinks = {
-    "app-store":
-      "https://apps.apple.com/app/apple-store/id6502583295?pt=126570476&ct=webtoapp&mt=8",
-    "google-play":
-      "https://play.google.com/store/apps/details?id=joggingtracker.joglog.metronome",
-    android: "https://chaomanpao.com/jogging/share.html",
-  };
+    'app-store':
+      'https://apps.apple.com/app/apple-store/id6502583295?pt=126570476&ct=webtoapp&mt=8',
+    'google-play':
+      'https://play.google.com/store/apps/details?id=joggingtracker.joglog.metronome',
+    android: 'https://chaomanpao.com/jogging/share.html',
+  }
   if (isMdOrLarger) {
     // 在桌面端点击 App Store 图标时显示二维码弹窗
-    downloadImgs.value[index].visible = true;
+    downloadImgs.value[index].visible = true
   } else {
     // 直接跳转到对应的下载链接
-    const link = downloadLinks[type];
+    const link = downloadLinks[type]
     if (link) {
-      window.open(link);
+      window.open(link)
     }
   }
-};
+}
 </script>
 <style lang="scss" scoped>
 .download-type-imgs {
