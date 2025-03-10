@@ -23,7 +23,7 @@
         <div
           class="more-read-title dd-fs-36 tw-font-[600] max-md:tw-mb-[22px] tw-mb-[35px]"
         >
-          更多阅读
+          {{ $t('post.更多阅读') }}
         </div>
         <div class="bw-list-main tw-flex tw-flex-wrap tw-justify-between">
           <bw-list-main
@@ -47,65 +47,67 @@
     ></app-download>
   </client-only>
 </template>
-
 <script lang="ts" setup>
-setPageLayout("default");
-import { getArticleInfo } from "~/composables/api/home";
-import AppDownload from "~/components/pages/info/AppDownload.vue";
-import { genrePageLink } from "~/utils/seo";
+const { $i18n: i18n } = useNuxtApp()
+const $t = i18n.t
+
+setPageLayout('default')
+import { getArticleInfo } from '~/composables/api/home'
+import AppDownload from '~/components/pages/info/AppDownload.vue'
+import { genrePageLink } from '~/utils/seo'
 
 interface TableListItem {
-  id: string;
-  cover: string;
-  isVideo: number;
-  visitNum?: number;
-  title?: string;
-  desc?: string;
+  id: string
+  cover: string
+  isVideo: number
+  visitNum?: number
+  title?: string
+  desc?: string
 }
 interface ArticleInfo {
-  id?: string;
-  title?: string;
-  content?: string;
-  categoryName?: string;
-  alias?: string;
-  categories?: any[];
-  lasts?: any[];
-  recommends?: TableListItem[];
+  id?: string
+  title?: string
+  content?: string
+  categoryName?: string
+  alias?: string
+  categories?: any[]
+  lasts?: any[]
+  recommends?: TableListItem[]
 }
-const route = useRoute();
-const id = route.params.id;
-const articleInfo = ref<ArticleInfo>({});
-const showDownload = ref(false);
-const categoriesList = ref<any[]>([]);
-const lastsList = ref<any[]>([]);
+const route = useRoute()
+const id = route.params.id
+const articleInfo = ref<ArticleInfo>({})
+const showDownload = ref(false)
+const categoriesList = ref<any[]>([])
+const lastsList = ref<any[]>([])
 
 const getArticleInfoById = async () => {
-  articleInfo.value = await getArticleInfo(id as string);
-  categoriesList.value = articleInfo.value.categories || [];
-  lastsList.value = articleInfo.value.lasts || [];
-};
-await useAsyncData("getArticleInfoById", getArticleInfoById);
+  articleInfo.value = await getArticleInfo(id as string)
+  categoriesList.value = articleInfo.value.categories || []
+  lastsList.value = articleInfo.value.lasts || []
+}
+await useAsyncData('getArticleInfoById', getArticleInfoById)
 onMounted(() => {
   nextTick(() => {
-    showDownload.value = true;
-  });
-});
+    showDownload.value = true
+  })
+})
 useHead({
-  title: `${articleInfo.value.title}-超慢跑`,
+  title: $t('post.{slot1}-超慢跑', { slot1: articleInfo.value.title }),
   meta: [
     {
-      name: "description",
-      content: `${articleInfo.value.title}, 超慢跑`,
+      name: 'description',
+      content: $t('post.{slot1},超慢跑', { slot1: articleInfo.value.title }),
     },
     {
-      name: "keywords",
+      name: 'keywords',
       content: articleInfo.value.title,
     },
   ],
-  link: genrePageLink(),
-});
-</script>
 
+  link: genrePageLink(),
+})
+</script>
 <style lang="scss" scoped>
 .detail-content {
   @apply lg:tw-w-[65.4%] lg:tw-border-r-[1px] lg:tw-border-linecolor lg:tw-border-solid lg:tw-pr-[30px];

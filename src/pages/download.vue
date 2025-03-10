@@ -36,7 +36,10 @@
                   @click="togglePopover"
                   >{{ $t('download.下载APP')
                   }}<el-icon class="tw-ml-[5px] tw-font-[500]"
-                    ><img src="@/assets/icon/Download.svg" loading="lazy" alt="超慢跑" /></el-icon
+                    ><img
+                      src="@/assets/icon/Download.svg"
+                      loading="lazy"
+                      :alt="$t('download.超慢跑')" /></el-icon
                 ></BwButton>
               </template>
               <div
@@ -46,7 +49,7 @@
                   src="@/assets/images/erweima.png"
                   class="tw-w-[125px] tw-mb-[5px]"
                   loading="lazy"
-                  alt="超慢跑"
+                  :alt="$t('download.超慢跑')"
                 />
                 <div
                   class="text tw-text-[#4A4A4A] tw-text-[16px] tw-font-[500] tw-leading-[24px]"
@@ -60,7 +63,7 @@
         <img
           src="@/assets/images/home.png"
           class="tw-w-[36.1%] max-sm:tw-w-[69.6%] max-sm:tw-mt-[35px]"
-          alt="超慢跑"
+          :alt="$t('download.超慢跑')"
           loading="lazy"
         />
       </div>
@@ -71,7 +74,9 @@
         <div
           class="top-content tw-px-[13.2%] max-xsm:tw-px-[2%] tw-mb-[54px] tw-flex tw-flex-col tw-justify-center tw-items-center"
         >
-        <div class="tw-w-[30%] tw-max-w-[133px] tw-h-[16px] tw-rounded-[16px] tw-bg-themecolor tw-mx-auto tw-mt-[54px] tw-mb-[40px]"></div>
+          <div
+            class="tw-w-[30%] tw-max-w-[133px] tw-h-[16px] tw-rounded-[16px] tw-bg-themecolor tw-mx-auto tw-mt-[54px] tw-mb-[40px]"
+          ></div>
           <div class="download-describe-header dd-fs-84 tw-mb-[26px]">
             {{ $t('download.超慢跑超健康') }}
           </div>
@@ -88,27 +93,27 @@
         >
           <img
             src="@/assets/images/download-image-1.png"
-            alt="超慢跑"
+            :alt="$t('download.超慢跑')"
             loading="lazy"
           />
           <img
             src="@/assets/images/download-image-2.png"
-            alt="超慢跑"
+            :alt="$t('download.超慢跑')"
             loading="lazy"
           />
           <img
             src="@/assets/images/download-image-3.png"
-            alt="超慢跑"
+            :alt="$t('download.超慢跑')"
             loading="lazy"
           />
           <img
             src="@/assets/images/download-image-4.png"
-            alt="超慢跑"
+            :alt="$t('download.超慢跑')"
             loading="lazy"
           />
           <img
             src="@/assets/images/download-image-5.png"
-            alt="超慢跑"
+            :alt="$t('download.超慢跑')"
             loading="lazy"
           />
         </div>
@@ -246,7 +251,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-setPageLayout("default");
+setPageLayout('default')
 const popover = ref(null)
 const visible = ref(false)
 // 鼠标悬停时显示

@@ -18,12 +18,17 @@
           class="tw-flex tw-items-center tw-space-x-2 md:tw-space-x-3 tw-cursor-pointer"
           @click="goHome"
         >
-          <img src="~/assets/images/logo.png" loading="lazy" alt="超慢跑" class="tw-w-[48px]" />
+          <img
+            src="~/assets/images/logo.png"
+            loading="lazy"
+            :alt="$t('common.超慢跑')"
+            class="tw-w-[48px]"
+          />
           <div>
             <h1
               class="tw-text-base md:tw-text-lg tw-text-[#3EDB30] tw-font-bold tw-text-green-500"
             >
-              {{ $t("common.超慢跑节拍器") }}
+              {{ $t('common.超慢跑节拍器') }}
             </h1>
             <div
               class="tw-text-xs md:tw-text-sm tw-text-[#ccc] tw-text-gray-500"
@@ -61,7 +66,10 @@
             >
               {{ languageName
               }}<el-icon class="el-icon--right"
-                ><img loading="lazy" src="@/assets/icon/ArrowDown.svg" alt="超慢跑"
+                ><img
+                  loading="lazy"
+                  src="@/assets/icon/ArrowDown.svg"
+                  :alt="$t('common.超慢跑')"
               /></el-icon>
             </el-button>
             <template #dropdown>
@@ -85,21 +93,21 @@
           <img
             v-if="!isEquipment"
             src="~/assets/images/morebtn.png"
-            alt="超慢跑"
+            :alt="$t('common.超慢跑')"
             loading="lazy"
             class="tw-w-[18px] tw-h-[18px]"
           />
           <img
             v-else
             src="~/assets/images/morebtn-black.png"
-            alt="超慢跑"
+            :alt="$t('common.超慢跑')"
             loading="lazy"
             class="tw-w-[18px] tw-h-[18px]"
           />
           <span
             class="tw-text-base"
             :style="{ color: isEquipment ? '#fff' : '#4a4a4a' }"
-            >{{ $t("common.更多") }}</span
+            >{{ $t('common.更多') }}</span
           >
         </div>
       </div>
@@ -143,7 +151,10 @@
             >
               {{ languageName }}
               <el-icon
-                ><img loading="lazy" src="@/assets/icon/ArrowDown.svg" alt="超慢跑"
+                ><img
+                  loading="lazy"
+                  src="@/assets/icon/ArrowDown.svg"
+                  :alt="$t('common.超慢跑')"
               /></el-icon>
             </el-button>
 
@@ -164,39 +175,39 @@
   </header>
 </template>
 <script setup>
-const { $i18n: i18n } = useNuxtApp();
-const $t = (...args) => i18n.t(...args);
-const switchLocalePath = useSwitchLocalePath();
-import { languageList } from "~/assets/js/const";
-import { ref, computed } from "vue";
-import { useRoute } from "vue-router";
+const { $i18n: i18n } = useNuxtApp()
+const $t = (...args) => i18n.t(...args)
+const switchLocalePath = useSwitchLocalePath()
+import { languageList } from '~/assets/js/const'
+import { ref, computed } from 'vue'
+import { useRoute } from 'vue-router'
 
-const route = useRoute();
+const route = useRoute()
 const isEquipment = computed(() => {
-  return route.name.includes("equipment");
-});
-const isMenuOpen = ref(false);
+  return route.name.includes('equipment')
+})
+const isMenuOpen = ref(false)
 
 const menuItems = computed(() => [
-  { name: $t("common.首页"), path: "/" },
-  { name: $t("common.超慢跑节拍器180下载"), path: "/download" },
-  { name: $t("common.必备装备"), path: "/equipment" },
-]);
+  { name: $t('common.首页'), path: '/' },
+  { name: $t('common.超慢跑节拍器180下载'), path: '/download' },
+  { name: $t('common.必备装备'), path: '/equipment' },
+])
 
-const language = computed(() => i18n.locale.value);
-const currentPath = computed(() => route.path);
+const language = computed(() => i18n.locale.value)
+const currentPath = computed(() => route.path)
 const languageName = computed(() => {
   const languageRow =
     languageList.find((item) => item.value === language.value) ||
-    languageList[0];
-  return $t(languageRow?.label);
-});
+    languageList[0]
+  return $t(languageRow?.label)
+})
 const changeLanguage = (str) => {
-  navigateTo(switchLocalePath(str));
-};
+  navigateTo(switchLocalePath(str))
+}
 const goHome = () => {
-  navigateTo(getRouteLink("/"));
-};
+  navigateTo(getRouteLink('/'))
+}
 </script>
 <style lang="scss" scoped>
 .layout-header {
