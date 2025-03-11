@@ -1,5 +1,5 @@
 <template>
-  <div class="custom-pagination">
+  <div class="custom-pagination" v-if="pageCount > 1">
     <bw-button
       type="border"
       :class="['button-page', currentPage === 1 ? 'disabled' : '']"
