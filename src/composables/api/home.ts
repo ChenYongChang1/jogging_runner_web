@@ -59,8 +59,8 @@ export const getSearchInfo = async (params: {
   alias?: string;
   keyword?: string;
   page?: number;
-}) => {
-  const result = await useFetchGet("/api/jogging/wb/article", params);
+}, options: { ssr: boolean }) => {
+  const result = await useFetchGet("/api/jogging/wb/article", params, options);
 
   return result.data.value?.data;
   // return {

@@ -47,7 +47,7 @@ const getList = async () => {
       page: currentPage.value,
       alias: "",
       keyword: props.searchValue,
-    });
+    }, { ssr: typeof window !== "undefined" });
 
     totalPage.value = data?.totalPage;
     currentPage.value = data?.page;

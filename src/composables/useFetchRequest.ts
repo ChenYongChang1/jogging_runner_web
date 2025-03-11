@@ -1,10 +1,9 @@
-
-
 import { useFetch, useRuntimeConfig } from "#app";
 import type { UseFetchOptions } from "nuxt/app";
 
 interface RequestOptions extends UseFetchOptions<any> {
   customBaseURL?: string;
+  ssr?: boolean;
 }
 
 type HttpMethod = "GET" | "POST" | "PUT" | "DELETE";
@@ -37,7 +36,7 @@ function createUseFetchRequest(method: HttpMethod) {
   return async function (
     url: string,
     data?: any,
-    options: RequestOptions = {}
+    options: RequestOptions = { ssr: typeof window !== "undefined" }
   ) {
     const {
       public: { API_BASE_ENV },
@@ -54,13 +53,30 @@ function createUseFetchRequest(method: HttpMethod) {
     const requestUrl = url; // new URL(url, baseURL).toString();
     const realUrl =
       requestUrl + (paramsKey.length ? "?" : "") + paramsKey.join("&");
-    return await useFetch(realUrl, {
-      ...options,
-      method,
-      body: data,
-      onRequest: handleRequest,
-      onResponse: handleResponse,
-    });
+
+    const fetchData = async (
+      realUrl: string,
+      options: any,
+      method: string,
+      data: any
+    ) => {
+      // 公共配置
+      const fetchOptions = {
+        ...options,
+        method,
+        body: data,
+        key: realUrl,
+        lazy: true,
+        onRequest: handleRequest,
+        onResponse: handleResponse,
+      };
+
+      // 根据 SSR 配置选择使用 useAsyncData 或 useFetch
+      return options.ssr
+        ? await useAsyncData(realUrl, () => $fetch(realUrl, fetchOptions))
+        : await useFetch(realUrl, fetchOptions);
+    };
+    return await fetchData(realUrl, options, method, data);
   };
 }
 
