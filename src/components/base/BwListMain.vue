@@ -85,7 +85,7 @@ const linkToInfo = (item: TableListItem) => {
   .bw-list-item-img {
     @apply tw-w-full tw-h-[229px] tw-overflow-hidden tw-rounded-[26px];
     img {
-      @apply tw-w-full;
+      @apply tw-w-full tw-h-full tw-object-cover;
     }
   }
 
