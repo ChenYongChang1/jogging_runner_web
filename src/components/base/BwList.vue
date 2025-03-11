@@ -70,7 +70,7 @@ const linkToInfo = (item: TableListItem) => {
   navigateTo(href);
 };
 // useFetch()
-getList();
+await getList();
 // 暴露getList方法供父组件调用
 // defineExpose({
 //   getList,
