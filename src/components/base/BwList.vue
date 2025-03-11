@@ -1,7 +1,7 @@
 <template>
   <div class="bwList tw-mx-auto">
     <div
-      class="bw-list-main tw-flex tw-flex-wrap tw-justify-between tw-gap-4"
+      class="bw-list-main dd-container-list"
       v-loading="loading"
     >
       <bw-list-main :tableList="tableList" />

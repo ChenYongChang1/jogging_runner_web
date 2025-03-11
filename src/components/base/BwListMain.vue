@@ -1,55 +1,55 @@
 <template>
-  <div
-    class="bw-list-item tw-w-full sm:tw-w-[48%] lg:tw-w-[29.3%] tw-px-[16px] tw-pt-[16px] tw-pb-[22px]"
-    v-for="(item, index) in tableList"
-    :key="index"
-  >
-    <div
-      class="bw-list-item-img tw-mb-[20px] tw-rounded-[26px] tw-w-[100%] tw-overflow-hidden"
-    >
-      <BwMedia
-        class="tw-rounded-[26px] tw-w-[100%]"
-        :src="item.cover"
-        :alt="item.title"
-        :type="item.isVideo === 1 ? 'image' : 'video'"
-      />
-    </div>
-
-    <div class="bw-list-item-title">
-      {{ item.title }}
-    </div>
-    <div class="bw-list-item-content">
-      {{ item.desc }}
-    </div>
-    <div class="look-nums tw-flex tw-mt-[10px]">
-      <img
-        src="@/assets/icon/look.svg"
-        class="tw-w-[18px] tw-mr-[8px]"
-        loading="lazy"
-        :alt="item.title"
-      />
-      <span class="tw-text-[14px] tw-font-[500] tw-text-text999"
-        >{{ item.visitNum }}{{ $t("common.人看过") }}</span
+  <div class="bw-list-item" v-for="(item, index) in tableList" :key="index">
+    <div>
+      <div
+        class="bw-list-item-img tw-mb-[20px] tw-rounded-[26px] tw-w-[100%] tw-overflow-hidden"
       >
+        <BwMedia
+          class="tw-rounded-[26px] tw-w-[100%]"
+          :src="item.cover"
+          :alt="item.title"
+          :type="item.isVideo === 1 ? 'image' : 'video'"
+        />
+      </div>
+
+      <div class="bw-list-item-title">
+        {{ item.title }}
+      </div>
+      <div class="bw-list-item-content">
+        {{ item.desc }}
+      </div>
     </div>
-    <div class="tw-flex tw-justify-end">
-      <nuxt-link :to="linkToInfo(item)">
-        <bw-button
-          type="border"
-          class="tw-w-[141px] tw-text-center tw-h-[46px] tw-pl-[22px] tw-pr-[13px]"
+    <div>
+      <div class="look-nums tw-flex tw-mt-[10px]">
+        <img
+          src="@/assets/icon/look.svg"
+          class="tw-w-[18px] tw-mr-[8px]"
+          loading="lazy"
+          :alt="item.title"
+        />
+        <span class="tw-text-[14px] tw-font-[500] tw-text-text999"
+          >{{ item.visitNum }}{{ $t("common.人看过") }}</span
         >
-          <div class="tw-flex tw-justify-center tw-h-[46px]">
-            <span class="tw-mr-[6px] tw-leading-[46px]">{{
-              $t("common.阅读全文")
-            }}</span>
-            <img
-              src="@/assets/icon/to-right.svg"
-              loading="lazy"
-              class="tw-w-[18px]"
-            />
-          </div>
-        </bw-button>
-      </nuxt-link>
+      </div>
+      <div class="tw-flex tw-justify-end">
+        <nuxt-link :to="linkToInfo(item)">
+          <bw-button
+            type="border"
+            class="tw-w-[141px] tw-text-center tw-h-[46px] tw-pl-[22px] tw-pr-[13px]"
+          >
+            <div class="tw-flex tw-justify-center tw-h-[46px]">
+              <span class="tw-mr-[6px] tw-leading-[46px]">{{
+                $t("common.阅读全文")
+              }}</span>
+              <img
+                src="@/assets/icon/to-right.svg"
+                loading="lazy"
+                class="tw-w-[18px]"
+              />
+            </div>
+          </bw-button>
+        </nuxt-link>
+      </div>
     </div>
   </div>
 </template>
@@ -79,6 +79,15 @@ const linkToInfo = (item: TableListItem) => {
   border-radius: 32px;
   background: #ffffff;
   box-shadow: 0px 6px 14px 0px #0000000f, 0px -4px 14px 0px #0000000a;
+  @apply tw-flex tw-flex-col tw-justify-between;
+  @apply tw-w-full tw-px-[16px] tw-pt-[16px] tw-pb-[22px];
+  @apply lg:tw-min-w-[300px] lg:tw-max-h-[560px];
+  .bw-list-item-img {
+    @apply tw-w-full tw-h-[229px] tw-overflow-hidden tw-rounded-[26px];
+    img {
+      @apply tw-w-full;
+    }
+  }
 
   .bw-list-item-title {
     margin-bottom: 16px;

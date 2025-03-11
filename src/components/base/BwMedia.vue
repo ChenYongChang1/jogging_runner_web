@@ -3,14 +3,14 @@
     v-if="mediaType === MediaType.image"
     :src="src"
     loading="lazy"
-    class="tw-w-full tw-object-contain tw-rounded-[8px] media-zoom"
+    class="tw-w-full tw-object-contain tw-rounded-[8px] common-media hover:tw-scale-[1.3]"
     :alt="alt"
   />
   <img
     v-else-if="mediaType === MediaType.video"
     :src="src"
     loading="lazy"
-    class="tw-w-full tw-object-contain tw-rounded-[8px] video"
+    class="tw-w-full tw-object-contain tw-rounded-[8px] video common-media hover:tw-scale-[1.3]"
     :alt="alt"
   />
   <!-- <video
@@ -59,10 +59,8 @@ const mediaType = computed(() => {
 </script>
 
 <style lang="scss" scoped>
-.media-zoom {
-  transition: transform 0.3s ease;
-  &:hover {
-    transform: scale(1.1);
-  }
+.common-media{
+  transition: transform 0.3s;
+  transform-origin: center;
 }
 </style>
