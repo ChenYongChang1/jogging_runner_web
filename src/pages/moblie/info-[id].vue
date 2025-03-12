@@ -15,7 +15,6 @@
 </template>
 
 <script lang="ts" setup>
-setPageLayout("none");
 import { getArticleInfo } from "~/composables/api/home";
 import { genreContent } from "~/composables/goods/useGoods";
 const route = useRoute();
