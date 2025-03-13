@@ -7,7 +7,7 @@ export const getRouteLink = (link: string) => {
 };
 
 export const searchPush = (world?: string) => {
-  if (world) {
+  if (world && world.trim()) {
     const searchWorld = encodeURIComponent(world);
     navigateTo(getRouteLink(`/search?kw=${searchWorld}`));
     return;

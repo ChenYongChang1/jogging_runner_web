@@ -1,6 +1,6 @@
 <template>
   <div class="tw-px-[1rem] tw-py-[0.5rem]">
-    <img
+    <!-- <img
       v-if="articleInfo.cover"
       class="tw-w-full tw-object-contain tw-mb-[1.25rem]"
       :src="articleInfo.cover"
@@ -9,7 +9,7 @@
     />
     <h1 class="tw-text-basecolor tw-font-[500] tw-text-[1.25rem] tw-mb-[1rem]">
       {{ articleInfo.title }}
-    </h1>
+    </h1> -->
     <div v-html="contentHtml"></div>
   </div>
 </template>

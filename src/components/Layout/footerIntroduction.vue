@@ -23,10 +23,9 @@
             class="download-type-imgs tw-w-full md:tw-w-[90%] tw-pt-[50px] tw-flex tw-flex-wrap"
           >
             <div
-              class="download-type-imgs-item tw-w-full md:tw-w-fit tw-mb-[10px]"
+              class="download-type-imgs-item tw-w-full md:tw-w-fit tw-mb-[10px] md:tw-pr-[8px]"
               v-for="(item, index) in downloadImgs"
               :key="index"
-              :class="item.type === 'app-store' ? 'md:tw-pr-[8px]' : ''"
             >
               <el-popover
                 popper-class="download-app-popover"

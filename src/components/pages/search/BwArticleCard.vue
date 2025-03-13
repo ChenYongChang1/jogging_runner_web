@@ -15,7 +15,7 @@
       Zone 2 心率計算：
     </div> -->
     <div class="sub-text tw-mb-[10px]">
-      {{ article.desc || '' }}
+      {{ article.desc || "" }}
     </div>
     <div
       class="look-views lg:tw-flex tw-justify-between tw-items-center tw-flex-wrap ss:tw-mb-[1.125rem]"
@@ -28,40 +28,40 @@
           loading="lazy"
         />
         <span class="tw-text-[14px] tw-font-[500] tw-text-text999"
-          >{{ article.visitNum || 0 }}{{ $t('common.人看过') }}</span
+          >{{ article.visitNum || 0 }}{{ $t("common.人看过") }}</span
         >
       </div>
-      <bw-button
-        type="border"
-        class="ss:tw-mx-auto lg:tw-mx-0 tw-w-fit"
-        @click="linkToInfo"
-      >
-        <div class="tw-flex">
-          <span class="tw-mr-[6px]">{{ $t('common.阅读全文') }}</span>
-          <img
-            src="@/assets/icon/to-right.svg"
-            class="tw-w-[18px]"
-            :alt="$t('common.超慢跑')"
-            loading="lazy"
-          />
-        </div>
-      </bw-button>
+      <nuxt-link :to="linkToInfo()">
+        <bw-button
+          type="border"
+          class="ss:tw-mx-auto lg:tw-mx-0 tw-w-fit btn-card"
+        >
+          <div class="tw-flex">
+            <span class="tw-mr-[6px]">{{ $t("common.阅读全文") }}</span>
+            <img
+              src="@/assets/icon/to-right.svg"
+              class="tw-w-[18px]"
+              :alt="$t('common.超慢跑')"
+              loading="lazy"
+            />
+          </div>
+        </bw-button>
+      </nuxt-link>
     </div>
   </div>
 </template>
 <script lang="ts" setup>
-defineOptions({ name: 'BwArticleCard' })
+defineOptions({ name: "BwArticleCard" });
 const props = defineProps({
   article: {
     type: Object,
     default: () => ({}),
   },
-})
-const router = useRouter()
+});
+const router = useRouter();
 const linkToInfo = () => {
-  const href = getRouteLink(`/post/${props.article.id}.html`)
-  navigateTo(href)
-}
+  return getRouteLink(`/post/${props.article.id}.html`);
+};
 </script>
 <style lang="scss" scoped>
 .card-row {
@@ -74,6 +74,11 @@ const linkToInfo = () => {
   }
   .sub-text {
     @apply tw-text-text666 lg:tw-text-[20px] ss:tw-text-[1rem] tw-font-[500] lg:tw-leading-[32px] ss:tw-leading-[1.5rem];
+  }
+}
+.btn-card:hover {
+  img {
+    filter: brightness(0) invert(1); // 将图标改为白色
   }
 }
 </style>

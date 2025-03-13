@@ -36,7 +36,7 @@ defineProps({
   &.btn-border {
     @apply tw-border-themecolor tw-border-[1px] tw-border-solid tw-text-themecolor;
     &:hover {
-      @apply tw-bg-themecolor/5;
+      @apply tw-bg-themecolor tw-border-themecolor tw-text-[white];
     }
   }
 }

@@ -52,7 +52,7 @@ const { $i18n: i18n } = useNuxtApp()
 const $t = i18n.t
 
 setPageLayout('default')
-import { getArticleInfo } from '~/composables/api/home'
+import { getArticleInfo, excuteStatistics } from '~/composables/api/home'
 import AppDownload from '~/components/pages/info/AppDownload.vue'
 import { genrePageLink } from '~/utils/seo'
 
@@ -90,6 +90,7 @@ await getArticleInfoById()
 onMounted(() => {
   nextTick(() => {
     showDownload.value = true
+    excuteStatistics(id)
   })
 })
 useHead({

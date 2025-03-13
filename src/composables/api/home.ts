@@ -262,7 +262,11 @@ export const getSearchInfo = async (params: {
   //   version: 0,
   // }.data;
 };
-
+// /jogging/wb/article/statistics/{id}
+export const excuteStatistics = async (id: string) => {
+  const result = await useFetchGet(`/api/jogging/wb/article/statistics/${id}`);
+  return result.data.value?.data;
+};
 export const getArticleInfo = async (id: string) => {
   const result = await useFetchGet(`/api/jogging/wb/article/${id}`);
   return result.data.value?.data;

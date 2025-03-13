@@ -66,7 +66,7 @@
               }}<el-icon class="el-icon--right"
                 ><img
                   loading="lazy"
-                  src="@/assets/icon/ArrowDown.svg"
+                  src="@/assets/icon/ArrowDown-gray.svg"
                   :alt="$t('common.超慢跑')"
               /></el-icon>
             </el-button>
@@ -248,12 +248,19 @@ const goHome = () => {
   .el-dropdown {
     .languageBtn {
       padding: 22px 16px;
-      background: #61cd57;
-      border-color: #61cd57;
+      background: transparent;
+      border-color: #e5e7eb;
+      color: #4a4a4a;
+      // background: #61cd57;
+      // border-color: #61cd57;
 
       &:hover {
         background: #61cd57;
         border-color: #61cd57;
+        color: white;
+        img {
+          filter: brightness(0) invert(1); // 将图标改为白色
+        }
       }
       &-h5 {
         background: #61cd57;

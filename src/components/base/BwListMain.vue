@@ -106,6 +106,11 @@ const linkToInfo = (item: TableListItem) => {
     line-height: 22.4px;
     letter-spacing: 2%;
     color: #666666;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
   }
   // 添加按钮悬停和点击效果
   .bw-button {
