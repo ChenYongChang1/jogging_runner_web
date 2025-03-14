@@ -2,7 +2,17 @@
   <div class="download-page">
     <div class="download-tabar tw-w-[100%]">
       <!-- pc端 -->
-      <div
+      <banner-card>
+        <template #inner>
+          <img
+            src="@/assets/images/home.png"
+            class="tw-w-[36.1%] max-sm:tw-w-[69.6%] max-sm:tw-mt-[20px] tw-hidden max-md:tw-block tw-mx-auto"
+            :alt="$t('download.超慢跑')"
+            loading="lazy"
+          />
+        </template>
+      </banner-card>
+      <!-- <div
         class="download-tabar dd-content-padding tw-bg-[#F8FFF8] tw-flex tw-pt-[24px] tw-justify-center tw-items-center max-sm:tw-flex-col tw-flex-row tw-w-[100%] tw-mx-auto tw-mb-[64px]"
       >
         <div
@@ -66,7 +76,7 @@
           :alt="$t('download.超慢跑')"
           loading="lazy"
         />
-      </div>
+      </div> -->
       <!-- pc端介绍 -->
       <div
         class="download-describe tw-rounded-[24px] tw-bg-[#EDFFEE] tw-w-[96.6%] tw-mx-auto tw-mb-[64px]"
@@ -77,13 +87,15 @@
           <div
             class="tw-w-[30%] tw-max-w-[133px] tw-h-[16px] tw-rounded-[16px] tw-bg-themecolor tw-mx-auto tw-mt-[54px] tw-mb-[40px]"
           ></div>
-          <div class="download-describe-header dd-fs-84 tw-mb-[26px] dd-runner-font">
-            {{ $t('download.超慢跑超健康') }}
+          <div
+            class="download-describe-header dd-fs-84 tw-mb-[26px] dd-runner-font"
+          >
+            {{ $t("download.超慢跑超健康") }}
           </div>
           <div class="describe-content-text dd-fs-30">
             {{
               $t(
-                'download.超慢跑节拍器是为所有人设计的跑步步频节拍器，适合跑步初学者、健康减肥者、想要提高心肺功能、减少运动伤害的跑者。通过精准的节拍控制，超慢跑节拍器帮助您维持恒定的超慢跑步频，从而优化跑步效果，让您的每一步都充满节奏感和舒适感。'
+                "download.超慢跑节拍器是为所有人设计的跑步步频节拍器，适合跑步初学者、健康减肥者、想要提高心肺功能、减少运动伤害的跑者。通过精准的节拍控制，超慢跑节拍器帮助您维持恒定的超慢跑步频，从而优化跑步效果，让您的每一步都充满节奏感和舒适感。"
               )
             }}
           </div>
@@ -123,127 +135,127 @@
         class="download-text-describe tw-flex tw-flex-col tw-rounded-[24px] tw-bg-[#FBFBFB] tw-w-[96.6%] tw-mx-autoß tw-px-[118px] max-sm:tw-px-[26px] tw-pt-[48px] tw-pb-[54px]"
       >
         <div class="text-describe-title dd-fs-48-28">
-          {{ $t('download.为什么推荐超慢跑：') }}
+          {{ $t("download.为什么推荐超慢跑：") }}
         </div>
         <div class="text-describe-content dd-fs-20">
           <div class="text">
             {{
-              $t('download.超慢跑的原理基于“低强度、长时间”的有氧运动理论。')
+              $t("download.超慢跑的原理基于“低强度、长时间”的有氧运动理论。")
             }}
           </div>
           <div class="text">
             {{
               $t(
-                'download.低强度的运动可以使心率保持在最大心率的60%-70%之间，这一区间被认为是最佳的脂肪燃烧和心肺功能提升区间。在这个心率区间内，身体主要使用脂肪作为能量来源，而非糖原，这有助于脂肪减少和体重管理。'
+                "download.低强度的运动可以使心率保持在最大心率的60%-70%之间，这一区间被认为是最佳的脂肪燃烧和心肺功能提升区间。在这个心率区间内，身体主要使用脂肪作为能量来源，而非糖原，这有助于脂肪减少和体重管理。"
               )
             }}
           </div>
         </div>
         <div class="text-describe-title dd-fs-48-28">
-          {{ $t('download.超慢跑有什么好处：') }}
+          {{ $t("download.超慢跑有什么好处：") }}
         </div>
         <div class="text-describe-content dd-fs-20">
           <div class="text">
             {{
               $t(
-                'download.-提高心肺功能：长期的超慢跑可以增强心脏功能，提高氧气利用率。'
+                "download.-提高心肺功能：长期的超慢跑可以增强心脏功能，提高氧气利用率。"
               )
             }}
           </div>
           <div class="text">
             {{
               $t(
-                'download.-减少运动伤害：由于跑步强度低，对关节和肌肉的压力小，因此能显著降低运动伤害的风险。'
+                "download.-减少运动伤害：由于跑步强度低，对关节和肌肉的压力小，因此能显著降低运动伤害的风险。"
               )
             }}
           </div>
           <div class="text">
             {{
               $t(
-                'download.-促进脂肪燃烧：在低强度运动下，身体更倾向于使用脂肪作为能源，有助于体重控制和减肥。'
+                "download.-促进脂肪燃烧：在低强度运动下，身体更倾向于使用脂肪作为能源，有助于体重控制和减肥。"
               )
             }}
           </div>
           <div class="text">
             {{
               $t(
-                'download.-提高睡眠质量：规律的超慢跑可以改善睡眠质量，帮助身体和心理更好地放松。'
+                "download.-提高睡眠质量：规律的超慢跑可以改善睡眠质量，帮助身体和心理更好地放松。"
               )
             }}
           </div>
           <div class="text">
             {{
               $t(
-                'download.-增强心理健康：慢跑过程中，跑者往往能享受到跑步带来的放松和快乐，有助于减少压力和抑郁情绪。'
+                "download.-增强心理健康：慢跑过程中，跑者往往能享受到跑步带来的放松和快乐，有助于减少压力和抑郁情绪。"
               )
             }}
           </div>
         </div>
         <div class="text-describe-title dd-fs-48-28">
-          {{ $t('download.超慢跑节拍器指南：') }}
+          {{ $t("download.超慢跑节拍器指南：") }}
         </div>
         <div class="text-describe-content dd-fs-20">
-          <div class="text">{{ $t('download.-步频调音器-') }}</div>
+          <div class="text">{{ $t("download.-步频调音器-") }}</div>
           <div class="text">
             {{
               $t(
-                'download.支持步频调节，根据您的日常习惯选择你的跑步步频，包含爆火的180步频慢跑、150步频、200步频等经典步频，还有几十种不同速度的步频，不管你是骑自行车踏频，还是健走，还是快跑，总有一款适合你，快定制你的跑步节拍吧'
+                "download.支持步频调节，根据您的日常习惯选择你的跑步步频，包含爆火的180步频慢跑、150步频、200步频等经典步频，还有几十种不同速度的步频，不管你是骑自行车踏频，还是健走，还是快跑，总有一款适合你，快定制你的跑步节拍吧"
               )
             }}
           </div>
-          <div class="text">{{ $t('download.-超慢跑节拍-') }}</div>
+          <div class="text">{{ $t("download.-超慢跑节拍-") }}</div>
           <div class="text">
             {{
               $t(
-                'download.超多跑步节拍音乐供选择，跟着节拍一步一步跑，不伤膝盖。音乐与节拍的结合，边跑步边享受，让跑步充满乐趣~'
+                "download.超多跑步节拍音乐供选择，跟着节拍一步一步跑，不伤膝盖。音乐与节拍的结合，边跑步边享受，让跑步充满乐趣~"
               )
             }}
           </div>
-          <div class="text">{{ $t('download.-计步器-') }}</div>
+          <div class="text">{{ $t("download.-计步器-") }}</div>
           <div class="text">
             {{
               $t(
-                'download.你只管跑，数据交给我们，每次慢跑都会帮你记录步数、公里数、消耗的卡路里、跑步时间~'
+                "download.你只管跑，数据交给我们，每次慢跑都会帮你记录步数、公里数、消耗的卡路里、跑步时间~"
               )
             }}
           </div>
-          <div class="text">{{ $t('download.倒数计时器-') }}</div>
+          <div class="text">{{ $t("download.倒数计时器-") }}</div>
           <div class="text">
             {{
               $t(
-                'download.每天一个小目标，设置锻炼时间，即可启动超慢跑计时器，定时提醒！'
+                "download.每天一个小目标，设置锻炼时间，即可启动超慢跑计时器，定时提醒！"
               )
             }}
           </div>
-          <div class="text">{{ $t('download.-数据分析-') }}</div>
+          <div class="text">{{ $t("download.-数据分析-") }}</div>
           <div class="text">
             {{
               $t(
-                'download.詳細記錄您的跑步數據，包括速度、步頻、跑步時間和消耗的卡路里，並通過圖表和分析報告展示您的進步。'
+                "download.詳細記錄您的跑步數據，包括速度、步頻、跑步時間和消耗的卡路里，並通過圖表和分析報告展示您的進步。"
               )
             }}
           </div>
-          <div class="text">{{ $t('download.-定制通知-') }}</div>
+          <div class="text">{{ $t("download.-定制通知-") }}</div>
           <div class="text">
             {{
               $t(
-                'download.想运动又怕忘记怎么办？超慢跑节拍器支持定制通知哦，周一到周日每天都可以设置运动提醒，到点定时运动提醒，不怕忘记~'
+                "download.想运动又怕忘记怎么办？超慢跑节拍器支持定制通知哦，周一到周日每天都可以设置运动提醒，到点定时运动提醒，不怕忘记~"
               )
             }}
           </div>
-          <div class="text">{{ $t('download.-免费无广-') }}</div>
+          <div class="text">{{ $t("download.-免费无广-") }}</div>
           <div class="text">
-            {{ $t('download.绿色安全，纯粹无广，免费哒！冲鸭~') }}
+            {{ $t("download.绿色安全，纯粹无广，免费哒！冲鸭~") }}
           </div>
           <div class="text">
             {{
               $t(
-                'download.一天15分鐘，不喘不累、強化心肺，不管你要锻炼身体，还是要健身减肥，超慢跑节拍器都是你不二选择，冲鸭~'
+                "download.一天15分鐘，不喘不累、強化心肺，不管你要锻炼身体，还是要健身减肥，超慢跑节拍器都是你不二选择，冲鸭~"
               )
             }}
           </div>
           <div class="text">
-            {{ $t('download.立即下载，改变从现在开始！') }}
+            {{ $t("download.立即下载，改变从现在开始！") }}
           </div>
         </div>
       </div>
@@ -251,21 +263,23 @@
   </div>
 </template>
 <script lang="ts" setup>
-setPageLayout('default')
-const popover = ref(null)
-const visible = ref(false)
+import BannerCard from "~/components/pages/banner/BannerCard.vue";
+
+setPageLayout("default");
+const popover = ref(null);
+const visible = ref(false);
 // 鼠标悬停时显示
 const showPopover = () => {
-  visible.value = true
-}
+  visible.value = true;
+};
 const hidePopover = () => {
-  visible.value = false
-}
+  visible.value = false;
+};
 // 点击时切换显示状态
 const togglePopover = () => {
-  console.log('惦记了')
-  visible.value = true
-}
+  console.log("惦记了");
+  visible.value = true;
+};
 // import BwButton from "~/components/base/BwButton.vue";
 </script>
 <style lang="scss" scoped>

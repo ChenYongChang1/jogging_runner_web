@@ -13,7 +13,7 @@
         ]"
       />
       <h1
-        class="dd-fs-36 tw-font-[600] tw-leading-[55px] max-md:tw-leading-[36px] max-md:tw-mb-[22px] tw-mb-[30px]"
+        class="dd-fs-36 tw-font-[600] tw-leading-[55px] max-md:tw-leading-[36px] max-md:tw-mb-[22px] tw-mb-[25px]"
       >
         {{ articleInfo.title }}
       </h1>
