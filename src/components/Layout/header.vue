@@ -136,7 +136,7 @@
           </nuxt-link>
 
           <!-- 移动端语言切换 -->
-          <el-dropdown
+          <!-- <el-dropdown
             popper-class="language-dropdown"
             class="language-dropdown tw-block tw-px-4 tw-py-3"
             @command="changeLanguage"
@@ -166,7 +166,7 @@
                 >
               </el-dropdown-menu>
             </template>
-          </el-dropdown>
+          </el-dropdown> -->
         </div>
       </el-drawer>
     </div>
@@ -193,7 +193,9 @@ const menuItems = computed(() => [
 ]);
 
 const language = computed(() => i18n.locale.value);
-const currentPath = computed(() => route.path);
+const currentPath = computed(() =>
+  menuItems.value.map((i) => i.path).includes(route.path) ? route.path : "/"
+);
 const languageName = computed(() => {
   const languageRow =
     languageList.find((item) => item.value === language.value) ||

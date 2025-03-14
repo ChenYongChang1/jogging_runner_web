@@ -10,9 +10,9 @@ export const searchPush = (world?: string) => {
   if (world && world.trim()) {
     const searchWorld = encodeURIComponent(world);
     navigateTo(getRouteLink(`/search?kw=${searchWorld}`));
-    return;
+    // return;
   }
-  navigateTo(getRouteLink(`/search`));
+  // navigateTo(getRouteLink(`/search`));
 };
 
 export const getWatchQueryFunc = (queryKey: string[], call: () => any) => {

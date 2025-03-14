@@ -14,7 +14,7 @@
         loading="lazy"
       />
       <span class="tw-text-[14px] tw-font-[500] tw-text-text999"
-        >{{ article.visitNum }}{{ $t('common.人看过') }}</span
+        >{{  setVisitNum(article.visitNum) }}{{ $t('common.人看过') }}</span
       >
     </div>
   </div>

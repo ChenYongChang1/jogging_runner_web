@@ -10,13 +10,15 @@
     <h1 class="tw-text-basecolor tw-font-[500] tw-text-[1.25rem] tw-mb-[1rem]">
       {{ articleInfo.title }}
     </h1> -->
-    <div v-html="contentHtml"></div>
+    <!-- <div v-html="contentHtml"></div> -->
+    <bw-article-content :content="contentHtml"></bw-article-content>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { getArticleInfo } from "~/composables/api/home";
 import { genreContent } from "~/composables/goods/useGoods";
+import BwArticleContent from "@/components/article/BwArticleContent.vue";
 const route = useRoute();
 const id = route.params.id;
 const articleInfo = ref({});
@@ -29,7 +31,7 @@ const contentHtml = computed(() =>
   genreContent(articleInfo.value?.content || "", articleInfo.value.relGoods)
 );
 
-await getArticleInfoById()
+await getArticleInfoById();
 </script>
 
 <style lang="scss" scoped></style>

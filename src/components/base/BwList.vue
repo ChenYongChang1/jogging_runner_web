@@ -1,11 +1,12 @@
 <template>
   <div class="bwList tw-mx-auto">
-    <div
-      class="bw-list-main dd-container-list"
-      v-loading="loading"
-    >
-      <bw-list-main :tableList="tableList" />
-    </div>
+    <BwCountNumReset :list="tableList">
+      <template #default="{ computedList }">
+        <div class="bw-list-main dd-container-list" v-loading="loading">
+          <bw-list-main :tableList="computedList" />
+        </div>
+      </template>
+    </BwCountNumReset>
     <div class="tw-flex tw-justify-end tw-mt-[42px] max-md:tw-mt-[24px]">
       <BwPagination
         :current-page="currentPage"
@@ -43,11 +44,14 @@ const getList = async () => {
   loading.value = true; // 请求开始时设置 loading
 
   try {
-    const data = await getSearchInfo({
-      page: currentPage.value,
-      alias: "",
-      keyword: props.searchValue,
-    }, { ssr: typeof window !== "undefined" });
+    const data = await getSearchInfo(
+      {
+        page: currentPage.value,
+        alias: "",
+        keyword: props.searchValue,
+      },
+      { ssr: typeof window !== "undefined" }
+    );
 
     totalPage.value = data?.totalPage;
     currentPage.value = data?.page;

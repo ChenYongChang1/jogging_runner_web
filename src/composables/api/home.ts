@@ -55,11 +55,14 @@ export const getCategory = async () => {
 };
 
 // 搜索/分类的接口 首页列表也是这个
-export const getSearchInfo = async (params: {
-  alias?: string;
-  keyword?: string;
-  page?: number;
-}, options: { ssr: boolean }) => {
+export const getSearchInfo = async (
+  params: {
+    alias?: string;
+    keyword?: string;
+    page?: number;
+  },
+  options: { ssr: boolean }
+) => {
   const result = await useFetchGet("/api/jogging/wb/article", params, options);
 
   return result.data.value?.data;
@@ -265,8 +268,18 @@ export const getSearchInfo = async (params: {
 // /jogging/wb/article/statistics/{id}
 export const excuteStatistics = async (id: string) => {
   const result = await useFetchGet(`/api/jogging/wb/article/statistics/${id}`);
-  return result.data.value?.data;
+  return result;
 };
+
+export const resetStatistics = async (ids: string[]) => {
+  if (!ids?.length) return {};
+  //
+  const result = await useFetchGet(
+    `/api/jogging/wb/article/statistics/${ids.join(",")}`
+  );
+  return result.data?.value?.data || {}
+};
+
 export const getArticleInfo = async (id: string) => {
   const result = await useFetchGet(`/api/jogging/wb/article/${id}`);
   return result.data.value?.data;

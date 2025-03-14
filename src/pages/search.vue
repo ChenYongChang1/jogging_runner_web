@@ -1,26 +1,35 @@
 <template>
   <div class="dd-content-padding">
     <div class="dd-container">
-      <div
-        class="search-box lg:tw-flex"
-      >
-        <div class="search-content xl:tw-pt-[56px] lg:tw-pt-[44px] ss:tw-pt-[32px]">
-          <search-empty v-if="!tableList.length"></search-empty>
-          <bw-article-card
-            v-for="item in tableList"
-            :key="`article-${item.id}`"
-            :article="item"
-            class="card-row-item"
-          ></bw-article-card>
-          <div class="tw-flex tw-justify-end tw-mt-[42px] max-md:tw-mt-[24px]">
-            <BwPagination
-              v-model:current-page="currentPage"
-              :page-count="pageCount"
-              @current-change="handleCurrentChange"
-            />
-          </div>
-        </div>
-        <div class="lg:tw-w-[33.9%] xl:tw-pl-[52px] lg:tw-pl-[30px] xl:tw-pt-[56px] lg:tw-pt-[44px] ss:tw-pt-[32px]">
+      <div class="search-box lg:tw-flex">
+        <BwCountNumReset :list="tableList">
+          <template #default="{ computedList }">
+            <div
+              class="search-content xl:tw-pt-[56px] lg:tw-pt-[44px] ss:tw-pt-[32px]"
+            >
+              <search-empty v-if="!computedList.length"></search-empty>
+              <bw-article-card
+                v-for="item in computedList"
+                :key="`article-${item.id}`"
+                :article="item"
+                class="card-row-item"
+              ></bw-article-card>
+              <div
+                class="tw-flex tw-justify-end tw-mt-[42px] max-md:tw-mt-[24px]"
+              >
+                <BwPagination
+                  v-model:current-page="currentPage"
+                  :page-count="pageCount"
+                  @current-change="handleCurrentChange"
+                />
+              </div>
+            </div>
+          </template>
+        </BwCountNumReset>
+
+        <div
+          class="lg:tw-w-[33.9%] xl:tw-pl-[52px] lg:tw-pl-[30px] xl:tw-pt-[56px] lg:tw-pt-[44px] ss:tw-pt-[32px]"
+        >
           <article-search-content
             v-model:searchWorld="searchWorld"
             :categoriesList="categoriesList"

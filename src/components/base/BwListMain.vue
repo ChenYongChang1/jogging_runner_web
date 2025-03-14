@@ -28,7 +28,7 @@
           :alt="item.title"
         />
         <span class="tw-text-[14px] tw-font-[500] tw-text-text999"
-          >{{ item.visitNum }}{{ $t("common.人看过") }}</span
+          >{{ setVisitNum(item.visitNum) }}{{ $t("common.人看过") }}</span
         >
       </div>
       <div class="tw-flex tw-justify-end">
