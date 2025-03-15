@@ -99,15 +99,15 @@
           @click="isMenuOpen = !isMenuOpen"
         >
           <img
-            v-if="!isEquipment && !scrollTop"
-            src="~/assets/images/morebtn.png"
+            v-if="isEquipment && !scrollTop"
+            src="~/assets/images/morebtn-black.png"
             :alt="$t('common.超慢跑')"
             loading="lazy"
             class="tw-w-[18px] tw-h-[18px]"
           />
           <img
             v-else
-            src="~/assets/images/morebtn-black.png"
+            src="~/assets/images/morebtn.png"
             :alt="$t('common.超慢跑')"
             loading="lazy"
             class="tw-w-[18px] tw-h-[18px]"
