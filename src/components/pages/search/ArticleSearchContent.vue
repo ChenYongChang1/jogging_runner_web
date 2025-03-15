@@ -6,26 +6,13 @@
       {{ $t("common.搜索") }}
     </div>
     <div class="tw-h-[64px] tw-w-full xl:tw-mb-[68px] ss:tw-mb-[2.75rem]">
-      <bw-input
-        v-model="searchWorld"
-        class="tw-h-[68px] tw-w-full"
-        :placeholder="$t('common.请输入您需要搜索的信息')"
-        @keydown.enter="search"
-      >
-        <template #append>
-          <BwButton :active="true" @click="search">
-            <div class="tw-flex">
-              <img
-                class="tw-w-[16px] tw-mr-[4px]"
-                src="@/assets/icon/Search.svg"
-                :alt="$t('common.超慢跑')"
-                loading="lazy"
-              />
-              <span> {{ $t("index.搜索") }}</span>
-            </div></BwButton
-          >
-        </template>
-      </bw-input>
+      <BwSearch 
+        class="tw-h-[68px] tw-w-full" 
+        key="article-search" 
+        :model-value="searchWorld"
+        @update:model-value="searchWorld = $event"
+        @search="search" 
+      />
     </div>
     <div
       class="dd-title-text tw-font-[500] tw-text-basecolor tw-leading-[50px] tw-mb-[28px]"
@@ -74,6 +61,8 @@
 <script lang="ts" setup>
 defineOptions({ name: "ArticleSearchContent" });
 import ArticleSmallRow from "./ArticleSmallRow.vue";
+import { ref } from 'vue';
+
 const props = defineProps({
   categoriesList: {
     type: Array,
@@ -84,9 +73,7 @@ const props = defineProps({
     default: () => [],
   },
 });
-const searchWorld = defineModel("searchWorld", {
-  type: String,
-});
+const searchWorld = ref('');
 
 const search = () => {
   searchPush(searchWorld.value);

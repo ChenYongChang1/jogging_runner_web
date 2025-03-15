@@ -68,6 +68,7 @@ const handleClear = () => {
 }
 
 .bw-input-field {
+  width: 90%;
   border: none;
   outline: none;
   flex-grow: 1;

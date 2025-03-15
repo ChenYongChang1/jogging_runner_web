@@ -53,32 +53,13 @@
     <div
       class="search-input lg:tw-h-[68px] max-lg:tw-h-[54px] tw-mb-[68px] max-lg:tw-mb-[28px] dd-container tw-mx-auto"
     >
-      <BwInput
-        class="tw-h-[100%]"
-        v-model="searchValue"
-        :placeholder="$t('common.请输入您需要搜索的信息')"
-        @keyup.enter="handleSearch"
-      >
-        <template #append>
-          <BwButton
-            @click="handleSearch"
-            class="max-lg:tw-h-[40px] lg:tw-h-[46px] tw-flex tw-items-center"
-            :active="true"
-          >
-            <div class="tw-flex tw-items-center">
-              <img
-                class="tw-w-[26px] tw-mr-[8px] max-md:tw-mr-[0]"
-                src="@/assets/icon/search-pc.svg"
-                loading="lazy"
-                :alt="$t('index.超慢跑')"
-              />
-              <span class="max-md:tw-hidden tw-text-[20px] tw-font-[500]">{{
-                $t("index.搜索")
-              }}</span>
-            </div>
-          </BwButton>
-        </template>
-      </BwInput>
+    <BwSearch 
+      class="tw-h-[68px] tw-w-full" 
+      key="index" 
+      :model-value="searchValue"
+      @update:model-value="searchValue = $event"
+      @search="handleSearch" 
+    />
     </div>
     <!-- pc端list -->
     <bw-list
