@@ -123,9 +123,10 @@ const handleClickType = (type: DownloadType, index: number) => {
       'https://apps.apple.com/app/apple-store/id6502583295?pt=126570476&ct=webtoapp&mt=8',
     'google-play':
       'https://play.google.com/store/apps/details?id=joggingtracker.joglog.metronome',
-    android: 'https://chaomanpao.com/jogging/share.html',
+    'android': 'https://chaomanpao.com/jogging/share.html',
   }
   if (isMdOrLarger) {
+    console.log(window.innerWidth, isMdOrLarger, '--------')
     // 在桌面端点击 App Store 图标时显示二维码弹窗
     downloadImgs.value[index].visible = true
   } else {

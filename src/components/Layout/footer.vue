@@ -44,14 +44,14 @@
       class="website-approve tw-mx-[24px] tw-mt-[25px] tw-rounded-[24px] max-md:tw-mb-[10px]"
       style="background-color: #1e293b"
     >
-      <div class="website-approve-pc tw-pt-[93px] tw-pb-[78px] tw-text-center">
+      <div class="website-approve-pc tw-pt-[93px] tw-pb-[78px] tw-text-center max-sm:tw-px-[48px] max-sm:tw-py-[105px]">
         <p
-          class="tw-text-[#fff] tw-text-[22px] tw-font-[500] tw-leading-[20px] tw-mb-[33px]"
+          class="tw-text-[#fff] dd-fs-22-14 tw-tracking-[-0.3%] tw-font-[500] tw-leading-[20px] tw-mb-[33px] max-sm:tw-mb-[16px]"
         >
           The Wind Technology Co., Ltd. © 2025 All rights reserved.
         </p>
         <p
-          class="tw-text-[#fff] tw-text-[22px] tw-font-[500] tw-leading-[20px]"
+          class="tw-text-[#fff] dd-fs-22-14 tw-font-[500] tw-leading-[20px]"
         >
           {{ $t('common.网站备案号：沪ICP备2024086239号-2') }}
         </p>

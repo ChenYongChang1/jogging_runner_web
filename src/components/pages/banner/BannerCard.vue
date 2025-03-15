@@ -27,13 +27,12 @@
                 @click="togglePopover"
               >
                 <span class="tw-text-[18px]">{{ $t("index.下载APP") }}</span>
-                <el-icon class="tw-ml-[4px] tw-font-[500]"
-                  ><img
-                    src="@/assets/icon/pc-download.svg"
-                    class="tw-w-[24px]"
-                    loading="lazy"
-                    :alt="$t('index.超慢跑')" /></el-icon
-              ></BwButton>
+                <img
+                  src="@/assets/icon/pc-download.svg"
+                  class="tw-w-[24px] tw-ml-[4px]"
+                  loading="lazy"
+                  :alt="$t('index.超慢跑')"
+              /></BwButton>
             </template>
             <div
               class="popover-download tw-flex tw-flex-col tw-items-center tw-justify-center"

@@ -37,10 +37,10 @@
             type="border"
             class="tw-w-[141px] tw-text-center tw-h-[46px] tw-pl-[22px] tw-pr-[13px]"
           >
-            <div class="tw-flex tw-justify-center tw-h-[46px]">
-              <span class="tw-mr-[6px] tw-leading-[46px]">{{
+            <div class="tw-flex tw-justify-center tw-items-center tw-h-[46px]">
+              <div class="tw-mr-[6px] tw-text-[20px] tw-font-[500] tw-leading-[100%]">{{
                 $t("common.阅读全文")
-              }}</span>
+              }}</div>
               <img
                 src="@/assets/icon/to-right.svg"
                 loading="lazy"

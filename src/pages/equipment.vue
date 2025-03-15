@@ -8,12 +8,12 @@
           <div
             class="header-text-one tw-text-[#fff] dd-fs-84 tw-font-[400] tw-leading-[94px] tw-mb-[18px] dd-runner-font"
           >
-            {{ $t('equipment.Roomfit超慢跑') }}
+            {{ $t("equipment.Roomfit超慢跑") }}
           </div>
           <div
             class="context-text-two tw-text-[#fff] dd-fs-42 tw-font-[500] tw-leading-[50px]"
           >
-            {{ $t('equipment.为超慢跑而生的运动品牌') }}
+            {{ $t("equipment.为超慢跑而生的运动品牌") }}
           </div>
         </div>
       </div>
@@ -26,49 +26,59 @@
           <div
             class="tw-text-[#4a4a4a] dd-fs-46 tw-font-[600] tw-leading-[50px] tw-mr-[10px]"
           >
-            {{ $t('equipment.扫码查看详情') }}
+            {{ $t("equipment.扫码查看详情") }}
           </div>
-          <img
-            src="@/assets/images/up-down.png"
-            loading="lazy"
-            :alt="$t('equipment.超慢跑')"
-            class="tw-w-[42px] tw-h-[42px]"
-          />
+          <div class="erweima-image tw-p-[11px] max-sm:tw-p-[9px]">
+            <img
+              src="@/assets/images/up-down.png"
+              loading="lazy"
+              :alt="$t('equipment.超慢跑')"
+              class="tw-w-[42px] tw-h-[42px]"
+            />
+          </div>
         </div>
         <div
           class="equipment-main tw-w-full tw-flex tw-items-center tw-justify-between sm:tw-flex-row tw-flex-col"
         >
+          <div
+            class="equipment-main-item tw-mb-[44px] tw-w-[342px] max-sm:tw-w-[252px]"
+          >
+            <div
+              class="title dd-fs-36-32 tw-leading-[56px] tw-tracking-[-2%] tw-mb-[33px] max-sm:tw-mb-[27px] tw-text-basecolor"
+            >
+              {{ $t("equipment.微信小店") }}
+            </div>
+            <div class="erweima-image tw-p-[11px] max-sm:tw-p-[9px]">
+              <img
+                src="@/assets/images/weixin.png"
+                loading="lazy"
+                class="tw-w-[100%] img-shadow"
+                :alt="$t('equipment.超慢跑')"
+              />
+            </div>
+          </div>
+          <div
+            class="equipment-main-item tw-mb-[44px] tw-w-[342px] max-sm:tw-w-[252px]"
+          >
+            <div
+              class="title dd-fs-36-32 tw-leading-[56px] tw-tracking-[-2%] tw-mb-[33px] max-sm:tw-mb-[27px] tw-text-basecolor"
+            >
+              {{ $t("equipment.抖音小店") }}
+            </div>
+            <div class="erweima-image tw-p-[11px] max-sm:tw-p-[9px]">
+              <img
+                src="@/assets/images/douyin.png"
+                class="tw-w-[100%] img-shadow"
+                loading="lazy"
+                :alt="$t('equipment.超慢跑')"
+              />
+            </div>
+          </div>
           <div class="equipment-main-item tw-w-[342px] max-sm:tw-w-[252px]">
             <div
-              class="title dd-fs-36 tw-leading-[56px] max-md:tw-leading-[24px] tw-mb-[33px]"
+              class="title dd-fs-36-32 tw-leading-[56px] tw-tracking-[-2%] tw-mb-[33px] max-sm:tw-mb-[27px] tw-text-basecolor"
             >
-              {{ $t('equipment.微信小店') }}
-            </div>
-            <img
-              src="@/assets/images/weixin.png"
-              loading="lazy"
-              class="tw-w-[100%] img-shadow"
-              :alt="$t('equipment.超慢跑')"
-            />
-          </div>
-          <div class="equipment-main-item  tw-w-[342px] max-sm:tw-w-[252px]">
-            <div
-              class="title dd-fs-36 tw-leading-[56px] max-md:tw-leading-[24px] tw-mb-[33px]"
-            >
-              {{ $t('equipment.抖音小店') }}
-            </div>
-            <img
-              src="@/assets/images/douyin.png"
-              class="tw-w-[100%] img-shadow"
-              loading="lazy"
-              :alt="$t('equipment.超慢跑')"
-            />
-          </div>
-          <div class="equipment-main-item  tw-w-[342px] max-sm:tw-w-[252px]">
-            <div
-              class="title dd-fs-36 tw-leading-[56px] max-md:tw-leading-[24px] tw-mb-[33px]"
-            >
-              {{ $t('equipment.小红书小店') }}
+              {{ $t("equipment.小红书小店") }}
             </div>
             <img
               src="@/assets/images/xiaohongshu.png"
@@ -83,12 +93,12 @@
   </div>
 </template>
 <script setup>
-setPageLayout('default')
+setPageLayout("default");
 </script>
 <style lang="scss" scoped>
 .equipment {
   .equipment-introduce-pc {
-    background-image: url('@/assets/images/equipment-bg.png'); /* 路径根据实际文件位置修改 */
+    background-image: url("@/assets/images/equipment-bg.png"); /* 路径根据实际文件位置修改 */
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -113,5 +123,8 @@ setPageLayout('default')
       }
     }
   }
+}
+.erweima-image {
+  box-shadow: 0px 13px 26.1px 0px #0000000a, 0px -8px 20.9px 0px #00000005;
 }
 </style>

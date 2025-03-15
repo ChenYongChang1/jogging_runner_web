@@ -38,6 +38,11 @@ $fontSizes: (
     17,
     18,
   ),
+  "22-14": (
+    14,
+    18,
+    22,
+  ),
   "20-12": (
     12,
     16,
@@ -57,6 +62,11 @@ $fontSizes: (
     20,
     28,
     34,
+  ),
+  '36-32': (
+    32,
+    34,
+    36,
   ),
   36: (
     24,
@@ -117,4 +127,11 @@ $fontSizes: (
 
 .el-popover.el-popper {
   min-width: unset;
+}
+
+.download-app-btn {
+  span {
+    font-weight: 600;
+    line-height: 22px;
+  }
 }

@@ -9,7 +9,7 @@
           class="home-tabar-list-pc tw-grid tw-grid-cols-2 lg:tw-grid-cols-4 tw-gap-4 dd-container tw-transform tw-mx-auto tw-translate-y-[-75px] max-lg:tw-translate-y-0"
         >
           <div
-            class="tabar-item tw-relative tw-rounded-[24px] tw-pt-[32px] tw-pb-[4px] tw-pl-[16px] tw-pr-[10px]"
+            class="tabar-item tw-relative tw-rounded-[24px] tw-pt-[32px] tw-pb-[4px] max-md:tw-pt-[23px] max-md:tw-pl-[10px] max-md:tw-pr-[6px] max-md:tw-pb-[4px] tw-pl-[16px] tw-pr-[10px]"
             v-for="(item, index) in tabarList"
             :key="index"
             :style="{
@@ -20,7 +20,7 @@
             }"
           >
             <div
-              class="tabar-item-text dd-fs-34 tw-font-[700] tw-leading-[47.6px] tw-text-[#333]"
+              class="tabar-item-text dd-fs-34 tw-font-[700] tw-mb-[3px] max-md:tw-font-[500] max-md:tw-mb-[6px] max-md:tw-leading-[20px] tw-leading-[47.6px] tw-text-[#333]"
             >
               {{ item.name }}
             </div>
@@ -33,7 +33,7 @@
                     background: item.buttonColor,
                     borderColor: item.buttonColor,
                   }"
-                  class="tw-w-[132px] tw-h-[46px] tw-rounded-[30px] tw-leading-[46px] max-md:tw-w-[98px] max-md:tw-h-[30px!important] max-md:tw-leading-[28px!important] max-xsm:tw-w-[78px] max-xsm:tw-h-[27px] max-sxm:tw-leading-[27px] dd-fs-20-12 max-xsm:tw-px-[8px] tw-text-center"
+                  class="tw-w-[132px] tw-h-[46px] tw-rounded-[30px] tw-leading-[46px] max-md:tw-w-[78px] max-md:tw-px-[14px] max-md:tw-h-[30px!important] max-md:tw-leading-[28px!important] max-xsm:tw-w-[78px] max-xsm:tw-h-[27px] max-sxm:tw-leading-[27px] dd-fs-20-12 max-xsm:tw-px-[14px] tw-text-center"
                   :active="true"
                   >{{ $t("home.点击查看") }}</bw-button
                 >
