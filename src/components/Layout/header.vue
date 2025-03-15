@@ -71,10 +71,9 @@
                   loading="lazy"
                   v-if="isEquipment && !scrollTop"
                   src="@/assets/icon/ArrowDown.svg"
-                  :alt="$t('common.超慢跑')"
-              />
-              <img
-                v-else
+                  :alt="$t('common.超慢跑')" />
+                <img
+                  v-else
                   loading="lazy"
                   src="@/assets/icon/ArrowDown-gray.svg"
                   :alt="$t('common.超慢跑')"
@@ -205,7 +204,9 @@ const menuItems = computed(() => [
 
 const language = computed(() => i18n.locale.value);
 const currentPath = computed(() =>
-  menuItems.value.map((i) => i.path).includes(route.path) ? route.path : "/"
+  getRouteLink(
+    menuItems.value.map((i) => i.path).includes(route.path) ? route.path : "/"
+  )
 );
 const languageName = computed(() => {
   const languageRow =
@@ -264,6 +265,7 @@ const goHome = () => {
       background: transparent;
       border-color: #e5e7eb;
       color: #4a4a4a;
+      outline: none;
       // background: #61cd57;
       // border-color: #61cd57;
 
@@ -271,6 +273,9 @@ const goHome = () => {
         background: #61cd57;
         border-color: #61cd57;
         color: white;
+        span {
+          color: white;
+        }
         img {
           filter: brightness(0) invert(1); // 将图标改为白色
         }

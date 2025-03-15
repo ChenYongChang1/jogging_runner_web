@@ -9,7 +9,14 @@
   src: url("https://static.chaomanpao.com/wb/resource/font/YouSheBiaoTiYuan-2.otf");
 }
 .dd-runner-font {
-  font-family: "runner-font";
+  font-family: "runner-font"; /* 如果 "runner-font" 不存在，则使用 sans-serif 字体 */
+  // font-weight: bold;
+}
+html[lang="zht"] {
+  .dd-runner-font {
+    font-family: sans-serif;
+    font-weight: bold;
+  }
 }
 html {
   // font-size: 4.2vw; /* 根据视口宽度设置字体大小 */
@@ -27,7 +34,6 @@ html {
 
 .dd-container-list-left {
   @apply tw-grid xl:tw-grid-cols-2 tw-gap-[40px] md:tw-grid-cols-2 max-md:tw-grid-cols-1;
-
 }
 .dd-content-padding {
   @apply md:tw-pt-[88px] max-md:tw-pt-[82px];
@@ -68,7 +74,7 @@ $fontSizes: (
     28,
     34,
   ),
-  '36-32': (
+  "36-32": (
     32,
     34,
     36,
@@ -103,7 +109,7 @@ $fontSizes: (
     70,
     84,
   ),
-  '84-44': (
+  "84-44": (
     44,
     48,
     84,

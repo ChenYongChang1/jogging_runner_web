@@ -277,6 +277,7 @@ export const resetStatistics = async (ids: string[]) => {
   const result = await useFetchGet(
     `/api/jogging/wb/article/statistics/${ids.join(",")}`
   );
+  
   return result.data?.value?.data || {}
 };
 

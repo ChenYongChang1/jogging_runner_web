@@ -2,6 +2,7 @@ import { languageList } from "~/assets/js/const";
 
 export default defineNuxtRouteMiddleware((to, from) => {
   // isAuthenticated()是一个验证用户是否已经认证的示例方法
+  
   const router = useRouter();
   if (!to.matched?.length) {
     setPageLayout("error");
@@ -14,6 +15,7 @@ export default defineNuxtRouteMiddleware((to, from) => {
     setPageLayout("error");
     return navigateTo("/404");
   }
+  // lang
   if (to.path.includes("moblie/info")) {
     setPageLayout("none");
   } else {

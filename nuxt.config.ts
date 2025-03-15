@@ -10,7 +10,7 @@ export default defineNuxtConfig({
   app: {
     baseURL: "/",
     head: {
-      title: '超慢跑',
+      title: "超慢跑",
       script: [
         // {
         //   src: "//unpkg.com/vconsole@latest/dist/vconsole.min.js",
@@ -18,11 +18,9 @@ export default defineNuxtConfig({
         // },
         // { innerHTML: "new VConsole()" },
       ],
-      htmlAttrs: {
-        lang: "zh",
-      },
+      htmlAttrs: {},
       viewport: "width=device-width, initial-scale=1, viewport-fit=cover",
-      link: [],
+      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
     },
   },
 
@@ -75,7 +73,6 @@ export default defineNuxtConfig({
     },
   ],
 
-
   vite: {
     resolve: {
       alias: {},
@@ -110,8 +107,6 @@ export default defineNuxtConfig({
   build: {
     // analyze: true,
   },
-
- 
 
   compatibilityDate: "2025-03-05",
 });

@@ -12,7 +12,7 @@ const mergeLanguage = (o, o2) => {
       }
     }
   }
-  return obj
+  return obj;
 };
 const result = defineI18nConfig(() => ({
   legacy: false, // 是否兼容之前
