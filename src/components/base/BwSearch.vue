@@ -1,7 +1,6 @@
 <template>
   <bw-input
-    :model-value="modelValue"
-    @update:model-value="(value) => emit('update:modelValue', value)"
+    v-model="searchWorld"
     class="bw-search"
     :placeholder="$t('common.请输入您需要搜索的信息')"
     @keydown.enter="search"
@@ -21,21 +20,18 @@
     </template>
   </bw-input>
 </template>
-
 <script setup lang="ts">
-import { defineEmits, defineProps } from 'vue'
+import { ref, defineModel } from 'vue'
 
-const props = defineProps<{
-  modelValue: string
-}>()
-
-const emit = defineEmits(['update:modelValue', 'search'])
+const searchWorld = defineModel<string>('searchWorld');
+const emit = defineEmits(['search'])
 
 const search = () => {
   emit('search')
 }
-</script>
 
+
+</script>
 <style lang="scss" scoped>
 .bw-search {
   @apply tw-h-[68px] tw-w-full;

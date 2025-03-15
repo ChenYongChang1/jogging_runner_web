@@ -6,13 +6,7 @@
       {{ $t("common.搜索") }}
     </div>
     <div class="tw-h-[64px] tw-w-full xl:tw-mb-[68px] ss:tw-mb-[2.75rem]">
-      <BwSearch 
-        class="tw-h-[68px] tw-w-full" 
-        key="article-search" 
-        :model-value="searchWorld"
-        @update:model-value="searchWorld = $event"
-        @search="search" 
-      />
+      <BwSearch class="tw-h-[68px] tw-w-full" key="article-search" v-model:searchWorld="searchWorld" @search="search" />
     </div>
     <div
       class="dd-title-text tw-font-[500] tw-text-basecolor tw-leading-[50px] tw-mb-[28px]"
@@ -61,8 +55,6 @@
 <script lang="ts" setup>
 defineOptions({ name: "ArticleSearchContent" });
 import ArticleSmallRow from "./ArticleSmallRow.vue";
-import { ref } from 'vue';
-
 const props = defineProps({
   categoriesList: {
     type: Array,
@@ -73,7 +65,9 @@ const props = defineProps({
     default: () => [],
   },
 });
-const searchWorld = ref('');
+const searchWorld = defineModel("searchWorld", {
+  type: String,
+});
 
 const search = () => {
   searchPush(searchWorld.value);

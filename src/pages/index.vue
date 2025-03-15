@@ -53,13 +53,7 @@
     <div
       class="search-input lg:tw-h-[68px] max-lg:tw-h-[54px] tw-mb-[68px] max-lg:tw-mb-[28px] dd-container tw-mx-auto"
     >
-    <BwSearch 
-      class="tw-h-[68px] tw-w-full" 
-      key="index" 
-      :model-value="searchValue"
-      @update:model-value="searchValue = $event"
-      @search="handleSearch" 
-    />
+    <BwSearch class="tw-h-[68px] tw-w-full" v-model:searchWorld="searchValue" key="index" @search="handleSearch" />
     </div>
     <!-- pc端list -->
     <bw-list
