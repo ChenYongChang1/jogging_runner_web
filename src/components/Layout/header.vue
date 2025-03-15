@@ -2,7 +2,7 @@
   <header
     class="layout-header tw-bg-white tw-shadow-sm border-b-1"
     :style="{
-      borderBottomColor: isEquipment ? '#424242' : '#F7F7F7',
+      borderBottomColor: isEquipment && !scrollTop ? '#424242' : '#F7F7F7',
     }"
   >
     <div class="container-custom tw-px-4 md:tw-px-6">
@@ -29,7 +29,7 @@
             </div>
             <div
               class="tw-text-xs md:tw-text-sm tw-text-[#ccc] tw-text-gray-500"
-              :class="{ 'tw-text-[white]': isEquipment }"
+              :class="{ 'tw-text-[white]': isEquipment && !scrollTop }"
             >
               chaomanpao.com
             </div>
@@ -44,7 +44,7 @@
             :to="getRouteLink(item.path)"
             :class="[
               'navBtn',
-              isEquipment ? 'navBtn-equipment' : '',
+              isEquipment && !scrollTop ? 'navBtn-equipment' : '',
               { active: currentPath === getRouteLink(item.path) },
             ]"
           >
@@ -61,10 +61,20 @@
               type="primary"
               round
               class="languageBtn tw-flex tw-items-center tw-text-sm"
+              :style="{
+                color: isEquipment && !scrollTop ? '#fff' : '#4a4a4a',
+              }"
             >
               {{ languageName
               }}<el-icon class="el-icon--right"
                 ><img
+                  loading="lazy"
+                  v-if="isEquipment && !scrollTop"
+                  src="@/assets/icon/ArrowDown.svg"
+                  :alt="$t('common.超慢跑')"
+              />
+              <img
+                v-else
                   loading="lazy"
                   src="@/assets/icon/ArrowDown-gray.svg"
                   :alt="$t('common.超慢跑')"
@@ -89,7 +99,7 @@
           @click="isMenuOpen = !isMenuOpen"
         >
           <img
-            v-if="!isEquipment"
+            v-if="!isEquipment && !scrollTop"
             src="~/assets/images/morebtn.png"
             :alt="$t('common.超慢跑')"
             loading="lazy"
@@ -104,7 +114,7 @@
           />
           <span
             class="tw-text-base"
-            :style="{ color: isEquipment ? '#fff' : '#4a4a4a' }"
+            :style="{ color: isEquipment && !scrollTop ? '#fff' : '#4a4a4a' }"
             >{{ $t("common.更多") }}</span
           >
         </div>
@@ -126,7 +136,7 @@
             :to="getRouteLink(item.path)"
             :class="[
               'navBtn-h5',
-              isEquipment ? 'navBtn-equipment' : '',
+              isEquipment && !scrollTop ? 'navBtn-equipment' : '',
               { active: currentPath === getRouteLink(item.path) },
             ]"
             class="tw-block tw-py-3 tw-px-4 tw-text-gray-500 hover:tw-bg-green-50 hover:tw-text-green-600 active:tw-bg-green-100 active:tw-text-green-700"
@@ -184,6 +194,7 @@ const route = useRoute();
 const isEquipment = computed(() => {
   return route.name.includes("equipment");
 });
+const scrollTop = defineModel("scrollTop");
 const isMenuOpen = ref(false);
 
 const menuItems = computed(() => [
@@ -211,7 +222,7 @@ const goHome = () => {
 </script>
 <style lang="scss" scoped>
 .layout-header {
-  border-bottom: 1px solid #424242;
+  border-bottom: 1.5px solid theme("colors.linecolor");
   z-index: 100;
   .navBtn {
     border-radius: 14px;

@@ -4,7 +4,7 @@
       class="tw-fixed tw-z-[1] tw-w-[100vw]"
       :class="{ 'tw-bg-[white]': scrollTop > 0 }"
     >
-      <Header />
+      <Header v-model:scrollTop="scrollTop" />
     </div>
     <div class="tw-flex-1">
       <slot></slot>

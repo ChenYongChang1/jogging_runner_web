@@ -18,10 +18,10 @@
         </div>
       </div>
       <div
-        class="equipment-content-pc dd-container tw-bg-[#fff] tw-mt-[80px] max-md:tw-mt-[44px]"
+        class="equipment-content-pc dd-container tw-w-full tw-bg-[#fff] tw-mt-[80px] max-md:tw-mt-[44px]"
       >
         <div
-          class="title tw-flex max-sm:tw-justify-center tw-justify-left tw-items-center tw-mb-[48px] max-md:tw-mb-[32px]"
+          class="title tw-w-full tw-flex max-sm:tw-justify-center tw-justify-left tw-items-center tw-mb-[48px] max-md:tw-mb-[32px]"
         >
           <div
             class="tw-text-[#4a4a4a] dd-fs-46 tw-font-[600] tw-leading-[50px] tw-mr-[10px]"
@@ -36,9 +36,9 @@
           />
         </div>
         <div
-          class="equipment-main tw-flex tw-items-center tw-justify-between sm:tw-flex-row tw-flex-col"
+          class="equipment-main tw-w-full tw-flex tw-items-center tw-justify-between sm:tw-flex-row tw-flex-col"
         >
-          <div class="equipment-main-item tw-w[342px] max-sm:tw-w[252px]">
+          <div class="equipment-main-item tw-w-[342px] max-sm:tw-w-[252px]">
             <div
               class="title dd-fs-36 tw-leading-[56px] max-md:tw-leading-[24px] tw-mb-[33px]"
             >
@@ -51,7 +51,7 @@
               :alt="$t('equipment.超慢跑')"
             />
           </div>
-          <div class="equipment-main-item">
+          <div class="equipment-main-item  tw-w-[342px] max-sm:tw-w-[252px]">
             <div
               class="title dd-fs-36 tw-leading-[56px] max-md:tw-leading-[24px] tw-mb-[33px]"
             >
@@ -64,7 +64,7 @@
               :alt="$t('equipment.超慢跑')"
             />
           </div>
-          <div class="equipment-main-item">
+          <div class="equipment-main-item  tw-w-[342px] max-sm:tw-w-[252px]">
             <div
               class="title dd-fs-36 tw-leading-[56px] max-md:tw-leading-[24px] tw-mb-[33px]"
             >

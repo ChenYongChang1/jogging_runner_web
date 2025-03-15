@@ -27,7 +27,7 @@
         >
           {{ $t("post.更多阅读") }}
         </div>
-        <div class="dd-container-list">
+        <div class="dd-container-list-left">
           <BwCountNumReset :list="articleInfo.recommends">
             <template #default="{ computedList }">
               <bw-list-main

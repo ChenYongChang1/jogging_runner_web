@@ -92,7 +92,7 @@
           >
             {{ $t("download.超慢跑超健康") }}
           </div>
-          <div class="describe-content-text dd-fs-30">
+          <div class="describe-content-text dd-fs-30 tw-text-basecolor tw-text-center">
             {{
               $t(
                 "download.超慢跑节拍器是为所有人设计的跑步步频节拍器，适合跑步初学者、健康减肥者、想要提高心肺功能、减少运动伤害的跑者。通过精准的节拍控制，超慢跑节拍器帮助您维持恒定的超慢跑步频，从而优化跑步效果，让您的每一步都充满节奏感和舒适感。"

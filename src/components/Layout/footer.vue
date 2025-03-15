@@ -8,27 +8,32 @@
       <div
         class="brief-introduction-pc dd-container sm:tw-flex lg:tw-items-start lg:tw-flex-row-reverse tw-flex-col tw-justify-center lg:tw-mb-[120px]"
       >
-        <div class="right-content lg:tw-w-[40.6%]">
+        <div class="right-content lg:tw-w-[40.6%] max-lg:tw-mb-[30px]">
           <div
             class="right-content-header max-lg:tw-text-center tw-text-[#4A4A4A] dd-fs-48 tw-font-[600] tw-leading-[56px] tw-text-left tw-pb-[17px]"
           >
             {{ $t('common.超慢跑') }}
           </div>
           <p
-            class="tw-text-[#666666] tw-text-[18px] tw-font-[500] tw-leading-[28.8px] tw-text-left"
+            class="tw-text-[#666666] dd-fs-18-16 tw-font-[500] tw-leading-[160%] tw-text-center"
           >
-            {{
-              $t(
-                'common.欢迎来到_超慢跑_，这里是超慢跑爱好者的专属家园！我们致力于全方位推广超慢跑，让这项运动被更多人认识和喜爱。在超慢跑内容方面，我们精心打造了丰富多元的资讯库。从跑者们的真实故事分享，到不同环境下超慢跑的独特体验，每一篇内容都饱含着对超慢跑的热爱，希望能给大家带来激励与启发。超慢跑科普是我们的重点板块。我们邀请专业的运动专家，深入浅出地讲解超慢跑的原理、益处，比如它如何提升心肺功能、增强关节灵活性，以及相较于其他运动，超慢跑在运动损伤风险上的优势，让大家科学地认识超慢跑。'
-              )
-            }}
+          欢迎来到 [超慢跑] ，这里是超慢跑爱好者的专属家园！我们致力于全方位推广超慢跑，让这项运动被更多人认识和喜爱。
           </p>
+          <p
+            class="tw-text-[#666666] dd-fs-18-16 tw-font-[500] tw-leading-[160%] tw-text-center"
+          >在超慢跑内容方面，我们精心打造了丰富多元的资讯库。从跑者们的真实故事分享，到不同环境下超慢跑的独特体验，每一篇内容都饱含着对超慢跑的热爱，希望能给大家带来激励与启发。超慢跑科普是我们的重点板块。
+          </p>
+          <p
+            class="tw-text-[#666666] dd-fs-18-16 tw-font-[500] tw-leading-[160%] tw-text-center"
+          >
+          我们邀请专业的运动专家，深入浅出地讲解超慢跑的原理、益处，比如它如何提升心肺功能、增强关节灵活性，以及相较于其他运动，超慢跑在运动损伤风险上的优势，让大家科学地认识超慢跑。          </p>
         </div>
         <img
           src="~assets/images/footer-introduction.png"
           :alt="$t('common.超慢跑')"
           loading="lazy"
-          class="lg:tw-w-[48%] lg:tw-mr-[9.4%] tw-w-full tw-mb-[2rem]"
+          style="box-shadow: 0px 6px 14px 0px #0000000A,0px -4px 14px 0px #0000000A;"
+          class="lg:tw-w-[48%] lg:tw-mr-[9.4%] tw-w-full tw-mb-[2rem] tw-rounded-[32px]"
         />
       </div>
     </div>

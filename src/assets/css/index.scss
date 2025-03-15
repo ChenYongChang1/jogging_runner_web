@@ -22,12 +22,22 @@ html {
   @apply xl:tw-w-[1280px] md:tw-w-[768px] lg:tw-w-[1000px] tw-mx-auto ss:tw-px-[1rem];
 }
 .dd-container-list {
-  @apply tw-grid xl:tw-grid-cols-3 tw-gap-[40px] sm:tw-grid-cols-2 max-sm:tw-grid-cols-1;
+  @apply tw-grid xl:tw-grid-cols-3 tw-gap-[40px] md:tw-grid-cols-2 max-md:tw-grid-cols-1;
+}
+
+.dd-container-list-left {
+  @apply tw-grid xl:tw-grid-cols-2 tw-gap-[40px] md:tw-grid-cols-2 max-md:tw-grid-cols-1;
+
 }
 .dd-content-padding {
   @apply md:tw-pt-[88px] max-md:tw-pt-[82px];
 }
 $fontSizes: (
+  "18-16": (
+    16,
+    17,
+    18,
+  ),
   "20-12": (
     12,
     16,
