@@ -1,6 +1,6 @@
 import { render, createVNode } from "vue";
 import BwGoodsRow from "./BwGoodsRow.vue";
-export const genreContent = (text: string, goodsList: any[]) => {
+export const genreContent = (text: string, goodsList: any[]= [{title: '123'}]) => {
   const { $i18n: i18n } = useNuxtApp();
   const $t = (...args) => i18n.t(...args);
   const goodsMap: { [k: string]: any } = {};

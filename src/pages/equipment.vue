@@ -38,7 +38,7 @@
           </div>
         </div>
         <div
-          class="equipment-main tw-w-full tw-flex tw-items-center tw-justify-between sm:tw-flex-row tw-flex-col"
+          class="equipment-main tw-mb-[-44px] tw-w-full tw-flex tw-items-center tw-justify-between sm:tw-flex-row tw-flex-col"
         >
           <div
             class="equipment-main-item tw-mb-[44px] tw-w-[342px] max-sm:tw-w-[252px]"
@@ -74,7 +74,7 @@
               />
             </div>
           </div>
-          <div class="equipment-main-item tw-w-[342px] max-sm:tw-w-[252px]">
+          <div class="equipment-main-item  tw-mb-[44px] tw-w-[342px] max-sm:tw-w-[252px]">
             <div
               class="title dd-fs-36-32 tw-leading-[56px] tw-tracking-[-2%] tw-mb-[33px] max-sm:tw-mb-[27px] tw-text-basecolor"
             >

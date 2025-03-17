@@ -1,18 +1,20 @@
 <template>
-  <img
-    v-if="mediaType === MediaType.image"
-    :src="src"
-    loading="lazy"
-    class="tw-w-full tw-object-contain tw-rounded-[8px] common-media hover:tw-scale-[1.1]"
-    :alt="alt"
-  />
-  <img
-    v-else-if="mediaType === MediaType.video"
-    :src="src"
-    loading="lazy"
-    class="tw-w-full tw-object-contain tw-rounded-[8px] video common-media hover:tw-scale-[1.1]"
-    :alt="alt"
-  />
+  <div class="tw-overflow-hidden">
+    <img
+      v-if="mediaType === MediaType.image"
+      :src="src"
+      loading="lazy"
+      class="tw-w-full tw-object-contain tw-rounded-[8px] common-media hover:tw-scale-[1.1]"
+      :alt="alt"
+    />
+    <img
+      v-else-if="mediaType === MediaType.video"
+      :src="src"
+      loading="lazy"
+      class="tw-w-full tw-object-contain tw-rounded-[8px] video common-media hover:tw-scale-[1.1]"
+      :alt="alt"
+    />
+  </div>
   <!-- <video
     v-else-if="mediaType === MediaType.video"
     class="tw-w-full tw-object-contain tw-rounded-[8px]"
@@ -59,7 +61,7 @@ const mediaType = computed(() => {
 </script>
 
 <style lang="scss" scoped>
-.common-media{
+.common-media {
   transition: transform 0.3s;
   transform-origin: center;
 }

@@ -18,7 +18,7 @@
       {{ article.desc || "" }}
     </div>
     <div
-      class="look-views lg:tw-flex tw-justify-between tw-items-center tw-flex-wrap ss:tw-mb-[1.125rem]"
+      class="look-views lg:tw-flex tw-justify-between tw-items-center tw-flex-wrap"
     >
       <div class="look-nums tw-flex max-lg:tw-mb-[1.125rem]">
         <img
@@ -36,8 +36,8 @@
           type="border"
           class="ss:tw-mx-auto lg:tw-mx-0 tw-w-fit btn-card"
         >
-          <div class="tw-flex">
-            <span class="tw-mr-[6px]">{{ $t("common.阅读全文") }}</span>
+          <div class="tw-flex tw-items-center">
+            <span class="tw-mr-[6px] tw-font-[500]">{{ $t("common.阅读全文") }}</span>
             <img
               src="@/assets/icon/to-right.svg"
               class="tw-w-[18px]"

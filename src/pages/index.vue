@@ -33,7 +33,7 @@
                     background: item.buttonColor,
                     borderColor: item.buttonColor,
                   }"
-                  class="tw-w-[132px] tw-h-[46px] tw-rounded-[30px] tw-leading-[46px] max-md:tw-w-[78px] max-md:tw-px-[14px] max-md:tw-h-[30px!important] max-md:tw-leading-[28px!important] max-xsm:tw-w-[78px] max-xsm:tw-h-[27px] max-sxm:tw-leading-[27px] dd-fs-20-12 max-xsm:tw-px-[14px] tw-text-center"
+                  class="look-more max-md:tw-h-[30px!important] max-md:tw-leading-[28px!important] max-xsm:tw-w-[78px] max-xsm:tw-h-[27px] max-sxm:tw-leading-[27px] dd-fs-20-12 max-xsm:tw-px-[14px]"
                   :active="true"
                   >{{ $t("home.点击查看") }}</bw-button
                 >
@@ -53,7 +53,12 @@
     <div
       class="search-input lg:tw-h-[68px] max-lg:tw-h-[54px] tw-mb-[68px] max-lg:tw-mb-[28px] dd-container tw-mx-auto"
     >
-    <BwSearch class="tw-h-[68px] tw-w-full" v-model:searchWorld="searchValue" key="index" @search="handleSearch" />
+      <BwSearch
+        class="tw-h-[68px] tw-w-full"
+        v-model:searchWorld="searchValue"
+        key="index"
+        @search="handleSearch"
+      />
     </div>
     <!-- pc端list -->
     <bw-list
@@ -148,6 +153,9 @@ useHead({
 });
 </script>
 <style lang="scss" scoped>
+.look-more {
+  @apply tw-w-[132px] tw-h-[46px] tw-rounded-[30px] tw-leading-[44px] max-md:tw-w-[78px] max-md:tw-px-[14px] tw-text-center;
+}
 .home-tabar {
   background: url("@/assets/images/home-bg.png") repeat-x center center;
   background-size: cover;

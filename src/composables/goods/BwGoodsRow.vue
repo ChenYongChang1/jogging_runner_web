@@ -79,6 +79,12 @@ const onTapBuyGoods = () => {
     color: #4f4f4f;
     line-height: 22px;
     margin-bottom: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    word-break: break-word;
+    -webkit-box-orient: vertical;
   }
   .goods-buy {
     width: 100%;
