@@ -24,18 +24,21 @@ defineProps({
 <style lang="scss" scoped>
 .bw-button {
   @apply tw-leading-[40px] tw-cursor-pointer;
+  &.disabled {
+    cursor: not-allowed;
+  }
   &.btn-default {
     @apply tw-border-[1px] tw-border-linecolor tw-border-solid tw-text-basecolor;
-    &:hover {
+    &:not(.disabled):hover {
       @apply tw-bg-themecolor tw-border-themecolor tw-text-[white];
     }
-    &.active {
+    &:not(.disabled).active {
       @apply tw-bg-themecolor tw-border-themecolor tw-text-[white];
     }
   }
   &.btn-border {
     @apply tw-border-themecolor tw-border-[1px] tw-border-solid tw-text-themecolor;
-    &:hover {
+    &:not(.disabled):hover {
       @apply tw-bg-themecolor tw-border-themecolor tw-text-[white];
     }
   }

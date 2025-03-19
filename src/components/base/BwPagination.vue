@@ -2,7 +2,10 @@
   <div class="custom-pagination" v-if="pageCount > 1">
     <bw-button
       type="border"
-      :class="['button-page', currentPage === 1 ? 'disabled' : '']"
+      :class="[
+        'button-page tw-h-[46px] height-line',
+        currentPage === 1 ? 'disabled' : '',
+      ]"
       :active="false"
       :disabled="currentPage === 1"
       @click="goToFirstPage"
@@ -11,7 +14,7 @@
     <bw-button
       type="border"
       :class="['button-page', currentPage === 1 ? 'disabled' : '']"
-      class="tw-text-center tw-w-[46px] tw-flex tw-justify-center tw-items-center"
+      class="tw-text-center page-btn tw-flex tw-justify-center tw-items-center"
       :active="false"
       @mouseenter="
         () => {
@@ -26,12 +29,16 @@
       :disabled="currentPage === 1"
       @click="goToPrevPage"
     >
-      <el-icon
-        ><img
-          v-if="isLeftHover && currentPage !== 1"
-          src="@/assets/icon/arrow-left.svg" />
-        <img v-else src="@/assets/icon/arrow-left-black.svg"
-      /></el-icon>
+      <img
+        v-if="isLeftHover && currentPage !== 1"
+        class="tw-h-[23px]"
+        src="@/assets/icon/to-left-black.svg"
+      />
+      <img
+        v-else
+        class="tw-h-[23px]"
+        src="@/assets/icon/to-left.svg"
+      />
     </bw-button>
     <client-only>
       <el-pagination
@@ -45,7 +52,7 @@
     <bw-button
       type="border"
       :class="['button-page', currentPage === totalPages ? 'disabled' : '']"
-      class="tw-text-center tw-w-[46px] tw-flex tw-justify-center tw-items-center"
+      class="tw-text-center page-btn tw-flex tw-justify-center tw-items-center"
       :active="false"
       :disabled="currentPage === totalPages"
       @mouseenter="
@@ -60,16 +67,23 @@
       "
       @click="goToNextPage"
     >
-      <el-icon>
-        <img
-          v-if="isRightHover && currentPage !== totalPages"
-          src="@/assets/icon/arrow-right.svg" />
-        <img v-else src="@/assets/icon/arrow-right-black.svg"
-      /></el-icon>
+      <img
+        v-if="isRightHover && currentPage !== totalPages"
+        class="tw-h-[23px]"
+        src="@/assets/icon/to-right2-black.svg"
+      />
+      <img
+        v-else
+        class="tw-h-[23px]"
+        src="@/assets/icon/to-right2.svg"
+      />
     </bw-button>
     <bw-button
       type="border"
-      :class="['button-page', currentPage === totalPages ? 'disabled' : '']"
+      :class="[
+        'button-page tw-h-[46px] height-line',
+        currentPage === totalPages ? 'disabled' : '',
+      ]"
       :active="false"
       :disabled="currentPage === totalPages"
       @click="goToLastPage"
@@ -153,10 +167,15 @@ const handleCurrentChange = (newPage) => {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 22px;
   .button-page {
     border-color: #c0c4cc;
     color: #4a4a4a;
+    &.height-line {
+      @apply tw-leading-[44px] tw-px-[16px];
+    }
+  }
+  .button-page:not(.disabled) {
     &:hover,
     &:active {
       background-color: #61cd57;
@@ -164,15 +183,19 @@ const handleCurrentChange = (newPage) => {
       color: #fff;
     }
   }
-  .disabled {
-    border-color: #c0c4cc;
-    color: #4a4a4a;
-    cursor: not-allowed;
-    &:hover,
-    &:active {
-      background-color: #fff;
-      border-color: #c0c4cc;
-      color: #4a4a4a;
+  :deep(.el-pager) {
+    .number {
+      width: 40px;
+      height: 40px;
+      margin-right: 16px;
+      &:last-child {
+        margin-right: 0;
+      }
+      &.is-active,
+      &:hover {
+        color: white;
+        @apply tw-bg-themecolor tw-rounded-[12px];
+      }
     }
   }
 }
@@ -181,10 +204,10 @@ const handleCurrentChange = (newPage) => {
   margin: 0;
   padding: 0 8px;
 }
-</style>
-<style lang="scss">
-.el-pager li.is-active,
-.el-pager li:hover {
-  color: rgb(97 205 87) !important;
+.page-btn {
+  @apply tw-w-[46px] tw-h-[46px] tw-rounded-[12px];
+  &.disabled {
+    @apply tw-bg-[#E5E7EB] tw-border-[transparent];
+  }
 }
 </style>
