@@ -132,7 +132,7 @@ const togglePopover = () => {
   if (deviceType.value === "pc") {
     visible.value = true;
   } else {
-    window.location.href = "https://chaomanpao.com/jogging/share.html";
+    window.location.href = "/jogging/share.html";
   }
 };
 

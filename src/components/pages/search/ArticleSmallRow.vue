@@ -6,10 +6,10 @@
     >
       {{ article.title }}
     </nuxt-link>
-    <div class="look-nums tw-flex">
+    <div class="look-nums tw-flex tw-items-center">
       <img
         src="@/assets/icon/look.svg"
-        class="tw-w-[18px] tw-mr-[8px]"
+        class="tw-block tw-w-[18px] tw-mr-[8px]"
         :alt="$t('common.超慢跑')"
         loading="lazy"
       />

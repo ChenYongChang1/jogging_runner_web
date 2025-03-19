@@ -1,9 +1,9 @@
 import { navigateTo } from "nuxt/app";
 
-export const getRouteLink = (link: string) => {
+export const getRouteLink = (link: string, ...args: any) => {
   const localePath = useLocalePath();
 
-  return localePath(link);
+  return localePath(link, ...args);
 };
 
 export const searchPush = (world?: string) => {

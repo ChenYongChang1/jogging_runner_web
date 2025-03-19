@@ -45,7 +45,7 @@
             :class="[
               'navBtn',
               isEquipment && !scrollTop ? 'navBtn-equipment' : '',
-              { active: currentPath === getRouteLink(item.path) },
+              { active: currentPath === getRouteLink(item.path, 'zh') },
             ]"
           >
             {{ item.name }}
@@ -136,7 +136,7 @@
             :class="[
               'navBtn-h5',
               isEquipment && !scrollTop ? 'navBtn-equipment' : '',
-              { active: currentPath === getRouteLink(item.path) },
+              { active: currentPath === getRouteLink(item.path, 'zh') },
             ]"
             class="tw-block tw-py-3 tw-px-4 tw-text-gray-500 hover:tw-bg-green-50 hover:tw-text-green-600 active:tw-bg-green-100 active:tw-text-green-700"
             @click="isMenuOpen = false"
@@ -203,11 +203,10 @@ const menuItems = computed(() => [
 ]);
 
 const language = computed(() => i18n.locale.value);
-const currentPath = computed(() =>
-  getRouteLink(
-    menuItems.value.map((i) => i.path).includes(route.path) ? route.path : "/"
-  )
-);
+const currentPath = computed(() => {
+  const zhPath = getRouteLink(route.path, "zh");
+  return menuItems.value.map((i) => i.path).includes(zhPath) ? zhPath : "/";
+});
 const languageName = computed(() => {
   const languageRow =
     languageList.find((item) => item.value === language.value) ||

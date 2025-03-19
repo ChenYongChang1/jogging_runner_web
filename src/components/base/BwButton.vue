@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bw-button tw-px-[16px] tw-h-[42px] tw-rounded-[14px] tw-flex-shrink-0"
+    class="bw-button tw-flex-nowrap tw-px-[16px] tw-rounded-[14px] tw-flex-shrink-0"
     :class="[`btn-${type}`, { active }]"
   >
     <slot></slot>

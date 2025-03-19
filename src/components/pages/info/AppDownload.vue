@@ -27,7 +27,7 @@ const props = defineProps({
 onMounted(async () => {
   if (isAndroid()) {
     scheme.value = `windjog://article?id=${props.articleInfo.id}&title=${props.articleInfo.title}&url=${location.href}`
-    downloadUrl.value = 'https://chaomanpao.com/jogging/share.html'
+    downloadUrl.value = '/jogging/share.html'
   } else if (isIOS()) {
     scheme.value = `jogging://jogging.net/article?id=${props.articleInfo.id}&title=${props.articleInfo.title}&url=${location.href}`
     downloadUrl.value =

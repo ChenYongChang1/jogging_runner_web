@@ -123,7 +123,7 @@ const handleClickType = (type: DownloadType, index: number) => {
       'https://apps.apple.com/app/apple-store/id6502583295?pt=126570476&ct=webtoapp&mt=8',
     'google-play':
       'https://play.google.com/store/apps/details?id=joggingtracker.joglog.metronome',
-    'android': 'https://chaomanpao.com/jogging/share.html',
+    'android': '/jogging/share.html',
   }
   if (isMdOrLarger) {
     console.log(window.innerWidth, isMdOrLarger, '--------')

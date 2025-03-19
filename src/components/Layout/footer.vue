@@ -57,7 +57,7 @@
         >
           The Wind Technology Co., Ltd. © 2025 All rights reserved.
         </p>
-        <p class="tw-text-[#fff] dd-fs-22-14 tw-font-[500] tw-leading-[20px]">
+        <p class="tw-text-[#fff] dd-fs-22-14 tw-font-[500] tw-leading-[20px] dd-hidden">
           网站备案号：沪ICP备2024086239号-2
         </p>
       </div>

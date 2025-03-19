@@ -61,6 +61,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       API_BASE_ENV: BASE_URL,
+      SHARE_ENV: "/jogging/share.html",
     },
   },
 

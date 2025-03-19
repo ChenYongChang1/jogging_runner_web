@@ -40,7 +40,7 @@
             <span class="tw-mr-[6px] tw-font-[500]">{{ $t("common.阅读全文") }}</span>
             <img
               src="@/assets/icon/to-right.svg"
-              class="tw-w-[18px]"
+              class="tw-block tw-w-[18px] tw-mt-[2px]"
               :alt="$t('common.超慢跑')"
               loading="lazy"
             />
