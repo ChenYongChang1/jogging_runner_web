@@ -65,7 +65,7 @@ export const getSearchInfo = async (
 ) => {
   const result = await useFetchGet("/api/jogging/wb/article", params, options);
 
-  return result.data.value?.data;
+  return result.data.value?.data || {};
   // return {
   //   code: 0,
   //   msg: "",

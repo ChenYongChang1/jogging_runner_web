@@ -9,7 +9,7 @@
           class="home-tabar-list-pc tw-grid tw-grid-cols-2 lg:tw-grid-cols-4 tw-gap-4 dd-container tw-transform tw-mx-auto tw-translate-y-[-75px] max-lg:tw-translate-y-0"
         >
           <div
-            class="tabar-item tw-relative tw-rounded-[24px] tw-pt-[32px] tw-pb-[4px] max-md:tw-pt-[23px] max-md:tw-pl-[10px] max-md:tw-pr-[6px] max-md:tw-pb-[4px] tw-pl-[16px] tw-pr-[10px]"
+            class="tabar-item tw-relative tw-pt-[32px] tw-pb-[4px] max-md:tw-pt-[23px] max-md:tw-pl-[10px] max-md:tw-pr-[6px] max-md:tw-pb-[4px] tw-pl-[16px] tw-pr-[10px]"
             v-for="(item, index) in tabarList"
             :key="index"
             :style="{
@@ -154,7 +154,7 @@ useHead({
 </script>
 <style lang="scss" scoped>
 .look-more {
-  @apply tw-w-[132px] tw-h-[46px] tw-rounded-[30px] tw-leading-[44px] max-md:tw-w-[78px] max-md:tw-px-[14px] tw-text-center;
+  @apply tw-px-[20px] tw-h-[46px] tw-rounded-[30px] tw-leading-[44px] max-md:tw-w-[78px] max-md:tw-px-[14px] tw-text-center;
 }
 .home-tabar {
   background: url("@/assets/images/home-bg.png") repeat-x center center;
