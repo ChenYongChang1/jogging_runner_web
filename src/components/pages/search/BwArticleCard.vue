@@ -37,7 +37,7 @@
           class="ss:tw-mx-auto tw-px-[20px] tw-py-[3px] lg:tw-mx-0 tw-w-fit btn-card"
         >
           <div class="tw-flex tw-items-center">
-            <span class="tw-mr-[6px]  dd-fs-20 tw-font-[500]">{{ $t("common.阅读全文") }}</span>
+            <span class="tw-mr-[6px]  ss:tw-text-[18px] md:tw-text-[20px] tw-font-[500]">{{ $t("common.阅读全文") }}</span>
             <img
               src="@/assets/icon/to-right.svg"
               class="tw-block tw-w-[18px] tw-mt-[2px]"

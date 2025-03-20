@@ -37,8 +37,8 @@
             type="border"
             class="tw--px-[20px] tw-text-center tw-h-[46px] tw-pl-[22px] tw-pr-[13px]"
           >
-            <div class="tw-flex tw-justify-center tw-items-center tw-h-[46px]">
-              <div class="tw-mr-[6px]  dd-fs-20 tw-font-[500] tw-leading-[100%]">{{
+            <div class="tw-flex tw-justify-center tw-items-center tw-h-[44px]">
+              <div class="tw-mr-[6px] ss:tw-text-[18px] md:tw-text-[20px] tw-font-[500] tw-leading-[100%]">{{
                 $t("common.阅读全文")
               }}</div>
               <img
@@ -83,7 +83,7 @@ const linkToInfo = (item: TableListItem) => {
   @apply tw-w-full tw-px-[16px] tw-pt-[16px] tw-pb-[22px];
   @apply lg:tw-min-w-[300px] lg:tw-max-h-[560px];
   .bw-list-item-img {
-    @apply tw-w-full tw-h-[229px] tw-overflow-hidden tw-rounded-[26px];
+    @apply tw-w-full md:tw-h-[229px] tw-overflow-hidden tw-rounded-[26px];
     img {
       @apply tw-w-full tw-h-full tw-object-cover;
     }
