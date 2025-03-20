@@ -9,18 +9,15 @@
           class="home-tabar-list-pc tw-grid tw-grid-cols-2 lg:tw-grid-cols-4 tw-gap-4 dd-container tw-transform tw-mx-auto tw-translate-y-[-75px] max-lg:tw-translate-y-0"
         >
           <div
-            class="tabar-item tw-relative tw-pt-[32px] tw-pb-[4px] max-md:tw-pt-[23px] max-md:tw-pl-[10px] max-md:tw-pr-[6px] max-md:tw-pb-[4px] tw-pl-[16px] tw-pr-[10px]"
+            class="tabar-item"
             v-for="(item, index) in tabarList"
             :key="index"
             :style="{
               backgroundImage: `url(${item?.backGroup})`,
-              backgroundSize: '100% 100%',
-              backgroundRepeat: 'no-repeat',
-              backgroundPosition: 'center',
             }"
           >
             <div
-              class="tabar-item-text dd-fs-34 tw-font-[700] tw-mb-[3px] max-md:tw-font-[500] max-md:tw-mb-[6px] max-md:tw-leading-[20px] tw-leading-[47.6px] tw-text-[#333]"
+              class="tabar-item-text tw-font-[700] tw-mb-[20px] max-md:tw-font-[500] max-sm:tw-mb-[16px] max-md:tw-leading-[24px] tw-leading-[47.6px] tw-text-[#333]"
             >
               {{ item.name }}
             </div>
@@ -33,7 +30,7 @@
                     background: item.buttonColor,
                     borderColor: item.buttonColor,
                   }"
-                  class="look-more max-md:tw-h-[30px!important] max-md:tw-leading-[28px!important] max-xsm:tw-w-[78px] max-xsm:tw-h-[27px] max-sxm:tw-leading-[27px] dd-fs-20-12 max-xsm:tw-px-[14px]"
+                  class="look-more"
                   :active="true"
                   >{{ $t("home.点击查看") }}</bw-button
                 >
@@ -153,8 +150,26 @@ useHead({
 });
 </script>
 <style lang="scss" scoped>
-.look-more {
-  @apply tw-px-[20px] tw-h-[46px] tw-rounded-[30px] tw-leading-[44px] max-md:tw-w-[78px] max-md:tw-px-[14px] tw-text-center;
+// .look-more {
+//   @apply tw-px-[14px] max-lg:tw-px-[20px] tw-h-[46px] tw-rounded-[30px] tw-leading-[44px] max-md:tw-px-[14px] tw-text-center;
+//   @apply max-md:tw-h-[30px!important] max-md:tw-leading-[28px!important] max-xsm:tw-h-[27px];
+//   @apply ss:tw-text-[14px] max-md:tw-text-[16px] max-lg:tw-text-[20px];
+// }
+.tabar-item {
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  @apply ss:tw-px-[9px] ss:tw-py-[18px];
+  @apply tw-relative md:tw-px-[18px] md:tw-pb-[26px] md:tw-pt-[32px];
+  .tabar-item-text {
+    @apply xl:tw-text-[34px] lg:tw-text-[28px] md:tw-text-[26px] sm:tw-text-[24px] ss:tw-text-[20px];
+  }
+  .look-more {
+    @apply ss:tw-px-[3vw] ss:tw-py-[0px] ss:tw-text-[14px];
+    @apply md:tw-px-[37px] md:tw-py-[3px] md:tw-text-[16px];
+    @apply lg:tw-text-[16px] lg:tw-px-[16px];
+    @apply xl:tw-px-[37px] tw-rounded-[30px] xl:tw-text-[20px] tw-py-[3px];
+  }
 }
 .home-tabar {
   background: url("@/assets/images/home-bg.png") repeat-x center center;

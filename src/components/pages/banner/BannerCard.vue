@@ -106,6 +106,7 @@ const togglePopover = () => {
 }
 .home-tabar-title {
   @apply tw-text-[#333333] ss:tw-text-[40px] md:tw-text-[56px] lg:tw-text-[70px] xl:tw-text-[84px] tw-font-[400];
-  @apply md:tw-pt-[60px] lg:tw-pt-[90px] xl:tw-pt-[130px];
+  @apply ss:tw-pt-[45px] md:tw-pt-[80px] lg:tw-pt-[100px] xl:tw-pt-[150px];
+  @apply xl:tw-leading-[98px] lg:tw-leading-[84px] md:tw-leading-[70px] ss:tw-leading-[44px];
 }
 </style>
