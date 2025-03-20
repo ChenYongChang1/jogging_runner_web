@@ -3,7 +3,7 @@
     <bw-button
       type="border"
       :class="[
-        'button-page tw-h-[46px] height-line',
+        'button-page tw-h-[46px] height-line tw-hidden lsm:tw-block',
         currentPage === 1 ? 'disabled' : '',
       ]"
       :active="false"
@@ -81,7 +81,7 @@
     <bw-button
       type="border"
       :class="[
-        'button-page tw-h-[46px] height-line',
+        'button-page tw-h-[46px] height-line  tw-hidden lsm:tw-block',
         currentPage === totalPages ? 'disabled' : '',
       ]"
       :active="false"

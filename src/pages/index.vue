@@ -168,7 +168,7 @@ useHead({
     @apply ss:tw-px-[3vw] ss:tw-py-[0px] ss:tw-text-[14px];
     @apply md:tw-px-[37px] md:tw-py-[3px] md:tw-text-[16px];
     @apply lg:tw-text-[16px] lg:tw-px-[16px];
-    @apply xl:tw-px-[37px] tw-rounded-[30px] xl:tw-text-[20px] tw-py-[3px];
+    @apply xl:tw-px-[0] xl:tw-w-[132px] xl:tw-text-center tw-rounded-[30px] xl:tw-text-[20px] tw-py-[3px];
   }
 }
 .home-tabar {

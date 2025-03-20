@@ -3,7 +3,7 @@
     class="footer-wrapper justify-center items-center w-full lg:tw-mt-[100px] tw-mt-[44px]"
   >
     <!-- 简介 -->
-    <div class="brief-introduction tw-mx-auto">
+    <div class="brief-introduction dd-container tw-mx-auto">
       <!-- pc端简介 1280px-->
       <div
         class="brief-introduction-pc dd-container sm:tw-flex lg:tw-items-start lg:tw-flex-row-reverse tw-flex-col tw-justify-center lg:tw-mb-[120px]"
