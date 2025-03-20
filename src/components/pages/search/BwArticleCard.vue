@@ -34,10 +34,10 @@
       <nuxt-link :to="linkToInfo()">
         <bw-button
           type="border"
-          class="ss:tw-mx-auto lg:tw-mx-0 tw-w-fit btn-card"
+          class="ss:tw-mx-auto tw-px-[20px] tw-py-[3px] lg:tw-mx-0 tw-w-fit btn-card"
         >
           <div class="tw-flex tw-items-center">
-            <span class="tw-mr-[6px] tw-font-[500]">{{ $t("common.阅读全文") }}</span>
+            <span class="tw-mr-[6px]  dd-fs-20 tw-font-[500]">{{ $t("common.阅读全文") }}</span>
             <img
               src="@/assets/icon/to-right.svg"
               class="tw-block tw-w-[18px] tw-mt-[2px]"

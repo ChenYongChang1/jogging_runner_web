@@ -154,7 +154,7 @@ useHead({
 </script>
 <style lang="scss" scoped>
 .look-more {
-  @apply tw-w-[132px] tw-h-[46px] tw-rounded-[30px] tw-leading-[44px] max-md:tw-w-[78px] max-md:tw-px-[14px] tw-text-center;
+  @apply tw-px-[20px] tw-h-[46px] tw-rounded-[30px] tw-leading-[44px] max-md:tw-w-[78px] max-md:tw-px-[14px] tw-text-center;
 }
 .home-tabar {
   background: url("@/assets/images/home-bg.png") repeat-x center center;
