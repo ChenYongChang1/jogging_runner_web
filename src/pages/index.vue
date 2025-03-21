@@ -159,7 +159,6 @@ useHead({
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url("@/assets/images/2222222.webp");
   @apply ss:tw-px-[9px] ss:tw-py-[18px] ss:tw-pb-[8px];
   @apply tw-relative md:tw-px-[18px] md:tw-pb-[16px] md:tw-pt-[32px];
   .tabar-item-text {
