@@ -17,7 +17,7 @@
             }"
           >
             <div
-              class="tabar-item-text tw-font-[700] tw-mb-[20px] max-md:tw-font-[500] max-sm:tw-mb-[16px] max-md:tw-leading-[24px] tw-leading-[47.6px] tw-text-[#333]"
+              class="tabar-item-text tw-font-[700] tw-mb-[14px] max-md:tw-font-[500] max-sm:tw-mb-[8px] max-md:tw-leading-[24px] tw-leading-[47.6px] tw-text-[#333]"
             >
               {{ item.name }}
             </div>
@@ -159,8 +159,9 @@ useHead({
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
-  @apply ss:tw-px-[9px] ss:tw-py-[18px];
-  @apply tw-relative md:tw-px-[18px] md:tw-pb-[26px] md:tw-pt-[32px];
+  background-image: url("@/assets/images/2222222.webp");
+  @apply ss:tw-px-[9px] ss:tw-py-[18px] ss:tw-pb-[8px];
+  @apply tw-relative md:tw-px-[18px] md:tw-pb-[16px] md:tw-pt-[32px];
   .tabar-item-text {
     @apply xl:tw-text-[34px] lg:tw-text-[28px] md:tw-text-[26px] sm:tw-text-[24px] ss:tw-text-[20px];
   }
@@ -168,7 +169,7 @@ useHead({
     @apply ss:tw-px-[3vw] ss:tw-py-[0px] ss:tw-text-[14px];
     @apply md:tw-px-[37px] md:tw-py-[3px] md:tw-text-[16px];
     @apply lg:tw-text-[16px] lg:tw-px-[16px];
-    @apply xl:tw-px-[0] xl:tw-w-[132px] xl:tw-text-center tw-rounded-[30px] xl:tw-text-[20px] tw-py-[3px];
+    @apply xl:tw-px-[5px] xl:tw-w-[132px] xl:tw-text-center tw-rounded-[30px] xl:tw-text-[20px] tw-py-[3px];
   }
 }
 .home-tabar {
