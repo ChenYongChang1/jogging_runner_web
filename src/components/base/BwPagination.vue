@@ -34,11 +34,7 @@
         class="tw-h-[23px]"
         src="@/assets/icon/to-left-black.svg"
       />
-      <img
-        v-else
-        class="tw-h-[23px]"
-        src="@/assets/icon/to-left.svg"
-      />
+      <img v-else class="tw-h-[23px]" src="@/assets/icon/to-left.svg" />
     </bw-button>
     <client-only>
       <el-pagination
@@ -72,11 +68,7 @@
         class="tw-h-[23px]"
         src="@/assets/icon/to-right2-black.svg"
       />
-      <img
-        v-else
-        class="tw-h-[23px]"
-        src="@/assets/icon/to-right2.svg"
-      />
+      <img v-else class="tw-h-[23px]" src="@/assets/icon/to-right2.svg" />
     </bw-button>
     <bw-button
       type="border"
@@ -134,6 +126,7 @@ const goToLastPage = () => {
 
 // 跳转到上一页
 const goToPrevPage = () => {
+  isLeftHover.value = false;
   if (props.currentPage > 1) {
     const newPage = props.currentPage - 1;
     emit("update:currentPage", newPage);
@@ -143,6 +136,7 @@ const goToPrevPage = () => {
 
 // 跳转到下一页
 const goToNextPage = () => {
+  isRightHover.value = false;
   if (props.currentPage < totalPages.value) {
     const newPage = props.currentPage + 1;
     emit("update:currentPage", newPage);
@@ -176,8 +170,7 @@ const handleCurrentChange = (newPage) => {
     }
   }
   .button-page:not(.disabled) {
-    &:hover,
-    &:active {
+    &:hover {
       background-color: #61cd57;
       border-color: #61cd57;
       color: #fff;
